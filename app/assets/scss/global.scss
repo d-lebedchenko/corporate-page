@@ -1,0 +1,239 @@
+@use './variables' as *;
+@use './fonts' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+ul, ol, li {
+  list-style: none;
+  padding: 0;
+}
+
+.f-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.f-a1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 180px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-a2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 141px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-a3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 108px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-a4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 96%;
+  letter-spacing: -0.05em;
+}
+
+.f-h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-sh1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 125%;
+  letter-spacing: -0.05em;
+}
+.f-sh2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: -0.02em;
+}
+
+.f-p1 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+.f-p2 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+.f-p3 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+.f-p4 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+.f-b-p1 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+
+.f-b-p2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+
+.f-b-p3 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 26px;
+  margin: 0 auto;
+}
+
+.d-f {
+  display: flex;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.ai-c {
+  align-items: center;
+}
+.fd-c {
+  flex-direction: column;
+}
+.jc-c {
+  justify-content: center;
+}
+.jc-e {
+  justify-content: flex-end;
+}
+.green {
+  color: $c-green;
+}
+.icon-32 {
+  width: 32px;
+  height: 32px;
+}
+.icon-52 {
+  width: 52px;
+  height: 52px;
+}
+
+.dots {
+  position: relative;
+  // padding: 20px; 
+  outline: 1px solid $c-steel-grey;
+  outline-offset: 0;
+}
+
+.dots::before,
+.dots::after,
+.dots .psevdo::before,
+.dots .psevdo::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: $c-steel-grey;
+  border-radius: 50%;
+}
+.dots .psevdo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dots::before {
+  top: -6px;
+  left: -6px;
+}
+
+.dots::after {
+  top: -6px;
+  right: -6px;
+}
+
+.dots .psevdo::before {
+  bottom: -6px;
+  left: -6px;
+}
+
+.dots .psevdo::after {
+  bottom: -6px;
+  right: -6px;
+}
+
+.icon {
+  color: $c-white;
+}
