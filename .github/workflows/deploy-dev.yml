@@ -44,7 +44,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            --build-arg PAYLOAD_URL=${{ vars.NUXT_PUBLIC_PAYLOAD_URL_DEV }} \
+            --build-arg NUXT_PUBLIC_PAYLOAD_URL=${{ vars.NUXT_PUBLIC_PAYLOAD_URL_DEV }} \
             -t tentens-front:latest .
 
       - name: Save Docker image to tarball
