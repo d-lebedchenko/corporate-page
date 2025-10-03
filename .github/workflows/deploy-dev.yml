@@ -1,0 +1,72 @@
+name: Build and Deploy Frontend
+
+on:
+  push:
+    branches:
+      - dev/main
+
+jobs:
+  build_and_deploy_dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
+
+      - name: Add remote host to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ vars.REMOTE_HOST_DEV }} >> ~/.ssh/known_hosts
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            --build-arg PAYLOAD_URL=${{ vars.NUXT_PUBLIC_PAYLOAD_URL_DEV }} \
+            -t tentens-front:latest .
+
+      - name: Save Docker image to tarball
+        run: docker save tentens-front:latest | gzip > tentens-front.tar.gz
+
+      - name: Ensure target directory exists on remote
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ vars.REMOTE_HOST_DEV }}
+          username: ${{ secrets.REMOTE_USER_DEV }}
+          key: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
+          port: 22
+          script: |
+            set -e
+            mkdir -p /opt/tentens-front
+
+      - name: Copy image and compose file to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.REMOTE_HOST_DEV }}
+          username: ${{ secrets.REMOTE_USER_DEV }}
+          key: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
+          port: 22
+          source: "tentens-front.tar.gz,docker-compose.yml"
+          target: "/opt/etg-front"
+
+      - name: Deploy on remote server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ vars.REMOTE_HOST_DEV }}
+          username: ${{ secrets.REMOTE_USER_DEV }}
+          key: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
+          port: 22
+          script: |
+            set -e
+            cd /opt/tentens-front
+            docker load < tentens-front.tar.gz
+            rm tentens-front.tar.gz
+            docker compose up -d
+            docker image prune -f
+
+      - name: URL Info
+        run: echo "https://tentens-dev.brights.cloud/"
