@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: tentens_front:latest
+    image: tentens-front:latest
     container_name: tentens-frontend
     restart: always
     ports:
