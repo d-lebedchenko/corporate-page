@@ -8,10 +8,28 @@ on:
 jobs:
   build_and_deploy_dev:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Set up DigitalOcean doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_DEV_API_TOKEN }} # Використовуємо ваш DO API токен
+
+      - name: Get GitHub Runner IP Address
+        id: get_ip
+        run: |
+          RUNNER_IP=$(curl -s https://api.ipify.org)
+          echo "Public Runner IP: $RUNNER_IP"
+          # Зберігаємо IP для подальших кроків
+          echo "RUNNER_IP=$RUNNER_IP" >> $GITHUB_ENV
+      
+      - name: Add Runner IP to DigitalOcean Firewall
+        run: |
+          doctl compute firewall update tentens-dev-firewall \
+            --add-rules "type=inbound,protocol=tcp,ports=22,sources=${{ env.RUNNER_IP }}/32"
+          echo "Firewall rule added for IP: ${{ env.RUNNER_IP }}"
 
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.9.0
@@ -67,6 +85,13 @@ jobs:
             rm tentens-front.tar.gz
             docker compose up -d
             docker image prune -f
+      
+      - name: Remove Runner IP from DigitalOcean Firewall
+        if: always()
+        run: |
+          doctl compute firewall update tentens-dev-firewall \
+            --remove-rules "type=inbound,protocol=tcp,ports=22,sources=${{ env.RUNNER_IP }}/32"
+          echo "Firewall rule removed for IP: ${{ env.RUNNER_IP }}"
 
       - name: URL Info
         run: echo "https://tentens-dev.brights.cloud/"
