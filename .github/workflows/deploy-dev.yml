@@ -69,7 +69,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY_DEV }}
           port: 22
           source: "tentens-front.tar.gz,docker-compose.yml"
-          target: "/opt/etg-front"
+          target: "/opt/tentens-front"
 
       - name: Deploy on remote server via SSH
         uses: appleboy/ssh-action@v1.0.3
