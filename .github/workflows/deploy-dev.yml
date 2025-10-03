@@ -27,8 +27,8 @@ jobs:
       
       - name: Add Runner IP to DigitalOcean Firewall
         run: |
-          doctl compute firewall update tentens-dev-firewall \
-            --add-rules "type=inbound,protocol=tcp,ports=22,sources=${{ env.RUNNER_IP }}/32"
+          doctl compute firewall add-rules ${{secrets.DO_FIREWALL_DEV_ID}} \
+            --inbound-rules "protocol:tcp,ports:22,address:${{ env.RUNNER_IP }}/32"
           echo "Firewall rule added for IP: ${{ env.RUNNER_IP }}"
 
       - name: Set up SSH
@@ -89,8 +89,8 @@ jobs:
       - name: Remove Runner IP from DigitalOcean Firewall
         if: always()
         run: |
-          doctl compute firewall update tentens-dev-firewall \
-            --remove-rules "type=inbound,protocol=tcp,ports=22,sources=${{ env.RUNNER_IP }}/32"
+          doctl compute firewall remove-rules ${{secrets.DO_FIREWALL_DEV_ID}} \
+            --inbound-rules "protocol:tcp,ports:22,address:${{ env.RUNNER_IP }}/32"
           echo "Firewall rule removed for IP: ${{ env.RUNNER_IP }}"
 
       - name: URL Info
