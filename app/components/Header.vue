@@ -1,14 +1,14 @@
 <script setup>
 const { data, pending, error } = await useFetch('/api/header')
 const scrollProgress = ref(0)
-const isActive = ref(false)
+const isOpen = ref(false)
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 import IconX from '~/assets/icons/x.svg'
 
-const openMenu = () => {
+const toggleMenu = () => {
   console.log('tresttt')
-  isActive.value = !isActive.value
+  isOpen.value = !isOpen.value
 }
 
 const updateScroll = () => {
@@ -29,13 +29,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="header__wr">
+  <div class="header__wr" :class="{ 'header-open': isOpen }">
 
     <header class="header">
       <!-- <pre>
       {{ data }}
     </pre> -->
-      <div class="d-f ai-c">
+      <div class="header__inner d-f ai-c">
         <div class="header__logo">
 
         </div>
@@ -48,21 +48,21 @@ onUnmounted(() => {
         <div class="header__language f-b-p3 d-f ai-c ">
           UA
         </div>
-        <button class="header__btn f-b-p3" @click="openMenu()">Меню</button>
+        <button class="header__btn f-b-p3" @click="toggleMenu()">Меню</button>
       </div>
     </header>
 
-    <div class="header__menu__wr" :class="{ 'active': isActive }" @click.self="openMenu()">
+    <div class="header__menu__wr" :class="{ 'active': isOpen }" @click.self="toggleMenu()">
       <div class="header__menu d-f fd-c">
-        <IconX class="header__close" @click.self="openMenu()" />
+        <IconX class="header__close" @click.self="toggleMenu()" />
         <div class="header__menu__list d-f fd-c">
           <div class="header__menu__item" v-for="(item, id) in data.links" :key="id">
-            <a class="header__menu__item f-h2" :href="item.link.url">{{
+            <a class="header__menu__item hover-green f-h2" :href="item.link.url">{{
               item.link.label }}</a>
             <div class="header__submenu" v-if="item.subLinks.length">
 
               <div class="header__submenu__item" v-for="(sublink, id) in item.subLinks" :key="id">
-                <a class="header__submenu__item f-sh2" :href="sublink.link.url">{{ sublink.link.label }}</a>
+                <a class="header__submenu__item hover-green f-sh2" :href="sublink.link.url">{{ sublink.link.label }}</a>
               </div>
             </div>
           </div>
@@ -83,32 +83,47 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/media" as *;
 .header {
   max-width: 1440px;
   margin: 0 auto;
   padding-left: 20px;
   background-color: $c-black;
   color: $c-white;
-  // border-top: 2px solid $c-white;
-  // position: fixed;
   width: 100%;
-  // left: 0;
-  // top: calc(100vh - 62px);
   z-index: 2;
 
-  &__wr {
+  @include respond("tab") {
+    padding-left: 15px;
+  }
 
+  &__wr {
     border-top: 2px solid $c-white;
     position: fixed;
     top: calc(100vh - 62px);
     width: 100%;
     z-index: 2;
+    @include respond("tab") {
+      top: calc(100vh - 54px);
+    }
+  }
+  &__inner {
+    
+    @include respond("tab") {
+      min-height: 52px;
+    }
   }
 
   &__logo {
     width: 110px;
     height: 40px;
     background-color: $c-green;
+    flex-shrink: 0;
+    
+    @include respond("tab") {
+      width: 77px;
+      height: 28px;
+    }
   }
 
   &__linebar {
@@ -138,6 +153,11 @@ onUnmounted(() => {
     padding: 20px;
     border-left: 1px solid $c-steel-grey;
     text-transform: uppercase;
+    
+    @include respond("tab") {
+      padding: 16px;
+      font-size: 16px;
+    }
   }
 
   &__close {
@@ -147,6 +167,13 @@ onUnmounted(() => {
     top: 46px;
     right: 46px;
     color: $c-steel-grey;
+    
+    @include respond("mob") {
+      width: 36px;
+      height: 36px;
+      top: 32px;
+      right: 32px;
+    }
   }
 
   &__menu {
@@ -159,6 +186,14 @@ onUnmounted(() => {
     height: 100%;
     transition: 0.3s all ease-in-out;
     transform: translateX(100%);
+    
+    @include respond("tab") {
+      max-width: 100%;
+    }
+
+    @include respond("mob") {
+      padding: 108px 32px 40px 32px;
+    }
 
     &__wr {
       position: fixed;
@@ -174,8 +209,8 @@ onUnmounted(() => {
 
       // background: transparent;
       content: '';
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
 
       &.active {
         opacity: 1;
@@ -190,10 +225,24 @@ onUnmounted(() => {
 
     &__list {
       gap: 56px;
+
+      @include respond("mob") {
+        gap: 32px;
+      }
     }
 
     &__item {
       text-transform: uppercase;
+      
+      @include respond("tab") {
+        a {
+          font-size: 40px;
+          
+          @include respond("mob") {
+            font-size: 32px;
+          }
+        }
+      }
     }
 
   }
@@ -203,10 +252,29 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    
+      @include respond("tab") {
+        & a {
+          
+          font-size: 24px;
+
+          @include respond("mob") {
+            font-size: 18px;
+            letter-spacing: -0.05em;
+          }
+        }
+      }
   }
 
   &__social {
     margin-top: auto;
+    
+    @include respond("mob") {
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+    }
+
     &__title {
       text-transform: uppercase;
     }
@@ -217,6 +285,15 @@ onUnmounted(() => {
       &__item {
         width: 36px;
         height: 36px;
+        @include respond("mob") {
+          width: 32px;
+          height: 32px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
