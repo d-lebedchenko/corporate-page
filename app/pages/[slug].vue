@@ -19,8 +19,9 @@ const { data: page, pending, error } = await useAsyncData(
     <div v-if="pending">Завантаження…</div>
     <div v-else-if="error">Помилка: {{ error.message }}</div>
     <div v-else-if="!page">Сторінку не знайдено</div>
-    <div v-else>
+    <div v-else-if="page?.Blocks && page?.Blocks.length">
       <RenderBloks :blocks="page.Blocks" />
     </div>
+    <div v-else>Сторінку не знайдено</div>
   </div>
 </template>

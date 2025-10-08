@@ -29,12 +29,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="header__wr" :class="{ 'header-open': isOpen }">
-
+  <div v-if="data && data?.links.length" class="header__wr" :class="{ 'header-open': isOpen }">
     <header class="header">
-      <!-- <pre>
-      {{ data }}
-    </pre> -->
       <div class="header__inner d-f ai-c">
         <div class="header__logo">
 

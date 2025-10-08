@@ -4,7 +4,7 @@ import Arrow from '~/assets/icons/arrow-up-right.svg'
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer" v-if="data && data?.navItems.length">
     <div class="container">
       <div class="footer__wr">
 
