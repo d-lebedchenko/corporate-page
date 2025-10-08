@@ -69,7 +69,7 @@ onUnmounted(() => {
           </div>
           <div class="header__social__icons d-f">
             <a class="header__social__icons__item" v-for="(item, id) in data.social" :href="item.link.url">
-              <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
+              <img v-if="item.image?.url" :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
             </a>
           </div>
         </div>

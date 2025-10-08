@@ -62,7 +62,7 @@ const props = defineProps({
     <div class="container">
       <div class="form__wr">
         <div class="form__image d-f jc-c">
-          <img :src="`${payloadUrl}${image.url}`" :alt="image.alt">
+          <img v-if="image?.url" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
         </div>
         <div class="form__content d-f fd-c">
           <input class="form__input f-p1" type="text" :placeholder="name">
