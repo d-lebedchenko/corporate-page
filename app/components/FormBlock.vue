@@ -43,7 +43,15 @@ const props = defineProps({
 
 <template>
   <section class="form">
-    <h2 class="form__runing f-a3">
+    <h2 class="form__runing f-a3 hide-tablet">
+      <div class="marquee-wrapper">
+        <div class="marquee">
+          <span>{{ runingTitle }}</span>
+          <span>{{ runingTitle }}</span>
+        </div>
+      </div>
+    </h2>
+    <h2 class="form__runing f-a1 hide-desctop">
       <div class="marquee-wrapper">
         <div class="marquee">
           <span>{{ runingTitle }}</span>
@@ -63,7 +71,12 @@ const props = defineProps({
           <div class="form__hint f-p3">
             {{ fileHint }}
           </div>
-          <button class="form__btn dots f-p2 d-f ai-c jc-sb">
+          <button class="form__btn dots dots-hover hide-tablet f-p2 d-f ai-c jc-sb">
+            <span class="psevdo"></span>
+            {{ btnText }}
+            <Arrow class="icon icon-32" />
+          </button>
+          <button class="form__btn dots dots-hover hide-desctop f-p1 d-f ai-c jc-sb">
             <span class="psevdo"></span>
             {{ btnText }}
             <Arrow class="icon icon-32" />
@@ -75,10 +88,14 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/media" as *;
 .form {
   color: $c-white;
   background-color: $c-black;
   padding: 70px 0;
+  @include respond("tab") {
+    padding: 40px 0;
+  }
 
   &__runing {
     color: $c-steel-grey;
@@ -107,13 +124,33 @@ const props = defineProps({
   &__wr {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    
+    @include respond("tab") {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 32px;
+    }
   }
 
   &__image {
+    @include respond("tab") {
+      height: 175px;
+      overflow: hidden;
+      align-items: flex-start;
+    }
+
     img {
       width: auto;
       height: 100%;
       object-fit: cover;
+      animation: rolling 10s linear infinite;
+      
+      @include respond("tab") {
+        // max-width: 345px;
+        width: 345px;
+        height: auto;
+        // animation: rolling 10s linear infinite;
+      }
     }
   }
 
@@ -123,7 +160,11 @@ const props = defineProps({
     border-bottom: 1px solid $c-steel-grey;
     padding: 24px;
     margin-bottom: 12px;
-    color: $c-white
+    color: $c-white;
+    
+    @include respond("tab") {
+      padding: 16px 0;
+    }
   }
 
   &__hint {
@@ -136,6 +177,18 @@ const props = defineProps({
     padding: 32px;
     width: max-content;
     gap: 24px;
+    
+    @include respond("tab") {
+      &.hide-desctop {
+        display: flex;
+        width: 100%;
+        padding: 16px;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
 }
@@ -147,6 +200,16 @@ const props = defineProps({
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes rolling {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

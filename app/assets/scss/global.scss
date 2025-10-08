@@ -1,14 +1,25 @@
 @use './variables' as *;
 @use './fonts' as *;
+@use './media' as *;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 body {
   font-family: 'Manrope', sans-serif;
+  cursor: none !important;
+}
+button, a {
+  cursor: none !important;
+}
+
+body:has(.header-open) {
+  height: 100vh;
+  overflow: hidden;
 }
 
 a {
@@ -40,6 +51,10 @@ ul, ol, li {
   font-size: 180px;
   line-height: 125%;
   letter-spacing: -0.05em;
+  
+  @include respond("tab") {
+    font-size: 64px;
+  }
 }
 .f-a2 {
   font-family: 'Oswald', sans-serif;
@@ -47,6 +62,10 @@ ul, ol, li {
   font-size: 141px;
   line-height: 125%;
   letter-spacing: -0.05em;
+  
+  @include respond("tab") {
+    font-size: 48px;
+  }
 }
 .f-a3 {
   font-family: 'Oswald', sans-serif;
@@ -69,6 +88,10 @@ ul, ol, li {
   font-size: 60px;
   line-height: 125%;
   letter-spacing: -0.05em;
+  
+  @include respond("tab") {
+    font-size: 32px;
+  }
 }
 .f-h2 {
   font-family: 'Oswald', sans-serif;
@@ -76,6 +99,9 @@ ul, ol, li {
   font-size: 40px;
   line-height: 125%;
   letter-spacing: -0.05em;
+  @include respond("tab") {
+    font-size: 24px;
+  }
 }
 .f-h3 {
   font-family: 'Oswald', sans-serif;
@@ -83,6 +109,10 @@ ul, ol, li {
   font-size: 28px;
   line-height: 125%;
   letter-spacing: -0.05em;
+
+  @include respond("tab") {
+    font-size: 20px;
+  }
 }
 .f-h4 {
   font-family: 'Oswald', sans-serif;
@@ -104,6 +134,10 @@ ul, ol, li {
   font-size: 24px;
   line-height: 125%;
   letter-spacing: -0.02em;
+  
+  @include respond("tab") {
+    font-size: 18px;
+  }
 }
 
 .f-p1 {
@@ -111,12 +145,20 @@ ul, ol, li {
   font-size: 28px;
   line-height: 130%;
   letter-spacing: -0.02em;
+  
+  @include respond("tab") {
+    font-size: 16px;
+  }
 }
 .f-p2 {
   font-weight: 400;
   font-size: 20px;
   line-height: 130%;
   letter-spacing: -0.02em;
+  
+  @include respond("tab") {
+    font-size: 16px;
+  }
 }
 .f-p3 {
   font-weight: 400;
@@ -135,6 +177,9 @@ ul, ol, li {
   font-size: 40px;
   line-height: 130%;
   letter-spacing: -0.02em;
+  @include respond("tab") {
+    font-size: 20px;
+  }
 }
 
 .f-b-p2 {
@@ -149,12 +194,17 @@ ul, ol, li {
   font-size: 20px;
   line-height: 110%;
   letter-spacing: -0.02em;
+
 }
 
 .container {
   max-width: 1440px;
   padding: 0 26px;
   margin: 0 auto;
+  
+  @include respond("tab") {
+    padding: 0 15px;
+  }
 }
 
 .d-f {
@@ -175,8 +225,10 @@ ul, ol, li {
 .jc-e {
   justify-content: flex-end;
 }
-.green {
-  color: $c-green;
+
+
+.icon {
+  color: $c-white;
 }
 .icon-32 {
   width: 32px;
@@ -204,6 +256,7 @@ ul, ol, li {
   height: 12px;
   background-color: $c-steel-grey;
   border-radius: 50%;
+  transition: 0.3s all ease-in-out;
 }
 .dots .psevdo {
   position: absolute;
@@ -233,7 +286,37 @@ ul, ol, li {
   bottom: -6px;
   right: -6px;
 }
+.dots-hover:hover {
+  &::before,
+  &::after, 
+  .psevdo::before,
+  .psevdo::after{
+    z-index: 2;
+    background-color: $c-green;
+    transition: 0.3s all ease-in-out;
+  }
+}
 
-.icon {
-  color: $c-white;
+.hide-tablet {
+  @include respond("tab") {
+    display: none;
+  }
+}
+.hide-desctop {
+  display: none;
+  
+  @include respond("tab") {
+    display: block;
+  }
+}
+
+.green {
+  color: $c-green;
+}
+
+.hover-green {
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    color: $c-green;
+  }
 }

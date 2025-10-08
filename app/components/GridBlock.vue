@@ -13,7 +13,7 @@ const props = defineProps({
     type: String,
     default: ''
   },
-  subtitle: {
+  text: {
     type: Object,
     default: () => ({})
   },
@@ -73,7 +73,7 @@ const props = defineProps({
         <div class="grid__top d-f fd-c jc-c dots">
           <span class="psevdo"></span>
           <h2 class="grid__top__title f-h1">{{ title }} <span class="green">{{ titleGreen }}</span></h2>
-          <RichtextLexical :content="subtitle" class="grid__top__text" />
+          <RichtextLexical :content="text" class="grid__top__text" />
         </div>
         <div class="grid__icon  dots">
           <span class="psevdo"></span>
@@ -101,11 +101,11 @@ const props = defineProps({
             {{ expertsSubtitle }}
           </div>
         </div>
-        <div class="grid__btn d-f ai-c jc-sb dots f-b-p1">
+        <a  :href="button.url" class="grid__btn d-f ai-c jc-sb dots dots-hover f-b-p1">
           <span class="psevdo"></span>
-          <a :href="button.url">{{ button.label }}</a>
+          {{ button.label }}
           <Arrow class="icon icon-52" />
-        </div>
+        </a>
       </div>
 
       <div class="grid__partners" v-if="partners.length">
@@ -123,25 +123,43 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/media" as *;
 .grid {
   color: $c-white;
   background-color: $c-black;
-  // padding-top: 78px;
-  // padding-bottom: 48px;
   padding: 70px 0;
+  
+  @include respond("tab") {
+    padding: 40px 0;
+  }
 
   &__content {
     display: grid;
     grid-template-columns: 177px auto 50%;
+    
+    @include respond("tab") {
+      grid-template-columns: 64px auto;
+    }
   }
 
   &__top {
     grid-row: span 2;
     padding: 40px;
+    
+    @include respond("tab") {
+      order: 1;
+      grid-column: span 2;
+      padding: 24px 20px;
+    }
 
     &__title {
       text-transform: uppercase;
       margin-bottom: 28px;
+      
+      @include respond("tab") {
+        margin-bottom: 20px;
+      }
+
     }
 
     &__text {
@@ -149,9 +167,17 @@ const props = defineProps({
       font-size: 20px;
       line-height: 130%;
       letter-spacing: -0.02em;
+      
+      @include respond("tab") {
+        font-size: 14px;
+      }
 
       :deep(p) {
         margin-bottom: 20px;
+
+        @include respond("tab") {
+          margin-bottom: 16px;
+        }
 
         &:last-child {
           margin-bottom: 0;
@@ -165,6 +191,23 @@ const props = defineProps({
     padding: 32px 20px;
     text-transform: uppercase;
     height: 100%;
+    
+    @include respond("tab") {
+      padding: 16px 12px;
+      min-height: 84px;
+    }
+    &__title {
+      @include respond("tab") {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    &__text  {
+      @include respond("tab") {
+        font-size: 12px;
+      }
+
+    }
   }
 
   &__btn {
@@ -172,26 +215,46 @@ const props = defineProps({
     height: 100%;
     padding: 40px;
     text-transform: uppercase;
-    // .icon {
-    //   color: $c-white;
-    // }
+    
+    @include respond("tab") {
+      order: 2;
+      grid-column: span 2;
+      padding: 16px;
+      
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &__partners {
     overflow: hidden;
     width: 100%;
     margin-top: 48px;
+    
+    @include respond("tab") {
+      margin-top: 40px;
+    }
 
     &__track {
       display: flex;
       gap: 142px;
       animation: scroll 15s linear infinite;
+      @include respond("tab") {
+        gap: 28px;
+      }
     }
 
     &__item {
       width: 112px;
       height: 72px;
       flex-shrink: 0;
+      
+      @include respond("tab") {
+        width: 89.6px;
+        height: 57.6px;
+      }
 
       img {
         width: 100%;

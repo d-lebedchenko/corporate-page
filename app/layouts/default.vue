@@ -1,6 +1,7 @@
 <script setup>
 import Footer from '~/components/Footer.vue'
 import Header from '~/components/Header.vue'
+import DynamicCursor from '~/components/DynamicCursor.vue' 
 </script>
 
 <template>
@@ -10,6 +11,10 @@ import Header from '~/components/Header.vue'
       <NuxtPage />
     </main>
     <Footer />
+
+    <ClientOnly>
+      <DynamicCursor />
+    </ClientOnly>
   </div>
 </template>
 
