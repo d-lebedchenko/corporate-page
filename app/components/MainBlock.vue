@@ -24,8 +24,6 @@ const props = defineProps({
 })
 
 
-// const words = computed(() => props.text.split(' '))
-
 const letters = computed(() =>
   props.text.split('').map(char => (char === '\n' ? '\n' : char))
 )
@@ -44,7 +42,10 @@ const letters = computed(() =>
           <h1 class="main-section__title f-a2">
             {{ title }}
           </h1>
-          <h3 class="main-section__subtitle f-sh1">
+          <h3 class="main-section__subtitle f-sh1 hide-tablet">
+            {{ subtitle }}
+          </h3>
+          <h3 class="main-section__subtitle f-sh2 hide-desctop">
             {{ subtitle }}
           </h3>
         </div>
@@ -60,11 +61,11 @@ const letters = computed(() =>
               {{ letter }}
             </span>
           </p>
-          <div class="main-section__btn dots f-b-p1 d-f jc-sb">
+          <a :href="button.url" class="main-section__btn dots dots-hover f-b-p1 d-f jc-sb ai-c">
             <span class="psevdo"></span>
-            <a :href="button.url">{{ button.label }}</a>
-            <Arrow class="icon-52"/>
-          </div>
+            {{ button.label }}
+            <Arrow class="icon icon-52"/>
+          </a>
         </div>
 
       </div>
@@ -73,6 +74,8 @@ const letters = computed(() =>
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/media" as *;
+
 .main-section {
   background-color: $c-black;
   color: $c-white;
@@ -83,6 +86,12 @@ const letters = computed(() =>
   &__wrapper {
     gap: 16px;
     height: 100%;
+    
+    @include respond("tab") {
+      gap:20px;
+      flex-direction: column;
+    }
+
   }
 
   &__left {
@@ -91,6 +100,12 @@ const letters = computed(() =>
     position: relative;
     padding-left: 26px;
     margin-left: -26px;
+    
+    @include respond("tab") {
+      margin-left: 0;
+      padding-left: 0;
+      min-height: 360px;
+    }
   }
 
   &__img {
@@ -99,9 +114,14 @@ const letters = computed(() =>
     width: 501px;
     background-color: $c-green;
     margin-left: auto;
+    
+    @include respond("tab") {
+      height: 100%;
+      width: 100%;
+      margin-left: 67px;
+    }
   }
 
-  
   &__runing {
     position: absolute;
     left: 0;
@@ -122,6 +142,20 @@ const letters = computed(() =>
         transform: rotate(-90deg) translateY(180px) translateX(-2950px);
       }
     }
+    @keyframes runingmobile {
+      0% {
+        transform: rotate(-90deg) translateY(56px)  translateX(0);
+      }
+
+      100% {
+        transform: rotate(-90deg) translateY(56px) translateX(-2950px);
+      }
+    }
+
+    @include respond("tab") {
+      transform: rotate(-90deg) translateY(56px) translateX(0);
+      animation: runingmobile 7s linear infinite;
+    }
   }
 
   &__right {
@@ -131,6 +165,10 @@ const letters = computed(() =>
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    @include respond("tab") {
+      max-width: 100%;
+    }
   }
 
 
@@ -141,6 +179,11 @@ const letters = computed(() =>
   &__subtitle {
     text-transform: uppercase;
     text-align: center;
+    
+    @include respond("tab") {
+      text-align: left;
+      margin-bottom: 16px;
+    }
   }
 
   &__text {
@@ -163,11 +206,29 @@ const letters = computed(() =>
         color: $c-white;
       }
     }
+    
+    @include respond("tab") {
+      margin-bottom: 16px;
+    }
   }
 
   &__btn {
     text-transform: uppercase;
     padding: 40px;
+    
+    @include respond("tab") {
+      padding: 16px;
+      gap: 32px;
+      width: max-content;
+       
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    @include respond("mob") {
+      width: 100%;
+    }
   }
 }
 </style>
