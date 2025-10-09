@@ -58,7 +58,7 @@ const props = defineProps({
           </h3>
         </div>
         <ul class="culture__list hide-tablet">
-          <li class="culture__item dots dots-hover d-f fd-c" v-for="(item, id) in features" :key="id">
+          <li class="culture__item dots dots-hover d-f fd-c clickable" v-for="(item, id) in features" :key="id">
             <span class="psevdo"></span>
             <h4 class="culture__item__title f-h3">
               {{ item.title }}

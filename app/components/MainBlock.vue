@@ -1,5 +1,7 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
+const config = useRuntimeConfig()
+const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 const props = defineProps({
   title: {
     type: String,
@@ -20,6 +22,10 @@ const props = defineProps({
   button: {
     type: Object,
     default: () => ({ label: '', url: '' })
+  },
+  image: {
+    type: Object,
+    default: () => ({})
   }
 })
 
@@ -35,7 +41,9 @@ const letters = computed(() =>
 
       <div class="main-section__left d-f">
         <div class="main-section__runing f-a1"> {{ runningText + ' ' + runningText }}</div>
-        <div class="main-section__img"></div>
+        <div class="main-section__img" v-if="image?.url">
+          <img :src="`${payloadUrl}${image?.url}`" :alt="image?.alt">
+        </div>
       </div>
       <div class="main-section__right">
         <div class="main-section__top">
@@ -109,11 +117,15 @@ const letters = computed(() =>
   }
 
   &__img {
-    // height: calc(100vh - 48px);
     height: 100%;
     width: 501px;
-    background-color: $c-green;
     margin-left: auto;
+ 
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
     
     @include respond("tab") {
       height: 100%;
@@ -130,7 +142,7 @@ const letters = computed(() =>
     text-transform: uppercase;
     transform: rotate(-90deg) translateY(180px) translateX(0);
     line-height: 100%;
-    animation: runing 5s linear infinite;
+    animation: runing 10s linear infinite; 
     white-space: nowrap;
     
     @keyframes runing {

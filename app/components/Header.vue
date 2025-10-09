@@ -7,7 +7,6 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 import IconX from '~/assets/icons/x.svg'
 
 const toggleMenu = () => {
-  console.log('tresttt')
   isOpen.value = !isOpen.value
 }
 
@@ -33,7 +32,7 @@ onUnmounted(() => {
     <header class="header">
       <div class="header__inner d-f ai-c">
         <div class="header__logo">
-
+          <img v-if="data.logo?.url" :src="`${payloadUrl}${data.logo.url}`" :alt="data.logo.label" />
         </div>
         <div class="header__linebar__wr">
 
@@ -113,8 +112,12 @@ onUnmounted(() => {
   &__logo {
     width: 110px;
     height: 40px;
-    background-color: $c-green;
     flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
     
     @include respond("tab") {
       width: 77px;

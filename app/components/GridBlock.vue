@@ -240,7 +240,7 @@ const props = defineProps({
     &__track {
       display: flex;
       gap: 142px;
-      animation: scroll 15s linear infinite;
+      animation: scroll 30s linear infinite;
       @include respond("tab") {
         gap: 28px;
       }

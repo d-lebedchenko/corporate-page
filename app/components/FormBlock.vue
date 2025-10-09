@@ -109,10 +109,10 @@ const props = defineProps({
       overflow: hidden;
     }
 
-    .marquee {
+    .marquee { 
       display: flex;
       white-space: nowrap;
-      animation: marquee 10s linear infinite;
+      animation: marquee 25s linear infinite;
 
       span {
         display: inline-block;
