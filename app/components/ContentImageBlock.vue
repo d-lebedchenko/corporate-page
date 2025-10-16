@@ -3,6 +3,7 @@
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+import RichtextLexical from './RichtextLexical'
 
 const props = defineProps({
   title: {
@@ -12,6 +13,10 @@ const props = defineProps({
   subtitle: {
     type: String,
     default: ''
+  },
+  text: {
+    type: Object,
+    default: () => ({})
   },
   button: {
     type: Object,
@@ -26,27 +31,28 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="grow">
+  <section class="content-image">
     <div class="container">
-      <div class="grow__wr">
-        <div class="grow__content d-f fd-c jc-e">
-          <h2 class="grow__title f-h1">
+      <div class="content-image__wr">
+        <div class="content-image__content d-f fd-c jc-e">
+          <h2 class="content-image__title f-h1">
             {{ title }}
           </h2>
-          <div class="grow__text f-p2">
+          <!-- <div class="content-image__text f-p2">
             {{ subtitle }}
-          </div>
-          <a  :href="button.url" class="grow__btn dots hide-tablet d-f ai-c jc-sb dots f-b-p2">
+          </div> -->
+          <RichtextLexical :content="text" class="content-image__text f-p2" />
+          <a  :href="button.url" class="content-image__btn dots hide-tablet d-f ai-c jc-sb dots f-b-p2">
             <span class="psevdo"></span>{{ button.label }}
             <Arrow class="icon icon-32" />
           </a>
-          <a  :href="button.url" class="grow__btn dots hide-desctop d-f ai-c jc-sb dots f-b-p1">
+          <a  :href="button.url" class="content-image__btn dots hide-desctop d-f ai-c jc-sb dots f-b-p1">
             <span class="psevdo"></span>
             {{ button.label }}
             <Arrow class="icon icon-32" />
           </a>
         </div>
-        <div class="grow__image d-f jc-c">
+        <div class="content-image__image d-f jc-c">
           <img :src="`${payloadUrl}${image.url}`" :alt="image.alt">
         </div>
       </div>
@@ -56,7 +62,7 @@ const props = defineProps({
 
 <style scoped lang="scss">
 @use "@/assets/scss/media" as *;
-.grow {
+.content-image {
   color: $c-white;
   background-color: $c-black;
   padding: 70px 0;
@@ -122,8 +128,9 @@ const props = defineProps({
 
   &__image {
     img {
-      width: 361px;
-      height: 361px;
+      min-height: 361px;
+      width: auto;
+      height: 100%;
       object-fit: cover;
       
       @include respond("tab") {

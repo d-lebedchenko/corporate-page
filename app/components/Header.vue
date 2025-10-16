@@ -31,9 +31,9 @@ onUnmounted(() => {
   <div v-if="data && data?.links.length" class="header__wr" :class="{ 'header-open': isOpen }">
     <header class="header">
       <div class="header__inner d-f ai-c">
-        <div class="header__logo">
+        <a href="/" class="header__logo">
           <img v-if="data.logo?.url" :src="`${payloadUrl}${data.logo.url}`" :alt="data.logo.label" />
-        </div>
+        </a>
         <div class="header__linebar__wr">
 
           <div class="header__linebar">
@@ -86,7 +86,7 @@ onUnmounted(() => {
   background-color: $c-black;
   color: $c-white;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
 
   @include respond("tab") {
     padding-left: 15px;
@@ -94,6 +94,7 @@ onUnmounted(() => {
 
   &__wr {
     border-top: 2px solid $c-white;
+    background-color: $c-black;
     position: fixed;
     top: calc(100vh - 62px);
     width: 100%;

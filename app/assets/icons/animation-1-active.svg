@@ -1,0 +1,11 @@
+<svg class="animated-icon" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="56" cy="56" r="18.5" stroke="#00F3BC"/> 
+  <circle class="c-top" cx="56" cy="19" r="18.5" stroke="white"/>
+  <circle class="c-bottom" cx="56" cy="93" r="18.5" stroke="white"/>
+  <circle class="c-left" cx="19" cy="56" r="18.5" stroke="white"/>
+  <circle class="c-right" cx="93" cy="56" r="18.5" stroke="white"/>
+  <circle class="c-top-left" cx="19" cy="19" r="18.5" stroke="white"/>
+  <circle class="c-bottom-left" cx="19" cy="93" r="18.5" stroke="white"/> 
+  <circle class="c-top-right" cx="93" cy="19" r="18.5" stroke="white"/>
+  <circle class="c-bottom-right" cx="93" cy="93" r="18.5" stroke="white"/> 
+</svg>

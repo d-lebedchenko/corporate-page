@@ -34,8 +34,8 @@ export default defineEventHandler(async (event) => {
     const locale = query.locale || 'uk'
 
     let page = null;
-
-    if (fullSlug.startsWith('career/')) {
+    
+    if (fullSlug.startsWith('career')) {
         page = await fetchPayloadPage(payloadUrl, 'career-pages', fullSlug, locale)
     }
 

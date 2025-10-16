@@ -179,7 +179,7 @@ onBeforeUnmount(() => {
           </button>
         </div>
       </div>
-      <ClientOnly>
+      <!-- <ClientOnly> -->
         <swiper-container v-if="sliderListItems.length > 0" ref="containerRef" class="matrices__slider"
           :slides-per-view="1" :space-between="0" effect="fade" fade-effect-cross-fade="true" auto-height="true">
 
@@ -203,11 +203,7 @@ onBeforeUnmount(() => {
           </swiper-slide>
         </swiper-container>
 
-
-        <div v-else>
-          <p>Немає елементів у цій підкатегорії.</p>
-        </div>
-      </ClientOnly>
+      <!-- </ClientOnly> -->
       <div class="container">
 
         <div class="matrices__slider__controls-mob dots" v-if="sliderListItems.length > 0">
@@ -339,7 +335,7 @@ onBeforeUnmount(() => {
       right: 26px;
       top: 26px;
       display: flex;
-      z-index: 3;
+      z-index: 1;
 
       @include respond("tab") {
         outline: none;

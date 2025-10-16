@@ -1,6 +1,7 @@
 @use "sass:map";
 
 $breakpoints: (
+  "mob-sm": 350px,
   "mob": 600px,
   "tab": 1024px,
 );
@@ -15,4 +16,6 @@ $breakpoints: (
 @include respond("tab") {
 }
 @include respond("mob") {
+}
+@include respond("mob-sm") {
 }

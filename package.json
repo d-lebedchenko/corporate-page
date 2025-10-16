@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxtjs/i18n": "^10.1.0",
     "@payloadcms/richtext-lexical": "3.56.0",
+    "@vueuse/core": "^13.9.0",
     "nuxt": "^4.1.2",
     "nuxt-swiper": "2.0.1",
     "vue": "^3.5.21",

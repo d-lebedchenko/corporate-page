@@ -208,6 +208,9 @@ ul, ol, li {
   @include respond("tab") {
     padding: 0 15px;
   }
+  @include respond("mob-sm") {
+    padding: 0 12px;
+  }
 }
 
 .d-f {
@@ -218,6 +221,9 @@ ul, ol, li {
 }
 .ai-c {
   align-items: center;
+}
+.ai-fe {
+  align-items: flex-end;
 }
 .fd-c {
   flex-direction: column;

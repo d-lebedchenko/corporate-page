@@ -2,7 +2,7 @@
 import MainBlock from './MainBlock.vue'
 import GridBlock from './GridBlock.vue'
 import CultureBlock from './CultureBlock.vue'
-import GrowBlock from './GrowBlock.vue'
+import ContentImageBlock from './ContentImageBlock.vue'
 import NolimitsBlock from './NolimitsBlock.vue'
 import FormBlock from './FormBlock.vue'
 import MatricesGridBlock from './MatricesGridBlock.vue'
@@ -10,7 +10,6 @@ import Breadcrumbs from './Breadcrumbs.vue'
 import MatricesMain from './MatricesMain.vue'
 
 import { ClientOnly } from '#components'
-
 
 defineProps({
   blocks: {
@@ -27,8 +26,8 @@ function getComponent(type) {
       return GridBlock
     case 'culture':
       return CultureBlock
-    case 'grow-block':
-      return GrowBlock
+    case 'content-image-block':
+      return ContentImageBlock
     case 'nolimits-block':
       return NolimitsBlock
     case 'form-block':
@@ -51,13 +50,8 @@ function getComponent(type) {
 <template>
   <div>
     <template v-for="(block, i) in blocks" :key="i">
-      
       <ClientOnly v-if="block.blockType === 'mgb'">
         <component :is="getComponent(block.blockType)" v-bind="block" />
-        
-        <template #fallback>
-          <div class="matrices-block-placeholder">Завантаження інтерактивного контенту...</div>
-        </template>
       </ClientOnly>
 
       <component v-else :is="getComponent(block.blockType)" v-bind="block" />
