@@ -335,7 +335,7 @@ onBeforeUnmount(() => {
       right: 26px;
       top: 26px;
       display: flex;
-      z-index: 1;
+      z-index: 2;
 
       @include respond("tab") {
         outline: none;

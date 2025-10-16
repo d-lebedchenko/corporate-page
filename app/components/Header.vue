@@ -98,7 +98,7 @@ onUnmounted(() => {
     position: fixed;
     top: calc(100vh - 62px);
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     @include respond("tab") {
       top: calc(100vh - 54px);
     }
