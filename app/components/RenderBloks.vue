@@ -62,11 +62,11 @@ function getComponent(type) {
 <template>
   <div>
     <template v-for="(block, i) in blocks" :key="i">
-      <ClientOnly v-if="block.blockType === 'mgb'">
+      <!-- <ClientOnly v-if="block.blockType === 'mgb'">
         <component :is="getComponent(block.blockType)" v-bind="block" />
-      </ClientOnly>
+      </ClientOnly> -->
 
-      <component v-else :is="getComponent(block.blockType)" v-bind="block" />
+      <component :is="getComponent(block.blockType)" v-bind="block" />
     </template>
   </div>
 </template>

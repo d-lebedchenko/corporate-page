@@ -82,6 +82,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
+@use "@/assets/scss/media" as *;
 .custom-cursor {
   position: fixed;
 
@@ -112,6 +113,11 @@ onUnmounted(() => {
       width: 48px;
       height: 48px;
     }
+  }
+
+  
+  @include respond("tab") {
+    display: none;
   }
 }
 </style>

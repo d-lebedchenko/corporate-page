@@ -6,9 +6,6 @@ import Check from '~/assets/icons/check.svg'
 import ArrowLeft from '~/assets/icons/arrow-left.svg'
 import ArrowRight from '~/assets/icons/arrow-right.svg'
 
-
-const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 const containerRef = ref(null)
 
 const props = defineProps({
@@ -81,9 +78,19 @@ watch(selectedSubcat, () => {
   nextTick(() => {
     if (containerRef.value?.swiper) {
       const swiper = containerRef.value.swiper
-      swiper.update()
-      swiper.slideTo(0)
-      currentSlide.value = 0
+      nextTick(() => {
+        swiper.update()
+        swiper.slideTo(0)
+        currentSlide.value = 0
+      })
+    }
+  })
+})
+
+watch(sliderListItems, () => {
+  nextTick(() => {
+    if (containerRef.value?.swiper) {
+      containerRef.value.swiper.update()
     }
   })
 })
@@ -92,14 +99,6 @@ const slidePrev = () => containerRef.value?.swiper.slidePrev()
 const slideNext = () => containerRef.value?.swiper.slideNext()
 
 onMounted(() => {
-  nextTick(() => {
-    if (containerRef.value?.swiper) {
-      const swiper = containerRef.value.swiper
-      swiper.on('slideChange', () => {
-        currentSlide.value = swiper.realIndex
-      })
-    }
-  })
   import('swiper/element/bundle').then(({ register }) => {
     register();
 
@@ -109,6 +108,7 @@ onMounted(() => {
         swiper.on('slideChange', () => {
           currentSlide.value = swiper.realIndex
         })
+        swiper.update()
       }
     })
   });
@@ -126,7 +126,7 @@ onBeforeUnmount(() => {
       <div class="matrices__selectors" v-if="props.categories.length > 0">
 
         <div class="matrices__select__wrapper" :class="{ 'open': isCatDropdownOpen }" @click="toggleCatDropdown"
-          v-click-outside="() => isCatDropdownOpen = false">
+          >
 
           <div class="matrices__select f-p1 clickable">
             {{ currentCategory ? currentCategory.title : 'Виберіть категорію' }}
@@ -143,7 +143,7 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="matrices__select__wrapper" :class="{ 'open': isSubcatDropdownOpen }" @click="toggleSubcatDropdown"
-          v-click-outside="() => isSubcatDropdownOpen = false">
+          >
 
           <div class="matrices__select f-p1 clickable" :class="{ 'disabled': subcategoriesList.length === 0 }">
             {{ currentSubcategory ? currentSubcategory.title : 'Немає підкатегорій' }}
@@ -169,16 +169,18 @@ onBeforeUnmount(() => {
         <div class="matrices__slider__controls dots" v-if="sliderListItems.length > 0">
           <span class="slider-counter f-sh2">
             <span class="psevdo"></span>{{ currentSlide + 1 }} / {{ sliderListItems.length }}</span>
-          <button @click="slidePrev" class="slider-btn dots">
+          <button @click="slidePrev" class="slider-btn dots dots-hover">
             <span class="psevdo"></span>
             <ArrowLeft class="icon green icon-22" />
           </button>
-          <button @click="slideNext" class="slider-btn dots">
+          <button @click="slideNext" class="slider-btn dots  dots-hover">
             <span class="psevdo"></span>
             <ArrowRight class="icon green icon-22" />
           </button>
         </div>
       </div>
+      <ClientOnly>
+
         <swiper-container v-if="sliderListItems.length > 0" ref="containerRef" class="matrices__slider"
           :slides-per-view="1" :space-between="0" effect="fade" fade-effect-cross-fade="true" auto-height="true">
 
@@ -201,6 +203,7 @@ onBeforeUnmount(() => {
             </div>
           </swiper-slide>
         </swiper-container>
+      </ClientOnly>
       <div class="container">
 
         <div class="matrices__slider__controls-mob dots" v-if="sliderListItems.length > 0">
@@ -223,9 +226,10 @@ onBeforeUnmount(() => {
 @use "@/assets/scss/media" as *;
 
 .matrices {
-  padding: 70px 0;
+  padding: 70px 0 44px;
   background-color: $c-black;
   color: $c-white;
+
   @include respond("tab") {
     padding: 40px 0;
   }
@@ -256,6 +260,7 @@ onBeforeUnmount(() => {
     border: none;
     border-bottom: 1px solid $c-steel-grey;
     position: relative;
+
     @include respond("tab") {
       padding: 16px 30px 16px 0;
     }
@@ -344,18 +349,22 @@ onBeforeUnmount(() => {
           display: none;
         }
       }
+
       &-mob {
         display: none;
+
         @include respond("tab") {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
         }
+
         .slider-btn {
           min-height: 52px;
           display: flex;
           justify-content: center;
           align-items: center;
         }
+
         .icon {
           width: 20px;
           height: 20px;
@@ -389,6 +398,7 @@ onBeforeUnmount(() => {
 
       .slider-counter {
         min-width: 132px;
+
         @include respond("tab") {
           min-width: 0;
           right: 16px;
@@ -451,6 +461,7 @@ onBeforeUnmount(() => {
           padding: 0 16px 24px 16px;
           grid-template-columns: 1fr;
           gap: 24px;
+
           .psevdo {
             display: none;
           }
@@ -484,5 +495,4 @@ onBeforeUnmount(() => {
 //       background-color: #0056b3;
 //     }
 //   }
-// }
-</style>
+// }</style>

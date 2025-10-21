@@ -11,7 +11,7 @@ import Arrow from '~/assets/icons/arrow-up-right.svg'
         <div class="footer__row d-f ai-c">
           <div class="footer__label f-sh2">{{ data.navLabel }}</div>
           <div class="footer__links d-f">
-            <div v-for="(link, index) in data.navItems" :key="index" class="footer__link f-p3">
+            <div v-for="(link, index) in data.navItems" :key="index" class="footer__link f-p3 hover-green">
               <a :href="link.link.url">{{ link.link.label }}</a>
             </div>
           </div>
@@ -19,7 +19,7 @@ import Arrow from '~/assets/icons/arrow-up-right.svg'
         <div class="footer__row d-f ai-c">
           <div class="footer__label f-sh2">{{ data.followLabel }}</div>
           <div class="footer__links d-f">
-            <div v-for="(link, index) in data.followItems" :key="index" class="footer__link f-p3">
+            <div v-for="(link, index) in data.followItems" :key="index" class="footer__link f-p3 hover-green">
               <a class="d-f ai-c" :href="link.link.url">{{ link.link.label }}
                 <Arrow class="icon" />
               </a>
@@ -29,12 +29,12 @@ import Arrow from '~/assets/icons/arrow-up-right.svg'
       </div>
       <div class="footer__info d-f ai-c">
         <div v-if="data.privacyLink">
-          <a :href="data.privacyLink.link.url" class="f-p3">{{ data.privacyLink.link.label }}</a>
+          <a :href="data.privacyLink.link.url" class="f-p3 o-5">{{ data.privacyLink.link.label }}</a>
         </div>
         <div v-if="data.termsLink">
-          <a :href="data.termsLink.link.url" class="f-p3">{{ data.termsLink.link.label }}</a>
+          <a :href="data.termsLink.link.url" class="f-p3 o-5">{{ data.termsLink.link.label }}</a>
         </div>
-        <div class="f-p3 right" v-if="data.rights">{{ data.rights }}</div>
+        <div class="f-p3 right o-5" v-if="data.rights">{{ data.rights }}</div>
       </div>
     </div>
   </footer>
