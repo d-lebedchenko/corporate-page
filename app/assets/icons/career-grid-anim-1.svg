@@ -1,0 +1,16 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="square-move s-1" d="M12.2998 0.5V12.2998H0.5V0.5H12.2998Z" stroke="white"/>
+    <path class="square-move s-2" d="M12.2998 26.1001V37.8999H0.5V26.1001H12.2998Z" stroke="white"/>
+    <path class="square-move s-3" d="M12.2998 51.7V63.4998H0.5V51.7H12.2998Z" stroke="white"/>
+    <path class="square-move s-4" d="M25.0999 13.3V25.0999H13.3V13.3H25.0999Z" stroke="white"/>
+    <path class="square-move s-5" d="M25.0999 38.8999V50.6997H13.3V38.8999H25.0999Z" stroke="white"/>
+    <path class="square-move s-6" d="M37.8999 0.5V12.2998H26.1001V0.5H37.8999Z" stroke="white"/>
+    <path class="square-move s-7" d="M37.8999 51.7V63.4998H26.1001V51.7H37.8999Z" stroke="white"/>
+    <path class="square-move s-8" d="M50.6997 13.3V25.0999H38.8999V13.3H50.6997Z" stroke="white"/>
+    <path class="square-move s-9" d="M50.6997 38.8999V50.6997H38.8999V38.8999H50.6997Z" stroke="white"/>
+    <path class="square-move s-10" d="M63.4998 0.5V12.2998H51.7V0.5H63.4998Z" stroke="white"/>
+    <path class="square-move s-11" d="M63.4998 26.1001V37.8999H51.7V26.1001H63.4998Z" stroke="white"/>
+    <path class="square-move s-12" d="M63.4998 51.7V63.4998H51.7V51.7H63.4998Z" stroke="white"/>
+
+    <path class="square-center" d="M37.8999 26.1001V37.8999H26.1001V26.1001H37.8999Z" stroke="#00F3BC"/>
+</svg>

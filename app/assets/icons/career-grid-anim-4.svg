@@ -1,0 +1,5 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="triangle-right" d="M63.3633 63.5H32.6436L48.2998 2.06055L63.3633 63.5Z" stroke="white"/>
+    <path class="triangle-left" d="M31.3633 63.5H0.643555L16.2998 2.06055L31.3633 63.5Z" stroke="white"/>
+    <rect class="underline" y="63" width="64" height="1" fill="#00F3BC"/>
+</svg>

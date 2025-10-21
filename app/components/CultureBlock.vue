@@ -11,7 +11,7 @@ const swiper = useSwiper(containerRef, {
   autoplay: {
     delay: 5000,
   },
-  slidesPerView: 2, // Дефолтно 2 слайди
+  slidesPerView: 2,
   creativeEffect: {
     prev: {
       shadow: true,
@@ -23,10 +23,10 @@ const swiper = useSwiper(containerRef, {
     },
   },
   breakpoints: {
-    0: {      // від 0px і до
-      slidesPerView: 1, // 1 слайд
+    0: {
+      slidesPerView: 1,
     },
-    601: {    // від 601px і більше
+    601: {
       slidesPerView: 2,
     },
   },

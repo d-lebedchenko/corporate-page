@@ -8,6 +8,10 @@ import FormBlock from './FormBlock.vue'
 import MatricesGridBlock from './MatricesGridBlock.vue'
 import Breadcrumbs from './Breadcrumbs.vue'
 import MatricesMain from './MatricesMain.vue'
+import CareerMain from './CareerMain.vue'
+import CareerStats from './CareerStats.vue'
+import CareerGrid from './CareerGrid.vue'
+import CareerStickySlider from './CareerStickySlider.vue'
 
 import { ClientOnly } from '#components'
 
@@ -38,6 +42,14 @@ function getComponent(type) {
       return Breadcrumbs
     case 'matrices-main-block':
       return MatricesMain
+    case 'career-main-block':
+      return CareerMain
+    case 'career-stats':
+      return CareerStats
+    case 'career-grid':
+      return CareerGrid
+    case 'career-sticky-slider':
+      return CareerStickySlider
     default:
       return {
         props: ['type'],
