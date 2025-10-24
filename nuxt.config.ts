@@ -35,11 +35,6 @@ export default defineNuxtConfig({
 
     strategy: "prefix_except_default",
 
-    detectBrowserLanguage: {
-      useCookie: false,
-      redirectOn: "root", 
-      fallbackLocale: "uk",
-      alwaysRedirect: false,
-    },
+    detectBrowserLanguage: false,
   },
 });

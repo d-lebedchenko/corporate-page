@@ -1,5 +1,6 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
+import { useTextAnimation } from '../../composables/useTextAnimation';
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 const props = defineProps({
@@ -33,6 +34,12 @@ const props = defineProps({
 const letters = computed(() =>
   props.text.split('').map(char => (char === '\n' ? '\n' : char))
 )
+
+const {
+  containerRef: textRef,
+  isVisible: isTextVisible
+} = useTextAnimation();
+
 </script>
 
 <template>
@@ -40,7 +47,10 @@ const letters = computed(() =>
     <div class="container main-section__wrapper d-f">
 
       <div class="main-section__left d-f">
-        <div class="main-section__runing f-a1"> {{ runningText + ' ' + runningText }}</div>
+        <div class="main-section__runing f-a1" ref="runningTrackRef">
+          <span class="main-section__runing__text"> {{ runningText + ' ' }} </span>
+          <span class="main-section__runing__text"> {{ runningText }} </span>
+        </div>
         <div class="main-section__img" v-if="image?.url">
           <img :src="`${payloadUrl}${image?.url}`" :alt="image?.alt">
         </div>
@@ -59,20 +69,16 @@ const letters = computed(() =>
         </div>
         <div class="main-section__bottom">
 
-          <p class="main-section__text f-p1">
-            <span
-              v-for="(letter, i) in letters"
-              :key="i"
-              class="animated-letter"
-              :style="{ 'animation-delay': `${i * 0.03}s` }"
-            >
+          <p class="main-section__text f-p1" ref="textRef" :class="{ 'is-visible': isTextVisible }">
+            <span v-for="(letter, i) in letters" :key="i" class="animated-letter"
+              :style="{ 'animation-delay': `${i * 0.03}s` }">
               {{ letter }}
             </span>
           </p>
           <a :href="button.url" class="main-section__btn dots dots-hover f-b-p1 d-f jc-sb ai-c">
             <span class="psevdo"></span>
             {{ button.label }}
-            <Arrow class="icon icon-52"/>
+            <Arrow class="icon icon-52" />
           </a>
         </div>
 
@@ -94,9 +100,9 @@ const letters = computed(() =>
   &__wrapper {
     gap: 16px;
     height: 100%;
-    
+
     @include respond("tab") {
-      gap:20px;
+      gap: 20px;
       flex-direction: column;
     }
 
@@ -108,7 +114,7 @@ const letters = computed(() =>
     position: relative;
     padding-left: 26px;
     margin-left: -26px;
-    
+
     @include respond("tab") {
       margin-left: 0;
       padding-left: 0;
@@ -120,13 +126,13 @@ const letters = computed(() =>
     height: 100%;
     width: 501px;
     margin-left: auto;
- 
+
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
-    
+
     @include respond("tab") {
       height: 100%;
       width: 100%;
@@ -140,33 +146,53 @@ const letters = computed(() =>
     bottom: 0;
     transform-origin: bottom left;
     text-transform: uppercase;
+    white-space: nowrap;
+
     transform: rotate(-90deg) translateY(180px) translateX(0);
     line-height: 100%;
-    animation: runing 10s linear infinite; 
-    white-space: nowrap;
-    
-    @keyframes runing {
+    animation: fast-jump-desktop 20s linear infinite;
+
+
+    @keyframes fast-jump-desktop {
       0% {
-        transform: rotate(-90deg) translateY(180px)  translateX(0);
+        transform: rotate(-90deg) translateY(180px) translateX(0);
+      }
+
+      50% {
+        transform: rotate(-90deg) translateY(180px) translateX(-50%);
+      }
+
+      50.01% {
+        transform: rotate(-90deg) translateY(180px) translateX(0);
       }
 
       100% {
-        transform: rotate(-90deg) translateY(180px) translateX(-2950px);
+        transform: rotate(-90deg) translateY(180px) translateX(-50%);
       }
     }
-    @keyframes runingmobile {
+
+
+    @keyframes fast-jump-mobile {
       0% {
-        transform: rotate(-90deg) translateY(56px)  translateX(0);
+        transform: rotate(-90deg) translateY(56px) translateX(0);
+      }
+
+      50% {
+        transform: rotate(-90deg) translateY(56px) translateX(-50%);
+      }
+
+      50.01% {
+        transform: rotate(-90deg) translateY(56px) translateX(0);
       }
 
       100% {
-        transform: rotate(-90deg) translateY(56px) translateX(-2950px);
+        transform: rotate(-90deg) translateY(56px) translateX(-50%);
       }
     }
 
     @include respond("tab") {
-      transform: rotate(-90deg) translateY(56px) translateX(0);
-      animation: runingmobile 7s linear infinite;
+        transform: rotate(-90deg) translateY(56px) translateX(0);
+        animation: fast-jump-mobile 10s linear infinite;
     }
   }
 
@@ -177,7 +203,7 @@ const letters = computed(() =>
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
     @include respond("tab") {
       max-width: 100%;
     }
@@ -191,7 +217,7 @@ const letters = computed(() =>
   &__subtitle {
     text-transform: uppercase;
     text-align: center;
-    
+
     @include respond("tab") {
       text-align: left;
       margin-bottom: 16px;
@@ -204,21 +230,25 @@ const letters = computed(() =>
     white-space: pre-wrap;
     color: $c-grey;
 
-    .animated-letter {
-      display: inline;
-      animation: colorChange 0.5s linear forwards;
-    }
+    &.is-visible {
 
-    @keyframes colorChange {
-      0% {
-        color: $c-grey;
+
+      .animated-letter {
+        display: inline;
+        animation: colorChange 0.5s linear forwards;
       }
 
-      100% {
-        color: $c-white;
+      @keyframes colorChange {
+        0% {
+          color: $c-grey;
+        }
+
+        100% {
+          color: $c-white;
+        }
       }
     }
-    
+
     @include respond("tab") {
       margin-bottom: 16px;
     }
@@ -227,17 +257,18 @@ const letters = computed(() =>
   &__btn {
     text-transform: uppercase;
     padding: 40px;
-    
+
     @include respond("tab") {
       padding: 16px;
       gap: 32px;
       width: max-content;
-       
+
       .icon {
         width: 24px;
         height: 24px;
       }
     }
+
     @include respond("mob") {
       width: 100%;
     }

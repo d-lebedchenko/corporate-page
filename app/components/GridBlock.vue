@@ -171,6 +171,79 @@ function handleIconThirdMouseLeave() {
     isIconThirdVisible.value = true;
   }
 }
+
+
+
+const partnersTrackRef = ref(null);
+const firstPartnersSetRef = ref([]);
+
+const setScrollShift = () => {
+  const track = partnersTrackRef.value;
+  if (!track || props.partners.length === 0) return;
+
+  // 1. Створюємо тимчасовий контейнер для вимірювання
+  const tempContainer = document.createElement('div');
+
+  // 2. Копіюємо критично важливі стилі Flexbox та Gap
+  const computedStyle = window.getComputedStyle(track);
+  tempContainer.style.display = 'flex';
+  tempContainer.style.gap = computedStyle.getPropertyValue('gap');
+  tempContainer.style.position = 'absolute'; // Не впливає на макет
+  tempContainer.style.visibility = 'hidden'; // Приховуємо від користувача
+  tempContainer.style.width = 'fit-content'; // Дозволяємо ширині бути природною
+  tempContainer.style.flexWrap = 'nowrap'; // Запобігаємо перенесенню
+
+  // 3. Додаємо клоновані елементи першого набору до тимчасового контейнера
+  // Оскільки ми не можемо клонувати ref-елементи з DOM, ми генеруємо їхній вміст
+
+  // Нам потрібно отримати ОДИН екземпляр grid__partners__item зі стилями.
+  const allItems = track.querySelectorAll('.grid__partners__item');
+
+  if (allItems.length < props.partners.length) return; // Недостатньо елементів
+
+  // Клонуємо лише елементи ПЕРШОГО набору
+  for (let i = 0; i < props.partners.length; i++) {
+    tempContainer.appendChild(allItems[i].cloneNode(true));
+  }
+
+  // 4. Додаємо тимчасовий контейнер до DOM для вимірювання
+  document.body.appendChild(tempContainer);
+
+  // 5. ВИМІРЮЄМО ШИРИНУ
+  // clientWidth або scrollWidth, scrollWidth тут більш надійний для вмісту Flexbox, що виходить за межі
+  const totalShift = tempContainer.scrollWidth;
+
+  // 6. Видаляємо тимчасовий контейнер
+  document.body.removeChild(tempContainer);
+
+  // 7. Встановлюємо змінну
+  if (totalShift > 0) {
+    // Ми виміряли ТОЧНУ ширину ПЕРШОГО набору + gap між елементами.
+    // Оскільки ми не включили gap, що йде ПОСЛІ останнього елемента,
+    // нам потрібно додати його, щоб стрибок був безшовним.
+    const gapValue = computedStyle.getPropertyValue('gap').split(' ')[0];
+    const finalShiftWidth = totalShift + parseFloat(gapValue || 0);
+
+    track.style.setProperty(
+      '--scroll-shift',
+      `${finalShiftWidth}px`
+    );
+  }
+};
+
+onMounted(() => {
+  nextTick(() => {
+    // Затримка 100мс потрібна для Nuxt/SSR, щоб CSS повністю застосувався
+    setTimeout(() => {
+      setScrollShift();
+      window.addEventListener('resize', setScrollShift);
+    }, 100);
+  });
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', setScrollShift);
+})
 </script>
 
 <template>
@@ -237,13 +310,29 @@ function handleIconThirdMouseLeave() {
         </a>
       </div>
 
-      <div class="grid__partners" v-if="partners.length">
+      <!-- <div class="grid__partners" v-if="partners.length">
         <div class="grid__partners__track">
 
-          <a class="grid__partners__item" v-for="(item, id) in [...partners, ...partners, ...partners, ...partners]"
-            :href="item.link.url">
+          <a class="grid__partners__item" v-for="(item, id) in [...partners, ...partners]" :href="item.link.url">
             <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
           </a>
+        </div>
+      </div> -->
+      <div class="grid__partners" v-if="partners.length">
+        <div class="grid__partners__track" ref="partnersTrackRef">
+
+          <template v-for="(item, id) in partners" :key="`partner-1-${id}`">
+            <a class="grid__partners__item" :ref="el => { if (el) firstPartnersSetRef[id] = el }" :href="item.link.url">
+              <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
+            </a>
+          </template>
+
+          <template v-for="(item, id) in partners" :key="`partner-2-${id}`">
+            <a class="grid__partners__item" :href="item.link.url">
+              <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
+            </a>
+          </template>
+
         </div>
       </div>
     </div>
@@ -344,6 +433,7 @@ function handleIconThirdMouseLeave() {
     svg {
       width: 110px;
       height: 110px;
+
       @include respond("tab") {
         width: 40px;
         height: 40px;
@@ -540,10 +630,12 @@ function handleIconThirdMouseLeave() {
     &__track {
       display: flex;
       gap: 142px;
-      animation: scroll 30s linear infinite;
+      --scroll-shift: 100vw;
+      animation: scroll 10s linear infinite;
 
       @include respond("tab") {
         gap: 28px;
+        animation: scroll 25s linear infinite;
       }
     }
 
@@ -566,14 +658,21 @@ function handleIconThirdMouseLeave() {
   }
 }
 
-// Anuimations
 @keyframes scroll {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translateX(100px);
   }
 
-  to {
-    transform: translateX(-50%);
+  50% {
+    transform: translateX(calc(var(--scroll-shift) * -1 + 100px) );
+  }
+
+  50.01% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(calc(var(--scroll-shift) * -1 + 100px));
   }
 }
 

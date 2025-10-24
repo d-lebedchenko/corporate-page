@@ -1,4 +1,6 @@
 <script setup>
+import { useTextAnimation } from '../../composables/useTextAnimation';
+
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
@@ -17,6 +19,89 @@ const props = defineProps({
   }
 })
 
+
+const {
+  containerRef: textRef,
+  isVisible: isTextVisible
+} = useTextAnimation();
+
+const subtitleWords = computed(() => props.subtitle.split(/\s+/));
+
+const staticWordsCount = computed(() => subtitleWords.value.length > 3 ? subtitleWords.value.length - 3 : 0);
+const staticText = computed(() => {
+  return subtitleWords.value.slice(0, staticWordsCount.value).join(' ') + (staticWordsCount.value > 0 ? ' ' : '');
+});
+
+const dynamicPhrases = computed(() => {
+  const lastThree = subtitleWords.value.slice(staticWordsCount.value);
+
+  return [
+    lastThree.join(' ')
+  ];
+});
+
+
+const dynamicWord = ref('');
+let phraseIndex = 0;
+let charIndex = 0; 
+let isDeleting = false;
+let typingInterval;
+
+const TYPING_SPEED = 100;
+const DELETING_SPEED = 50;
+const PAUSE_DURATION = 1500;
+const RESTART_PAUSE_DURATION = 1500
+
+function typeWriter() {
+  const currentPhrase = dynamicPhrases.value[phraseIndex];
+  if (!currentPhrase) return;
+
+  if (isDeleting) {
+    dynamicWord.value = currentPhrase.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    dynamicWord.value = currentPhrase.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  if (!isDeleting && charIndex === currentPhrase.length) {
+    isDeleting = true;
+    clearInterval(typingInterval);
+    typingInterval = setTimeout(typeWriter, PAUSE_DURATION);
+
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % dynamicPhrases.value.length;
+
+    clearInterval(typingInterval);
+    typingInterval = setTimeout(typeWriter, RESTART_PAUSE_DURATION);
+
+  } else {
+    const speed = isDeleting ? DELETING_SPEED : TYPING_SPEED;
+    clearInterval(typingInterval);
+    typingInterval = setTimeout(typeWriter, speed);
+  }
+}
+watch(isTextVisible, (isVisible) => {
+  if (isVisible && !typingInterval) {
+    typeWriter();
+  } else if (!isVisible && typingInterval) {
+    clearInterval(typingInterval);
+    typingInterval = null;
+    dynamicWord.value = '';
+    phraseIndex = 0;
+    charIndex = 0;
+    isDeleting = false;
+  }
+});
+
+onBeforeUnmount(() => {
+  if (typingInterval) {
+    clearInterval(typingInterval);
+  }
+});
+
+
 </script>
 
 <template>
@@ -26,7 +111,7 @@ const props = defineProps({
         <div class="nolimits__image d-f jc-e">
           <img :src="`${payloadUrl}${image.url}`" :alt="image.alt">
         </div>
-        
+
         <h2 class="nolimits__title f-a2 hide-tablet">
           <span class="first-word">{{ title.split(' ')[0] }}</span>
           {{ title.split(' ').slice(1).join(' ') }}
@@ -35,13 +120,21 @@ const props = defineProps({
           <span class="first-word">{{ title.split(' ')[0] }}</span>
           {{ title.split(' ').slice(1).join(' ') }}
         </h2>
-        <div class="nolimits__content d-f fd-c jc-e">
-          <div class="nolimits__text f-p2 hide-tablet">
-            {{ subtitle }}
-          </div>
-          <div class="nolimits__text f-p1 hide-desctop">
-            {{ subtitle }}
-          </div>
+        <div class="nolimits__content d-f fd-c jc-e" ref="textRef" :class="{ 'is-visible': isTextVisible }">
+          <p class="nolimits__text f-p2 hide-tablet">
+            {{ staticText }}
+            <span class="typing-word">
+              {{ dynamicWord }}
+              <span class="cursor">|</span>
+            </span>
+          </p>
+          <p class="nolimits__text f-p1 hide-desctop">
+            {{ staticText }}
+            <span class="typing-word">
+              {{ dynamicWord }}
+              <span class="cursor">|</span>
+            </span>
+          </p>
         </div>
       </div>
     </div>
@@ -60,12 +153,13 @@ const props = defineProps({
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
+
     @include respond("mob") {
       display: flex;
       flex-direction: column;
     }
   }
+
   &__image {
     padding-left: 170px;
 
@@ -81,25 +175,52 @@ const props = defineProps({
 
   &__content {
     padding: 0 39px;
+
     @include respond("tab") {
       padding: 0 8px;
     }
-    
+
     @include respond("mob") {
       padding: 0;
       display: flex;
       flex-direction: column;
     }
+
+    &.is-visible {}
   }
 
   &__text {
     margin-bottom: 152px;
+
     @include respond("tab") {
       margin-bottom: 77px;
     }
+
     @include respond("mob") {
       transform: translateY(-70px);
       margin-bottom: -70px;
+    }
+
+    .typing-word {
+      white-space: nowrap;
+    }
+
+    .cursor {
+      opacity: 1;
+      font-weight: 300;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
   }
 
@@ -112,6 +233,7 @@ const props = defineProps({
     @include respond("tab") {
       bottom: -7px;
     }
+
     @include respond("mob") {
       position: static;
       transform: translateY(-50%);

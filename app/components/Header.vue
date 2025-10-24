@@ -6,6 +6,12 @@ const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 import IconX from '~/assets/icons/x.svg'
 
+import { useI18n } from 'vue-i18n'; // Можна імпортувати напряму або через Nuxt auto-imports
+
+// Отримання глобального об'єкта i18n
+const { locale } = useI18n();
+const switchLocalePath = useSwitchLocalePath()
+
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
 }
@@ -40,10 +46,11 @@ onUnmounted(() => {
             <div class="header__linebar-progress" :style="{ width: scrollProgress + '%' }"></div>
           </div>
         </div>
-        <div class="header__language f-b-p3 d-f ai-c ">
-          UA
-        </div>
-        <button class="header__btn f-b-p3" @click="toggleMenu()">Меню</button>
+          
+          <NuxtLink v-if="locale == 'uk'" class="header__language f-b-p3 d-f ai-c hover-green clickable" :to="switchLocalePath('en')">UA</NuxtLink>
+          <NuxtLink v-else class="header__language f-b-p3 d-f ai-c hover-green clickable" :to="switchLocalePath('uk')">EN</NuxtLink>
+
+        <button class="header__btn f-b-p3 hover-green" @click="toggleMenu()">Меню</button>
       </div>
     </header>
 
@@ -79,6 +86,7 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 @use "@/assets/scss/media" as *;
+
 .header {
   max-width: 1440px;
   margin: 0 auto;
@@ -99,12 +107,14 @@ onUnmounted(() => {
     top: calc(100vh - 62px);
     width: 100%;
     z-index: 3;
+
     @include respond("tab") {
       top: calc(100vh - 54px);
     }
   }
+
   &__inner {
-    
+
     @include respond("tab") {
       min-height: 52px;
     }
@@ -119,7 +129,7 @@ onUnmounted(() => {
       width: 100%;
       height: 100%;
     }
-    
+
     @include respond("tab") {
       width: 77px;
       height: 28px;
@@ -153,7 +163,7 @@ onUnmounted(() => {
     padding: 20px;
     border-left: 1px solid $c-steel-grey;
     text-transform: uppercase;
-    
+
     @include respond("tab") {
       padding: 16px;
       font-size: 16px;
@@ -167,7 +177,7 @@ onUnmounted(() => {
     top: 46px;
     right: 46px;
     color: $c-steel-grey;
-    
+
     @include respond("mob") {
       width: 36px;
       height: 36px;
@@ -186,7 +196,7 @@ onUnmounted(() => {
     height: 100%;
     transition: 0.3s all ease-in-out;
     transform: translateX(100%);
-    
+
     @include respond("tab") {
       max-width: 100%;
     }
@@ -233,11 +243,11 @@ onUnmounted(() => {
 
     &__item {
       text-transform: uppercase;
-      
+
       @include respond("tab") {
         a {
           font-size: 40px;
-          
+
           @include respond("mob") {
             font-size: 32px;
           }
@@ -252,23 +262,23 @@ onUnmounted(() => {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    
-      @include respond("tab") {
-        & a {
-          
-          font-size: 24px;
 
-          @include respond("mob") {
-            font-size: 18px;
-            letter-spacing: -0.05em;
-          }
+    @include respond("tab") {
+      & a {
+
+        font-size: 24px;
+
+        @include respond("mob") {
+          font-size: 18px;
+          letter-spacing: -0.05em;
         }
       }
+    }
   }
 
   &__social {
     margin-top: auto;
-    
+
     @include respond("mob") {
       flex-direction: column;
       align-items: start;
@@ -285,6 +295,7 @@ onUnmounted(() => {
       &__item {
         width: 36px;
         height: 36px;
+
         @include respond("mob") {
           width: 32px;
           height: 32px;
