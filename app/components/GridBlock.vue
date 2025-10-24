@@ -631,7 +631,7 @@ onBeforeUnmount(() => {
       display: flex;
       gap: 142px;
       --scroll-shift: 100vw;
-      animation: scroll 10s linear infinite;
+      animation: scroll 20s linear infinite;
 
       @include respond("tab") {
         gap: 28px;
