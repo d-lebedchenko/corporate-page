@@ -12,6 +12,7 @@ import CareerMain from './CareerMain.vue'
 import CareerStats from './CareerStats.vue'
 import CareerGrid from './CareerGrid.vue'
 import CareerStickySlider from './CareerStickySlider.vue'
+import HeroAboutUsBlock from './HeroAboutUsBlock.vue'
 
 import { ClientOnly } from '#components'
 
@@ -50,6 +51,8 @@ function getComponent(type) {
       return CareerGrid
     case 'career-sticky-slider':
       return CareerStickySlider
+    case 'hero-about-us-block':
+      return HeroAboutUsBlock
     default:
       return {
         props: ['type'],
