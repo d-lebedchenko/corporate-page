@@ -1,9 +1,6 @@
 <script setup>
 import RichtextLexical from './RichtextLexical'
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
-
 const props = defineProps({
   title: {
     type: String,
@@ -23,6 +20,8 @@ const props = defineProps({
   }
 })
 
+const config = useRuntimeConfig()
+const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 </script>
 
 <template>
@@ -41,9 +40,14 @@ const props = defineProps({
 
         <div class="hero-about-us__text">
           <div class="hero-about-us__text-head">
-            <h1 class="hero-about-us__title f-a2">{{ title }}</h1>
+            <h1 class="hero-about-us__title f-a2">
+              {{ title }}
+            </h1>
             
-            <div v-if="marquee?.length" class="hero-about-us__marquee f-sh1">
+            <div
+              v-if="marquee?.length"
+              class="hero-about-us__marquee f-sh1"
+            >
               <NuxtMarquee autoFill>
                 <span v-for="item in marquee" :key="item.id">
                   {{ item.label }}
@@ -70,10 +74,10 @@ const props = defineProps({
   background-color: $c-black;
   color: $c-white;
   padding-top: 28px;
-  padding-bottom: 140px;
+  padding-bottom: 120px;
   @include respond("tab") {
     padding-top: 15px;
-    padding-bottom: 80px;
+    padding-bottom: 64px;
   }
 
   &__inner {
@@ -86,7 +90,7 @@ const props = defineProps({
   }
 
   &__image {
-    flex: 1;
+    flex-basis: 694px;
     height: 600px;
     @include respond("tab") {
       width: 100%;
@@ -106,6 +110,7 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
     @include respond("tab") {
       margin-top: -36px;
     }

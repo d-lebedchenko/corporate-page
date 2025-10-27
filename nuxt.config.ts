@@ -21,14 +21,32 @@ export default defineNuxtConfig({
         },
       },
     },
-    plugins: [svgLoader()],
+    plugins: [
+      svgLoader({
+        svgoConfig: {
+          multipass: true,
+          plugins: [
+            {
+              name: 'preset-default',
+              params: {
+                overrides: {
+                  // viewBox is required to resize SVGs with CSS.
+                  // @see https://github.com/svg/svgo/issues/1128
+                  removeViewBox: false,
+                },
+              },
+            },
+          ],
+        },
+      }),
+    ],
   },
 
   modules: ["nuxt-swiper", "@nuxtjs/i18n", "nuxt-marquee"],
   i18n: {
     locales: [
-      { code: "uk", iso: "uk-UA", name: "Українська" },
-      { code: "en", iso: "en-US", name: "English" },
+      { code: "uk", iso: "uk-UA", name: "Українська", file: 'uk.json' },
+      { code: "en", iso: "en-US", name: "English", file: 'en.json' },
     ],
 
     defaultLocale: "uk",

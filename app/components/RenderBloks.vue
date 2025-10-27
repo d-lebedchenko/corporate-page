@@ -13,6 +13,9 @@ import CareerStats from './CareerStats.vue'
 import CareerGrid from './CareerGrid.vue'
 import CareerStickySlider from './CareerStickySlider.vue'
 import HeroAboutUsBlock from './HeroAboutUsBlock.vue'
+import AboutQuoteBlock from './AboutQuoteBlock.vue'
+import AboutFeatureBlock from './AboutFeatureBlock.vue'
+import AboutTracksBlock from './AboutTracksBlock.vue'
 
 import { ClientOnly } from '#components'
 
@@ -53,6 +56,12 @@ function getComponent(type) {
       return CareerStickySlider
     case 'hero-about-us-block':
       return HeroAboutUsBlock
+    case 'about-quote-block':
+      return AboutQuoteBlock
+    case 'about-feature-block':
+      return AboutFeatureBlock
+    case 'about-tracks-block':
+      return AboutTracksBlock
     default:
       return {
         props: ['type'],
