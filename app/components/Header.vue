@@ -58,7 +58,7 @@ onUnmounted(() => {
         <div class="header__menu__list d-f fd-c">
           <div class="header__menu__item" v-for="(item, id) in data.links" :key="id">
             <a class="header__menu__item hover-green f-h2" :href="item.link?.reference?.value?.slug || item.link.url">{{
-              item.link.label + ' ' + item.link?.reference?.value?.slug || item.link.url }}</a>
+              item.link.label }}</a>
             <div class="header__submenu" v-if="item.subLinks.length">
 
               <div class="header__submenu__item" v-for="(sublink, id) in item.subLinks" :key="id">
