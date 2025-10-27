@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     plugins: [svgLoader()],
   },
 
-  modules: ["nuxt-swiper", "@nuxtjs/i18n"],
+  modules: ["nuxt-swiper", "@nuxtjs/i18n", "nuxt-marquee"],
   i18n: {
     locales: [
       { code: "uk", iso: "uk-UA", name: "Українська" },
