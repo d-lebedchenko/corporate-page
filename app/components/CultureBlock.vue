@@ -133,6 +133,7 @@ const props = defineProps({
     min-height: 360px;
 
     &:hover {
+      background-color: transparent;
       .culture__item__text {
         max-height: 300px;
         padding-top: 32px;

@@ -6,9 +6,7 @@ const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 import IconX from '~/assets/icons/x.svg'
 
-import { useI18n } from 'vue-i18n'; // Можна імпортувати напряму або через Nuxt auto-imports
-
-// Отримання глобального об'єкта i18n
+import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
 const switchLocalePath = useSwitchLocalePath()
 
@@ -59,12 +57,12 @@ onUnmounted(() => {
         <IconX class="header__close" @click.self="toggleMenu()" />
         <div class="header__menu__list d-f fd-c">
           <div class="header__menu__item" v-for="(item, id) in data.links" :key="id">
-            <a class="header__menu__item hover-green f-h2" :href="item.link.url">{{
-              item.link.label }}</a>
+            <a class="header__menu__item hover-green f-h2" :href="item.link?.reference?.value?.slug || item.link.url">{{
+              item.link.label + ' ' + item.link?.reference?.value?.slug || item.link.url }}</a>
             <div class="header__submenu" v-if="item.subLinks.length">
 
               <div class="header__submenu__item" v-for="(sublink, id) in item.subLinks" :key="id">
-                <a class="header__submenu__item hover-green f-sh2" :href="sublink.link.url">{{ sublink.link.label }}</a>
+                <a class="header__submenu__item hover-green f-sh2" :href="sublink.link?.reference?.value?.slug || sublink.link.url">{{ sublink.link.label }}</a>
               </div>
             </div>
           </div>
