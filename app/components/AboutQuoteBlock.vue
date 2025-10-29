@@ -1,4 +1,6 @@
 <script setup>
+import { useTextAnimation } from '~~/composables/useTextAnimation';
+
 const props = defineProps({
   sectionTitle: {
     type: String,
@@ -24,6 +26,16 @@ const props = defineProps({
 
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+
+const {
+  containerRef,
+  isVisible
+} = useTextAnimation()
+
+const quoteLetters = computed(() => {
+  if (typeof props.quote !== 'string') return []
+  return props.quote.split('').map(char => (char === '\n' ? '\n' : char))
+})
 </script>
 
 <template>
@@ -48,8 +60,22 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
         </div>
 
         <div class="about-quote-block__text">
-          <p class="about-quote-block__quote f-p2 whitespace-pre-line">
-            {{ quote }}
+          <p
+            v-if="quote"
+            ref="containerRef"
+            :class="[
+              'about-quote-block__quote f-p2 whitespace-pre-line',
+              { 'is-visible': isVisible }
+            ]"
+          >
+            <span
+              v-for="(letter, i) in quoteLetters"
+              :key="i"
+              class="animated-letter"
+              :style="{ 'animation-delay': `${i * 0.03}s` }"
+            >
+              {{ letter }}
+            </span>
           </p>
 
           <div v-if="name || position" class="about-quote-block__info">
@@ -131,6 +157,7 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
   }
 
   &__quote {
+    color: $c-grey;
     max-width: 600px;
     &:not(:last-child) {
       margin-bottom: 32px;
@@ -141,6 +168,13 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
     @include respond("tab") {
       font-size: 14px;
+    }
+
+    &.is-visible {
+      .animated-letter {
+        display: inline;
+        animation: colorChange 0.5s linear forwards;
+      }
     }
   }
 
@@ -160,5 +194,9 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
       }
     }
   }
+}
+
+@keyframes colorChange {
+  100% { color: $c-white; }
 }
 </style>
