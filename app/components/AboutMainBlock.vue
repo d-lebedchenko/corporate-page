@@ -25,10 +25,10 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 </script>
 
 <template>
-  <div class="hero-about-us">
+  <div class="about-main-block">
     <div class="container">
-      <div class="hero-about-us__inner">
-        <div class="hero-about-us__image">
+      <div class="about-main-block__inner">
+        <div class="about-main-block__image">
           <img
             v-if="image?.url"
             :src="`${payloadUrl}${image.url}`"
@@ -38,15 +38,15 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
           >
         </div>
 
-        <div class="hero-about-us__text">
-          <div class="hero-about-us__text-head">
-            <h1 class="hero-about-us__title f-a2">
+        <div class="about-main-block__text">
+          <div class="about-main-block__text-head">
+            <h1 class="about-main-block__title f-a2">
               {{ title }}
             </h1>
             
             <div
               v-if="marquee?.length"
-              class="hero-about-us__marquee f-sh1"
+              class="about-main-block__marquee f-sh1"
             >
               <NuxtMarquee autoFill>
                 <span v-for="item in marquee" :key="item.id">
@@ -59,7 +59,7 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
           <RichtextLexical
             v-if="text"
             :content="text"
-            class="hero-about-us__richtext f-p2"
+            class="about-main-block__richtext f-p2"
           />
         </div>
       </div>
@@ -70,7 +70,7 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 <style scoped lang="scss">
 @use "@/assets/scss/media" as *;
 
-.hero-about-us {
+.about-main-block {
   background-color: $c-black;
   color: $c-white;
   padding-top: 28px;
