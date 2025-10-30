@@ -17,7 +17,7 @@ const props = defineProps({
   image: {
     type: Object,
     default: () => ({})
-  }
+  },
 })
 
 const config = useRuntimeConfig()
@@ -40,7 +40,10 @@ const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
         <div class="about-main-block__text">
           <div class="about-main-block__text-head">
-            <h1 class="about-main-block__title f-a2">
+            <h1
+              v-if="title"
+              class="about-main-block__title f-a2"
+            >
               {{ title }}
             </h1>
             
