@@ -1,5 +1,5 @@
 <script setup>
-import { useTextAnimation } from '~~/composables/useTextAnimation';
+import { useTextAnimation } from '~~/composables/useTextAnimation'
 
 const props = defineProps({
   sectionTitle: {
@@ -34,7 +34,7 @@ const {
 
 const quoteLetters = computed(() => {
   if (typeof props.quote !== 'string') return []
-  return props.quote.split('').map(char => (char === '\n' ? '\n' : char))
+  return props.quote.trim().split('').map(char => (char === '\n' ? '\n' : char))
 })
 </script>
 
