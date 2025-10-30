@@ -33,7 +33,7 @@ const {
 } = useTextAnimation()
 
 const quoteLetters = computed(() => {
-  if (typeof props.quote !== 'string') return []
+  if (!props.quote || typeof props.quote !== 'string') return []
   return props.quote.trim().split('').map(char => (char === '\n' ? '\n' : char))
 })
 </script>
