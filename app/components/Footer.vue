@@ -1,6 +1,7 @@
 <script setup>
-const { data, pending, error } = await useFetch('/api/footer')
 import Arrow from '~/assets/icons/arrow-up-right.svg'
+
+const { data } = await useFetch('/api/footer')
 </script>
 
 <template>
@@ -11,28 +12,28 @@ import Arrow from '~/assets/icons/arrow-up-right.svg'
         <div class="footer__row d-f ai-c">
           <div class="footer__label f-sh2">{{ data.navLabel }}</div>
           <div class="footer__links d-f">
-            <div v-for="(link, index) in data.navItems" :key="index" class="footer__link f-p3 hover-green">
-              <a :href="link.link.url">{{ link.link.label }}</a>
+            <div v-for="link in data.navItems" :key="link.id" class="footer__link f-p3 hover-green">
+              <CmsLink :link="link.link">{{ link.link.label }}</CmsLink>
             </div>
           </div>
         </div>
         <div class="footer__row d-f ai-c">
           <div class="footer__label f-sh2">{{ data.followLabel }}</div>
           <div class="footer__links d-f">
-            <div v-for="(link, index) in data.followItems" :key="index" class="footer__link f-p3 hover-green">
-              <a class="d-f ai-c" :href="link.link.url">{{ link.link.label }}
+            <div v-for="link in data.followItems" :key="link.id" class="footer__link f-p3 hover-green">
+              <CmsLink class="d-f ai-c" :link="link.link">{{ link.link.label }}
                 <Arrow class="icon" />
-              </a>
+              </CmsLink>
             </div>
           </div>
         </div>
       </div>
       <div class="footer__info d-f ai-c">
         <div v-if="data.privacyLink">
-          <a :href="data.privacyLink.link.url" class="f-p3 o-5">{{ data.privacyLink.link.label }}</a>
+          <CmsLink :link="data.privacyLink.link" class="f-p3 o-5">{{ data.privacyLink.link.label }}</CmsLink>
         </div>
         <div v-if="data.termsLink">
-          <a :href="data.termsLink.link.url" class="f-p3 o-5">{{ data.termsLink.link.label }}</a>
+          <CmsLink :link="data.termsLink.link" class="f-p3 o-5">{{ data.termsLink.link.label }}</CmsLink>
         </div>
         <div class="f-p3 right o-5" v-if="data.rights">{{ data.rights }}</div>
       </div>

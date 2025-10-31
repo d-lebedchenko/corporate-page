@@ -14,6 +14,10 @@ const toggleMenu = () => {
   isOpen.value = !isOpen.value
 }
 
+const closeMenu = () => {
+  isOpen.value = false
+}
+
 const updateScroll = () => {
   const scrollTop = window.scrollY || window.pageYOffset
   const docHeight = document.documentElement.scrollHeight - window.innerHeight
@@ -34,9 +38,9 @@ onUnmounted(() => {
   <div v-if="data && data?.links.length" class="header__wr" :class="{ 'header-open': isOpen }">
     <header class="header">
       <div class="header__inner d-f ai-c">
-        <a href="/" class="header__logo">
+        <NuxtLink :to="$localePath('/')" class="header__logo">
           <img v-if="data.logo?.url" :src="`${payloadUrl}${data.logo.url}`" :alt="data.logo.label" />
-        </a>
+        </NuxtLink>
         <div class="header__linebar__wr">
 
           <div class="header__linebar">
@@ -55,17 +59,20 @@ onUnmounted(() => {
       </div>
     </header>
 
-    <div class="header__menu__wr" :class="{ 'active': isOpen }" @click.self="toggleMenu()">
+    <div class="header__menu__wr" :class="{ 'active': isOpen }" @click.self="closeMenu()">
       <div class="header__menu d-f fd-c">
-        <IconX class="header__close" @click.self="toggleMenu()" />
+        <IconX class="header__close" @click.self="closeMenu()" />
         <div class="header__menu__list d-f fd-c">
-          <div class="header__menu__item" v-for="(item, id) in data.links" :key="id">
-            <a class="header__menu__item hover-green f-h2" :href="item.link?.reference?.value?.slug || item.link.url">{{
-              item.link.label }}</a>
+          <div class="header__menu__item" v-for="item in data.links" :key="item.id">
+            <CmsLink class="header__menu__item hover-green f-h2" :link="item.link" @click="closeMenu()">
+              {{ item.link.label }}
+            </CmsLink>
             <div class="header__submenu" v-if="item.subLinks.length">
 
-              <div class="header__submenu__item" v-for="(sublink, id) in item.subLinks" :key="id">
-                <a class="header__submenu__item hover-green f-sh2" :href="sublink.link?.reference?.value?.slug || sublink.link.url">{{ sublink.link.label }}</a>
+              <div class="header__submenu__item" v-for="sublink in item.subLinks" :key="sublink.id">
+                <CmsLink class="header__submenu__item hover-green f-sh2" :link="sublink.link" @click="closeMenu()">
+                  {{ sublink.link.label }}
+                </CmsLink>
               </div>
             </div>
           </div>
@@ -75,9 +82,9 @@ onUnmounted(() => {
             {{ data.socialLabel }}
           </div>
           <div class="header__social__icons d-f">
-            <a class="header__social__icons__item" v-for="(item, id) in data.social" :href="item.link.url">
+            <CmsLink class="header__social__icons__item" v-for="item in data.social" :key="item.id" :link="item.link">
               <img v-if="item.image?.url" :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
-            </a>
+            </CmsLink>
           </div>
         </div>
       </div>
