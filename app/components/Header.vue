@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n';
 import IconX from '~/assets/icons/x.svg'
 
-const { data } = await useFetch('/api/header')
+const { data } = useFetch('/api/header')
 const scrollProgress = ref(0)
 const isOpen = ref(false)
 const config = useRuntimeConfig()
@@ -48,12 +48,12 @@ onUnmounted(() => {
           </div>
         </div>
           
-        <a
+        <NuxtLink
           class="header__language f-b-p3 d-f ai-c hover-green clickable"
-          :href="$switchLocalePath(locale === 'uk' ? 'en' : 'uk')"
+          :to="$switchLocalePath(locale === 'uk' ? 'en' : 'uk')"
         >
           {{ locale === 'uk' ? 'UA' : 'EN' }}
-        </a>
+        </NuxtLink>
 
         <button class="header__btn f-b-p3 hover-green" @click="toggleMenu()">Меню</button>
       </div>
