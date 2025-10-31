@@ -16,6 +16,8 @@ import AboutMainBlock from './AboutMainBlock.vue'
 import AboutQuoteBlock from './AboutQuoteBlock.vue'
 import AboutFeatureBlock from './AboutFeatureBlock.vue'
 import AboutTracksBlock from './AboutTracksBlock.vue'
+import GrowthMainBlock from './GrowthMainBlock.vue'
+import GrowthStoriesBlock from './GrowthStoriesBlock.vue'
 
 import { ClientOnly } from '#components'
 
@@ -62,6 +64,10 @@ function getComponent(type) {
       return AboutFeatureBlock
     case 'about-tracks-block':
       return AboutTracksBlock
+    case 'growth-main-block':
+      return GrowthMainBlock
+    case 'growth-stories-block':
+      return GrowthStoriesBlock
     default:
       return {
         props: ['type'],
