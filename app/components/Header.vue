@@ -1,14 +1,14 @@
 <script setup>
-const { data, pending, error } = await useFetch('/api/header')
+import { useI18n } from 'vue-i18n';
+import IconX from '~/assets/icons/x.svg'
+
+const { data } = await useFetch('/api/header')
 const scrollProgress = ref(0)
 const isOpen = ref(false)
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
-import IconX from '~/assets/icons/x.svg'
 
-import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
-const switchLocalePath = useSwitchLocalePath()
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -28,7 +28,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', updateScroll)
 })
-
 </script>
 
 <template>
@@ -45,8 +44,12 @@ onUnmounted(() => {
           </div>
         </div>
           
-          <NuxtLink v-if="locale == 'uk'" class="header__language f-b-p3 d-f ai-c hover-green clickable" :to="switchLocalePath('en')">UA</NuxtLink>
-          <NuxtLink v-else class="header__language f-b-p3 d-f ai-c hover-green clickable" :to="switchLocalePath('uk')">EN</NuxtLink>
+        <a
+          class="header__language f-b-p3 d-f ai-c hover-green clickable"
+          :href="$switchLocalePath(locale === 'uk' ? 'en' : 'uk')"
+        >
+          {{ locale === 'uk' ? 'UA' : 'EN' }}
+        </a>
 
         <button class="header__btn f-b-p3 hover-green" @click="toggleMenu()">Меню</button>
       </div>
