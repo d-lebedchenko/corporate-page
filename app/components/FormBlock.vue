@@ -1,9 +1,9 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 import Attachment from '~/assets/icons/paperclip.svg'
+import IconX from '~/assets/icons/x.svg'
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
-import IconX from '~/assets/icons/x.svg'
 
 const props = defineProps({
   runingTitle: {
