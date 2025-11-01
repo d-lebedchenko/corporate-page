@@ -75,11 +75,11 @@ const {
               {{ letter }}
             </span>
           </p>
-          <a :href="button.url" class="main-section__btn dots dots-hover f-b-p1 d-f jc-sb ai-c">
+          <CmsLink :link="button" class="main-section__btn dots dots-hover f-b-p1 d-f jc-sb ai-c">
             <span class="psevdo"></span>
             {{ button.label }}
             <Arrow class="icon icon-52" />
-          </a>
+          </CmsLink>
         </div>
 
       </div>

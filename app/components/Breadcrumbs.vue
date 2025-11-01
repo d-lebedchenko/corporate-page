@@ -1,7 +1,4 @@
 <script setup>
-import { computed } from 'vue'
-import { NuxtLink } from '#components'
-
 const props = defineProps({
   list: {
     type: Array,
@@ -9,10 +6,6 @@ const props = defineProps({
     default: () => [],
     // Приклад структури елемента: { label: 'Головна', type: 'custom', url: '/' }
   },
-})
-
-const breadcrumbsList = computed(() => {
-  return props.list.filter(item => item.url && item.label)
 })
 </script>
 
@@ -22,9 +15,9 @@ const breadcrumbsList = computed(() => {
       <ul class="breadcrumbs__list">
         <li v-for="(item, index) in list" :key="index" class="breadcrumbs__item">
 
-          <NuxtLink v-if="index < list.length - 1" :to="item.link.url" class="breadcrumbs__link clickable f-p4 o-4">
+          <CmsLink v-if="index < list.length - 1" :link="item.link" class="breadcrumbs__link clickable f-p4 o-4">
             {{ item.link.label }}
-          </NuxtLink>
+          </CmsLink>
 
           <span v-else class="breadcrumbs__text f-p4 o-7">
             {{ item.link.label }}

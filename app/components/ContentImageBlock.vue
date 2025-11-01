@@ -42,15 +42,15 @@ const props = defineProps({
             {{ subtitle }}
           </div> -->
           <RichtextLexical :content="text" class="content-image__text f-p2" />
-          <a  :href="button.url" class="content-image__btn dots dots-hover hide-tablet d-f ai-c jc-sb dots f-b-p2">
+          <CmsLink :link="button" class="content-image__btn dots dots-hover hide-tablet d-f ai-c jc-sb dots f-b-p2">
             <span class="psevdo"></span>{{ button.label }}
             <Arrow class="icon icon-32" />
-          </a>
-          <a  :href="button.url" class="content-image__btn dots hide-desctop d-f ai-c jc-sb dots f-b-p1">
+          </CmsLink>
+          <CmsLink :link="button" class="content-image__btn dots hide-desctop d-f ai-c jc-sb dots f-b-p1">
             <span class="psevdo"></span>
             {{ button.label }}
             <Arrow class="icon icon-32" />
-          </a>
+          </CmsLink>
         </div>
         <div class="content-image__image d-f jc-c">
           <img :src="`${payloadUrl}${image.url}`" :alt="image.alt">

@@ -303,34 +303,34 @@ onBeforeUnmount(() => {
             {{ expertsSubtitle }}
           </div>
         </div>
-        <a :href="button.url" class="grid__btn d-f ai-c jc-sb dots dots-hover f-b-p1">
+        <CmsLink :link="button" class="grid__btn d-f ai-c jc-sb dots dots-hover f-b-p1">
           <span class="psevdo"></span>
           {{ button.label }}
           <Arrow class="icon icon-52" />
-        </a>
+        </CmsLink>
       </div>
 
       <!-- <div class="grid__partners" v-if="partners.length">
         <div class="grid__partners__track">
 
-          <a class="grid__partners__item" v-for="(item, id) in [...partners, ...partners]" :href="item.link.url">
+          <CmsLink class="grid__partners__item" v-for="(item, id) in [...partners, ...partners]" :link="item.link">
             <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
-          </a>
+          </CmsLink>
         </div>
       </div> -->
       <div class="grid__partners" v-if="partners.length">
         <div class="grid__partners__track" ref="partnersTrackRef">
 
           <template v-for="(item, id) in partners" :key="`partner-1-${id}`">
-            <a class="grid__partners__item" :ref="el => { if (el) firstPartnersSetRef[id] = el }" :href="item.link.url">
+            <CmsLink class="grid__partners__item" :ref="el => { if (el) firstPartnersSetRef[id] = el }" :link="item.link">
               <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
-            </a>
+            </CmsLink>
           </template>
 
           <template v-for="(item, id) in partners" :key="`partner-2-${id}`">
-            <a class="grid__partners__item" :href="item.link.url">
+            <CmsLink class="grid__partners__item" :link="item.link">
               <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
-            </a>
+            </CmsLink>
           </template>
 
         </div>
