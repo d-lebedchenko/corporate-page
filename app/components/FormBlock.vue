@@ -171,7 +171,7 @@ const handleSubmit = (event) => {
                
                 <Attachment v-if="!selectedFile" class="icon icon-24" />
                
-                <IconX v-if="selectedFile" class="icon icon-24icon-clear" @click="clearFile" />
+                <IconX v-if="selectedFile" class="icon icon-24 icon-clear" @click="clearFile" />
                
               </div>
 
