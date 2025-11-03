@@ -510,17 +510,15 @@ button {
   --os-track-border-radius: 8px;
   --os-handle-interactive-area-offset: 2px;
   --os-handle-border-radius: 8px;
+  --os-handle-bg-hover: var(--os-handle-bg);
+  --os-handle-bg-active: var(--os-handle-bg);
   @include respond("tab") {
     --os-size: 12px;
   }
 }
 .os-theme-grey {
   --os-handle-bg: #{$c-steel-grey};
-  --os-handle-bg-hover: var(--os-handle-bg);
-  --os-handle-bg-active: var(--os-handle-bg);
 }
 .os-theme-green {
   --os-handle-bg: #{$c-green};
-  --os-handle-bg-hover: var(--os-handle-bg);
-  --os-handle-bg-active: var(--os-handle-bg);
 }
