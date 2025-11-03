@@ -5231,6 +5231,16 @@ open@^8.0.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
+overlayscrollbars-vue@^0.5.9:
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/overlayscrollbars-vue/-/overlayscrollbars-vue-0.5.9.tgz#bc0f51844aa0caab8556fcc874e82ddae1e4bc55"
+  integrity sha512-zZEcsb6llnKaRwXTP44E4RrmwuH+eAi70mgCdiiPwcPBE2H99Vs2V0q7sWnEanqU3462ch38e4SmIMnuH906DQ==
+
+overlayscrollbars@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/overlayscrollbars/-/overlayscrollbars-2.12.0.tgz#b6447716246cb62a32a43193b354bd423a85fa21"
+  integrity sha512-mWJ5MOkcZ/ljHwfLw8+bN0V9ziGCoNoqULcp994j5DTGNQvnkWKWkA7rnO29Kyew5AoHxUnJ4Ndqfcl0HSQjXg==
+
 oxc-minify@^0.87.0:
   version "0.87.0"
   resolved "https://registry.yarnpkg.com/oxc-minify/-/oxc-minify-0.87.0.tgz#d185fbf8e96f721eaca83fc5afc100e60d0db3ab"
