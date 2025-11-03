@@ -83,7 +83,7 @@ const props = defineProps({
       margin-top: 0;
       gap: 16px;
     }
-    @include respond("tab") {
+    @include respond("mob") {
       flex-direction: column;
       align-items: flex-start;
       gap: 0;

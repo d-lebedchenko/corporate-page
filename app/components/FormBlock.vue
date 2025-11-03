@@ -2,6 +2,7 @@
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 import Attachment from '~/assets/icons/paperclip.svg'
 import IconX from '~/assets/icons/x.svg'
+import ErrorIcon from '~/assets/icons/error.svg'
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
@@ -41,95 +42,161 @@ const props = defineProps({
 })
 
 const fileInputRef = ref(null)
-const selectedFile = ref(null) // Зберігатиме об'єкт File
+const selectedFile = ref(null)
+const isDragging = ref(false)
 
-// 💡 Функція для відкриття вікна вибору файлу (при кліку на стилізований інпут)
+const nameValue = ref('')
+const emailValue = ref('')
+const isFormSubmitted = ref(false)
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const isNameValid = computed(() => {
+  return nameValue.value.trim().length >= 2
+})
+
+const isEmailValid = computed(() => {
+  return emailRegex.test(emailValue.value)
+})
+
+const isFileValid = computed(() => {
+  return selectedFile.value !== null
+})
+
+const isFormValid = computed(() => {
+  return isNameValid.value && isEmailValid.value && isFileValid.value
+})
+
+const showNameError = computed(() => {
+  return isFormSubmitted.value && !isNameValid.value
+})
+
+const showEmailError = computed(() => {
+  return isFormSubmitted.value && !isEmailValid.value
+})
+
+const showFileError = computed(() => {
+  return isFormSubmitted.value && !isFileValid.value
+})
+
 const triggerFileInput = () => {
   fileInputRef.value.click()
 }
 
 const handleFileChange = (event) => {
-  const file = event.target.files[0]
+
+  const files = event.target.files || event.dataTransfer?.files;
+  const file = files ? files[0] : null;
+
   if (file) {
     selectedFile.value = file
   } else {
     selectedFile.value = null
   }
 }
+const handleDrop = (event) => {
+  handleFileChange(event);
+  isDragging.value = false;
+}
 
-// 💡 Computed property для відображення назви файлу або плейсхолдера
+const handleDragEnter = () => {
+  isDragging.value = true
+}
+const handleDragLeave = () => {
+  isDragging.value = false
+}
+
+
 const fileLabel = computed(() => {
   return selectedFile.value ? selectedFile.value.name : props.file
 })
 
-// 💡 Функція для очищення вибраного файлу
 const clearFile = (event) => {
-  event.stopPropagation(); // Зупиняємо, щоб не спрацював клік на інпут
+  event.stopPropagation();
   selectedFile.value = null;
-  // Очищаємо значення у прихованому інпуті для можливості повторного вибору
   if (fileInputRef.value) {
     fileInputRef.value.value = '';
   }
 }
-</script>
 
+const handleSubmit = (event) => {
+  event.preventDefault()
+  isFormSubmitted.value = true
+
+  if (isFormValid.value) {
+    alert('Форма валідна! Відправка даних...')
+    // sendFormData()
+  } else {
+    alert('Будь ласка, заповніть всі обов\'язкові поля коректно.')
+  }
+}
+</script>
 <template>
   <section class="form">
-    <h2 class="form__runing f-a3 hide-tablet">
-      <div class="marquee-wrapper">
-        <div class="marquee">
-          <span>{{ runingTitle }}</span>
-          <span>{{ runingTitle }}</span>
-        </div>
-      </div>
-    </h2>
-    <h2 class="form__runing f-a1 hide-desctop">
-      <div class="marquee-wrapper">
-        <div class="marquee">
-          <span>{{ runingTitle }}</span>
-          <span>{{ runingTitle }}</span>
-        </div>
-      </div>
-    </h2>
     <div class="container">
-      <div class="form__wr">
-        <div class="form__image d-f jc-c">
-          <img v-if="image?.url" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
-        </div>
-        <div class="form__content d-f fd-c">
-          <input class="form__input f-p1 clickable" type="text" :placeholder="name">
-          <input class="form__input f-p1 clickable" type="text" :placeholder="email">
-          <div class="form__file-attachment">
-            <div class="form__input form__input--file f-p1 clickable" @click="triggerFileInput"
-              :class="{ 'file-selected': selectedFile }">
-              
-              <Attachment v-if="selectedFile" class="icon icon-24" />
-              {{ fileLabel }}
-              <Attachment v-if="!selectedFile" class="icon icon-24" />
+     <div class="form__wr">
+       <div class="form__image d-f jc-c">
+         <img v-if="image?.url" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
+         </div>
 
-              <!-- <button v-if="selectedFile" @click="clearFile" class="form__file-clear">
-                &times;
-              </button> -->
-              
-              
-              <IconX v-if="selectedFile" class="icon icon-24  icon-clear" @click="clearFile" />
+       <div class="form__content d-f fd-c">
+
+          <form @submit="handleSubmit">
+
+           <input class="form__input f-p1 clickable" type="text" :placeholder="name" v-model="nameValue"
+              :class="{ 'input-error': showNameError }">
+            <div v-if="showNameError" class="form__error-message d-f ai-c">
+              <ErrorIcon/> <div class="error-text f-p3">Name must contain at least 2 letters</div>
             </div>
 
-            <input type="file" ref="fileInputRef" @change="handleFileChange" style="display: none;"
-              accept=".pdf,.doc,.docx">
-          </div>
-          <div class="form__hint f-p3">
-            {{ fileHint }}
-          </div>
-          <button class="form__btn dots dots-hover f-b-p2 d-f ai-c">
-            <span class="psevdo"></span>
-            {{ btnText }}
-            <Arrow class="icon icon-32" />
-          </button>
+            <input class="form__input f-p1 clickable" type="email" :placeholder="email" v-model="emailValue"
+              :class="{ 'input-error': showEmailError }">
+            <div v-if="showEmailError" class="form__error-message d-f ai-c">
+              <ErrorIcon/> <div class="error-text f-p3">Email is invalid.</div>
+            </div>
+
+            <div class="form__file-attachment">
+              <div class="form__input form__input--file f-p1 clickable" @click="triggerFileInput"
+                :class="{
+                  'file-selected': selectedFile,
+                  'file-draged': isDragging,
+                  'input-error': showFileError
+                }" @dragenter.prevent="handleDragEnter" @dragleave.prevent="handleDragLeave"
+                @dragover.prevent @drop.prevent="handleDrop">
+               
+                <Attachment v-if="selectedFile" class="icon icon-24" />
+                <div class="file-label">
+                  {{ fileLabel }}
+                  </div>
+               
+                <Attachment v-if="!selectedFile" class="icon icon-24" />
+               
+                <IconX v-if="selectedFile" class="icon icon-24icon-clear" @click="clearFile" />
+               
+              </div>
+
+              <input type="file" ref="fileInputRef" @change="handleFileChange" style="display: none;"
+                accept=".pdf,.doc,.docx">
+              </div>
+            <div class="form__hint f-p3">
+              {{ fileHint }}
+              </div>
+
+            <button type="submit" class="form__btn dots dots-hover f-b-p2 d-f ai-c"
+              :disabled="isFormSubmitted && !isFormValid" :class="{ 'disabled-btn': isFormSubmitted && !isFormValid }">
+              <span class="psevdo"></span>
+              {{ btnText }}
+             
+              <Arrow class="icon icon-32" />
+             
+            </button>
+
+          </form>
+         
+        </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 </template>
 
 <style scoped lang="scss">
@@ -169,8 +236,7 @@ const clearFile = (event) => {
   }
 
   &__wr {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
 
     @include respond("tab") {
       display: flex;
@@ -180,7 +246,10 @@ const clearFile = (event) => {
   }
 
   &__image {
+    width: 50%;
+
     @include respond("tab") {
+      width: 100%;
       height: 175px;
       overflow: hidden;
       align-items: flex-start;
@@ -193,18 +262,23 @@ const clearFile = (event) => {
       animation: rolling 10s linear infinite;
 
       @include respond("tab") {
-        // max-width: 345px;
         width: 345px;
         height: auto;
-        // animation: rolling 10s linear infinite;
       }
+    }
+  }
+
+  &__content {
+    width: 50%;
+
+    @include respond("tab") {
+      width: 100%;
     }
   }
 
   &__input {
     background-color: transparent;
-    border: none;
-    border-bottom: 1px solid $c-steel-grey;
+    width: 100%;
     padding: 24px;
     margin-bottom: 12px;
     color: $c-white;
@@ -213,12 +287,20 @@ const clearFile = (event) => {
     font-weight: 600;
     transition: 0.3s all ease-in-out;
     outline: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $c-steel-grey;
 
     &:hover {
       border-bottom: 1px solid $c-white;
     }
-    &:active, &:focus {
+
+    &:active,
+    &:focus {
       border-bottom: 1px solid $c-green;
+    }
+
+    &::placeholder {
+      color: $c-white;
     }
 
     &--file {
@@ -227,14 +309,35 @@ const clearFile = (event) => {
       width: 100%;
       gap: 10px;
 
+      &.file-draged {
+        border: 1px dashed $c-green;
+        background-color: rgba($c-white, 0.1);
+      }
+
       &.file-selected {
-        color: $c-green;
+        .icon {
+          flex-shrink: 0;
+        }
+
+        .file-label {
+          flex-shrink: 1;
+          min-width: 0;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
     }
 
     @include respond("tab") {
       padding: 16px 0;
     }
+  }
+
+  &__error-message {
+    gap: 8px;
+    color: $c-green;
   }
 
   &__file-attachment {
@@ -275,9 +378,12 @@ const clearFile = (event) => {
     width: max-content;
     gap: 24px;
     min-width: 269px;
+    font-family: 'Manrope', sans-serif;
 
     @include respond("tab") {
       font-size: 20px;
+      width: 100%;
+      padding: 16px;
 
       &.hide-desctop {
         display: flex;

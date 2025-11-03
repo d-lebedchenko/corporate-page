@@ -134,6 +134,7 @@ const props = defineProps({
       object-fit: cover;
       
       @include respond("tab") {
+        min-height: 0;
         max-width: 345px;
         width: 100%;
         height: auto;

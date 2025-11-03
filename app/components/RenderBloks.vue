@@ -80,9 +80,6 @@ function getComponent(type) {
 <template>
   <div>
     <template v-for="(block, i) in blocks" :key="i">
-      <!-- <ClientOnly v-if="block.blockType === 'mgb'">
-        <component :is="getComponent(block.blockType)" v-bind="block" />
-      </ClientOnly> -->
 
       <component :is="getComponent(block.blockType)" v-bind="block" />
     </template>
