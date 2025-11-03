@@ -27,9 +27,11 @@ const onSwiper = (swiper) => {
 
 const onSlideChange = (swiper) => {
   activeIndex.value = swiper.activeIndex
-  const contents = swiper.el.querySelectorAll('.slide__content')
+  const contents = swiper.el.querySelectorAll('.ui-scroll-area__viewport')
   if (contents?.length) {
-    contents.forEach((el) => { el.scrollTop = 0 })
+    contents.forEach((el) => {
+      el.scrollTo({ top: 0, left: 0 })
+    })
   }
 }
 
@@ -115,7 +117,7 @@ const slidePrev = () => {
                   </div>
                 </div>
 
-                <div class="slide__content custom-scrollbar custom-scrollbar--accent">
+                <UiScrollArea class="slide__content" type="auto" theme="green">
                   <div v-if="item.keyTasks?.length" class="slide__group">
                     <h4 class="slide__group-title f-sh2">
                       {{ $t('about_tracks_block.title_tasks') }}
@@ -149,7 +151,7 @@ const slidePrev = () => {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </UiScrollArea>
               </SwiperSlide>
             </Swiper>
           </div>
@@ -333,14 +335,16 @@ const slidePrev = () => {
     }
   }
 
-
+  
   &__content {
     flex: 1;
-    padding: 52px;
-    overflow: auto;
-    @include respond("tab") {
-      padding: 0 20px 32px;
-      max-height: 445px;
+    
+    :deep(.ui-scroll-area__viewport) {
+      padding: 52px;
+      @include respond("tab") {
+        padding: 0 20px 32px;
+        max-height: 445px;
+      }
     }
   }
 
