@@ -134,69 +134,72 @@ const handleSubmit = (event) => {
 <template>
   <section class="form">
     <div class="container">
-     <div class="form__wr">
-       <div class="form__image d-f jc-c">
-         <img v-if="image?.url" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
-         </div>
+      <div class="form__wr">
+        <div class="form__image d-f jc-c">
+          <img v-if="image?.url" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
+        </div>
 
-       <div class="form__content d-f fd-c">
+        <div class="form__content d-f fd-c">
 
           <form @submit="handleSubmit">
 
-           <input class="form__input f-p1 clickable" type="text" :placeholder="name" v-model="nameValue"
+            <input class="form__input f-p1 clickable" type="text" :placeholder="name" v-model="nameValue"
               :class="{ 'input-error': showNameError }">
             <div v-if="showNameError" class="form__error-message d-f ai-c">
-              <ErrorIcon/> <div class="error-text f-p3">Name must contain at least 2 letters</div>
+              <ErrorIcon />
+              <div class="error-text f-p3">Name must contain at least 2 letters</div>
             </div>
 
             <input class="form__input f-p1 clickable" type="email" :placeholder="email" v-model="emailValue"
               :class="{ 'input-error': showEmailError }">
             <div v-if="showEmailError" class="form__error-message d-f ai-c">
-              <ErrorIcon/> <div class="error-text f-p3">Email is invalid.</div>
+              <ErrorIcon />
+              <div class="error-text f-p3">Email is invalid.</div>
             </div>
 
             <div class="form__file-attachment">
-              <div class="form__input form__input--file f-p1 clickable" @click="triggerFileInput"
-                :class="{
-                  'file-selected': selectedFile,
-                  'file-draged': isDragging,
-                  'input-error': showFileError
-                }" @dragenter.prevent="handleDragEnter" @dragleave.prevent="handleDragLeave"
-                @dragover.prevent @drop.prevent="handleDrop">
-               
+              <div class="form__input form__input--file f-p1 clickable" @click="triggerFileInput" :class="{
+                'file-selected': selectedFile,
+                'file-draged': isDragging,
+                'input-error': showFileError
+              }"@dragenter.prevent="handleDragEnter"
+                @dragleave.prevent="handleDragLeave"
+                @dragover.prevent
+                @drop.prevent="handleDrop">
+
                 <Attachment v-if="selectedFile" class="icon icon-24" />
                 <div class="file-label">
                   {{ fileLabel }}
-                  </div>
-               
+                </div>
+
                 <Attachment v-if="!selectedFile" class="icon icon-24" />
-               
+
                 <IconX v-if="selectedFile" class="icon icon-24 icon-clear" @click="clearFile" />
-               
+
               </div>
 
               <input type="file" ref="fileInputRef" @change="handleFileChange" style="display: none;"
                 accept=".pdf,.doc,.docx">
-              </div>
+            </div>
             <div class="form__hint f-p3">
               {{ fileHint }}
-              </div>
+            </div>
 
             <button type="submit" class="form__btn dots dots-hover f-b-p2 d-f ai-c"
               :disabled="isFormSubmitted && !isFormValid" :class="{ 'disabled-btn': isFormSubmitted && !isFormValid }">
               <span class="psevdo"></span>
               {{ btnText }}
-             
+
               <Arrow class="icon icon-32" />
-             
+
             </button>
 
           </form>
-         
-        </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
@@ -312,6 +315,10 @@ const handleSubmit = (event) => {
       &.file-draged {
         border: 1px dashed $c-green;
         background-color: rgba($c-white, 0.1);
+      }
+      .icon,
+      .file-label {
+        pointer-events: none;
       }
 
       &.file-selected {
