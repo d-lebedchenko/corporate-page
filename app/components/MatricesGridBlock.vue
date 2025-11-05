@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, nextTick, watch, onMounted, onBeforeUnmount } from 'vue'
+import { hasText } from '@payloadcms/richtext-lexical/shared'
 import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/chevron-down.svg'
 import Check from '~/assets/icons/check.svg'
@@ -196,7 +197,7 @@ onBeforeUnmount(() => {
                 <div class="matrices__slider__item__col matrices__slider__item__col--left">
                   <RichtextLexical :content="item.textL" class="f-p3" />
                 </div>
-                <div class="matrices__slider__item__col matrices__slider__item__col--right">
+                <div v-if="hasText(item.textR)" class="matrices__slider__item__col matrices__slider__item__col--right">
                   <RichtextLexical :content="item.textR" class="f-p3" />
                 </div>
               </div>
