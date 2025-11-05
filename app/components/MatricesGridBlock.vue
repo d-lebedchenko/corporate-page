@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed, nextTick, watch, onMounted, onBeforeUnmount } from 'vue'
-import { hasText } from '@payloadcms/richtext-lexical/shared'
 import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/chevron-down.svg'
 import Check from '~/assets/icons/check.svg'
@@ -197,7 +196,7 @@ onBeforeUnmount(() => {
                 <div class="matrices__slider__item__col matrices__slider__item__col--left">
                   <RichtextLexical :content="item.textL" class="f-p3" />
                 </div>
-                <div v-if="hasText(item.textR)" class="matrices__slider__item__col matrices__slider__item__col--right">
+                <div class="matrices__slider__item__col matrices__slider__item__col--right">
                   <RichtextLexical :content="item.textR" class="f-p3" />
                 </div>
               </div>
@@ -225,7 +224,6 @@ onBeforeUnmount(() => {
 
 <style scoped lang="scss">
 @use "@/assets/scss/media" as *;
-@use "@/assets/scss/functions" as *;
 
 .matrices {
   padding: 70px 0 44px;
@@ -451,7 +449,8 @@ onBeforeUnmount(() => {
       }
 
       &__content {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 64px;
         padding: 40px 32px;
 
@@ -460,7 +459,7 @@ onBeforeUnmount(() => {
           border: 1px solid $c-steel-grey;
           border-top: none;
           padding: 0 16px 24px 16px;
-          flex-direction: column;
+          grid-template-columns: 1fr;
           gap: 24px;
 
           .psevdo {
@@ -472,10 +471,6 @@ onBeforeUnmount(() => {
             display: none;
           }
         }
-      }
-
-      &__col {
-        flex: 1 0 percent-width-with-gap(2, 64px);
       }
     }
   }
