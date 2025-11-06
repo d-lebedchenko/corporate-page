@@ -47,9 +47,13 @@ const {
     <div class="container main-section__wrapper d-f">
 
       <div class="main-section__left d-f">
-        <div class="main-section__runing f-a1" ref="runningTrackRef">
-          <span class="main-section__runing__text"> {{ runningText + ' ' }} </span>
-          <span class="main-section__runing__text"> {{ runningText }} </span>
+        <div class="main-section__marquee">
+          
+          <NuxtMarquee autoFill :speed="180"  :direction="'down'">
+            <div class="main-section__runing f-a1">
+              <span class="main-section__runing__text"> {{ runningText }} </span>&nbsp;
+            </div>
+          </NuxtMarquee>
         </div>
         <div class="main-section__img" v-if="image?.url">
           <img :src="`${payloadUrl}${image?.url}`" :alt="image?.alt">
@@ -136,65 +140,36 @@ const {
     @include respond("tab") {
       height: 100%;
       width: 100%;
-      margin-left: 67px;
+      // margin-left: 67px;
+    }
+  }
+
+
+  &__marquee {
+    width: 180px;
+    transform: translateX(calc(100% - 10px));
+
+    :deep() {
+      .vfm-marquee-container {
+        transform-origin: top left;
+      }
+    }
+    @include respond("tab") {
+      width: 64px;
+    transform: translateX(100%);
     }
   }
 
   &__runing {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform-origin: bottom left;
+    rotate: -90deg;
+    font-size: 160px;
     text-transform: uppercase;
-    white-space: nowrap;
-
-    transform: rotate(-90deg) translateY(180px) translateX(0);
-    line-height: 100%;
-    animation: fast-jump-desktop 20s linear infinite;
-
-
-    @keyframes fast-jump-desktop {
-      0% {
-        transform: rotate(-90deg) translateY(180px) translateX(0);
-      }
-
-      50% {
-        transform: rotate(-90deg) translateY(180px) translateX(-50%);
-      }
-
-      50.01% {
-        transform: rotate(-90deg) translateY(180px) translateX(0);
-      }
-
-      100% {
-        transform: rotate(-90deg) translateY(180px) translateX(-50%);
-      }
-    }
-
-
-    @keyframes fast-jump-mobile {
-      0% {
-        transform: rotate(-90deg) translateY(56px) translateX(0);
-      }
-
-      50% {
-        transform: rotate(-90deg) translateY(56px) translateX(-50%);
-      }
-
-      50.01% {
-        transform: rotate(-90deg) translateY(56px) translateX(0);
-      }
-
-      100% {
-        transform: rotate(-90deg) translateY(56px) translateX(-50%);
-      }
-    }
 
     @include respond("tab") {
-        transform: rotate(-90deg) translateY(56px) translateX(0);
-        animation: fast-jump-mobile 10s linear infinite;
+      font-size: 64px;
     }
   }
+   
 
   &__right {
     max-width: 702px;

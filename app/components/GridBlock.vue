@@ -173,77 +173,6 @@ function handleIconThirdMouseLeave() {
 }
 
 
-
-const partnersTrackRef = ref(null);
-const firstPartnersSetRef = ref([]);
-
-const setScrollShift = () => {
-  const track = partnersTrackRef.value;
-  if (!track || props.partners.length === 0) return;
-
-  // 1. Створюємо тимчасовий контейнер для вимірювання
-  const tempContainer = document.createElement('div');
-
-  // 2. Копіюємо критично важливі стилі Flexbox та Gap
-  const computedStyle = window.getComputedStyle(track);
-  tempContainer.style.display = 'flex';
-  tempContainer.style.gap = computedStyle.getPropertyValue('gap');
-  tempContainer.style.position = 'absolute'; // Не впливає на макет
-  tempContainer.style.visibility = 'hidden'; // Приховуємо від користувача
-  tempContainer.style.width = 'fit-content'; // Дозволяємо ширині бути природною
-  tempContainer.style.flexWrap = 'nowrap'; // Запобігаємо перенесенню
-
-  // 3. Додаємо клоновані елементи першого набору до тимчасового контейнера
-  // Оскільки ми не можемо клонувати ref-елементи з DOM, ми генеруємо їхній вміст
-
-  // Нам потрібно отримати ОДИН екземпляр grid__partners__item зі стилями.
-  const allItems = track.querySelectorAll('.grid__partners__item');
-
-  if (allItems.length < props.partners.length) return; // Недостатньо елементів
-
-  // Клонуємо лише елементи ПЕРШОГО набору
-  for (let i = 0; i < props.partners.length; i++) {
-    tempContainer.appendChild(allItems[i].cloneNode(true));
-  }
-
-  // 4. Додаємо тимчасовий контейнер до DOM для вимірювання
-  document.body.appendChild(tempContainer);
-
-  // 5. ВИМІРЮЄМО ШИРИНУ
-  // clientWidth або scrollWidth, scrollWidth тут більш надійний для вмісту Flexbox, що виходить за межі
-  const totalShift = tempContainer.scrollWidth;
-
-  // 6. Видаляємо тимчасовий контейнер
-  document.body.removeChild(tempContainer);
-
-  // 7. Встановлюємо змінну
-  if (totalShift > 0) {
-    // Ми виміряли ТОЧНУ ширину ПЕРШОГО набору + gap між елементами.
-    // Оскільки ми не включили gap, що йде ПОСЛІ останнього елемента,
-    // нам потрібно додати його, щоб стрибок був безшовним.
-    const gapValue = computedStyle.getPropertyValue('gap').split(' ')[0];
-    const finalShiftWidth = totalShift + parseFloat(gapValue || 0);
-
-    track.style.setProperty(
-      '--scroll-shift',
-      `${finalShiftWidth}px`
-    );
-  }
-};
-
-onMounted(() => {
-  nextTick(() => {
-    // Затримка 100мс потрібна для Nuxt/SSR, щоб CSS повністю застосувався
-    setTimeout(() => {
-      setScrollShift();
-      window.addEventListener('resize', setScrollShift);
-    }, 100);
-  });
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', setScrollShift);
-})
 </script>
 
 <template>
@@ -309,31 +238,16 @@ onBeforeUnmount(() => {
           <Arrow class="icon icon-52" />
         </CmsLink>
       </div>
-
-      <!-- <div class="grid__partners" v-if="partners.length">
-        <div class="grid__partners__track">
-
-          <CmsLink class="grid__partners__item" v-for="(item, id) in [...partners, ...partners]" :link="item.link">
-            <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
-          </CmsLink>
-        </div>
-      </div> -->
       <div class="grid__partners" v-if="partners.length">
-        <div class="grid__partners__track" ref="partnersTrackRef">
-
-          <template v-for="(item, id) in partners" :key="`partner-1-${id}`">
-            <CmsLink class="grid__partners__item" :ref="el => { if (el) firstPartnersSetRef[id] = el }" :link="item.link">
-              <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
-            </CmsLink>
-          </template>
-
-          <template v-for="(item, id) in partners" :key="`partner-2-${id}`">
+        
+        <NuxtMarquee autoFill :speed="30">
+          
+          <template v-for="(item, id) in partners" :key="id">
             <CmsLink class="grid__partners__item" :link="item.link">
               <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
             </CmsLink>
           </template>
-
-        </div>
+        </NuxtMarquee>
       </div>
     </div>
   </section>
@@ -643,10 +557,12 @@ onBeforeUnmount(() => {
       width: 112px;
       height: 72px;
       flex-shrink: 0;
+      margin-right: 142px;
 
       @include respond("tab") {
         width: 89.6px;
         height: 57.6px;
+        margin-right: 28px;
       }
 
       img {

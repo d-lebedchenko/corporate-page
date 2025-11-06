@@ -112,7 +112,6 @@ const fileLabel = computed(() => {
 })
 
 const clearFile = (event) => {
-  event.stopPropagation();
   selectedFile.value = null;
   if (fileInputRef.value) {
     fileInputRef.value.value = '';
@@ -133,6 +132,23 @@ const handleSubmit = (event) => {
 </script>
 <template>
   <section class="form">
+    <NuxtMarquee autoFill :speed="100" >
+      <h2 class="form__runing f-a3 hide-tablet">
+        <div class="marquee-wrapper">
+          <div class="marquee">
+            <span>{{ runingTitle }}</span>&nbsp;
+          </div>
+        </div>
+      </h2>
+      <h2 class="form__runing f-a1 hide-desctop">
+      <div class="marquee-wrapper">
+          <div class="marquee">
+            <span>{{ runingTitle }}</span>
+            <span>{{ runingTitle }}</span>
+          </div>
+        </div>
+      </h2>
+    </NuxtMarquee>
     <div class="container">
       <div class="form__wr">
         <div class="form__image d-f jc-c">
@@ -167,14 +183,14 @@ const handleSubmit = (event) => {
                 @dragover.prevent
                 @drop.prevent="handleDrop">
 
-                <Attachment v-if="selectedFile" class="icon icon-24" />
+                <Attachment v-if="selectedFile" class="icon icon-attach icon-24" />
                 <div class="file-label">
                   {{ fileLabel }}
                 </div>
 
-                <Attachment v-if="!selectedFile" class="icon icon-24" />
+                <Attachment v-if="!selectedFile" class="icon icon-attach icon-24" />
 
-                <IconX v-if="selectedFile" class="icon icon-24 icon-clear" @click="clearFile" />
+                <IconX v-if="selectedFile" class="icon icon-24 icon-clear" @click.stop="clearFile" />
 
               </div>
 
@@ -220,22 +236,22 @@ const handleSubmit = (event) => {
     margin-bottom: 32px;
     overflow: hidden;
 
-    .marquee-wrapper {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-    }
+    // .marquee-wrapper {
+    //   display: block;
+    //   width: 100%;
+    //   overflow: hidden;
+    // }
 
-    .marquee {
-      display: flex;
-      white-space: nowrap;
-      animation: marquee 25s linear infinite;
+    // .marquee {
+    //   display: flex;
+    //   white-space: nowrap;
+    //   animation: marquee 25s linear infinite;
 
-      span {
-        display: inline-block;
-        padding-right: 10px;
-      }
-    }
+    //   span {
+    //     display: inline-block;
+    //     padding-right: 10px;
+    //   }
+    // }
   }
 
   &__wr {
@@ -316,7 +332,7 @@ const handleSubmit = (event) => {
         border: 1px dashed $c-green;
         background-color: rgba($c-white, 0.1);
       }
-      .icon,
+      .icon-attach,
       .file-label {
         pointer-events: none;
       }
