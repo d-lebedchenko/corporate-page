@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   const queryString = stringify(
     {
       locale,
-      depth: 1,
+      depth: 2,
       limit: 1,
       where: { slug: { equals: slug } },
     },

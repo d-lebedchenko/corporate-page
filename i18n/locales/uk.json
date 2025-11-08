@@ -2,5 +2,14 @@
   "about_tracks_block": {
     "title_tasks": "Ключові задачі команди:",
     "title_stacks": "Технологічний стек і підходи:"
+  },
+  "breadcrumb": {
+    "blog": "Блог"
+  },
+  "related_posts_block": {
+    "title_fallback": "Схожі статті"
+  },
+  "post_content_block" : {
+    "contents": "Зміст"
   }
 }

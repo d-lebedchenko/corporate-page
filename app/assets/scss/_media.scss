@@ -12,6 +12,12 @@ $breakpoints: (
   }
 }
 
+@mixin respond-min($device) {
+  @media (min-width: (map.get($breakpoints, $device) + 1px)) {
+    @content;
+  }
+}
+
 // examples 
 @include respond("tab") {
 }

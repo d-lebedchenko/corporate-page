@@ -18,6 +18,8 @@ import AboutFeatureBlock from './AboutFeatureBlock.vue'
 import AboutTracksBlock from './AboutTracksBlock.vue'
 import GrowthMainBlock from './GrowthMainBlock.vue'
 import GrowthStoriesBlock from './GrowthStoriesBlock.vue'
+import PostContentBlock from './PostContentBlock.vue'
+import RelatedPostsBlock from './RelatedPostsBlock.vue'
 
 import { ClientOnly } from '#components'
 
@@ -68,6 +70,10 @@ function getComponent(type) {
       return GrowthMainBlock
     case 'growth-stories-block':
       return GrowthStoriesBlock
+    case 'post-content-block':
+      return PostContentBlock
+    case 'related-posts-block':
+      return RelatedPostsBlock
     default:
       return {
         props: ['type'],

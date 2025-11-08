@@ -21,6 +21,7 @@ export default defineEventHandler(async (event) => {
         description: true,
         image: true,
         categories: true,
+        publishedAt: true,
       },
     },
     { addQueryPrefix: true }
