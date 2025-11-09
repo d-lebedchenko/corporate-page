@@ -181,6 +181,14 @@ const pagesList = computed(() => {
       line-height: 1.3;
       letter-spacing: -0.02em;
       transition: color 0.3s;
+      @include respond("tab") {
+        width: 57px;
+        height: 57px;
+      }
+      @include respond("mob-sm") {
+        width: 49px;
+      }
+
       &:before {
         content: '';
         position: absolute;
