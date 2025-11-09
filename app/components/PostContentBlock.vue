@@ -1,4 +1,5 @@
 <script setup>
+import { slugify } from 'transliteration'
 import RichtextLexical from './RichtextLexical'
 import ChevronIcon from '~/assets/icons/chevron-down.svg'
 
@@ -9,21 +10,102 @@ const props = defineProps({
   },
 })
 
+const HEADER_OFFSET = 56
+
 const isSidebarOpen = ref(false)
+const activeId = ref(getInitialActiveId(props.sections))
+
+const sectionEls = shallowRef([])
+
+function getInitialActiveId(sections) {
+  if (!Array.isArray(sections) || !sections.length) return ''
+  const first = sections.find(s => s?.title)
+  return first ? getSectionId(first) : ''
+}
+
+function getSectionId(section) {
+  if (section?.title) return slugify(`section-${section.title}`)
+  if (section?.id) return String(`section-${section.id}`)
+  return ''
+}
 
 const sidebarItems = computed(() => {
-  if (!props?.sections?.length) return []
+  if (!Array.isArray(props.sections) || !props.sections.length) return []
   return props.sections
-    .filter((s) => s.title)
-    .map((s) => ({
-      id: s.id,
-      title: s.title,
-    }))
+    .filter(s => s?.title)
+    .map(s => ({ id: getSectionId(s), title: s.title }))
 })
+
+function collectSectionEls() {
+  if (typeof document === 'undefined') return
+  sectionEls.value = Array.from(
+    document.querySelectorAll('.post-content-block__section[id]')
+  )
+}
+
+function updateActiveSection() {
+  if (!sectionEls.value.length) return
+
+  const y = window.scrollY
+  let current = sectionEls.value[0]
+
+  for (const el of sectionEls.value) {
+    const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET
+    if (top <= y + 1) current = el
+    else break
+  }
+
+  if (current && current.id && activeId.value !== current.id) {
+    activeId.value = current.id
+  }
+}
+
+function scrollToSection(id) {
+  if (typeof document === 'undefined') return
+  const el = document.getElementById(id)
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET
+  window.scrollTo({ top, behavior: 'smooth' })
+}
 
 function toggleSidebar() {
   isSidebarOpen.value = !isSidebarOpen.value
 }
+
+let ticking = false
+function onScrollOrResize() {
+  if (ticking) return
+  ticking = true
+  requestAnimationFrame(() => {
+    updateActiveSection()
+    ticking = false
+  })
+}
+
+onMounted(() => {
+  collectSectionEls()
+  updateActiveSection()
+
+  window.addEventListener('scroll', onScrollOrResize, { passive: true })
+  window.addEventListener('resize', onScrollOrResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScrollOrResize)
+  window.removeEventListener('resize', onScrollOrResize)
+})
+
+watch(
+  () => props.sections,
+  () => {
+    activeId.value = getInitialActiveId(props.sections)
+    nextTick(() => {
+      collectSectionEls()
+      updateActiveSection()
+    })
+  },
+  { deep: true }
+)
 </script>
 
 <template>
@@ -55,18 +137,19 @@ function toggleSidebar() {
                 v-show="isSidebarOpen"
                 class="post-content-block__sidebar-list"
               >
-                <button
-                  v-for="(item, index) in sidebarItems"
+                <a
+                  v-for="item in sidebarItems"
+                  :key="item.id"
+                  :href="`#${item.id}`"
                   :class="[
                     'post-content-block__sidebar-item f-sh2 dots dots-hover',
-                    { active: index === 0 },
+                    { active: activeId === item.id },
                   ]"
-                  type="button"
-                  :key="item.id"
+                  @click.prevent="scrollToSection(item.id)"
                 >
                   <span class="psevdo"></span>
                   {{ item.title }}
-                </button>
+                </a>
               </div>
             </TransitionExpand>
           </div>
@@ -75,13 +158,12 @@ function toggleSidebar() {
         <div class="post-content-block__right">
           <div
             v-for="section in sections"
+            :key="section.id"
+            :id="section.title ? getSectionId(section) : undefined"
             :class="[
               'post-content-block__section',
-              {
-                'bigger-mb': section.biggerMarginBottom,
-              },
+              { 'bigger-mb': section.biggerMarginBottom },
             ]"
-            :key="section.id"
           >
             <h2
               v-if="section.title"

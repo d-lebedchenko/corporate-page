@@ -22,6 +22,7 @@
     "overlayscrollbars-vue": "^0.5.9",
     "qs-esm": "^7.0.2",
     "swiper": "^11.2.6",
+    "transliteration": "^2.3.5",
     "vue": "^3.5.21",
     "vue-router": "^4.5.1"
   },
