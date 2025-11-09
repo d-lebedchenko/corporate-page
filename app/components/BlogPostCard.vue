@@ -72,19 +72,19 @@ const link = {
         <div class="blog-post-card__info">
           <div
             v-if="publishedAt"
-            class="blog-post-card__info-date f-p2"
+            class="blog-post-card__info-date f-p2 clickable"
           >
             {{ formatDate(publishedAt) }}
           </div>
           <div
             v-if="title"
-            class="blog-post-card__info-title f-h3"
+            class="blog-post-card__info-title f-h3 clickable"
           >
             {{ title }}
           </div>
           <div
             v-if="description"
-            class="blog-post-card__info-descr f-p3 whitespace-pre-line"
+            class="blog-post-card__info-descr f-p3 whitespace-pre-line clickable"
           >
             {{ description }}
           </div>
@@ -96,7 +96,7 @@ const link = {
         >
           <div
             v-for="item in categories"
-            class="blog-post-card__tags-item f-p3"
+            class="blog-post-card__tags-item f-p3 clickable"
             :key="item.id"
           >
             {{ item.label }}
