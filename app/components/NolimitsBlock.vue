@@ -229,6 +229,7 @@ onBeforeUnmount(() => {
     right: 0;
     bottom: -24px;
     text-transform: uppercase;
+    letter-spacing: 0;
 
     @include respond("tab") {
       bottom: -7px;
