@@ -260,7 +260,11 @@ watch(
       padding: 32px;
       text-align: left;
       text-transform: uppercase;
-      transition: font-size 0.3s, color 0.3s;
+      transition:
+        font-size 0.3s,
+        color 0.3s,
+        background-color 0.3s ease-in-out,
+        outline 0.3s ease-in-out;
       @include respond("tab") {
         padding: 16px 12px;
         border-top: 1px solid $c-steel-grey;
@@ -273,6 +277,14 @@ watch(
           &:before,
           &:after {
             display: none;
+          }
+        }
+      }
+
+      &.dots-hover {
+        @include respond("tab") {
+          &:hover {
+            background-color: transparent;
           }
         }
       }
