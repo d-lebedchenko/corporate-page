@@ -202,9 +202,9 @@ const {
   &__img {
     position: absolute;
     width: 537px;
-    height: 537px;
+    height: 441px;
     right: 22px;
-    bottom: -96px;
+    bottom: 0;
     
     @include respond("tab") {
       width: 210px;
