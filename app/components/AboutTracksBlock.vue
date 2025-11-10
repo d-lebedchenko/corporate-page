@@ -115,7 +115,7 @@ const slidePrev = () => {
                   </div>
                 </div>
 
-                <div class="slide__content custom-scrollbar custom-scrollbar--accent">
+                <div class="slide__content custom-scrollbar">
                   <div v-if="item.keyTasks?.length" class="slide__group">
                     <h4 class="slide__group-title f-sh2">
                       {{ $t('about_tracks_block.title_tasks') }}
