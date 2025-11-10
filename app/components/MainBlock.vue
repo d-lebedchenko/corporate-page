@@ -40,6 +40,26 @@ const {
   isVisible: isTextVisible
 } = useTextAnimation();
 
+const DESKTOP_SPEED = 150;
+const MOBILE_SPEED = 100;
+
+const currentSpeed = ref(DESKTOP_SPEED);
+
+const checkScreenSize = () => {
+  if (window.innerWidth < 1023) { 
+    currentSpeed.value = MOBILE_SPEED;
+  } else {
+    currentSpeed.value = DESKTOP_SPEED;
+  }
+};
+onMounted(() => {
+  checkScreenSize();
+  window.addEventListener('resize', checkScreenSize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkScreenSize);
+});
 </script>
 
 <template>
@@ -49,7 +69,7 @@ const {
       <div class="main-section__left d-f">
         <div class="main-section__marquee">
           
-          <NuxtMarquee autoFill :speed="180"  :direction="'down'">
+          <NuxtMarquee autoFill :speed="currentSpeed"  :direction="'down'">
             <div class="main-section__runing f-a1">
               <span class="main-section__runing__text"> {{ runningText }} </span>&nbsp;
             </div>
@@ -75,11 +95,11 @@ const {
 
           <p class="main-section__text f-p1" ref="textRef" :class="{ 'is-visible': isTextVisible }">
             <span v-for="(letter, i) in letters" :key="i" class="animated-letter"
-              :style="{ 'animation-delay': `${i * 0.03}s` }">
+              :style="{ 'animation-delay': `${i * 0.015}s` }">
               {{ letter }}
             </span>
           </p>
-          <CmsLink :link="button" class="main-section__btn dots dots-hover f-b-p1 d-f jc-sb ai-c">
+          <CmsLink :link="button" class="main-section__btn dots dots-hover btn-green f-b-p1 d-f jc-sb ai-c">
             <span class="psevdo"></span>
             {{ button.label }}
             <Arrow class="icon icon-52" />
@@ -97,8 +117,8 @@ const {
 .main-section {
   background-color: $c-black;
   color: $c-white;
-  padding-top: 28px;
-  padding-bottom: 82px;
+  padding-bottom: 28px;
+  padding-top: 82px;
   height: 100vh;
 
   &__wrapper {
@@ -123,6 +143,11 @@ const {
       margin-left: 0;
       padding-left: 0;
       min-height: 360px;
+      padding-left: 15px;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding-right: 15px;
+      width: auto;
     }
   }
 
@@ -140,10 +165,8 @@ const {
     @include respond("tab") {
       height: 100%;
       width: 100%;
-      // margin-left: 67px;
     }
   }
-
 
   &__marquee {
     width: 180px;
@@ -162,11 +185,11 @@ const {
 
   &__runing {
     rotate: -90deg;
-    font-size: 160px;
+    font-size: 150px;
     text-transform: uppercase;
 
     @include respond("tab") {
-      font-size: 64px;
+      font-size: 56px;
     }
   }
    
@@ -191,10 +214,8 @@ const {
 
   &__subtitle {
     text-transform: uppercase;
-    text-align: center;
 
     @include respond("tab") {
-      text-align: left;
       margin-bottom: 16px;
     }
   }

@@ -109,10 +109,12 @@ onUnmounted(() => {
   }
 
   &__wr {
-    border-top: 2px solid $c-white;
+    // border-top: 2px solid $c-white;
+    border-bottom: 2px solid $c-white;
     background-color: $c-black;
     position: fixed;
-    top: calc(100vh - 62px);
+    // top: calc(100vh - 62px);
+    top: 0;
     width: 100%;
     z-index: 3;
 

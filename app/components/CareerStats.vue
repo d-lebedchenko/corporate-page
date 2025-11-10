@@ -208,9 +208,13 @@ const {
     
     @include respond("tab") {
       width: 210px;
-      height: 150px; 
-      top: 0;
+      height: 210px; 
+      bottom: 15px;
       right: 56px;
+    }
+    @include respond("mob") {
+      top: 0;
+      left: 122px;
     }
   }
 

@@ -42,7 +42,7 @@ const props = defineProps({
             {{ title }}
           </h2>
           <RichtextLexical :content="text" class="content-image__text f-p2" />
-          <CmsLink :link="button" class="content-image__btn dots dots-hover hide-tablet d-f ai-c jc-sb dots f-b-p2">
+          <CmsLink :link="button" class="content-image__btn btn-green dots dots-hover hide-tablet d-f ai-c jc-sb dots f-b-p2">
             <span class="psevdo"></span>{{ button.label }}
             <Arrow class="icon icon-32" />
           </CmsLink>

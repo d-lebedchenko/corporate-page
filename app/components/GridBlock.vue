@@ -232,7 +232,7 @@ function handleIconThirdMouseLeave() {
             {{ expertsSubtitle }}
           </div>
         </div>
-        <CmsLink :link="button" class="grid__btn d-f ai-c jc-sb dots dots-hover f-b-p1">
+        <CmsLink :link="button" class="grid__btn d-f ai-c jc-sb dots dots-hover btn-green f-b-p1">
           <span class="psevdo"></span>
           {{ button.label }}
           <Arrow class="icon icon-52" />

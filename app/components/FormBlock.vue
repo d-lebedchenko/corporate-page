@@ -201,7 +201,7 @@ const handleSubmit = (event) => {
               {{ fileHint }}
             </div>
 
-            <button type="submit" class="form__btn dots dots-hover f-b-p2 d-f ai-c"
+            <button type="submit" class="form__btn btn-green dots dots-hover f-b-p2 d-f ai-c"
               :disabled="isFormSubmitted && !isFormValid" :class="{ 'disabled-btn': isFormSubmitted && !isFormValid }">
               <span class="psevdo"></span>
               {{ btnText }}
