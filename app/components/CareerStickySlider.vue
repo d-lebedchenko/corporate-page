@@ -21,6 +21,10 @@ const props = defineProps({
   slides: {
     type: Array,
     default: () => ([])
+  },
+  slidesMobile: {
+    type: Array,
+    default: () => ([])
   }
 })
 
@@ -74,9 +78,8 @@ const swiper = useSwiper(sliderRef, {
         </div>
 
         <div class="career-sticky-slider__slider mob">
-
-          <swiper-container v-if="slides.length > 0" ref="sliderRef">
-            <swiper-slide class="career-sticky-slider__item" v-for="(slide, id) in slides" :key="id">
+          <swiper-container v-if="slidesMobile.length > 0" ref="sliderRef">
+            <swiper-slide class="career-sticky-slider__item" v-for="(slide, id) in [...slidesMobile, ...slidesMobile]" :key="id">
               <div class="slide-image-wrapper">
                 <img :src="`${payloadUrl}${slide.image.url}`" :alt="slide.image.alt">
               </div>

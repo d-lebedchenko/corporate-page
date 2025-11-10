@@ -397,7 +397,7 @@ const handleSubmit = (event) => {
 
   &__btn {
     text-transform: uppercase;
-    padding: 32px;
+    padding: 32px 40px;
     width: max-content;
     gap: 24px;
     min-width: 269px;

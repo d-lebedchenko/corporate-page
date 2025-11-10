@@ -43,6 +43,10 @@ const props = defineProps({
   image: {
     type: Object,
     default: () => ({})
+  },
+  imageMobile: {
+    type: Object,
+    default: () => ({})
   }
 })
 
@@ -86,7 +90,8 @@ const {
           <h2 class="career-stats__title f-h1">{{ title }}</h2>
 
           <RichtextLexical :content="text" class="career-stats__text f-p2" />
-          <img class="career-stats__img" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
+          <img class="career-stats__img hide-tablet" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
+          <img v-if="imageMobile?.url" class="career-stats__img hide-desctop" :src="`${payloadUrl}${imageMobile.url}`" :alt="imageMobile.alt">
         </div>
         <div class="career-stats__content">
 
@@ -203,10 +208,9 @@ const {
     
     @include respond("tab") {
       width: 210px;
-      height: 210px; 
-      bottom: 15px;
+      height: 150px; 
+      top: 0;
       right: 56px;
-      transform: rotate(90deg);
     }
   }
 

@@ -1,5 +1,4 @@
 <script setup>
-// import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 import RichtextLexical from './RichtextLexical'
 const config = useRuntimeConfig()
@@ -9,6 +8,10 @@ const props = defineProps({
   title: {
     type: String,
     default: ''
+  },
+  isTitleBig: {
+    type: Boolean,
+    default: false
   },
   subtitle: {
     type: String,
@@ -35,12 +38,9 @@ const props = defineProps({
     <div class="container">
       <div class="content-image__wr">
         <div class="content-image__content d-f fd-c jc-e">
-          <h2 class="content-image__title f-h1">
+          <h2 class="content-image__title" :class="isTitleBig ? 'f-h1' : 'f-h2'">
             {{ title }}
           </h2>
-          <!-- <div class="content-image__text f-p2">
-            {{ subtitle }}
-          </div> -->
           <RichtextLexical :content="text" class="content-image__text f-p2" />
           <CmsLink :link="button" class="content-image__btn dots dots-hover hide-tablet d-f ai-c jc-sb dots f-b-p2">
             <span class="psevdo"></span>{{ button.label }}
@@ -95,6 +95,10 @@ const props = defineProps({
     @include respond("tab") {
       margin-bottom: 0;
       padding-top: 28px;
+      &.f-h2 {
+        font-size: 24px;
+        font-weight: 600;
+      }
     }
     
   }
@@ -105,6 +109,7 @@ const props = defineProps({
     
     @include respond("tab") {
       margin-bottom: 0;
+      max-width: 100%;
     }
   }
   &__btn {
