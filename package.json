@@ -18,8 +18,6 @@
     "nuxt": "^4.1.2",
     "nuxt-marquee": "1.0.4",
     "nuxt-swiper": "2.0.1",
-    "overlayscrollbars": "^2.12.0",
-    "overlayscrollbars-vue": "^0.5.9",
     "qs-esm": "^7.0.2",
     "swiper": "^11.2.6",
     "transliteration": "^2.3.5",
