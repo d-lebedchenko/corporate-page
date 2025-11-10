@@ -132,7 +132,7 @@ const handleSubmit = (event) => {
 </script>
 <template>
   <section class="form">
-    <NuxtMarquee autoFill :speed="100" >
+    <NuxtMarquee autoFill :speed="80" >
       <h2 class="form__runing f-a3 hide-tablet">
         <div class="marquee-wrapper">
           <div class="marquee">
@@ -143,8 +143,7 @@ const handleSubmit = (event) => {
       <h2 class="form__runing f-a1 hide-desctop">
       <div class="marquee-wrapper">
           <div class="marquee">
-            <span>{{ runingTitle }}</span>
-            <span>{{ runingTitle }}</span>
+            <span>{{ runingTitle }}</span>&nbsp;
           </div>
         </div>
       </h2>
@@ -308,6 +307,8 @@ const handleSubmit = (event) => {
     outline: none;
     border: 1px solid transparent;
     border-bottom: 1px solid $c-steel-grey;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none;
 
     &:hover {
       border-bottom: 1px solid $c-white;
@@ -316,6 +317,9 @@ const handleSubmit = (event) => {
     &:active,
     &:focus {
       border-bottom: 1px solid $c-green;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      box-shadow: none;
     }
 
     &::placeholder {

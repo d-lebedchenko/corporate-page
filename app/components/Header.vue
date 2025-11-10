@@ -109,18 +109,12 @@ onUnmounted(() => {
   }
 
   &__wr {
-    // border-top: 2px solid $c-white;
     border-bottom: 2px solid $c-white;
     background-color: $c-black;
-    position: fixed;
-    // top: calc(100vh - 62px);
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 3;
-
-    @include respond("tab") {
-      top: calc(100vh - 54px);
-    }
   }
 
   &__inner {
@@ -147,7 +141,6 @@ onUnmounted(() => {
   }
 
   &__linebar {
-    // position: fixed;
     top: 0;
     left: 0;
     height: 2px;
@@ -221,13 +214,11 @@ onUnmounted(() => {
       top: 0;
       width: 100vw;
       height: 100vh;
-      // z-index: 3;
       background-color: rgba(#00000080, 0.5);
       opacity: 0;
       transition: 0.3s all ease-in-out;
       pointer-events: none;
 
-      // background: transparent;
       content: '';
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);

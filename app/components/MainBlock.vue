@@ -118,8 +118,8 @@ onBeforeUnmount(() => {
   background-color: $c-black;
   color: $c-white;
   padding-bottom: 28px;
-  padding-top: 82px;
-  height: 100vh;
+  padding-top: 28px;
+  height: calc(100vh - 62px);
 
   &__wrapper {
     gap: 16px;
