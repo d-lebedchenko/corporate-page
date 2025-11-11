@@ -10,7 +10,7 @@ const props = defineProps({
   },
 })
 
-const HEADER_OFFSET = 56
+const HEADER_OFFSET = 64
 
 const isSidebarOpen = ref(false)
 const activeId = ref(getInitialActiveId(props.sections))
@@ -216,7 +216,7 @@ watch(
   
   &__sidebar {
     position: sticky;
-    top: 0;
+    top: 64px;
     @include respond("tab") {
       position: static;
       border: 1px solid $c-steel-grey;
