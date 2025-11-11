@@ -121,6 +121,10 @@ onBeforeUnmount(() => {
   padding-top: 28px;
   height: calc(100vh - 62px);
 
+    @include respond("tab") {
+      height: 100%;
+    }
+
   &__wrapper {
     gap: 16px;
     height: 100%;
@@ -163,7 +167,7 @@ onBeforeUnmount(() => {
     }
 
     @include respond("tab") {
-      height: 100%;
+      height: 360px;
       width: 100%;
     }
   }

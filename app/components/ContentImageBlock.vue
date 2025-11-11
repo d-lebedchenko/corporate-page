@@ -46,7 +46,7 @@ const props = defineProps({
             <span class="psevdo"></span>{{ button.label }}
             <Arrow class="icon icon-32" />
           </CmsLink>
-          <CmsLink :link="button" class="content-image__btn dots hide-desctop d-f ai-c jc-sb dots f-b-p1">
+          <CmsLink :link="button" class="content-image__btn btn-green dots hide-desctop d-f ai-c jc-sb dots f-b-p1">
             <span class="psevdo"></span>
             {{ button.label }}
             <Arrow class="icon icon-32" />
