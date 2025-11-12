@@ -9,7 +9,10 @@
   "related_posts_block": {
     "title_fallback": "Схожі статті"
   },
-  "post_content_block" : {
+  "post_content_block": {
     "contents": "Зміст"
+  },
+  "framework_nav_block": {
+    "review": "Переглянути"
   }
 }

@@ -15,6 +15,8 @@ const props = defineProps({
   },
 })
 
+const { query } = useRoute()
+
 const selectedCat = ref(null)
 const selectedSubcat = ref(null)
 const currentSlide = ref(0)
@@ -43,7 +45,12 @@ const selectSubcategory = (subId) => {
 
 watch(() => props.categories, (newCategories) => {
   if (newCategories && newCategories.length > 0) {
-    const firstCategory = newCategories[0]
+    const { matricesCat } = query
+    const queryCategory =
+      matricesCat &&
+      newCategories.find(c => c.queryValue === matricesCat)
+
+    const firstCategory = queryCategory ? queryCategory : newCategories[0]
     selectedCat.value = firstCategory.id
     const firstSubcategory = firstCategory.subcategories[0]
     if (firstSubcategory) selectedSubcat.value = firstSubcategory.id

@@ -42,7 +42,13 @@ export default defineNuxtConfig({
     ],
   },
 
-  modules: ["nuxt-swiper", "@nuxtjs/i18n", "nuxt-marquee", "@morev/vue-transitions/nuxt"],
+  modules: [
+    "nuxt-swiper",
+    "@nuxtjs/i18n",
+    "nuxt-marquee",
+    "@morev/vue-transitions/nuxt",
+    "nuxt-lottie",
+  ],
   i18n: {
     locales: [
       { code: "uk", iso: "uk-UA", name: "Українська", file: 'uk.json' },

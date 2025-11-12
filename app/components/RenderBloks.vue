@@ -20,6 +20,11 @@ import GrowthMainBlock from './GrowthMainBlock.vue'
 import GrowthStoriesBlock from './GrowthStoriesBlock.vue'
 import PostContentBlock from './PostContentBlock.vue'
 import RelatedPostsBlock from './RelatedPostsBlock.vue'
+import FrameworkMainBlock from './FrameworkMainBlock.vue'
+import FrameworkWhyBlock from './FrameworkWhyBlock.vue'
+import FrameworkContentBlock from './FrameworkContentBlock.vue'
+import FrameworkTracksBlock from './FrameworkTracksBlock.vue'
+import FrameworkNavBlock from './FrameworkNavBlock.vue'
 
 import { ClientOnly } from '#components'
 
@@ -74,6 +79,16 @@ function getComponent(type) {
       return PostContentBlock
     case 'related-posts-block':
       return RelatedPostsBlock
+    case 'framework-main-block':
+      return FrameworkMainBlock
+    case 'framework-why-block':
+      return FrameworkWhyBlock
+    case 'framework-content-block':
+      return FrameworkContentBlock
+    case 'framework-tracks-block':
+      return FrameworkTracksBlock
+    case 'framework-nav-block':
+      return FrameworkNavBlock
     default:
       return {
         props: ['type'],

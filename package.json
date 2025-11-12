@@ -19,6 +19,7 @@
     "mime": "^4.1.0",
     "nodemailer": "^7.0.10",
     "nuxt": "^4.1.2",
+    "nuxt-lottie": "^1.0.8",
     "nuxt-marquee": "1.0.4",
     "nuxt-swiper": "2.0.1",
     "qs-esm": "^7.0.2",
