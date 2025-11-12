@@ -69,6 +69,7 @@ const titleRest = computed(() => {
   background-color: $c-black;
   color: $c-white;
   padding: 60px 0 70px;
+  overflow: hidden;
   @include respond("tab") {
     padding: 32px 0 40px;
   }
@@ -131,7 +132,7 @@ const titleRest = computed(() => {
       top: 24px;
       left: 0;
       white-space: nowrap;
-      width: calc(50% + 32px);
+      // width: calc(50% + 32px);
       // text-align: right;
       @include respond("tab") {
         position: static;
