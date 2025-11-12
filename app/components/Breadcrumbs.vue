@@ -57,6 +57,11 @@ const props = defineProps({
         font-size: 14px;
       }
     }
+
+    &:last-child {
+      flex: 1;
+      overflow: hidden;
+    }
   }
 
   &__link {
@@ -67,6 +72,11 @@ const props = defineProps({
     }
   }
 
+  &__text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
   &__separator {
     margin-left: 12px;

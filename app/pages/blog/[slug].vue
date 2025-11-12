@@ -109,18 +109,6 @@ const breadcrumbsList = [
   background-color: $c-black;
   color: $c-white;
 
-  :deep(.breadcrumbs__list) {
-    flex-wrap: nowrap;
-  }
-  :deep(.breadcrumbs__item:last-child) {
-    overflow: hidden;
-  }
-  :deep(.breadcrumbs__text) {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
   &__head {
     padding: 60px 0 70px;
     @include respond("tab") {
