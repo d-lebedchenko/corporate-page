@@ -59,12 +59,12 @@ const isEmailValid = computed(() => {
   return emailRegex.test(emailValue.value)
 })
 
-const isFileValid = computed(() => {
-  return selectedFile.value !== null
-})
+// const isFileValid = computed(() => {
+//   return selectedFile.value !== null
+// })
 
 const isFormValid = computed(() => {
-  return isNameValid.value && isEmailValid.value && isFileValid.value
+  return isNameValid.value && isEmailValid.value
 })
 
 const showNameError = computed(() => {
@@ -75,9 +75,9 @@ const showEmailError = computed(() => {
   return isFormSubmitted.value && !isEmailValid.value
 })
 
-const showFileError = computed(() => {
-  return isFormSubmitted.value && !isFileValid.value
-})
+// const showFileError = computed(() => {
+//   return isFormSubmitted.value && !isFileValid.value
+// })
 
 const triggerFileInput = () => {
   fileInputRef.value.click()
@@ -117,16 +117,49 @@ const clearFile = (event) => {
     fileInputRef.value.value = '';
   }
 }
+const sendFormData = async () => {
+  const formData = new FormData();
+  
+  formData.append('name', nameValue.value);
+  formData.append('email', emailValue.value);
+  
+  if (selectedFile.value) {
+    formData.append('file', selectedFile.value); 
+  }
+
+  try {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      console.log('Succsess:', result.message);
+      
+      nameValue.value = '';
+      emailValue.value = '';
+      clearFile();
+      isFormSubmitted.value = false;
+      
+    } else {
+      console.error('Sending error:', result.error);
+    }
+
+  } catch (error) {
+    console.error('Network error:', error);
+  }
+}
 
 const handleSubmit = (event) => {
   event.preventDefault()
   isFormSubmitted.value = true
 
   if (isFormValid.value) {
-    alert('Форма валідна! Відправка даних...')
-    // sendFormData()
+    sendFormData()
   } else {
-    alert('Будь ласка, заповніть всі обов\'язкові поля коректно.')
+    console.error('Form is invalid!')
   }
 }
 </script>
@@ -176,8 +209,7 @@ const handleSubmit = (event) => {
               <div class="form__input form__input--file f-p1 clickable" @click="triggerFileInput" :class="{
                 'file-selected': selectedFile,
                 'file-draged': isDragging,
-                'input-error': showFileError
-              }"@dragenter.prevent="handleDragEnter"
+              }" @dragenter.prevent="handleDragEnter"
                 @dragleave.prevent="handleDragLeave"
                 @dragover.prevent
                 @drop.prevent="handleDrop">

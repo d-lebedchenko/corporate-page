@@ -92,7 +92,6 @@ onBeforeUnmount(() => {
           </h3>
         </div>
         <div class="main-section__bottom">
-
           <p class="main-section__text f-p1" ref="textRef" :class="{ 'is-visible': isTextVisible }">
             <span v-for="(letter, i) in letters" :key="i" class="animated-letter"
               :style="{ 'animation-delay': `${i * 0.015}s` }">
