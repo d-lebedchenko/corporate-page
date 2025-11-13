@@ -248,6 +248,9 @@ button {
 .jc-e {
   justify-content: flex-end;
 }
+.shrink-0 {
+  flex-shrink: 0;
+}
 
 .icon {
   color: $c-white;

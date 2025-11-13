@@ -34,22 +34,18 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="content-image">
+  <section :class="['content-image', { 'content-image--big-title': isTitleBig }]">
     <div class="container">
       <div class="content-image__wr">
-        <div class="content-image__content d-f fd-c jc-e">
+        <div class="content-image__content">
           <h2 class="content-image__title" :class="isTitleBig ? 'f-h1' : 'f-h2'">
             {{ title }}
           </h2>
           <RichtextLexical :content="text" class="content-image__text f-p2" />
-          <CmsLink :link="button" class="content-image__btn btn-green dots dots-hover hide-tablet d-f ai-c jc-sb dots f-b-p2">
-            <span class="psevdo"></span>{{ button.label }}
-            <Arrow class="icon icon-32" />
-          </CmsLink>
-          <CmsLink :link="button" class="content-image__btn btn-green dots hide-desctop d-f ai-c jc-sb dots f-b-p1">
+          <CmsLink :link="button" class="content-image__btn btn-green dots dots-hover d-if ai-c jc-sb f-b-p2">
             <span class="psevdo"></span>
             {{ button.label }}
-            <Arrow class="icon icon-32" />
+            <Arrow class="icon icon-32 shrink-0" />
           </CmsLink>
         </div>
         <div class="content-image__image d-f jc-c">
@@ -78,29 +74,27 @@ const props = defineProps({
     @include respond("tab") {
       display: flex;
       flex-direction: column-reverse;
-      gap: 24px;
+      gap: 32px;
     }
   }
-  &__content {
-
-    @include respond("tab") {
-      gap: 28px;
-    }
-
-  }
+  // &__content {}
   &__title {
     margin-bottom: 32px;
+    padding-top: 40px;
     text-transform: uppercase;
     
     @include respond("tab") {
-      margin-bottom: 0;
+      margin-bottom: 28px;
       padding-top: 28px;
-      &.f-h2 {
+    }
+
+    &.f-h2 {
+      padding-top: 0;
+      @include respond("tab") {
         font-size: 24px;
         font-weight: 600;
       }
     }
-    
   }
   &__text {
     margin-bottom: 40px;
@@ -108,22 +102,20 @@ const props = defineProps({
     width: 100%;
     
     @include respond("tab") {
-      margin-bottom: 0;
+      margin-bottom: 28px;
       max-width: 100%;
     }
   }
   &__btn {
     text-transform: uppercase;
-    padding: 32px;
-    max-width: 577px;
-    width: 100%;
+    padding: 32px 40px;
+    gap: 24px;
     
     @include respond("tab") {
-      max-width: 100%;
+      width: 100%;
       padding: 16px;
-      &.hide-desctop {
-        display: flex;
-      }
+      gap: 32px;
+      font-size: 20px;
       .icon {
         width: 24px;
         height: 24px;
@@ -132,14 +124,20 @@ const props = defineProps({
   }
 
   &__image {
+    padding-left: 32px;
+    @include respond("tab") {
+      padding-left: 0;
+    }
+
     img {
-      min-height: 361px;
+      display: block;
+      max-width: 488px;
       width: auto;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      aspect-ratio: 1 / 1;
       
       @include respond("tab") {
-        min-height: 0;
         max-width: 345px;
         width: 100%;
         height: auto;
@@ -147,5 +145,12 @@ const props = defineProps({
     }
   }
 
+  &--big-title {
+    .content-image__wr {
+      @include respond("tab") {
+        gap: 24px;
+      }
+    }
+  }
 }
 </style>
