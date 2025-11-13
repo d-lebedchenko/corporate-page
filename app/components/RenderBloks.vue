@@ -25,6 +25,7 @@ import FrameworkWhyBlock from './FrameworkWhyBlock.vue'
 import FrameworkContentBlock from './FrameworkContentBlock.vue'
 import FrameworkTracksBlock from './FrameworkTracksBlock.vue'
 import FrameworkNavBlock from './FrameworkNavBlock.vue'
+import PrivacyBlock from './PrivacyBlock.vue'
 
 import { ClientOnly } from '#components'
 
@@ -32,6 +33,10 @@ defineProps({
   blocks: {
     type: Array,
     default: () => []
+  },
+  publishedAt: {
+    type: String,
+    default: ''
   }
 })
 
@@ -89,6 +94,8 @@ function getComponent(type) {
       return FrameworkTracksBlock
     case 'framework-nav-block':
       return FrameworkNavBlock
+    case 'privacy-block':
+      return PrivacyBlock
     default:
       return {
         props: ['type'],
@@ -102,7 +109,7 @@ function getComponent(type) {
   <div>
     <template v-for="(block, i) in blocks" :key="i">
 
-      <component :is="getComponent(block.blockType)" v-bind="block" />
+      <component :is="getComponent(block.blockType)" v-bind="block" :publishedAt="publishedAt" />
     </template>
   </div>
 </template>
