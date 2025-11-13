@@ -270,7 +270,7 @@ watch(
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding: 20px 32px;
+      padding: 18px 32px;
       text-align: left;
       text-transform: uppercase;
       outline: 1px solid $c-steel-grey;
@@ -293,7 +293,7 @@ watch(
     &-item {
       display: block;
       width: 100%;
-      padding: 20px 32px;
+      padding: 18px 32px;
       text-align: left;
 
       outline: 1px solid $c-steel-grey;
