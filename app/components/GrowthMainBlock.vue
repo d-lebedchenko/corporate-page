@@ -60,7 +60,7 @@ const descrLetters = computed(() => {
             class="growth-main-block__title f-a3"
           >
             <span class="first">{{ titleFirst }}</span>
-            <span class="rest">{{ titleRest }}</span>
+            {{ titleRest }}
           </h1>
 
           <p
@@ -131,6 +131,7 @@ const descrLetters = computed(() => {
     text-transform: uppercase;
     position: relative;
     padding-top: 70px;
+    color: $c-green;
     @include respond("tab") {
       font-size: 48px;
       padding-top: 0;
@@ -157,20 +158,16 @@ const descrLetters = computed(() => {
       position: absolute;
       top: -18px;
       left: -261px;
+      color: $c-white;
       @include respond("tab") {
         position: static;
       }
       @include respond("mob") {
-        padding-right: 4px;
         transform: translateY(-32px);
       }
       @include respond("mob-sm") {
-        padding-right: 0;
         transform: none;
       }
-    }
-    .rest {
-      color: $c-green;
     }
   }
 
