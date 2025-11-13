@@ -88,7 +88,7 @@ const Icon = computed(() => {
           >
             <span class="psevdo"></span>
             {{ button.label }}
-            <ArrowIcon class="icon icon-32" />
+            <ArrowIcon class="icon icon-32 shrink-0" />
           </CmsLink>
         </div>
       </div>
