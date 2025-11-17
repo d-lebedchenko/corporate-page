@@ -19,6 +19,10 @@ const props = defineProps({
   publishedAt: {
     type: String,
     default: ''
+  },
+  footnote: {
+    type: String,
+    default: ''
   }
 })
 const HEADER_OFFSET = 100
@@ -198,6 +202,8 @@ watch(
             <RichtextLexical v-if="lexicalHasText(section.text)" :content="section.text"
               class="privacy__richtext f-p2" />
           </div>
+          
+            <p v-if="footnote" class="privacy__footnote f-h2 green">{{ footnote }}</p>
         </div>
       </div>
     </div>
