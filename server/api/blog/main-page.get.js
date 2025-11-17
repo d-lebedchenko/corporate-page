@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
     const res = await $fetch(`${payloadUrl}/api/globals/blog-main-page${queryString}`)
     return res || null
   } catch (error) {
-    console.error('Error fetching blog-main-page:', error)
+    console.error('Error in /api/blog/main-page:', error)
 
     throw createError({
       statusCode: error?.statusCode || 500,

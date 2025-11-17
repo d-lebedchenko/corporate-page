@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
     const res = await $fetch(`${payloadUrl}/api/blog-posts${queryString}`)
     return res
   } catch (error) {
-    console.error('Error fetching blog posts:', error)
+    console.error('Error in /api/blog/posts:', error)
 
     throw createError({
       statusCode: error?.statusCode || 500,
