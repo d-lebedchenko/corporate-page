@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { useIconAnimation } from '../../composables/useIconAnimation.js';
 
 import Anim1 from '~/assets/icons/career-grid-anim-1.svg';
@@ -10,6 +10,7 @@ import Anim5 from '~/assets/icons/career-grid-anim-5.svg';
 import Arrow from '~/assets/icons/arrow-right.svg';
 
 const AnimComponents = [Anim1, Anim2, Anim3, Anim4, Anim5];
+const NUM_ANIMATIONS = AnimComponents.length;
 
 const props = defineProps({
   title: { type: String, default: '' },
@@ -26,39 +27,41 @@ const props = defineProps({
 });
 
 const sliderRef = ref(null);
+const rootRef = ref(null);
+const previousRealIndex = ref(0);
+const isIntersecting = ref(false);
+
 const swiper = useSwiper(sliderRef, {
-  effect: 'creative',
-  loop: true,
-  autoplay: {
-    delay: 5000,
+ effect: 'creative',
+ loop: true,
+ autoplay: {
+  delay: 5000,
+ },
+ slidesPerView: 2,
+ creativeEffect: {
+  prev: {
+   shadow: true,
+   translate: [0, 0, -400],
   },
-  slidesPerView: 2,
-  creativeEffect: {
-    prev: {
-      shadow: true,
-      translate: [0, 0, -400],
-    },
-    next: {
-      shadow: true,
-      translate: [0, 0, -400],
-    },
+  next: {
+   shadow: true,
+   translate: [0, 0, -400],
   },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    601: {
-      slidesPerView: 2,
-    },
+ },
+ breakpoints: {
+  0: {
+   slidesPerView: 1,
   },
+  601: {
+   slidesPerView: 2,
+  },
+ },
 });
 
+const slidePrev = () => sliderRef.value?.swiper?.slidePrev()
+const slideNext = () => sliderRef.value?.swiper?.slideNext()
 
-const slidePrev = () => sliderRef.value?.swiper.slidePrev()
-const slideNext = () => sliderRef.value?.swiper.slideNext()
 
-
-const NUM_ANIMATIONS = 5;
 const animations = Array.from({ length: NUM_ANIMATIONS }, () => useIconAnimation());
 
 const refAssigned = ref(Array(NUM_ANIMATIONS).fill(false));
@@ -72,13 +75,11 @@ const setIconRef = (el, index) => {
   }
 };
 
-
 const handleMouseEnter = (index) => {
   const element = animations[index].containerRef.value;
 
   if (element) {
     animations[index].isVisible.value = false;
-
     void element.offsetHeight;
   }
 
@@ -89,10 +90,111 @@ const handleMouseLeave = (index) => {
   animations[index].handleMouseLeave();
 };
 
-</script>
+const triggerSlideAnimation = (index) => {
+  if (index < 0 || index >= NUM_ANIMATIONS || !animations[index]) return;
 
+  const animation = animations[index];
+  const element = animation.containerRef.value;
+  if (!element) return;
+
+  animation.isVisible.value = false;
+  animation.isHovered.value = false;
+
+  void element.offsetHeight;
+
+  animation.handleMouseEnter();
+};
+
+const resetSlideAnimation = (index) => {
+  if (index < 0 || index >= NUM_ANIMATIONS || !animations[index]) return;
+  animations[index].isVisible.value = false;
+  animations[index].isHovered.value = false;
+};
+
+const triggerInitialAnimations = (swiperInstance) => {
+  const currentRealIndex = swiperInstance.realIndex;
+  const slidesPerView = swiperInstance.params.slidesPerView;
+
+  for (let i = 0; i < slidesPerView; i++) {
+    const dataIndex = (currentRealIndex + i) % NUM_ANIMATIONS;
+    triggerSlideAnimation(dataIndex);
+  }
+};
+
+const manageAnimations = (swiperInstance) => {
+  const currentRealIndex = swiperInstance.realIndex;
+  const slidesPerView = swiperInstance.params.slidesPerView;
+
+  const newVisibleIndices = [];
+  for (let i = 0; i < slidesPerView; i++) {
+    newVisibleIndices.push((currentRealIndex + i) % NUM_ANIMATIONS);
+  }
+  const newActiveAnimations = new Set(newVisibleIndices);
+
+  let slidesToReset = [];
+
+  const prevRealIndex = previousRealIndex.value;
+
+  if (currentRealIndex !== prevRealIndex) {
+    slidesToReset.push(prevRealIndex);
+
+    let isNext = currentRealIndex > prevRealIndex || (currentRealIndex === 0 && prevRealIndex === NUM_ANIMATIONS - 1);
+
+    if (isNext) {
+      slidesToReset = [prevRealIndex];
+    } else {
+      slidesToReset = [(currentRealIndex + slidesPerView) % NUM_ANIMATIONS];
+    }
+
+    slidesToReset.forEach(index => {
+      if (index >= 0 && index < NUM_ANIMATIONS) {
+        resetSlideAnimation(index);
+      }
+    });
+
+    let indexToAnimate = isNext
+      ? (currentRealIndex + slidesPerView - 1) % NUM_ANIMATIONS 
+      : currentRealIndex;
+
+    triggerSlideAnimation(indexToAnimate);
+  }
+
+  previousRealIndex.value = currentRealIndex;
+};
+
+
+onMounted(() => {
+  nextTick(() => {
+    const swiperInstance = sliderRef.value?.swiper;
+
+    if (swiperInstance) {
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+
+            triggerInitialAnimations(swiperInstance);
+
+            previousRealIndex.value = swiperInstance.realIndex;
+
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.5 }
+      );
+
+      if (rootRef.value) {
+        observer.observe(rootRef.value);
+      }
+
+      swiperInstance.on('slideChangeTransitionEnd', () => manageAnimations(swiperInstance));
+    }
+  });
+});
+
+</script>
 <template>
-  <section class="career-grid">
+  <section class="career-grid" ref="rootRef">
     <div class="container">
       <div class="career-grid__title-wr dots">
         <div class="psevdo"></div>
@@ -138,7 +240,10 @@ const handleMouseLeave = (index) => {
             <swiper-container ref="sliderRef">
               <swiper-slide v-for="(anim, index) in animations" :key="index" class="career-grid__slide">
                 <div class="career-grid__item">
-                  <div :class="[`anim${index + 1}-container`, 'career-grid__icon d-f jc-c ai-c is-animated']" :ref="el => setIconRef(el, index)" @mouseenter="handleMouseEnter(index)"
+                  <div :class="[`anim${index + 1}-container`, 'career-grid__icon d-f jc-c ai-c', {
+                    'is-animated': anim.isVisible.value,
+                    'is-hovered': anim.isHovered.value
+                  }]" :ref="el => setIconRef(el, index)" @mouseenter="handleMouseEnter(index)"
                     @mouseleave="handleMouseLeave(index)">
                     <component :is="AnimComponents[index]" class="icon" />
                   </div>
@@ -541,7 +646,6 @@ const handleMouseLeave = (index) => {
         .circle-right,
         .circle-top,
         .circle-bottom {
-          // opacity: 0;
           animation: none;
         }
 
