@@ -32,10 +32,10 @@ const props = defineProps({
           {{ title }}
         </h1>
         <div class="career-main__title__block d-f ai-c">
-          <span class="career-main__title__green green f-a2">
+          <span class="career-main__title__green green f-a2 shrink-0">
             {{ titleGreen }}
           </span>
-          <span class="career-main__subtitle f-h2">
+          <span class="career-main__subtitle f-h2 whitespace-pre-line">
             {{ subtitle }}
           </span>
         </div>
@@ -55,7 +55,7 @@ const props = defineProps({
   color: $c-white;
   padding: 28px 0 70px;
   @include respond("tab") {
-    padding: 15px 0 40;
+    padding: 15px 0 40px;
   }
 
   &__img {
@@ -96,10 +96,7 @@ const props = defineProps({
     }
   }
   &__subtitle {
-    max-width: 326px;
-    @include respond("tab") {
-      max-width: 196px;
-    }
+    text-transform: uppercase;
   }
 }
 </style>

@@ -205,7 +205,7 @@ watch(
 
   &__left {
     position: relative;
-    flex: 0 0 600px;
+    flex: 0 0 43.22767%;
     @include respond("tab") {
       margin-bottom: 80px;
     }

@@ -13,6 +13,8 @@ export const convertCollectionPath = (relationTo, slug) => {
       return `/${slug}`
     case 'blog-posts':
       return `/blog/${slug}`
+    case 'vacancy-pages':
+      return `/vacancies/${slug}`
     default:
       if (process.env.NODE_ENV !== 'production') {
         console.warn(`convertCollectionPath: unresolved relationTo "${relationTo}" with slug "${slug}".`)
