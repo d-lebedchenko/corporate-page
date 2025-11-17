@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   if (!slug) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Missing slug parameter',
+      statusMessage: 'Error in /api/blog/posts/[slug]: Missing slug parameter',
     })
   }
 
@@ -27,18 +27,18 @@ export default defineEventHandler(async (event) => {
 
   try {
     const res = await $fetch(`${payloadUrl}/api/blog-posts${queryString}`)
-    const post = res?.docs?.[0]
+    const doc = res?.docs?.[0]
 
-    if (!post) {
+    if (!doc) {
       throw createError({
         statusCode: 404,
         statusMessage: `Post with slug "${slug}" not found`,
       })
     }
 
-    return post
+    return doc
   } catch (error) {
-    console.error('Error in /api/blog/posts/[slug]:', error)
+    console.error(`Error in /api/blog/posts/${slug}:`, error)
 
     if (error?.statusCode === 404) {
       throw error
