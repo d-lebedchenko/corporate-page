@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
 
     return post
   } catch (error) {
-    console.error('Error fetching blog post:', error)
+    console.error('Error in /api/blog/posts/[slug]:', error)
 
     if (error?.statusCode === 404) {
       throw error
