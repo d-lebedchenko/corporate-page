@@ -1,4 +1,5 @@
 <script setup>
+import { useElementVisibility } from '@vueuse/core'
 import ArrowIcon from '~/assets/icons/arrow-up-right.svg'
 
 const props = defineProps({
@@ -7,6 +8,12 @@ const props = defineProps({
     default: () => ({}),
   },
 })
+
+const target = ref(null)
+const visible = useElementVisibility(target, { once: true })
+
+const isVisible = ref(false)
+watch(visible, (v) => { if (v) isVisible.value = true }, { immediate: true })
 
 function getVacancyLink(slug) {
   return {
@@ -20,7 +27,13 @@ function getVacancyLink(slug) {
 </script>
 
 <template>
-  <div class="vacancies-group">
+  <div
+    ref="target"
+    :class="[
+      'vacancies-group',
+      { 'is-visible': isVisible },
+    ]"
+  >
     <h2 class="vacancies-group__head f-sh2 dots">
       {{ data.department?.label || $t('vacancies.other_department') }}
     </h2>
@@ -72,6 +85,7 @@ function getVacancyLink(slug) {
 @use "@/assets/scss/media" as *;
 
 .vacancies-group {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   &:not(:last-child) {
     margin-bottom: 60px;
     @include respond("tab") {
@@ -176,6 +190,11 @@ function getVacancyLink(slug) {
     &-apply {
       color: $c-green;
     }
+  }
+
+  &:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(100px);
   }
 }
 </style>

@@ -261,7 +261,7 @@ const link = {
   }
 
   &:not(.is-visible) {
-    transform: translateY(100px)
+    transform: translateY(100px);
   }
 }
 </style>

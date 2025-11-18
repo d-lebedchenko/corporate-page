@@ -97,9 +97,12 @@ const breadcrumbsList = [
               v-if="page.contentSections?.length"
               class="vacancy-page__sections"
             >
-              <RichtextLexical
+              <VacancyContentSection
                 v-for="section in page.contentSections"
-                class="vacancy-page__richtext f-p2"
+                :class="[
+                  'vacancy-page__richtext',
+                  { 'bigger-mb': section.biggerMarginBottom }
+                ]"
                 :key="section.id"
                 :content="section.content"
               />
@@ -234,33 +237,17 @@ const breadcrumbsList = [
   }
 
   &__richtext {
-    @include respond("tab") {
-      font-size: 14px;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+      @include respond("tab") {
+        margin-bottom: 32px;
+      }
     }
 
-    &:not(:last-child) {
+    &.bigger-mb:not(:last-child) {
       margin-bottom: 80px;
       @include respond("tab") {
         margin-bottom: 48px;
-      }
-    }
-
-    :deep(p),
-    :deep(ul),
-    :deep(ol),
-    :deep(li) {
-      margin: 1em 0;
-      &:first-child {
-        margin-top: 0;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    :deep(li) {
-      @include respond("tab") {
-        margin: 12px 0;
       }
     }
   }
