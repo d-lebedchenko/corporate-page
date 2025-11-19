@@ -35,6 +35,31 @@ watch(visible, (v) => { if (v) isVisible.value = true }, { immediate: true })
     font-size: 14px;
   }
 
+  :deep(h2) {
+    &:not(:last-child) {
+      margin-bottom: 52px;
+      @include respond("tab") {
+        margin-bottom: 36px;
+      }
+    }
+  }
+
+  :deep(h3) {
+    &:not(:first-child) {
+      margin-top: 40px;
+      @include respond("tab") {
+        margin-top: 32px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+      @include respond("tab") {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
   :deep(p),
   :deep(ul),
   :deep(ol),

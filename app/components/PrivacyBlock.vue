@@ -396,17 +396,10 @@ watch(
     }
 
     :deep(h3) {
-      text-transform: uppercase;
-      font-family: $font-secondary;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 1.25;
-      letter-spacing: 0;
       margin-top: 52px;
       margin-bottom: 20px;
 
       @include respond("tab") {
-        font-size: 18px;
         margin-top: 32px;
         margin-bottom: 12px;
       }

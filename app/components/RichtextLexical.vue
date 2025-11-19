@@ -39,13 +39,6 @@ const htmlContent = computed(() => {
     @include respond("tab") {
       font-size: 24px;
     }
-
-    &:not(:last-child) {
-      margin-bottom: 52px;
-      @include respond("tab") {
-        margin-bottom: 36px;
-      }
-    }
   }
 
   :deep(h3) {
@@ -57,20 +50,6 @@ const htmlContent = computed(() => {
     text-transform: uppercase;
     @include respond("tab") {
       font-size: 18px;
-    }
-
-    &:not(:first-child) {
-      margin-top: 40px;
-      @include respond("tab") {
-        margin-top: 32px;
-      }
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 32px;
-      @include respond("tab") {
-        margin-bottom: 20px;
-      }
     }
   }
 }
