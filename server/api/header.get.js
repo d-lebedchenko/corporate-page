@@ -4,6 +4,5 @@ export default defineEventHandler(async () => {
 
   // Запит до Payload (global header)
   const res = await $fetch(`${payloadUrl}/api/globals/header?depth=1`)
-  // console.log('res', res)
   return res
 })

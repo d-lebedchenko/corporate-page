@@ -34,10 +34,6 @@ const swiper = useSwiper(containerRef, {
     },
   },
 })
-
-onMounted(() => {
-  console.log(swiper.instance)
-})
 </script>
 
 <template>
