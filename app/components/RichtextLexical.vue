@@ -30,7 +30,7 @@ const htmlContent = computed(() => {
 
 .richtext {
   :deep(h2) {
-    font-family: 'Oswald', sans-serif;
+    font-family: $font-secondary;
     font-weight: 500;
     font-size: 40px;
     line-height: 125%;
@@ -49,7 +49,7 @@ const htmlContent = computed(() => {
   }
 
   :deep(h3) {
-    font-family: 'Oswald', sans-serif;
+    font-family: $font-secondary;
     font-weight: 400;
     font-size: 24px;
     line-height: 125%;

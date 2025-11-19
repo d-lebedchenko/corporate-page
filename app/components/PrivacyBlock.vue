@@ -397,7 +397,7 @@ watch(
 
     :deep(h3) {
       text-transform: uppercase;
-      font-family: 'Oswald', sans-serif;
+      font-family: $font-secondary;
       font-weight: 400;
       font-size: 24px;
       line-height: 125%;

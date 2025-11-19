@@ -11,7 +11,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: $font-primary;
   cursor: none !important;
   
   @include respond("tab") {
@@ -50,11 +50,11 @@ button {
 
 
 .f-oswald {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
 }
 
 .f-a1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 180px;
   line-height: 125%;
@@ -65,7 +65,7 @@ button {
   }
 }
 .f-a2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 141px;
   line-height: 125%;
@@ -76,14 +76,14 @@ button {
   }
 }
 .f-a3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 108px;
   line-height: 125%;
   letter-spacing: -0.05em;
 }
 .f-a4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 80px;
   line-height: 96%;
@@ -91,7 +91,7 @@ button {
 }
 
 .f-h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 60px;
   line-height: 125%;
@@ -102,7 +102,7 @@ button {
   }
 }
 .f-h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 40px;
   line-height: 125%;
@@ -112,7 +112,7 @@ button {
   }
 }
 .f-h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 600;
   font-size: 28px;
   line-height: 125%;
@@ -123,21 +123,21 @@ button {
   }
 }
 .f-h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 600;
   font-size: 20px;
   line-height: 125%;
   letter-spacing: 0;
 }
 .f-sh1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 400;
   font-size: 35px;
   line-height: 125%;
   letter-spacing: 0;
 }
 .f-sh2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 400;
   font-size: 24px;
   line-height: 125%;

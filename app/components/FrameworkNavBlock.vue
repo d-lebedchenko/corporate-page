@@ -106,7 +106,7 @@ defineProps({
     }
 
     &-review {
-      font-family: 'Manrope', sans-serif;
+      font-family: $font-primary;
       @include respond("tab") {
         display: none;
       }

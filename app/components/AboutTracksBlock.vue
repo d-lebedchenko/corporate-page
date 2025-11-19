@@ -356,7 +356,7 @@ const slidePrev = () => {
       text-transform: uppercase;
       margin-bottom: 16px;
       @include respond("tab") {
-        font-family: 'Manrope', sans-serif;
+        font-family: $font-primary;
         font-size: 16px;
         line-height: 130%;
         margin-bottom: 12px;

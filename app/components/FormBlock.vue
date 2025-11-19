@@ -330,7 +330,7 @@ const handleSubmit = (event) => {
     margin-bottom: 12px;
     color: $c-white;
     text-transform: uppercase;
-    font-family: 'Manrope', sans-serif;
+    font-family: $font-primary;
     font-weight: 600;
     transition: 0.3s all ease-in-out;
     outline: none;
@@ -434,7 +434,7 @@ const handleSubmit = (event) => {
     width: max-content;
     gap: 24px;
     min-width: 269px;
-    font-family: 'Manrope', sans-serif;
+    font-family: $font-primary;
 
     @include respond("tab") {
       font-size: 20px;

@@ -139,7 +139,7 @@ onClickOutside(selectRef, () => {
     gap: 16px;
     padding: 24px 0;
     border-bottom: 1px solid $c-steel-grey;
-    font-family: 'Manrope', sans-serif;
+    font-family: $font-primary;
     font-weight: 600;
     text-align: left;
     text-transform: uppercase;
@@ -196,7 +196,7 @@ onClickOutside(selectRef, () => {
     justify-content: space-between;
     gap: 10px;
     padding: 16px 24px;
-    font-family: 'Manrope', sans-serif;
+    font-family: $font-primary;
     text-align: left;
     transition: background-color 0.3s ease;
     @include respond("tab") {
