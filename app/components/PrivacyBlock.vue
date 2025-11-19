@@ -400,7 +400,7 @@ watch(
       font-family: $font-secondary;
       font-weight: 400;
       font-size: 24px;
-      line-height: 125%;
+      line-height: 1.25;
       letter-spacing: 0;
       margin-top: 52px;
       margin-bottom: 20px;

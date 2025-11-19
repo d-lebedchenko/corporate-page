@@ -133,7 +133,7 @@ const pagesList = computed(() => {
       text-transform: uppercase;
       @include respond("tab") {
         font-size: 32px;
-        line-height: 125%;
+        line-height: 1.25;
       }
     }
 

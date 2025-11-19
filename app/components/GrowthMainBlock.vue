@@ -140,7 +140,7 @@ const descrLetters = computed(() => {
     }
     @include respond("mob-sm") {
       margin-top: -42px;
-      line-height: 110%;
+      line-height: 1.1;
     }
 
     &:not(:last-child) {
