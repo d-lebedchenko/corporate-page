@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue';
-import { useIconAnimation } from '../../composables/useIconAnimation.js';
 
 import Anim1 from '~/assets/icons/career-grid-anim-1.svg';
 import Anim2 from '~/assets/icons/career-grid-anim-2.svg';

@@ -1,6 +1,4 @@
 <script setup>
-import { useIconAnimation } from '~~/composables/useIconAnimation.js'
-
 const props = defineProps({
   animation: {
     type: String,

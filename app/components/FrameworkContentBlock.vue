@@ -1,5 +1,4 @@
 <script setup>
-import { useIconAnimation } from '~~/composables/useIconAnimation.js'
 import ArrowIcon from '~/assets/icons/arrow-up-right.svg'
 
 const props = defineProps({

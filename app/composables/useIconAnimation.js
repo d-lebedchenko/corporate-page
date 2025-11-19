@@ -1,5 +1,3 @@
-//./composables/useIconAnimation.js
-
 import { ref, onMounted } from 'vue';
 
 export function useIconAnimation() { 

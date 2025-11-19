@@ -1,5 +1,4 @@
 <script setup>
-import { useIconAnimation } from '../../composables/useIconAnimation.js';
 import RichtextLexical from './RichtextLexical'
 import Anim1 from '~/assets/icons/career-anim-1.svg'
 import Anim2 from '~/assets/icons/career-anim-2.svg'
