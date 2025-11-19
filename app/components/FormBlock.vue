@@ -24,10 +24,6 @@ const props = defineProps({
     type: String,
     default: ''
   },
-  runingTitle: {
-    type: String,
-    default: ''
-  },
   fileHint: {
     type: String,
     default: ''
