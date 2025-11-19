@@ -1,19 +1,18 @@
-export function useTextAnimation(threshold = 0) { 
+import { useIntersectionObserver } from '@vueuse/core'
+
+export function useTextAnimation(threshold = 0) {
   const containerRef = ref(null);
   const isVisible = ref(false);
 
-  onMounted(async () => {
-    const { useIntersectionObserver } = await import('@vueuse/core'); 
-
+  onMounted(() => {
     useIntersectionObserver(
       containerRef,
-      ([ { isIntersecting } ]) => {
-        isVisible.value = isIntersecting; 
-        
+      ([{ isIntersecting }]) => {
+        isVisible.value = isIntersecting;
       },
-      { 
+      {
         rootMargin: '0px 0px 0px 0px',
-        threshold: threshold 
+        threshold,
       }
     );
   });

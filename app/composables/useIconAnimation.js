@@ -1,20 +1,19 @@
+import { useIntersectionObserver } from '@vueuse/core'
+
 export function useIconAnimation() { 
   const containerRef = ref(null);
   const isObserverActive = ref(false);
   const isVisible = ref(false);
   const isHovered = ref(false);
 
-  onMounted(async () => {
-    const { useIntersectionObserver } = await import('@vueuse/core');
-
+  onMounted(() => {
     useIntersectionObserver(
       containerRef,
       ([{ isIntersecting }]) => {
         isObserverActive.value = isIntersecting;
         if (isIntersecting) {
           isVisible.value = true;
-        }
-        if (!isIntersecting) {
+        } else {
           isVisible.value = false;
           isHovered.value = false;
         }
@@ -22,7 +21,6 @@ export function useIconAnimation() {
       { threshold: 0 }
     );
   });
-
 
   function handleMouseEnter() {
     isVisible.value = false;
