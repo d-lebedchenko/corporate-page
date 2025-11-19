@@ -1,6 +1,4 @@
 <script setup>
-import { useTextAnimation } from '../../composables/useTextAnimation';
-
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 

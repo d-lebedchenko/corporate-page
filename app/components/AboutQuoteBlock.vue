@@ -1,6 +1,4 @@
 <script setup>
-import { useTextAnimation } from '~~/composables/useTextAnimation'
-
 const props = defineProps({
   sectionTitle: {
     type: String,

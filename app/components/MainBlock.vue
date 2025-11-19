@@ -1,6 +1,5 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
-import { useTextAnimation } from '../../composables/useTextAnimation';
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 const props = defineProps({
