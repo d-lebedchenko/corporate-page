@@ -151,6 +151,7 @@ const Icon = computed(() => {
   }
 
   &__title {
+    color: $c-green;
     margin-bottom: 32px;
     text-transform: uppercase;
     @include respond("tab") {
