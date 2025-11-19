@@ -1,8 +1,6 @@
 <script setup>
 // import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/arrow-right.svg'
-const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
 const containerRef = ref(null)
 const swiper = useSwiper(containerRef, {
@@ -36,7 +34,7 @@ onMounted(() => {
   console.log(swiper.instance)
 })
 
-const props = defineProps({
+defineProps({
   title: { type: String, default: '' },
   subtitle: { type: String, default: '' },
   features: { type: Array, default: () => [] },

@@ -1,7 +1,7 @@
 <script setup>
 import ArrowIcon from '~/assets/icons/arrow-up-right.svg'
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: '',

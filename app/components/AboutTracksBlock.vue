@@ -7,7 +7,7 @@ import ArrowBigRight from '~/assets/icons/arrow-big-right.svg'
 import ArrowLeft from '~/assets/icons/arrow-left.svg'
 import ArrowRight from '~/assets/icons/arrow-right.svg'
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: ''

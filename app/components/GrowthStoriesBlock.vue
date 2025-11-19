@@ -6,7 +6,7 @@ import 'swiper/css/effect-fade'
 import ArrowLeft from '~/assets/icons/arrow-left.svg'
 import ArrowRight from '~/assets/icons/arrow-right.svg'
 
-const props = defineProps({
+defineProps({
   stories: {
     type: Array,
     default: () => []

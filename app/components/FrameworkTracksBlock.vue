@@ -1,7 +1,7 @@
 <script setup>
 import { useWindowSize, useElementVisibility } from '@vueuse/core'
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: '',

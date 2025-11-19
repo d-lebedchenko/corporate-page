@@ -9,7 +9,7 @@ import Anim3 from '~/assets/icons/animation-3-active.svg'
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: ''

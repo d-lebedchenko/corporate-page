@@ -7,6 +7,8 @@ const props = defineProps({
   },
 })
 
+defineEmits(['click'])
+
 const getHref = computed(() => {
   const { type, reference, url } = props.link
   if (type === 'reference' && typeof reference?.value === 'object' && reference.value.slug) {

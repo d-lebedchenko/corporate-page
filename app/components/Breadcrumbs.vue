@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   list: {
     type: Array,
     required: true,

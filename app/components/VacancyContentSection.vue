@@ -1,7 +1,7 @@
 <script setup>
 import { useElementVisibility } from '@vueuse/core'
 
-const props = defineProps({
+defineProps({
   content: {
     type: Object,
     default: () => ({}),

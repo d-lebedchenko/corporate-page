@@ -4,7 +4,7 @@ import RichtextLexical from './RichtextLexical'
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: ''

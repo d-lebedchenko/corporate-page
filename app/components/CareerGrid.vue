@@ -12,7 +12,7 @@ import Arrow from '~/assets/icons/arrow-right.svg';
 const AnimComponents = [Anim1, Anim2, Anim3, Anim4, Anim5];
 const NUM_ANIMATIONS = AnimComponents.length;
 
-const props = defineProps({
+defineProps({
   title: { type: String, default: '' },
   frameworkTitle: { type: String, default: '' },
   frameworkText: { type: String, default: '' },
@@ -29,9 +29,8 @@ const props = defineProps({
 const sliderRef = ref(null);
 const rootRef = ref(null);
 const previousRealIndex = ref(0);
-const isIntersecting = ref(false);
 
-const swiper = useSwiper(sliderRef, {
+useSwiper(sliderRef, {
  effect: 'creative',
  loop: true,
  autoplay: {
@@ -129,7 +128,6 @@ const manageAnimations = (swiperInstance) => {
   for (let i = 0; i < slidesPerView; i++) {
     newVisibleIndices.push((currentRealIndex + i) % NUM_ANIMATIONS);
   }
-  const newActiveAnimations = new Set(newVisibleIndices);
 
   let slidesToReset = [];
 

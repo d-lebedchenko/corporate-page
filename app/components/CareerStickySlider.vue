@@ -5,7 +5,7 @@ import { useSwiper } from '#imports';
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: ''
@@ -30,7 +30,7 @@ const props = defineProps({
 
 const sliderRef = ref(null);
 
-const swiper = useSwiper(sliderRef, {
+useSwiper(sliderRef, {
   effect: 'slide',
   loop: true,
   centeredSlides: true,

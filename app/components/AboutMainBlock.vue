@@ -1,7 +1,7 @@
 <script setup>
 import RichtextLexical from './RichtextLexical'
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: ''

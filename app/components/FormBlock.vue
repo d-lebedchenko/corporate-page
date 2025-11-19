@@ -111,7 +111,7 @@ const fileLabel = computed(() => {
   return selectedFile.value ? selectedFile.value.name : props.file
 })
 
-const clearFile = (event) => {
+const clearFile = () => {
   selectedFile.value = null;
   if (fileInputRef.value) {
     fileInputRef.value.value = '';

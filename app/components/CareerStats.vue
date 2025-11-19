@@ -7,7 +7,7 @@ import Anim3 from '~/assets/icons/career-anim-3.svg'
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: ''

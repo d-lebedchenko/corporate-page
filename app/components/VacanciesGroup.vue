@@ -2,7 +2,7 @@
 import { useElementVisibility } from '@vueuse/core'
 import ArrowIcon from '~/assets/icons/arrow-up-right.svg'
 
-const props = defineProps({
+defineProps({
   data: {
     type: Object,
     default: () => ({}),
