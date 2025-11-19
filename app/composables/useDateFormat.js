@@ -1,6 +1,6 @@
 import { format } from 'date-fns'
-import { enGB } from 'date-fns/locale'
-import { uk } from 'date-fns/locale'
+import { enGB, uk  } from 'date-fns/locale'
+
 
 const LOCALE_MAP = { uk, en: enGB }
 

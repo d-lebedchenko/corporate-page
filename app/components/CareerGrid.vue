@@ -138,7 +138,7 @@ const manageAnimations = (swiperInstance) => {
   if (currentRealIndex !== prevRealIndex) {
     slidesToReset.push(prevRealIndex);
 
-    let isNext = currentRealIndex > prevRealIndex || (currentRealIndex === 0 && prevRealIndex === NUM_ANIMATIONS - 1);
+    const isNext = currentRealIndex > prevRealIndex || (currentRealIndex === 0 && prevRealIndex === NUM_ANIMATIONS - 1);
 
     if (isNext) {
       slidesToReset = [prevRealIndex];
@@ -152,7 +152,7 @@ const manageAnimations = (swiperInstance) => {
       }
     });
 
-    let indexToAnimate = isNext
+    const indexToAnimate = isNext
       ? (currentRealIndex + slidesPerView - 1) % NUM_ANIMATIONS 
       : currentRealIndex;
 
