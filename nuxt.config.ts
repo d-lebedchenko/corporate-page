@@ -48,6 +48,7 @@ export default defineNuxtConfig({
     "nuxt-marquee",
     "@morev/vue-transitions/nuxt",
     "nuxt-lottie",
+    "@nuxt/fonts",
   ],
   i18n: {
     locales: [
@@ -60,5 +61,25 @@ export default defineNuxtConfig({
     strategy: "prefix_except_default",
 
     detectBrowserLanguage: false,
+  },
+  fonts: {
+    families: [
+      {
+        name: 'Manrope',
+        provider: 'google',
+        weights: [300, 400, 500, 600, 700],
+        styles: ['normal'],
+        subsets: ['latin', 'cyrillic-ext'],
+        global: true,
+      },
+      {
+        name: 'Oswald',
+        provider: 'google',
+        weights: [300, 400, 500, 600, 700],
+        styles: ['normal'],
+        subsets: ['latin', 'cyrillic-ext'],
+        global: true,
+      },
+    ],
   },
 });
