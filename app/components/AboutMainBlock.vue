@@ -1,6 +1,4 @@
 <script setup>
-import RichtextLexical from './RichtextLexical'
-
 defineProps({
   title: {
     type: String,

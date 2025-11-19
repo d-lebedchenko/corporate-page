@@ -1,6 +1,4 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-
 const cursorSize = ref(12);
 const cursorPosition = ref({ x: 0, y: 0 });
 

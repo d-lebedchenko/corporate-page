@@ -1,6 +1,5 @@
 <script setup>
 import { slugify } from 'transliteration'
-import RichtextLexical from './RichtextLexical'
 import ChevronIcon from '~/assets/icons/chevron-down.svg'
 
 const props = defineProps({

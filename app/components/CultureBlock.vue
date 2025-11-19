@@ -1,5 +1,4 @@
 <script setup>
-// import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/arrow-right.svg'
 
 const containerRef = ref(null)

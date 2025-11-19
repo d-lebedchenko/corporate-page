@@ -1,5 +1,3 @@
-import { ref, onMounted } from 'vue';
-
 export function useIconAnimation() { 
   const containerRef = ref(null);
   const isObserverActive = ref(false);

@@ -1,7 +1,4 @@
 <script setup>
-
-import RenderBloks from '~/components/RenderBloks.vue'
-
 const { data: page, pending, error } = await useAsyncData('page', () =>
   $fetch('/api/page')
 )

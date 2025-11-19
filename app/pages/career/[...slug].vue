@@ -1,7 +1,4 @@
 <script setup>
-import RenderBloks from '~/components/RenderBloks.vue'
-import { useI18n } from '#i18n'
-
 const route = useRoute()
 const { locale } = useI18n()
 

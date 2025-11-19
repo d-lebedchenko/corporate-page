@@ -1,6 +1,3 @@
-
-import { defineEventHandler, createError } from 'h3'
-
 const fetchPayloadPage = async (payloadUrl, collectionSlug, fullSlug, locale) => {
     const apiPath = `${payloadUrl}/api/${collectionSlug}?where[slug][equals]=${fullSlug}&locale=${locale}`
 

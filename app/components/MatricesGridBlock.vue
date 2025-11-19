@@ -1,6 +1,4 @@
 <script setup>
-import { ref, computed, nextTick, watch, onMounted, onBeforeUnmount } from 'vue'
-import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/chevron-down.svg'
 import Check from '~/assets/icons/check.svg'
 import ArrowLeft from '~/assets/icons/arrow-left.svg'

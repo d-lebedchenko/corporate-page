@@ -1,5 +1,3 @@
-import { ref, onMounted } from 'vue';
-
 export function useTextAnimation(threshold = 0) { 
   const containerRef = ref(null);
   const isVisible = ref(false);

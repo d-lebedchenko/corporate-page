@@ -1,7 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-import { useSwiper } from '#imports';
-
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 

@@ -1,6 +1,4 @@
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
-
 import Anim1 from '~/assets/icons/career-grid-anim-1.svg';
 import Anim2 from '~/assets/icons/career-grid-anim-2.svg';
 import Anim3 from '~/assets/icons/career-grid-anim-3.svg';

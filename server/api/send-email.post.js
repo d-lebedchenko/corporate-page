@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer';
 import formidable from 'formidable'; 
 import fs from 'fs';
-import { defineEventHandler } from 'h3';
 
 // const transporter = nodemailer.createTransport({
 //   host: process.env.SMTP_HOST,

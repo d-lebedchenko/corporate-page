@@ -1,6 +1,4 @@
 <script setup>
-import RenderBloks from '~/components/RenderBloks.vue'
-
 const route = useRoute()
 
 const slug = route.params.slug

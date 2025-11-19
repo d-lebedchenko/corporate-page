@@ -1,6 +1,6 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
-import RichtextLexical from './RichtextLexical'
+
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 

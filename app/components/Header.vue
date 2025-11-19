@@ -1,5 +1,4 @@
 <script setup>
-import { useI18n } from 'vue-i18n';
 import IconX from '~/assets/icons/x.svg'
 
 const { data } = useFetch('/api/header')

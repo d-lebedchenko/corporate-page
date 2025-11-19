@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from 'vue';
 import { useIntersectionObserver } from '@vueuse/core'
-import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 import Anim1 from '~/assets/icons/animation-1-active.svg'
 import Anim2 from '~/assets/icons/animation-2-active.svg'
 import Anim3 from '~/assets/icons/animation-3-active.svg'
+
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
