@@ -75,13 +75,15 @@ useSwiper(sliderRef, {
         </div>
 
         <div class="career-sticky-slider__slider mob">
-          <swiper-container v-if="slidesMobile.length > 0" ref="sliderRef">
-            <swiper-slide class="career-sticky-slider__item" v-for="(slide, id) in [...slidesMobile, ...slidesMobile]" :key="id">
-              <div class="slide-image-wrapper">
-                <img :src="`${payloadUrl}${slide.image.url}`" :alt="slide.image.alt">
-              </div>
-            </swiper-slide>
-          </swiper-container>
+          <ClientOnly>
+            <swiper-container v-if="slidesMobile.length > 0" ref="sliderRef">
+              <swiper-slide class="career-sticky-slider__item" v-for="(slide, id) in [...slidesMobile, ...slidesMobile]" :key="id">
+                <div class="slide-image-wrapper">
+                  <img :src="`${payloadUrl}${slide.image.url}`" :alt="slide.image.alt">
+                </div>
+              </swiper-slide>
+            </swiper-container>
+          </ClientOnly>
         </div>
       </div>
     </div>
