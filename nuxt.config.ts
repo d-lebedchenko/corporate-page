@@ -82,4 +82,7 @@ export default defineNuxtConfig({
       },
     ],
   },
+  lottie: {
+    autoFolderCreation: false,
+  },
 });

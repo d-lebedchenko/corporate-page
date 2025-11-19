@@ -15,11 +15,28 @@ defineProps({
 const { width } = useWindowSize()
 const isDesktop = computed(() => width.value > 1024)
 
+const isLoaded = ref(false)
 const lottieRef = ref(null)
 const visible = useElementVisibility(lottieRef, { once: true })
 
 const isVisible = ref(false)
 watch(visible, (v) => { if (v) isVisible.value = true }, { immediate: true })
+
+const shouldPlay = computed(() => isLoaded.value && isVisible.value)
+
+function handleAnimationLoaded() {
+  isLoaded.value = true
+}
+
+watch(
+  shouldPlay,
+  (v) => {
+    const inst = lottieRef.value
+    if (!inst) return
+    if (v) inst.play?.()
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -37,9 +54,10 @@ watch(visible, (v) => { if (v) isVisible.value = true }, { immediate: true })
           <div class="framework-tracks-block__anim-content">
             <Lottie
               ref="lottieRef"
-              :name="`framework-tracks/${isDesktop ? 'desktop' : 'mobile'}`"
+              :link="`/lottie/framework-tracks-${isDesktop ? 'lg' : 'sm'}.json`"
               :loop="false"
               :autoplay="isVisible"
+              @onAnimationLoaded="handleAnimationLoaded"
             />
           </div>
         </div>
