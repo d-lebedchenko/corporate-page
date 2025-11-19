@@ -98,8 +98,6 @@ onBeforeUnmount(() => {
     clearInterval(typingInterval);
   }
 });
-
-
 </script>
 
 <template>
@@ -208,7 +206,6 @@ onBeforeUnmount(() => {
     }
 
     @keyframes blink {
-
       0%,
       100% {
         opacity: 1;
@@ -245,6 +242,5 @@ onBeforeUnmount(() => {
       }
     }
   }
-
 }
 </style>

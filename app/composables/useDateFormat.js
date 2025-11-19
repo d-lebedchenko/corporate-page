@@ -1,7 +1,6 @@
 import { format } from 'date-fns'
 import { enGB, uk  } from 'date-fns/locale'
 
-
 const LOCALE_MAP = { uk, en: enGB }
 
 export function useDateFormat() {

@@ -170,8 +170,6 @@ function handleIconThirdMouseLeave() {
     isIconThirdVisible.value = true;
   }
 }
-
-
 </script>
 
 <template>

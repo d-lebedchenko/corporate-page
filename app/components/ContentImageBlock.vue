@@ -30,7 +30,6 @@ defineProps({
     default: () => ({})
   }
 })
-
 </script>
 
 <template>

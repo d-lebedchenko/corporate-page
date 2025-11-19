@@ -193,7 +193,6 @@ swiper-slide {
   width: $slide-width !important; 
   height: $slide-width !important;
   flex-shrink: 0;
-  
 }
 
 .slide-image-wrapper {

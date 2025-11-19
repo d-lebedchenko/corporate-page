@@ -1,8 +1,6 @@
 <script setup>
 import { convertLexicalToHTML } from '@payloadcms/richtext-lexical/html'
 
-
-
 const props = defineProps({
   content: {
     type: Object,
@@ -12,7 +10,6 @@ const props = defineProps({
 
 const htmlContent = computed(() => {
   if (!props.content) return ''
-  // console.log('data', convertLexicalToHTML({ data: props.content, disableContainer: true }))
   return convertLexicalToHTML({ data: props.content, disableContainer: true })
 })
 </script>

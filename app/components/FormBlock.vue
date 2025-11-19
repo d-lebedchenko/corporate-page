@@ -3,6 +3,7 @@ import Arrow from '~/assets/icons/arrow-up-right.svg'
 import Attachment from '~/assets/icons/paperclip.svg'
 import IconX from '~/assets/icons/x.svg'
 import ErrorIcon from '~/assets/icons/error.svg'
+
 const config = useRuntimeConfig()
 const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
 
@@ -84,7 +85,6 @@ const triggerFileInput = () => {
 }
 
 const handleFileChange = (event) => {
-
   const files = event.target.files || event.dataTransfer?.files;
   const file = files ? files[0] : null;
 
@@ -163,6 +163,7 @@ const handleSubmit = (event) => {
   }
 }
 </script>
+
 <template>
   <section class="form">
     <NuxtMarquee autoFill :speed="80" >
@@ -222,7 +223,6 @@ const handleSubmit = (event) => {
                 <Attachment v-if="!selectedFile" class="icon icon-attach icon-24" />
 
                 <IconX v-if="selectedFile" class="icon icon-24 icon-clear" @click.stop="clearFile" />
-
               </div>
 
               <input type="file" ref="fileInputRef" @change="handleFileChange" style="display: none;"
@@ -238,11 +238,8 @@ const handleSubmit = (event) => {
               {{ btnText }}
 
               <Arrow class="icon icon-32" />
-
             </button>
-
           </form>
-
         </div>
       </div>
     </div>

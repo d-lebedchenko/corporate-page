@@ -125,6 +125,7 @@ onBeforeUnmount(() => {
   }
 })
 </script>
+
 <template>
   <section class="matrices">
     <div class="container">
@@ -500,4 +501,5 @@ onBeforeUnmount(() => {
 //       background-color: #0056b3;
 //     }
 //   }
-// }</style>
+// }
+</style>

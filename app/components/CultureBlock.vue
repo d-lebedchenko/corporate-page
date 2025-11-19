@@ -1,6 +1,12 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-right.svg'
 
+defineProps({
+  title: { type: String, default: '' },
+  subtitle: { type: String, default: '' },
+  features: { type: Array, default: () => [] },
+})
+
 const containerRef = ref(null)
 const swiper = useSwiper(containerRef, {
   effect: 'creative',
@@ -32,13 +38,6 @@ const swiper = useSwiper(containerRef, {
 onMounted(() => {
   console.log(swiper.instance)
 })
-
-defineProps({
-  title: { type: String, default: '' },
-  subtitle: { type: String, default: '' },
-  features: { type: Array, default: () => [] },
-})
-
 </script>
 
 <template>
@@ -190,6 +189,5 @@ defineProps({
       }
     }
   }
-
 }
 </style>

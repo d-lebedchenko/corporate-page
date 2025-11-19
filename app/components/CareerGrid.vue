@@ -186,8 +186,8 @@ onMounted(() => {
     }
   });
 });
-
 </script>
+
 <template>
   <section class="career-grid" ref="rootRef">
     <div class="container">

@@ -49,9 +49,6 @@ defineProps({
   }
 })
 
-
-
-
 // Animation 1
 const {
   containerRef: iconFirstContainer,
@@ -340,5 +337,4 @@ const {
     transform: translate(0, 0);
   }
 }
-
 </style>
