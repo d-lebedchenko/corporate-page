@@ -1,115 +1,68 @@
 <script setup>
-import MainBlock from './MainBlock.vue'
-import GridBlock from './GridBlock.vue'
-import CultureBlock from './CultureBlock.vue'
-import ContentImageBlock from './ContentImageBlock.vue'
-import NolimitsBlock from './NolimitsBlock.vue'
-import FormBlock from './FormBlock.vue'
-import MatricesGridBlock from './MatricesGridBlock.vue'
-import Breadcrumbs from './Breadcrumbs.vue'
-import MatricesMain from './MatricesMain.vue'
-import CareerMain from './CareerMain.vue'
-import CareerStats from './CareerStats.vue'
-import CareerGrid from './CareerGrid.vue'
-import CareerStickySlider from './CareerStickySlider.vue'
-import AboutMainBlock from './AboutMainBlock.vue'
-import AboutQuoteBlock from './AboutQuoteBlock.vue'
-import AboutFeatureBlock from './AboutFeatureBlock.vue'
-import AboutTracksBlock from './AboutTracksBlock.vue'
-import GrowthMainBlock from './GrowthMainBlock.vue'
-import GrowthStoriesBlock from './GrowthStoriesBlock.vue'
-import PostContentBlock from './PostContentBlock.vue'
-import RelatedPostsBlock from './RelatedPostsBlock.vue'
-import FrameworkMainBlock from './FrameworkMainBlock.vue'
-import FrameworkWhyBlock from './FrameworkWhyBlock.vue'
-import FrameworkContentBlock from './FrameworkContentBlock.vue'
-import FrameworkTracksBlock from './FrameworkTracksBlock.vue'
-import FrameworkNavBlock from './FrameworkNavBlock.vue'
-import PrivacyBlock from './PrivacyBlock.vue'
-
-import { ClientOnly } from '#components'
-
 defineProps({
   blocks: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   publishedAt: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 })
 
+const FallbackBlock = {
+  props: {
+    type: {
+      type: String,
+      default: '',
+    },
+  },
+  template: `<div>Unknown block: {{ type }}</div>`,
+}
+
+const componentsMap = {
+  'main-block': defineAsyncComponent(() => import('./MainBlock.vue')),
+  'grid-block': defineAsyncComponent(() => import('./GridBlock.vue')),
+  'culture': defineAsyncComponent(() => import('./CultureBlock.vue')),
+  'content-image-block': defineAsyncComponent(() => import('./ContentImageBlock.vue')),
+  'nolimits-block': defineAsyncComponent(() => import('./NolimitsBlock.vue')),
+  'form-block': defineAsyncComponent(() => import('./FormBlock.vue')),
+  'mgb': defineAsyncComponent(() => import('./MatricesGridBlock.vue')),
+  'breadcrumbs': defineAsyncComponent(() => import('./Breadcrumbs.vue')),
+  'matrices-main-block': defineAsyncComponent(() => import('./MatricesMain.vue')),
+  'career-main-block': defineAsyncComponent(() => import('./CareerMain.vue')),
+  'career-stats': defineAsyncComponent(() => import('./CareerStats.vue')),
+  'career-grid': defineAsyncComponent(() => import('./CareerGrid.vue')),
+  'career-sticky-slider': defineAsyncComponent(() => import('./CareerStickySlider.vue')),
+  'about-main-block': defineAsyncComponent(() => import('./AboutMainBlock.vue')),
+  'about-quote-block': defineAsyncComponent(() => import('./AboutQuoteBlock.vue')),
+  'about-feature-block': defineAsyncComponent(() => import('./AboutFeatureBlock.vue')),
+  'about-tracks-block': defineAsyncComponent(() => import('./AboutTracksBlock.vue')),
+  'growth-main-block': defineAsyncComponent(() => import('./GrowthMainBlock.vue')),
+  'growth-stories-block': defineAsyncComponent(() => import('./GrowthStoriesBlock.vue')),
+  'post-content-block': defineAsyncComponent(() => import('./PostContentBlock.vue')),
+  'related-posts-block': defineAsyncComponent(() => import('./RelatedPostsBlock.vue')),
+  'framework-main-block': defineAsyncComponent(() => import('./FrameworkMainBlock.vue')),
+  'framework-why-block': defineAsyncComponent(() => import('./FrameworkWhyBlock.vue')),
+  'framework-content-block': defineAsyncComponent(() => import('./FrameworkContentBlock.vue')),
+  'framework-tracks-block': defineAsyncComponent(() => import('./FrameworkTracksBlock.vue')),
+  'framework-nav-block': defineAsyncComponent(() => import('./FrameworkNavBlock.vue')),
+  'privacy-block': defineAsyncComponent(() => import('./PrivacyBlock.vue')),
+}
+
 function getComponent(type) {
-  switch (type) {
-    case 'main-block':
-      return MainBlock
-    case 'grid-block':
-      return GridBlock
-    case 'culture':
-      return CultureBlock
-    case 'content-image-block':
-      return ContentImageBlock
-    case 'nolimits-block':
-      return NolimitsBlock
-    case 'form-block':
-      return FormBlock
-    case 'mgb':
-      return MatricesGridBlock
-    case 'breadcrumbs':
-      return Breadcrumbs
-    case 'matrices-main-block':
-      return MatricesMain
-    case 'career-main-block':
-      return CareerMain
-    case 'career-stats':
-      return CareerStats
-    case 'career-grid':
-      return CareerGrid
-    case 'career-sticky-slider':
-      return CareerStickySlider
-    case 'about-main-block':
-      return AboutMainBlock
-    case 'about-quote-block':
-      return AboutQuoteBlock
-    case 'about-feature-block':
-      return AboutFeatureBlock
-    case 'about-tracks-block':
-      return AboutTracksBlock
-    case 'growth-main-block':
-      return GrowthMainBlock
-    case 'growth-stories-block':
-      return GrowthStoriesBlock
-    case 'post-content-block':
-      return PostContentBlock
-    case 'related-posts-block':
-      return RelatedPostsBlock
-    case 'framework-main-block':
-      return FrameworkMainBlock
-    case 'framework-why-block':
-      return FrameworkWhyBlock
-    case 'framework-content-block':
-      return FrameworkContentBlock
-    case 'framework-tracks-block':
-      return FrameworkTracksBlock
-    case 'framework-nav-block':
-      return FrameworkNavBlock
-    case 'privacy-block':
-      return PrivacyBlock
-    default:
-      return {
-        props: ['type'],
-        template: `<div>Unknown block: {{ type }}</div>`
-      }
-  }
+  return componentsMap[type] || FallbackBlock
 }
 </script>
 
 <template>
   <div>
-    <template v-for="(block, i) in blocks" :key="i">
-
-      <component :is="getComponent(block.blockType)" v-bind="block" :publishedAt="publishedAt" />
-    </template>
+    <component
+      v-for="(block, i) in blocks"
+      :key="block?.id || `unknown-${i}`"
+      :is="getComponent(block.blockType)"
+      v-bind="block"
+      :publishedAt="publishedAt"
+    />
   </div>
 </template>
