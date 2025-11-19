@@ -185,8 +185,6 @@ onBeforeUnmount(() => {
       display: flex;
       flex-direction: column;
     }
-
-    &.is-visible {}
   }
 
   &__text {
