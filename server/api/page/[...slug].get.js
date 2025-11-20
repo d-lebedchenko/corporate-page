@@ -11,7 +11,7 @@ const fetchPayloadPage = async (payloadUrl, collectionSlug, fullSlug, locale) =>
 
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig()
-    const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+    const payloadUrl = config.public.payloadUrl
 
     let slugParts = event.context.params.slug
 

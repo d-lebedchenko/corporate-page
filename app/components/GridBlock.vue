@@ -6,7 +6,7 @@ import Anim2 from '~/assets/icons/animation-2-active.svg'
 import Anim3 from '~/assets/icons/animation-3-active.svg'
 
 const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+const payloadUrl = config.public.payloadUrl
 
 defineProps({
   title: {

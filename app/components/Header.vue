@@ -5,7 +5,7 @@ const { data } = useFetch('/api/header')
 const scrollProgress = ref(0)
 const isOpen = ref(false)
 const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+const payloadUrl = config.public.payloadUrl
 
 const { locale } = useI18n();
 

@@ -4,7 +4,7 @@ import Anim2 from '~/assets/icons/career-anim-2.svg'
 import Anim3 from '~/assets/icons/career-anim-3.svg'
 
 const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+const payloadUrl = config.public.payloadUrl
 
 defineProps({
   title: {

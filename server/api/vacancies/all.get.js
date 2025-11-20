@@ -2,7 +2,7 @@ import { stringify } from 'qs-esm'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
-  const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+  const payloadUrl = config.public.payloadUrl
 
   const query = getQuery(event);
   const locale = query.locale || 'uk'

@@ -5,7 +5,7 @@ import IconX from '~/assets/icons/x.svg'
 import ErrorIcon from '~/assets/icons/error.svg'
 
 const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+const payloadUrl = config.public.payloadUrl
 
 const props = defineProps({
   runingTitle: {

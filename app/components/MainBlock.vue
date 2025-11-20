@@ -2,7 +2,7 @@
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 
 const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+const payloadUrl = config.public.payloadUrl
 const props = defineProps({
   title: {
     type: String,

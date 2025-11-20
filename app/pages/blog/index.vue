@@ -4,7 +4,7 @@ const router = useRouter()
 const { locale } = useI18n()
 
 const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+const payloadUrl = config.public.payloadUrl
 
 function getInitialPage() {
   const p = Number(route.query.page || 1)

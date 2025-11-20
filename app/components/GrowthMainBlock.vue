@@ -15,7 +15,7 @@ const props = defineProps({
 })
 
 const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+const payloadUrl = config.public.payloadUrl
 
 const {
   containerRef,
