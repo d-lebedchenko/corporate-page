@@ -358,7 +358,7 @@ const slidePrev = () => {
       @include respond("tab") {
         font-family: $font-primary;
         font-size: 16px;
-        line-height: 1.3;
+        line-height: 130%;
         margin-bottom: 12px;
       }
     }
