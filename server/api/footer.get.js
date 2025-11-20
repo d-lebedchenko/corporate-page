@@ -1,5 +1,5 @@
-export default defineEventHandler(async () => {
-  const config = useRuntimeConfig()
+export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig(event)
   const payloadUrl = config.public.payloadUrl
 
   // Запит до Payload (global header)

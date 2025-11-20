@@ -1,7 +1,7 @@
 import { stringify } from 'qs-esm'
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig()
+  const config = useRuntimeConfig(event)
   const payloadUrl = config.public.payloadUrl
 
   const query = getQuery(event);
