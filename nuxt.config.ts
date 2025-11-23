@@ -109,5 +109,6 @@ export default defineNuxtConfig({
       'md': 600,
       'lg': 1024,
     },
+    quality: 80,
   },
 });
