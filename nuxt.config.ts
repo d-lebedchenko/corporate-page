@@ -2,6 +2,7 @@
 import svgLoader from "vite-svg-loader";
 
 const payloadUrl = process.env.NUXT_PUBLIC_PAYLOAD_URL!;
+const payloadHostname = new URL(payloadUrl).hostname;
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -14,6 +15,14 @@ export default defineNuxtConfig({
   },
 
   css: ["~/assets/scss/global.scss"],
+
+  nitro: {
+    routeRules: {
+      '/payload/**': {
+        proxy: `${payloadUrl}/**`,
+      },
+    },
+  },
 
   vite: {
     css: {
@@ -51,6 +60,7 @@ export default defineNuxtConfig({
     "@morev/vue-transitions/nuxt",
     "nuxt-lottie",
     "@nuxt/fonts",
+    "@nuxt/image",
   ],
   i18n: {
     locales: [
@@ -86,5 +96,17 @@ export default defineNuxtConfig({
   },
   lottie: {
     autoFolderCreation: false,
+  },
+  image: {
+    domains: [payloadHostname],
+    alias: {
+      payload: payloadUrl,
+    },
+    screens: {
+      'xs': 320,
+      'sm': 350,
+      'md': 600,
+      'lg': 1024,
+    },
   },
 });
