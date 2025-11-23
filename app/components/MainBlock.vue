@@ -81,6 +81,7 @@ onBeforeUnmount(() => {
           :width="image.width"
           :height="image.height"
           sizes="xs:100vw sm:100vw md:100vw lg:501px"
+          :preload="{ fetchPriority: 'high' }"
         />
       </div>
       <div class="main-section__right">
