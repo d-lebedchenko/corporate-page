@@ -105,6 +105,7 @@ export default defineNuxtConfig({
     screens: {
       'xs': 320,
       'sm': 350,
+      '2sm': 430,
       'md': 600,
       'lg': 1024,
     },
