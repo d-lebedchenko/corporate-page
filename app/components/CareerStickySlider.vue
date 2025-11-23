@@ -1,7 +1,4 @@
 <script setup>
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 defineProps({
   title: {
     type: String,
@@ -57,7 +54,15 @@ useSwiper(sliderRef, {
     <div class="container">
       <div class="career-sticky-slider__wr d-f ai-fs">
         <div class="career-sticky-slider__content">
-          <img class="career-sticky-slider__icon" :src="`${payloadUrl}${icon.url}`" :alt="icon.alt">
+          <NuxtPicture
+            class="career-sticky-slider__icon"
+            :src="`/payload${icon.url}`"
+            :alt="icon.alt || ''"
+            :width="icon.width"
+            :height="icon.height"
+            sizes="xs:172px lg:176px"
+            loading="lazy"
+          />
 
           <h2 class="career-sticky-slider__title f-h2">
             {{ title }}
@@ -68,19 +73,32 @@ useSwiper(sliderRef, {
         </div>
 
         <div class="career-sticky-slider__slider d-f fd-c ai-c">
-          <div v-for="(slide, id) in slides" :key="id" class="career-sticky-slider__slide__img">
-            <img :src="`${payloadUrl}${slide.image.url}`" :alt="slide.image.alt">
-
-          </div>
+          <NuxtPicture
+            v-for="slide in slides"
+            :key="slide.id"
+            class="career-sticky-slider__slide__img"
+            :src="`/payload${slide.image.url}`"
+            :alt="slide.image.alt || ''"
+            :width="slide.image.width"
+            :height="slide.image.height"
+            sizes="516px"
+            loading="lazy"
+          />
         </div>
 
         <div class="career-sticky-slider__slider mob">
           <ClientOnly>
             <swiper-container v-if="slidesMobile.length > 0" ref="sliderRef">
               <swiper-slide class="career-sticky-slider__item" v-for="(slide, id) in [...slidesMobile, ...slidesMobile]" :key="id">
-                <div class="slide-image-wrapper">
-                  <img :src="`${payloadUrl}${slide.image.url}`" :alt="slide.image.alt">
-                </div>
+                <NuxtPicture
+                  class="slide-image-wrapper"
+                  :src="`/payload${slide.image.url}`"
+                  :alt="slide.image.alt || ''"
+                  :width="slide.image.width"
+                  :height="slide.image.height"
+                  sizes="300px"
+                  loading="lazy"
+                />
               </swiper-slide>
             </swiper-container>
           </ClientOnly>
@@ -129,14 +147,17 @@ $slide-scale: 0.8667;
   }
 
   &__icon {
-    width: 176px;
-    height: auto;
+    display: block;
     margin-bottom: 28px;
 
-    @include respond("tab") {
-      width: 172px;
+    &:deep(img) {
+      display: block;
+      width: 176px;
+      height: auto;
+      @include respond("tab") {
+        width: 172px;
+      }
     }
-
   }
 
   &__title {
@@ -189,6 +210,16 @@ $slide-scale: 0.8667;
     }
   }
 
+  &__slide__img {
+    display: block;
+    max-width: 516px;
+    width: 100%;
+    &:deep(img) {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 swiper-slide {
@@ -198,6 +229,7 @@ swiper-slide {
 }
 
 .slide-image-wrapper {
+  display: block;
   width: 100%; 
   height: 100%; 
   overflow: hidden;
@@ -206,7 +238,8 @@ swiper-slide {
   transform: scale($slide-scale);
   transform-origin: center center;
 
-  img {
+  &:deep(img) {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;

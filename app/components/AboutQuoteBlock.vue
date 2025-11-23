@@ -22,9 +22,6 @@ const props = defineProps({
   },
 })
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const {
   containerRef,
   isVisible
@@ -47,15 +44,16 @@ const quoteLetters = computed(() => {
 
     <div class="container">
       <div class="about-quote-block__inner">
-        <div class="about-quote-block__image">
-          <img
-            v-if="image?.url"
-            :src="`${payloadUrl}${image.url}`"
-            :alt="image?.alt"
-            :width="image.width"
-            :height="image.height"
-          >
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="about-quote-block__image"
+          :src="`/payload${image.url}`"
+          :alt="name || image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:100vw sm:100vw md:50vw lg:614px"
+          loading="lazy"
+        />
 
         <div class="about-quote-block__text">
           <p
@@ -122,6 +120,7 @@ const quoteLetters = computed(() => {
   }
 
   &__image {
+    display: block;
     flex: 1 1 612px;
     height: 400px;
     @include respond("tab") {
@@ -133,7 +132,8 @@ const quoteLetters = computed(() => {
       margin-bottom: 16px;
     }
 
-    img {
+    &:deep(img) {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;

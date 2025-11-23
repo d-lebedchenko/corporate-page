@@ -14,9 +14,6 @@ const props = defineProps({
   },
 })
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const {
   containerRef,
   isVisible
@@ -42,15 +39,15 @@ const descrLetters = computed(() => {
   <div class="growth-main-block">
     <div class="container">
       <div class="growth-main-block__inner">
-        <div class="growth-main-block__img">
-          <img
-            v-if="image?.url"
-            :src="`${payloadUrl}${image.url}`"
-            :alt="image?.alt"
-            :width="image.width"
-            :height="image.height"
-          >
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="growth-main-block__img"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:100vw sm:100vw md:100vw lg:692px"
+        />
 
         <div class="growth-main-block__text">
           <h1
@@ -106,6 +103,7 @@ const descrLetters = computed(() => {
   }
 
   &__img {
+    display: block;
     flex: 1 1 692px;
     @include respond("tab") {
       height: 307px;
@@ -114,7 +112,8 @@ const descrLetters = computed(() => {
       height: 263px;
     }
 
-    img {
+    &:deep(img) {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;

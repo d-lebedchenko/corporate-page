@@ -4,8 +4,6 @@ import IconX from '~/assets/icons/x.svg'
 const { data } = useFetch('/api/header')
 const scrollProgress = ref(0)
 const isOpen = ref(false)
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
 
 const { locale } = useI18n();
 
@@ -38,7 +36,15 @@ onUnmounted(() => {
     <header class="header">
       <div class="header__inner d-f ai-c">
         <NuxtLink :to="$localePath('/')" class="header__logo">
-          <img v-if="data.logo?.url" :src="`${payloadUrl}${data.logo.url}`" :alt="data.logo.label" />
+          <NuxtPicture
+            v-if="data.logo?.url"
+            :src="`/payload${data.logo.url}`"
+            :alt="data.logo.alt || 'TENTENS Tech'"
+            width="110"
+            height="40"
+            sizes="77px lg:110px"
+            fit="inside"
+          />
         </NuxtLink>
         <div class="header__linebar__wr">
 
@@ -82,7 +88,16 @@ onUnmounted(() => {
           </div>
           <div class="header__social__icons d-f">
             <CmsLink class="header__social__icons__item" v-for="item in data.social" :key="item.id" :link="item.link">
-              <img v-if="item.image?.url" :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
+              <NuxtPicture
+                v-if="item.image?.url"
+                :src="`/payload${item.image.url}`"
+                :alt="item.link?.label || item.image.alt || 'Social link'"
+                width="36"
+                height="36"
+                sizes="32px md:36px"
+                fit="inside"
+                loading="lazy"
+              />
             </CmsLink>
           </div>
         </div>
@@ -124,19 +139,22 @@ onUnmounted(() => {
   }
 
   &__logo {
-    width: 110px;
-    height: 40px;
     flex-shrink: 0;
 
-    img {
-      width: 100%;
-      height: 100%;
+    picture {
+      display: block;
+      &:deep(img) {
+        display: block;
+        width: 110px;
+        height: 40px;
+        object-fit: contain;
+        @include respond("tab") {
+          width: 77px;
+          height: 28px;
+        }
+      }
     }
 
-    @include respond("tab") {
-      width: 77px;
-      height: 28px;
-    }
   }
 
   &__linebar {
@@ -293,17 +311,18 @@ onUnmounted(() => {
       gap: 20px;
 
       &__item {
-        width: 36px;
-        height: 36px;
-
-        @include respond("mob") {
-          width: 32px;
-          height: 32px;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
+        picture {
+          display: block;
+          &:deep(img) {
+            display: block;
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            @include respond("mob") {
+              width: 32px;
+              height: 32px;
+            }
+          }
         }
       }
     }

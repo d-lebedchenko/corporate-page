@@ -1,8 +1,6 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
 const props = defineProps({
   title: {
     type: String,
@@ -75,9 +73,15 @@ onBeforeUnmount(() => {
             </div>
           </NuxtMarquee>
         </div>
-        <div class="main-section__img" v-if="image?.url">
-          <img :src="`${payloadUrl}${image?.url}`" :alt="image?.alt">
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="main-section__img"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:100vw sm:100vw md:100vw lg:501px"
+        />
       </div>
       <div class="main-section__right">
         <div class="main-section__top">
@@ -119,6 +123,7 @@ onBeforeUnmount(() => {
   padding-bottom: 28px;
   padding-top: 28px;
   height: calc(100vh - 62px);
+  overflow: hidden;
 
     @include respond("tab") {
       height: 100%;
@@ -155,11 +160,13 @@ onBeforeUnmount(() => {
   }
 
   &__img {
+    display: block;
     height: 100%;
     width: 501px;
     margin-left: auto;
 
-    img {
+    &:deep(img) {
+      display: block;
       height: 100%;
       width: 100%;
       object-fit: cover;

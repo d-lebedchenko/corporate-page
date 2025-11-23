@@ -1,7 +1,4 @@
 <script setup>
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const props = defineProps({
   title: {
     type: String,
@@ -104,9 +101,16 @@ onBeforeUnmount(() => {
   <section class="nolimits">
     <div class="container">
       <div class="nolimits__wr">
-        <div class="nolimits__image d-f jc-e">
-          <img :src="`${payloadUrl}${image.url}`" :alt="image.alt">
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="nolimits__image d-f jc-e"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:100vw sm:100vw md:50vw lg:524px"
+          loading="lazy"
+        />
 
         <h2 class="nolimits__title f-a2 hide-tablet">
           <span class="first-word">{{ title.split(' ')[0] }}</span>
@@ -163,7 +167,8 @@ onBeforeUnmount(() => {
       padding-left: 0;
     }
 
-    img {
+    &:deep(img) {
+      display: block;
       width: 100%;
       height: auto;
     }

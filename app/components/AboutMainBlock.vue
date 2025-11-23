@@ -17,24 +17,21 @@ defineProps({
     default: () => ({})
   },
 })
-
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
 </script>
 
 <template>
   <div class="about-main-block">
     <div class="container">
       <div class="about-main-block__inner">
-        <div class="about-main-block__image">
-          <img
-            v-if="image?.url"
-            :src="`${payloadUrl}${image.url}`"
-            :alt="image?.alt"
-            :width="image.width"
-            :height="image.height"
-          >
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="about-main-block__image"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:100vw sm:100vw md:100vw lg:694px"
+        />
 
         <div class="about-main-block__text">
           <div class="about-main-block__text-head">
@@ -91,6 +88,7 @@ const payloadUrl = config.public.payloadUrl
   }
 
   &__image {
+    display: block;
     flex-basis: 694px;
     height: 600px;
     @include respond("tab") {
@@ -98,7 +96,8 @@ const payloadUrl = config.public.payloadUrl
       height: 316px;
     }
 
-    img {
+    &:deep(img) {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;

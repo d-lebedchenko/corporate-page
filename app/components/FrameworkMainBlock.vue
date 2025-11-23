@@ -14,9 +14,6 @@ const props = defineProps({
   },
 })
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const titleFirst = computed(() => {
   if (!props.title || typeof props.title !== 'string') return ''
   return props.title.trim().split(' ').slice(0, 2).join(' ')
@@ -32,15 +29,15 @@ const titleRest = computed(() => {
   <div class="framework-main-block">
     <div class="container">
       <div class="framework-main-block__wr">
-        <div class="framework-main-block__left">
-          <img
-            v-if="image?.url"
-            :src="`${payloadUrl}${image.url}`"
-            :alt="image?.alt"
-            :width="image.width"
-            :height="image.height"
-          >
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="framework-main-block__left"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:100vw sm:100vw md:100vw lg:516px"
+        />
 
         <div class="framework-main-block__right">
           <h1
@@ -84,6 +81,7 @@ const titleRest = computed(() => {
   }
 
   &__left {
+    display: block;
     flex: 0 0 50%;
     min-height: 460px;
     @include respond("tab") {
@@ -91,7 +89,7 @@ const titleRest = computed(() => {
       margin-bottom: 20px;
     }
 
-    img {
+    &:deep(img) {
       display: block;
       max-width: 516px;
       margin-left: auto;

@@ -5,9 +5,6 @@ import Anim1 from '~/assets/icons/animation-1-active.svg'
 import Anim2 from '~/assets/icons/animation-2-active.svg'
 import Anim3 from '~/assets/icons/animation-3-active.svg'
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 defineProps({
   title: {
     type: String,
@@ -235,13 +232,22 @@ function handleIconThirdMouseLeave() {
           <Arrow class="icon icon-52" />
         </CmsLink>
       </div>
-      <div class="grid__partners" v-if="partners.length">
+      <div class="grid__partners" v-if="partners?.length">
         
         <NuxtMarquee autoFill :speed="30">
           
-          <template v-for="(item, id) in partners" :key="id">
+          <template v-for="item in partners" :key="item.id">
             <CmsLink class="grid__partners__item" :link="item.link">
-              <img :src="`${payloadUrl}${item.image.url}`" :alt="item.link.label" />
+              <NuxtPicture
+                v-if="item.image?.url"
+                :src="`/payload${item.image.url}`"
+                :alt="item.link?.label || item.image.alt || 'Partner link'"
+                width="112"
+                height="72"
+                sizes="90px lg:112px"
+                fit="inside"
+                loading="lazy"
+              />
             </CmsLink>
           </template>
         </NuxtMarquee>
@@ -551,21 +557,25 @@ function handleIconThirdMouseLeave() {
     }
 
     &__item {
-      width: 112px;
-      height: 72px;
       flex-shrink: 0;
       margin-right: 142px;
 
       @include respond("tab") {
-        width: 89.6px;
-        height: 57.6px;
         margin-right: 28px;
       }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+      picture {
+        display: block;
+        &:deep(img) {
+          display: block;
+          width: 112px;
+          height: 72px;
+          object-fit: contain;
+          @include respond("tab") {
+            width: 90px;
+            height: 58px;
+          }
+        }
       }
     }
   }

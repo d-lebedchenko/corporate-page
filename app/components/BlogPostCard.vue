@@ -29,9 +29,6 @@ const props = defineProps({
   },
 })
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const target = ref(null)
 const visible = useElementVisibility(target, { once: true })
 
@@ -58,15 +55,16 @@ const link = {
     ]"
   >
     <CmsLink class="blog-post-card__wr" :link="link">
-      <div class="blog-post-card__head">
-        <img
-          v-if="image?.url"
-          :src="`${payloadUrl}${image.url}`"
-          :alt="image?.alt || ''"
-          :width="image?.width"
-          :height="image?.height"
-        />
-      </div>
+      <NuxtPicture
+        v-if="image?.url"
+        class="blog-post-card__head"
+        :src="`/payload${image.url}`"
+        :alt="image.alt || ''"
+        :width="image?.width"
+        :height="image?.height"
+        sizes="xs:100vw sm:100vw md:300px lg:532px"
+        loading="lazy"
+      />
 
       <div class="blog-post-card__body">
         <div class="blog-post-card__info">
@@ -149,6 +147,7 @@ const link = {
   }
 
   &__head {
+    display: block;
     flex: 0 1 532px;
     min-height: 360px;
     @include respond("tab") {
@@ -160,7 +159,7 @@ const link = {
       height: 200px;
     }
 
-    img {
+    &:deep(img) {
       display: block;
       width: 100%;
       height: 100%;

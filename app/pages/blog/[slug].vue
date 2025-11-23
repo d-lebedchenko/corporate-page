@@ -2,9 +2,6 @@
 const route = useRoute()
 const { locale, t } = useI18n()
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const { formatDate } = useDateFormat()
 
 const slug = computed(() => route.params.slug)
@@ -80,15 +77,15 @@ const breadcrumbsList = [
             </div>
           </div>
 
-          <div class="post-page__head-right">
-            <img
-              v-if="page.image?.url"
-              :src="`${payloadUrl}${page.image.url}`"
-              :alt="page.image?.alt || ''"
-              :width="page.image?.width"
-              :height="page.image?.height"
-            />
-          </div>
+          <NuxtPicture
+            v-if="page.image?.url"
+            class="post-page__head-right"
+            :src="`/payload${page.image.url}`"
+            :alt="page.image.alt || ''"
+            :width="page.image.width"
+            :height="page.image.height"
+            sizes="xs:100vw sm:100vw md:100vw lg:692px"
+          />
         </div>
       </div>
     </div>
@@ -171,6 +168,7 @@ const breadcrumbsList = [
     }
 
     &-right {
+      display: block;
       flex: 0 1 692px;
       min-height: 360px;
       @include respond("tab") {
@@ -178,7 +176,7 @@ const breadcrumbsList = [
         height: 200px;
       }
 
-      img {
+      &:deep(img) {
         display: block;
         width: 100%;
         height: 100%;

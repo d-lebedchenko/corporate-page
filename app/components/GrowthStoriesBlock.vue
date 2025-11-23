@@ -13,9 +13,6 @@ defineProps({
   },
 })
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const swiperInstance = ref(null)
 
 const onSwiper = (swiper) => {
@@ -77,15 +74,16 @@ const slidePrev = () => {
 
               <div class="slide__body">
                 <div class="slide__person dots-border dots-border--hide-bottom">
-                  <img
+                  <NuxtPicture
                     v-if="item.image?.url"
                     class="slide__person-img"
-                    :src="`${payloadUrl}${item.image.url}`"
-                    :alt="item.image?.alt"
+                    :src="`/payload${item.image.url}`"
+                    :alt="item.image.alt || ''"
                     :width="item.image.width"
                     :height="item.image.height"
+                    sizes="xs:100vw sm:100vw md:100vw lg:694px"
                     loading="lazy"
-                  >
+                  />
 
                   <div class="slide__person-text">
                     <p
@@ -113,6 +111,7 @@ const slidePrev = () => {
                         width="50"
                         height="32"
                         aria-hidden="true"
+                        loading="lazy"
                       />
                       <p
                         v-if="item.highlightedText"
@@ -266,9 +265,15 @@ const slidePrev = () => {
       display: block;
       width: 100%;
       height: 529px;
-      object-fit: cover;
       @include respond("tab") {
         height: 240px;
+      }
+      
+      &:deep(img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
 

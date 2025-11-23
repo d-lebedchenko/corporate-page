@@ -4,9 +4,6 @@ import Attachment from '~/assets/icons/paperclip.svg'
 import IconX from '~/assets/icons/x.svg'
 import ErrorIcon from '~/assets/icons/error.svg'
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const props = defineProps({
   runingTitle: {
     type: String,
@@ -180,9 +177,16 @@ const handleSubmit = (event) => {
     </NuxtMarquee>
     <div class="container">
       <div class="form__wr">
-        <div class="form__image d-f jc-c">
-          <img v-if="image?.url" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="form__image d-f jc-c"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:345px lg:430px"
+          loading="lazy"
+        />
 
         <div class="form__content d-f fd-c">
 
@@ -298,7 +302,8 @@ const handleSubmit = (event) => {
       align-items: flex-start;
     }
 
-    img {
+    &:deep(img) {
+      display: block;
       width: auto;
       height: 100%;
       object-fit: cover;

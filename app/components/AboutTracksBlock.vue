@@ -260,7 +260,7 @@ const slidePrev = () => {
 
   &__content {
     position: relative;
-    flex: 1 0 693px;
+    flex: 1 1 693px;
     min-width: 0;
 
     &-inner {

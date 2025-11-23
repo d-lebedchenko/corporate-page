@@ -3,9 +3,6 @@ import Anim1 from '~/assets/icons/career-anim-1.svg'
 import Anim2 from '~/assets/icons/career-anim-2.svg'
 import Anim3 from '~/assets/icons/career-anim-3.svg'
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 defineProps({
   title: {
     type: String,
@@ -86,8 +83,28 @@ const {
           <h2 class="career-stats__title f-h1">{{ title }}</h2>
 
           <RichtextLexical :content="text" class="career-stats__text f-p2" />
-          <img class="career-stats__img hide-tablet" :src="`${payloadUrl}${image.url}`" :alt="image.alt">
-          <img v-if="imageMobile?.url" class="career-stats__img hide-desctop" :src="`${payloadUrl}${imageMobile.url}`" :alt="imageMobile.alt">
+          <NuxtPicture
+            v-if="image?.url"
+            class="career-stats__img hide-tablet"
+            :src="`/payload${image.url}`"
+            :alt="image.alt || ''"
+            width="537"
+            height="441"
+            fit="inside"
+            sizes="537px"
+            loading="lazy"
+          />
+          <NuxtPicture
+            v-if="imageMobile?.url"
+            class="career-stats__img hide-desctop"
+            :src="`/payload${imageMobile.url}`"
+            :alt="imageMobile.alt || ''"
+            width="210"
+            height="210"
+            fit="inside"
+            sizes="210px"
+            loading="lazy"
+          />
         </div>
         <div class="career-stats__content">
 
@@ -211,6 +228,12 @@ const {
     @include respond("mob") {
       top: 0;
       left: 122px;
+    }
+
+    &:deep(img) {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   }
 

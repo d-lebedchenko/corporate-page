@@ -53,7 +53,7 @@ function getVacancyLink(slug) {
             v-if="item.locations?.length"
             class="vacancies-group__item-info-loc f-p3"
           >
-            <img class="icon-24 shrink-0" src="/img/map-pin.svg" width="24" height="24" alt="" >
+            <img class="icon-24 shrink-0" src="/img/map-pin.svg" width="24" height="24" alt="" loading="lazy">
             {{ formatLocationLabels(item.locations) }}
           </p>
         </div>

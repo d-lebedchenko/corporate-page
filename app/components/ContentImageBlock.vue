@@ -1,9 +1,6 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 defineProps({
   title: {
     type: String,
@@ -47,9 +44,17 @@ defineProps({
             <Arrow class="icon icon-32 shrink-0" />
           </CmsLink>
         </div>
-        <div class="content-image__image d-f jc-c">
-          <img :src="`${payloadUrl}${image.url}`" :alt="image.alt">
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="content-image__image d-f jc-c"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          width="488"
+          height="488"
+          sizes="xs:100vw sm:345px lg:488px"
+          fit="cover"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
@@ -128,7 +133,7 @@ defineProps({
       padding-left: 0;
     }
 
-    img {
+    &:deep(img) {
       display: block;
       max-width: 488px;
       width: auto;

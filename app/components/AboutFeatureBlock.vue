@@ -29,9 +29,6 @@ const props = defineProps({
   },
 })
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 const {
   containerRef,
   isVisible,
@@ -126,17 +123,17 @@ const Icon = computed(() => {
             v-if="person && (person.avatar?.url || person.name || person.position)"
             class="about-feature-block__person"
           >
-            <div
+            <NuxtPicture
               v-if="person.avatar?.url"
               class="about-feature-block__person-img"
-            >
-              <img
-                :src="`${payloadUrl}${person.avatar?.url}`"
-                :alt="person.avatar?.alt"
-                width="64"
-                height="64"
-              >
-            </div>
+              :src="`/payload${person.avatar.url}`"
+              :alt="person.name || person.avatar.alt || ''"
+              width="80"
+              height="80"
+              sizes="xs:64px lg:80px"
+              fit="cover"
+              loading="lazy"
+            />
 
             <div class="about-feature-block__person-info">
               <p
@@ -303,6 +300,7 @@ const Icon = computed(() => {
     }
 
     &-img {
+      display: block;
       width: 80px;
       height: 80px;
       flex-shrink: 0;
@@ -311,7 +309,8 @@ const Icon = computed(() => {
         height: 64px;
       }
 
-      img {
+      &:deep(img) {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;

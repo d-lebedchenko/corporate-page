@@ -1,7 +1,4 @@
 <script setup>
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 defineProps({
   title: {
     type: String,
@@ -37,9 +34,15 @@ defineProps({
             {{ subtitle }}
           </span>
         </div>
-        <div class="career-main__img" v-if="image?.url">
-          <img   v-if="image?.url" :src="`${payloadUrl}${image.url}`" :alt="image?.alt">
-        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="career-main__img"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:100vw sm:100vw md:100vw lg:1388px"
+        />
       </div>
     </div>
   </div>
@@ -57,14 +60,15 @@ defineProps({
   }
 
   &__img {
+    display: block;
     height: 360px;
     width: 100%;
-    object-fit: cover;
     @include respond("tab") {
       height: 200px;
     }
 
-    img {
+    &:deep(img) {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;

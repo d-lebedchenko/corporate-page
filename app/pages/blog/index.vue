@@ -3,9 +3,6 @@ const route = useRoute()
 const router = useRouter()
 const { locale } = useI18n()
 
-const config = useRuntimeConfig()
-const payloadUrl = config.public.payloadUrl
-
 function getInitialPage() {
   const p = Number(route.query.page || 1)
   return Number.isFinite(p) && p > 0 ? p : 1
@@ -60,13 +57,14 @@ const pagesList = computed(() => {
         >
           {{ pageData.subtitle }}
         </h2>
-        <img
+        <NuxtPicture
           v-if="pageData?.image?.url"
           class="blog-page__head-img"
-          :src="`${payloadUrl}${pageData.image.url}`"
-          :alt="pageData.image?.alt || ''"
-          :width="pageData.image?.width"
-          :height="pageData.image?.height"
+          :src="`/payload${pageData.image.url}`"
+          :alt="pageData.image.alt || ''"
+          :width="pageData.image.width"
+          :height="pageData.image.height"
+          sizes="xs:100vw sm:100vw md:100vw lg:1388px"
         />
       </div>
 
@@ -141,7 +139,6 @@ const pagesList = computed(() => {
       display: block;
       width: 100%;
       height: 360px;
-      object-fit: cover;
       @include respond("tab") {
         height: 200px;
       }
@@ -151,6 +148,13 @@ const pagesList = computed(() => {
         @include respond("tab") {
           margin-top: 20px;
         }
+      }
+      
+      &:deep(img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }
