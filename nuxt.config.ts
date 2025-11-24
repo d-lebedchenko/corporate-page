@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from "vite-svg-loader";
 
+const baseUrl = process.env.NUXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 const payloadUrl = process.env.NUXT_PUBLIC_PAYLOAD_URL!;
 const payloadHostname = new URL(payloadUrl).hostname;
 
@@ -10,6 +11,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      baseUrl,
       payloadUrl,
     },
   },
@@ -63,9 +65,10 @@ export default defineNuxtConfig({
     "@nuxt/image",
   ],
   i18n: {
+    baseUrl,
     locales: [
-      { code: "uk", iso: "uk-UA", name: "Українська", file: 'uk.json' },
-      { code: "en", iso: "en-US", name: "English", file: 'en.json' },
+      { code: "uk", language: "uk-UA", name: "Українська", file: 'uk.json' },
+      { code: "en", language: "en-US", name: "English", file: 'en.json' },
     ],
 
     defaultLocale: "uk",
