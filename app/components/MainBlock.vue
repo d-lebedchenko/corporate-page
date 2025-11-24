@@ -132,35 +132,29 @@ onBeforeUnmount(() => {
     height: 100%;
 
     @include respond("tab") {
-      gap: 20px;
-      flex-direction: column;
+      display: block;
     }
 
   }
 
   &__left {
-    width: 100%;
+    flex: 1;
     overflow: hidden;
     position: relative;
     padding-left: 26px;
     margin-left: -26px;
 
     @include respond("tab") {
-      margin-left: 0;
-      padding-left: 0;
       min-height: 360px;
-      padding-left: 15px;
-      margin-left: -15px;
-      margin-right: -15px;
-      padding-right: 15px;
-      width: auto;
+      padding: 0 15px;
+      margin: 0 -15px 20px;
     }
   }
 
   &__img {
     display: block;
     height: 100%;
-    width: 501px;
+    flex: 1;
     margin-left: auto;
 
     &:deep(img) {
@@ -172,12 +166,13 @@ onBeforeUnmount(() => {
 
     @include respond("tab") {
       height: 360px;
-      width: 100%;
+      // width: 100%;
     }
   }
 
   &__marquee {
-    width: 180px;
+    min-width: 0;
+    flex: 0 0 180px;
     transform: translateX(calc(100% - 10px));
 
     :deep() {
@@ -186,8 +181,8 @@ onBeforeUnmount(() => {
       }
     }
     @include respond("tab") {
-      width: 64px;
-    transform: translateX(100%);
+      flex-basis: 64px;
+      transform: translateX(100%);
     }
   }
 
@@ -203,15 +198,13 @@ onBeforeUnmount(() => {
    
 
   &__right {
-    max-width: 702px;
-    width: 100%;
-    flex-shrink: 0;
+    flex: 0 0 702px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     @include respond("tab") {
-      max-width: 100%;
+      display: block;
     }
   }
 
