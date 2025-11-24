@@ -116,4 +116,8 @@ export default defineNuxtConfig({
       maxAge: 86400, // 24h
     },
   },
+  vitalizer: {
+    disablePrefetchLinks: 'dynamicImports',
+    disablePreloadLinks: true,
+  },
 });
