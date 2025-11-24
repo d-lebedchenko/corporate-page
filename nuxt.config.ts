@@ -110,5 +110,8 @@ export default defineNuxtConfig({
       'lg': 1024,
     },
     quality: 80,
+    ipx: {
+      maxAge: 86400, // 24h
+    },
   },
 });
