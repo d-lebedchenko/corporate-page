@@ -63,6 +63,7 @@ export default defineNuxtConfig({
     "nuxt-lottie",
     "@nuxt/fonts",
     "@nuxt/image",
+    'nuxt-vitalizer',
   ],
   i18n: {
     baseUrl,
