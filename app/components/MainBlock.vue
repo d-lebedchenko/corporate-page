@@ -81,7 +81,6 @@ onBeforeUnmount(() => {
           :width="image.width"
           :height="image.height"
           sizes="2sm:506px md:930px lg:501px"
-          :preload="{ fetchPriority: 'high' }"
         />
         <NuxtPicture
           v-if="image?.url"
