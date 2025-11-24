@@ -1,9 +1,3 @@
-<script setup>
-import Footer from '~/components/Footer.vue'
-import Header from '~/components/Header.vue'
-import DynamicCursor from '~/components/DynamicCursor.vue' 
-</script>
-
 <template>
   <div>
     <Header />
@@ -17,6 +11,3 @@ import DynamicCursor from '~/components/DynamicCursor.vue'
     </ClientOnly>
   </div>
 </template>
-
-<style>
-</style>

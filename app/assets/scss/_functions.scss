@@ -1,0 +1,8 @@
+@use "sass:math";
+
+@function percent-width-with-gap($items, $gap) {
+  $width: math.div(100%, $items);
+  $gutter: math.div(($items - 1), $items) * $gap;
+
+  @return calc($width - $gutter);
+}

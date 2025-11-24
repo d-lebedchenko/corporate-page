@@ -1,0 +1,36 @@
+{
+  "about_tracks_block": {
+    "title_tasks": "Ключові задачі команди:",
+    "title_stacks": "Технологічний стек і підходи:"
+  },
+  "breadcrumb": {
+    "blog": "Блог",
+    "vacancies": "Вакансії"
+  },
+  "related_posts_block": {
+    "title_fallback": "Схожі статті"
+  },
+  "post_content_block": {
+    "contents": "Зміст"
+  },
+  "framework_nav_block": {
+    "review": "Переглянути"
+  },
+  "vacancies": {
+    "any_department": "Будь-який відділ",
+    "any_location": "Будь-яке місцезнаходження",
+    "other_department": "Інше",
+    "not_found": "Вакансій не знайдено",
+    "more_details": "Докладніше",
+    "apply": "Подати заявку",
+    "apply_job": "Подати заявку на вакансію",
+    "employment": {
+      "full_time": "Повна зайнятість",
+      "part_time": "Неповна зайнятість"
+    }
+  },
+  "swiper": {
+    "prev": "Попередній слайд",
+    "next": "Наступний слайд"
+  }
+}

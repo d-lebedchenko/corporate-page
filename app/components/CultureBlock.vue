@@ -1,8 +1,11 @@
 <script setup>
-// import RichtextLexical from './RichtextLexical'
 import Arrow from '~/assets/icons/arrow-right.svg'
-const config = useRuntimeConfig()
-const payloadUrl = config.public.NUXT_PUBLIC_PAYLOAD_URL
+
+defineProps({
+  title: { type: String, default: '' },
+  subtitle: { type: String, default: '' },
+  features: { type: Array, default: () => [] },
+})
 
 const containerRef = ref(null)
 const swiper = useSwiper(containerRef, {
@@ -11,7 +14,7 @@ const swiper = useSwiper(containerRef, {
   autoplay: {
     delay: 5000,
   },
-  slidesPerView: 2, // Дефолтно 2 слайди
+  slidesPerView: 2,
   creativeEffect: {
     prev: {
       shadow: true,
@@ -23,25 +26,14 @@ const swiper = useSwiper(containerRef, {
     },
   },
   breakpoints: {
-    0: {      // від 0px і до
-      slidesPerView: 1, // 1 слайд
+    0: {
+      slidesPerView: 1,
     },
-    601: {    // від 601px і більше
+    601: {
       slidesPerView: 2,
     },
   },
 })
-
-onMounted(() => {
-  console.log(swiper.instance)
-})
-
-const props = defineProps({
-  title: { type: String, default: '' },
-  subtitle: { type: String, default: '' },
-  features: { type: Array, default: () => [] },
-})
-
 </script>
 
 <template>
@@ -58,7 +50,7 @@ const props = defineProps({
           </h3>
         </div>
         <ul class="culture__list hide-tablet">
-          <li class="culture__item dots dots-hover d-f fd-c" v-for="(item, id) in features" :key="id">
+          <li class="culture__item dots dots-hover d-f fd-c clickable" v-for="(item, id) in features" :key="id">
             <span class="psevdo"></span>
             <h4 class="culture__item__title f-h3">
               {{ item.title }}
@@ -80,11 +72,11 @@ const props = defineProps({
           </ClientOnly>
           <div class="culture__slider__controls">
             
-            <button class="culture__slider__arrow prev dots dots-hover" @click="swiper.prev()">
+            <button class="culture__slider__arrow prev dots dots-hover" @click="swiper.prev()" :aria-label="$t('swiper.prev')">
               <span class="psevdo"></span>
               <Arrow class="icon green" />
             </button>
-            <button class="culture__slider__arrow next  dots dots-hover" @click="swiper.next()">
+            <button class="culture__slider__arrow next  dots dots-hover" @click="swiper.next()" :aria-label="$t('swiper.next')">
               <span class="psevdo"></span>
               <Arrow class="icon green" />
             </button>
@@ -133,6 +125,7 @@ const props = defineProps({
     min-height: 360px;
 
     &:hover {
+      background-color: transparent;
       .culture__item__text {
         max-height: 300px;
         padding-top: 32px;
@@ -192,6 +185,5 @@ const props = defineProps({
       }
     }
   }
-
 }
 </style>

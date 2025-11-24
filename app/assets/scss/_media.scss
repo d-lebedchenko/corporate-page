@@ -1,6 +1,7 @@
 @use "sass:map";
 
 $breakpoints: (
+  "mob-sm": 350px,
   "mob": 600px,
   "tab": 1024px,
 );
@@ -11,8 +12,16 @@ $breakpoints: (
   }
 }
 
+@mixin respond-min($device) {
+  @media (min-width: (map.get($breakpoints, $device) + 1px)) {
+    @content;
+  }
+}
+
 // examples 
 @include respond("tab") {
 }
 @include respond("mob") {
+}
+@include respond("mob-sm") {
 }

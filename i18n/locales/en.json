@@ -1,0 +1,36 @@
+{
+  "about_tracks_block": {
+    "title_tasks": "Key tasks of the team:",
+    "title_stacks": "Technology stack and approaches:"
+  },
+  "breadcrumb": {
+    "blog": "Blog",
+    "vacancies": "Vacancies"
+  },
+  "related_posts_block": {
+    "title_fallback": "Similar articles"
+  },
+  "post_content_block": {
+    "contents": "Contents"
+  },
+  "framework_nav_block": {
+    "review": "Review"
+  },
+  "vacancies": {
+    "any_department": "Any department",
+    "any_location": "Any location",
+    "other_department": "Other",
+    "not_found": "No vacancies found",
+    "more_details": "More details",
+    "apply": "Apply",
+    "apply_job": "Apply for a job",
+    "employment": {
+      "full_time": "Full-time employment",
+      "part_time": "Part-time employment"
+    }
+  },
+  "swiper": {
+    "prev": "Previous slide",
+    "next": "Next slide"
+  }
+}

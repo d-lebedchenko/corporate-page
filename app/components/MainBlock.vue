@@ -1,5 +1,6 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
+
 const props = defineProps({
   title: {
     type: String,
@@ -20,6 +21,10 @@ const props = defineProps({
   button: {
     type: Object,
     default: () => ({ label: '', url: '' })
+  },
+  image: {
+    type: Object,
+    default: () => ({})
   }
 })
 
@@ -27,6 +32,32 @@ const props = defineProps({
 const letters = computed(() =>
   props.text.split('').map(char => (char === '\n' ? '\n' : char))
 )
+
+const {
+  containerRef: textRef,
+  isVisible: isTextVisible
+} = useTextAnimation();
+
+const DESKTOP_SPEED = 150;
+const MOBILE_SPEED = 100;
+
+const currentSpeed = ref(DESKTOP_SPEED);
+
+const checkScreenSize = () => {
+  if (window.innerWidth < 1023) { 
+    currentSpeed.value = MOBILE_SPEED;
+  } else {
+    currentSpeed.value = DESKTOP_SPEED;
+  }
+};
+onMounted(() => {
+  checkScreenSize();
+  window.addEventListener('resize', checkScreenSize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkScreenSize);
+});
 </script>
 
 <template>
@@ -34,38 +65,46 @@ const letters = computed(() =>
     <div class="container main-section__wrapper d-f">
 
       <div class="main-section__left d-f">
-        <div class="main-section__runing f-a1"> {{ runningText + ' ' + runningText }}</div>
-        <div class="main-section__img"></div>
+        <div class="main-section__marquee">
+          
+          <NuxtMarquee autoFill :speed="currentSpeed"  :direction="'down'">
+            <div class="main-section__runing f-a1">
+              <span class="main-section__runing__text"> {{ runningText }} </span>&nbsp;
+            </div>
+          </NuxtMarquee>
+        </div>
+        <NuxtPicture
+          v-if="image?.url"
+          class="main-section__img"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:262px sm:327px 2sm:506px md:930px lg:501px"
+          :preload="{ fetchPriority: 'high' }"
+        />
       </div>
       <div class="main-section__right">
         <div class="main-section__top">
           <h1 class="main-section__title f-a2">
             {{ title }}
           </h1>
-          <h3 class="main-section__subtitle f-sh1 hide-tablet">
+          <h2 class="main-section__subtitle f-sh1">
             {{ subtitle }}
-          </h3>
-          <h3 class="main-section__subtitle f-sh2 hide-desctop">
-            {{ subtitle }}
-          </h3>
+          </h2>
         </div>
         <div class="main-section__bottom">
-
-          <p class="main-section__text f-p1">
-            <span
-              v-for="(letter, i) in letters"
-              :key="i"
-              class="animated-letter"
-              :style="{ 'animation-delay': `${i * 0.03}s` }"
-            >
+          <p class="main-section__text f-p1" ref="textRef" :class="{ 'is-visible': isTextVisible }">
+            <span v-for="(letter, i) in letters" :key="i" class="animated-letter"
+              :style="{ 'animation-delay': `${i * 0.015}s` }">
               {{ letter }}
             </span>
           </p>
-          <a :href="button.url" class="main-section__btn dots dots-hover f-b-p1 d-f jc-sb ai-c">
+          <CmsLink :link="button" class="main-section__btn dots dots-hover btn-green f-b-p1 d-f jc-sb ai-c">
             <span class="psevdo"></span>
             {{ button.label }}
-            <Arrow class="icon icon-52"/>
-          </a>
+            <Arrow class="icon icon-52" />
+          </CmsLink>
         </div>
 
       </div>
@@ -79,16 +118,21 @@ const letters = computed(() =>
 .main-section {
   background-color: $c-black;
   color: $c-white;
+  padding-bottom: 28px;
   padding-top: 28px;
-  padding-bottom: 82px;
-  height: 100vh;
+  height: calc(100vh - 62px);
+  overflow: hidden;
+
+    @include respond("tab") {
+      height: 100%;
+    }
 
   &__wrapper {
     gap: 16px;
     height: 100%;
-    
+
     @include respond("tab") {
-      gap:20px;
+      gap: 20px;
       flex-direction: column;
     }
 
@@ -100,63 +144,63 @@ const letters = computed(() =>
     position: relative;
     padding-left: 26px;
     margin-left: -26px;
-    
+
     @include respond("tab") {
       margin-left: 0;
       padding-left: 0;
       min-height: 360px;
+      padding-left: 15px;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding-right: 15px;
+      width: auto;
     }
   }
 
   &__img {
-    // height: calc(100vh - 48px);
+    display: block;
     height: 100%;
     width: 501px;
-    background-color: $c-green;
     margin-left: auto;
-    
-    @include respond("tab") {
+
+    &:deep(img) {
+      display: block;
       height: 100%;
       width: 100%;
-      margin-left: 67px;
+      object-fit: cover;
+    }
+
+    @include respond("tab") {
+      height: 360px;
+      width: 100%;
+    }
+  }
+
+  &__marquee {
+    width: 180px;
+    transform: translateX(calc(100% - 10px));
+
+    :deep() {
+      .vfm-marquee-container {
+        transform-origin: top left;
+      }
+    }
+    @include respond("tab") {
+      width: 64px;
+    transform: translateX(100%);
     }
   }
 
   &__runing {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform-origin: bottom left;
+    rotate: -90deg;
+    font-size: 150px;
     text-transform: uppercase;
-    transform: rotate(-90deg) translateY(180px) translateX(0);
-    line-height: 100%;
-    animation: runing 5s linear infinite;
-    white-space: nowrap;
-    
-    @keyframes runing {
-      0% {
-        transform: rotate(-90deg) translateY(180px)  translateX(0);
-      }
-
-      100% {
-        transform: rotate(-90deg) translateY(180px) translateX(-2950px);
-      }
-    }
-    @keyframes runingmobile {
-      0% {
-        transform: rotate(-90deg) translateY(56px)  translateX(0);
-      }
-
-      100% {
-        transform: rotate(-90deg) translateY(56px) translateX(-2950px);
-      }
-    }
 
     @include respond("tab") {
-      transform: rotate(-90deg) translateY(56px) translateX(0);
-      animation: runingmobile 7s linear infinite;
+      font-size: 56px;
     }
   }
+   
 
   &__right {
     max-width: 702px;
@@ -165,7 +209,7 @@ const letters = computed(() =>
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+
     @include respond("tab") {
       max-width: 100%;
     }
@@ -178,11 +222,10 @@ const letters = computed(() =>
 
   &__subtitle {
     text-transform: uppercase;
-    text-align: center;
-    
+
     @include respond("tab") {
-      text-align: left;
       margin-bottom: 16px;
+      font-size: 18px;
     }
   }
 
@@ -192,21 +235,25 @@ const letters = computed(() =>
     white-space: pre-wrap;
     color: $c-grey;
 
-    .animated-letter {
-      display: inline;
-      animation: colorChange 0.5s linear forwards;
-    }
+    &.is-visible {
 
-    @keyframes colorChange {
-      0% {
-        color: $c-grey;
+
+      .animated-letter {
+        display: inline;
+        animation: colorChange 0.5s linear forwards;
       }
 
-      100% {
-        color: $c-white;
+      @keyframes colorChange {
+        0% {
+          color: $c-grey;
+        }
+
+        100% {
+          color: $c-white;
+        }
       }
     }
-    
+
     @include respond("tab") {
       margin-bottom: 16px;
     }
@@ -215,17 +262,18 @@ const letters = computed(() =>
   &__btn {
     text-transform: uppercase;
     padding: 40px;
-    
+
     @include respond("tab") {
       padding: 16px;
       gap: 32px;
       width: max-content;
-       
+
       .icon {
         width: 24px;
         height: 24px;
       }
     }
+
     @include respond("mob") {
       width: 100%;
     }

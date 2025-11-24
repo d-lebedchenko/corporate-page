@@ -1,20 +1,31 @@
 @use './variables' as *;
-@use './fonts' as *;
 @use './media' as *;
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  margin: 0;
   cursor: none !important;
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: $font-primary;
   cursor: none !important;
+  
+  @include respond("tab") {
+    cursor: auto
+  }
 }
 button, a {
   cursor: none !important;
+  @include respond("tab") {
+    cursor: auto
+  }
+}
+ul, ol, li {
+  list-style: none;
+  padding: 0;
 }
 
 body:has(.header-open) {
@@ -36,17 +47,13 @@ button {
   color: inherit;
 }
 
-ul, ol, li {
-  list-style: none;
-  padding: 0;
-}
 
 .f-oswald {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
 }
 
 .f-a1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 180px;
   line-height: 125%;
@@ -57,7 +64,7 @@ ul, ol, li {
   }
 }
 .f-a2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 141px;
   line-height: 125%;
@@ -68,14 +75,14 @@ ul, ol, li {
   }
 }
 .f-a3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 108px;
   line-height: 125%;
   letter-spacing: -0.05em;
 }
 .f-a4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 80px;
   line-height: 96%;
@@ -83,57 +90,57 @@ ul, ol, li {
 }
 
 .f-h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 60px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
   
   @include respond("tab") {
     font-size: 32px;
   }
 }
 .f-h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 500;
   font-size: 40px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
   @include respond("tab") {
     font-size: 24px;
   }
 }
 .f-h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 600;
   font-size: 28px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 
   @include respond("tab") {
     font-size: 20px;
   }
 }
 .f-h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 600;
   font-size: 20px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 .f-sh1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 400;
   font-size: 35px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 .f-sh2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: $font-secondary;
   font-weight: 400;
   font-size: 24px;
   line-height: 125%;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   
   @include respond("tab") {
     font-size: 18px;
@@ -165,6 +172,9 @@ ul, ol, li {
   font-size: 18px;
   line-height: 130%;
   letter-spacing: -0.02em;
+  @include respond("tab") {
+    font-size: 14px;
+  }
 }
 .f-p4 {
   font-weight: 400;
@@ -205,16 +215,28 @@ ul, ol, li {
   @include respond("tab") {
     padding: 0 15px;
   }
+  @include respond("mob-sm") {
+    padding: 0 12px;
+  }
 }
 
 .d-f {
   display: flex;
+}
+.d-if {
+  display: inline-flex;
 }
 .jc-sb {
   justify-content: space-between;
 }
 .ai-c {
   align-items: center;
+}
+.ai-fe { 
+  align-items: flex-end;
+}
+.ai-fs {
+  align-items: flex-start;
 }
 .fd-c {
   flex-direction: column;
@@ -225,10 +247,21 @@ ul, ol, li {
 .jc-e {
   justify-content: flex-end;
 }
-
+.shrink-0 {
+  flex-shrink: 0;
+}
 
 .icon {
   color: $c-white;
+  transition: 0.3s all ease-in-out;
+}
+.icon-22 {
+  width: 22px;
+  height: 22px;
+}
+.icon-24 {
+  width: 24px;
+  height: 24px;
 }
 .icon-32 {
   width: 32px;
@@ -238,12 +271,22 @@ ul, ol, li {
   width: 52px;
   height: 52px;
 }
+.o-4 {
+  opacity: 0.4;
+}
+.o-5 {
+  opacity: 0.5;
+}
+.o-7 {
+  opacity: 0.7;
+}
 
 .dots {
   position: relative;
   // padding: 20px; 
   outline: 1px solid $c-steel-grey;
   outline-offset: 0;
+  transition: 0.3s all ease-in-out;
 }
 
 .dots::before,
@@ -257,6 +300,12 @@ ul, ol, li {
   background-color: $c-steel-grey;
   border-radius: 50%;
   transition: 0.3s all ease-in-out;
+  z-index: 1;
+  
+  @include respond("tab") {
+    width: 6px;
+    height: 6px;
+  }
 }
 .dots .psevdo {
   position: absolute;
@@ -270,23 +319,42 @@ ul, ol, li {
 .dots::before {
   top: -6px;
   left: -6px;
+  @include respond("tab") {
+    top: -3px;
+    left: -3px;
+  }
 }
 
 .dots::after {
   top: -6px;
   right: -6px;
+  @include respond("tab") {
+    top: -3px;
+    right: -3px;
+  }
 }
 
 .dots .psevdo::before {
   bottom: -6px;
   left: -6px;
+  @include respond("tab") {
+    bottom: -3px;
+    left: -3px;
+  }
 }
 
 .dots .psevdo::after {
   bottom: -6px;
   right: -6px;
+  @include respond("tab") {
+    bottom: -3px;
+    right: -3px;
+  }
 }
 .dots-hover:hover {
+  outline: 1px solid $c-white;
+  background-color: rgba($c-white, 0.1);
+   
   &::before,
   &::after, 
   .psevdo::before,
@@ -314,9 +382,146 @@ ul, ol, li {
   color: $c-green;
 }
 
+.btn-green {
+  color: $c-green;
+  svg {
+    color: $c-green;
+  }
+  &:hover {
+    color: $c-white;
+    svg {
+      color: $c-white;
+    }
+  }
+}
+
 .hover-green {
   transition: 0.3s all ease-in-out;
   &:hover {
     color: $c-green;
+    .icon {
+      color: $c-green;
+    }
   }
+}
+
+.richtext {
+  
+  ul, ol {
+    padding-left: 20px;
+  }
+  ul li {
+    list-style: disc;
+  }
+  ol li {
+    list-style: auto;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  blockquote {
+    font-style: italic;
+  }
+}
+
+.btn {
+  &:hover{
+    background-color: rgba($c-white, 0.1);
+  }
+}
+
+.vfm-marquee-container {
+  overflow: hidden;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 16px;
+    @include respond("tab") {
+      width: 12px;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: $c-steel-grey;
+    border: 4px solid transparent;
+    background-clip: content-box;
+  }
+
+  &--accent {
+    &::-webkit-scrollbar-thumb {
+      background-color: $c-green;
+    }
+  }
+}
+
+.dots-border {
+  --dot-size: 12px;
+  --dot-radius: calc(var(--dot-size) / 2);
+  position: relative;
+  @include respond("tab") {
+    --dot-size: 6px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid $c-steel-grey;
+  }
+
+  &:after {
+    top: calc(var(--dot-radius) * -1);
+    right: calc(var(--dot-radius) * -1);
+    bottom: calc(var(--dot-radius) * -1);
+    left: calc(var(--dot-radius) * -1);
+    background:
+      radial-gradient(circle, $c-steel-grey var(--dot-radius), transparent var(--dot-radius)) top left,
+      radial-gradient(circle, $c-steel-grey var(--dot-radius), transparent var(--dot-radius)) top right,
+      radial-gradient(circle, $c-steel-grey var(--dot-radius), transparent var(--dot-radius)) bottom left,
+      radial-gradient(circle, $c-steel-grey var(--dot-radius), transparent var(--dot-radius)) bottom right;
+    background-size: var(--dot-size) var(--dot-size);
+    background-repeat: no-repeat;
+  }
+
+  &--hide-bottom {
+    &:before {
+      border-bottom-width: 0;
+    }
+
+    &:after {
+      background:
+        radial-gradient(circle, $c-steel-grey var(--dot-radius), transparent var(--dot-radius)) top left,
+        radial-gradient(circle, $c-steel-grey var(--dot-radius), transparent var(--dot-radius)) top right;
+      background-size: var(--dot-size) var(--dot-size);
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
