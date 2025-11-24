@@ -2,7 +2,7 @@
 import svgLoader from "vite-svg-loader";
 
 const baseUrl = process.env.NUXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-const payloadUrl = process.env.NUXT_PUBLIC_PAYLOAD_URL!;
+const payloadUrl = process.env.NUXT_PUBLIC_PAYLOAD_URL || 'http://localhost:3001';
 const payloadHostname = new URL(payloadUrl).hostname;
 
 export default defineNuxtConfig({
