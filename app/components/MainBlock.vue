@@ -90,12 +90,9 @@ onBeforeUnmount(() => {
           <h1 class="main-section__title f-a2">
             {{ title }}
           </h1>
-          <h3 class="main-section__subtitle f-sh1 hide-tablet">
+          <h2 class="main-section__subtitle f-sh1">
             {{ subtitle }}
-          </h3>
-          <h3 class="main-section__subtitle f-sh2 hide-desctop">
-            {{ subtitle }}
-          </h3>
+          </h2>
         </div>
         <div class="main-section__bottom">
           <p class="main-section__text f-p1" ref="textRef" :class="{ 'is-visible': isTextVisible }">
@@ -229,6 +226,7 @@ onBeforeUnmount(() => {
 
     @include respond("tab") {
       margin-bottom: 16px;
+      font-size: 18px;
     }
   }
 
