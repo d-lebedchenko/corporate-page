@@ -64,45 +64,49 @@ onUnmounted(() => {
       </div>
     </header>
 
-    <div class="header__menu__wr" :class="{ 'active': isOpen }" @click.self="closeMenu()">
-      <div class="header__menu d-f fd-c">
-        <IconX class="header__close" @click.self="closeMenu()" />
-        <div class="header__menu__list d-f fd-c">
-          <div class="header__menu__item" v-for="item in data.links" :key="item.id">
-            <CmsLink class="header__menu__item hover-green f-h2" :link="item.link" @click="closeMenu()">
-              {{ item.link.label }}
-            </CmsLink>
-            <div class="header__submenu" v-if="item.subLinks.length">
+    <Transition name="menu">
+      <div v-if="isOpen" class="header__menu__wr" @click.self="closeMenu()">
+        <div class="header__menu d-f fd-c">
+          <button type="button" class="header__close" @click="closeMenu()" :aria-label="$t('general.close')">
+            <IconX />
+          </button>
+          <div class="header__menu__list d-f fd-c">
+            <div class="header__menu__item" v-for="item in data.links" :key="item.id">
+              <CmsLink class="header__menu__item hover-green f-h2" :link="item.link" @click="closeMenu()">
+                {{ item.link.label }}
+              </CmsLink>
+              <div class="header__submenu" v-if="item.subLinks.length">
 
-              <div class="header__submenu__item" v-for="sublink in item.subLinks" :key="sublink.id">
-                <CmsLink class="header__submenu__item hover-green f-sh2" :link="sublink.link" @click="closeMenu()">
-                  {{ sublink.link.label }}
-                </CmsLink>
+                <div class="header__submenu__item" v-for="sublink in item.subLinks" :key="sublink.id">
+                  <CmsLink class="header__submenu__item hover-green f-sh2" :link="sublink.link" @click="closeMenu()">
+                    {{ sublink.link.label }}
+                  </CmsLink>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="header__social d-f ai-c jc-sb">
-          <div class="header__social__title f-sh2">
-            {{ data.socialLabel }}
-          </div>
-          <div class="header__social__icons d-f">
-            <CmsLink class="header__social__icons__item" v-for="item in data.social" :key="item.id" :link="item.link">
-              <NuxtPicture
-                v-if="item.image?.url"
-                :src="`/payload${item.image.url}`"
-                :alt="item.link?.label || item.image.alt || 'Social link'"
-                width="36"
-                height="36"
-                sizes="32px md:36px"
-                fit="inside"
-                loading="lazy"
-              />
-            </CmsLink>
+          <div class="header__social d-f ai-c jc-sb">
+            <div class="header__social__title f-sh2">
+              {{ data.socialLabel }}
+            </div>
+            <div class="header__social__icons d-f">
+              <CmsLink class="header__social__icons__item" v-for="item in data.social" :key="item.id" :link="item.link">
+                <NuxtPicture
+                  v-if="item.image?.url"
+                  :src="`/payload${item.image.url}`"
+                  :alt="item.link?.label || item.image.alt || 'Social link'"
+                  width="36"
+                  height="36"
+                  sizes="32px md:36px"
+                  fit="inside"
+                  loading="lazy"
+                />
+              </CmsLink>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Transition>
   </div>
 </template>
 
@@ -204,6 +208,11 @@ onUnmounted(() => {
       top: 32px;
       right: 32px;
     }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__menu {
@@ -214,8 +223,6 @@ onUnmounted(() => {
     width: 100%;
     margin-left: auto;
     height: 100%;
-    transition: 0.3s all ease-in-out;
-    transform: translateX(100%);
 
     @include respond("tab") {
       max-width: 100%;
@@ -232,21 +239,24 @@ onUnmounted(() => {
       width: 100vw;
       height: 100vh;
       background-color: rgba(#00000080, 0.5);
-      opacity: 0;
-      transition: 0.3s all ease-in-out;
-      pointer-events: none;
 
       content: '';
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
+      z-index: 3;
 
-      &.active {
-        opacity: 1;
-        z-index: 3;
-        pointer-events: auto;
-
+      &.menu-enter-active,
+      &.menu-leave-active {
+        transition: opacity 0.3s ease-in-out;
         .header__menu {
-          transform: none;
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+      &.menu-enter-from,
+      &.menu-leave-to {
+        opacity: 0;
+        .header__menu {
+          transform: translateX(100%);
         }
       }
     }

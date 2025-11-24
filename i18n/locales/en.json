@@ -32,5 +32,8 @@
   "swiper": {
     "prev": "Previous slide",
     "next": "Next slide"
+  },
+  "general": {
+    "close": "Close"
   }
 }
