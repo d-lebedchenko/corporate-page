@@ -72,11 +72,11 @@ const swiper = useSwiper(containerRef, {
           </ClientOnly>
           <div class="culture__slider__controls">
             
-            <button class="culture__slider__arrow prev dots dots-hover" @click="swiper.prev()">
+            <button class="culture__slider__arrow prev dots dots-hover" @click="swiper.prev()" :aria-label="$t('swiper.prev')">
               <span class="psevdo"></span>
               <Arrow class="icon green" />
             </button>
-            <button class="culture__slider__arrow next  dots dots-hover" @click="swiper.next()">
+            <button class="culture__slider__arrow next  dots dots-hover" @click="swiper.next()" :aria-label="$t('swiper.next')">
               <span class="psevdo"></span>
               <Arrow class="icon green" />
             </button>

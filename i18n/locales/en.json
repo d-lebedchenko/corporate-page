@@ -28,5 +28,9 @@
       "full_time": "Full-time employment",
       "part_time": "Part-time employment"
     }
+  },
+  "swiper": {
+    "prev": "Previous slide",
+    "next": "Next slide"
   }
 }
