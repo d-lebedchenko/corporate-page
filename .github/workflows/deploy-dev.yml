@@ -24,7 +24,7 @@ jobs:
           echo "Public Runner IP: $RUNNER_IP"
           # Зберігаємо IP для подальших кроків
           echo "RUNNER_IP=$RUNNER_IP" >> $GITHUB_ENV
-      
+
       - name: Add Runner IP to DigitalOcean Firewall
         run: |
           doctl compute firewall add-rules ${{secrets.DO_FIREWALL_DEV_ID}} \
@@ -45,6 +45,7 @@ jobs:
         run: |
           docker build \
             --build-arg NUXT_PUBLIC_PAYLOAD_URL=${{ vars.NUXT_PUBLIC_PAYLOAD_URL_DEV }} \
+            --build-arg NUXT_PUBLIC_BASE_URL=${{ vars.NUXT_PUBLIC_BASE_URL_DEV }} \
             -t tentens-front:latest .
 
       - name: Save Docker image to tarball
@@ -85,7 +86,7 @@ jobs:
             rm tentens-front.tar.gz
             docker compose up -d
             docker image prune -f
-      
+
       - name: Remove Runner IP from DigitalOcean Firewall
         if: always()
         run: |
