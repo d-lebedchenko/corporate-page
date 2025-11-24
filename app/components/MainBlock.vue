@@ -80,8 +80,19 @@ onBeforeUnmount(() => {
           :alt="image.alt || ''"
           :width="image.width"
           :height="image.height"
-          sizes="xs:262px sm:327px 2sm:506px md:930px lg:501px"
+          sizes="2sm:506px md:930px lg:501px"
           :preload="{ fetchPriority: 'high' }"
+        />
+        <NuxtPicture
+          v-if="image?.url"
+          class="main-section__img main-section__img--mob"
+          :src="`/payload${image.url}`"
+          :alt="image.alt || ''"
+          :width="image.width"
+          :height="image.height"
+          sizes="xs:262px sm:336px"
+          :preload="{ fetchPriority: 'high' }"
+          densities="1x"
         />
       </div>
       <div class="main-section__right">
@@ -166,7 +177,16 @@ onBeforeUnmount(() => {
 
     @include respond("tab") {
       height: 360px;
-      // width: 100%;
+    }
+    @include respond("mob-md") {
+      display: none;
+    }
+
+    &--mob {
+      display: none;
+      @include respond("mob-md") {
+        display: block;
+      }
     }
   }
 
