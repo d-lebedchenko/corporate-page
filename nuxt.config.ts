@@ -86,7 +86,6 @@ export default defineNuxtConfig({
         weights: [300, 400, 500, 600, 700],
         styles: ['normal'],
         subsets: ['latin', 'cyrillic-ext'],
-        global: true,
       },
       {
         name: 'Oswald',
@@ -94,7 +93,6 @@ export default defineNuxtConfig({
         weights: [300, 400, 500, 600, 700],
         styles: ['normal'],
         subsets: ['latin', 'cyrillic-ext'],
-        global: true,
       },
     ],
   },
