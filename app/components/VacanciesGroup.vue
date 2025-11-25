@@ -58,13 +58,13 @@ function getVacancyLink(slug) {
           </p>
         </div>
 
-        <CmsLink
+        <!-- <CmsLink
           class="vacancies-group__item-more f-b-p2 shrink-0 dots dots-hover"
           :link="getVacancyLink(item.slug)"
         >
           <span class="psevdo" />
           {{ $t('vacancies.more_details') }}
-        </CmsLink>
+        </CmsLink> -->
 
         <a
           class="vacancies-group__item-apply f-b-p2 shrink-0 dots dots-hover"
