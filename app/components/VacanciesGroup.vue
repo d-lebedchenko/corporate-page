@@ -119,7 +119,6 @@ function getVacancyLink(slug) {
     }
 
     &:not(:last-child) {
-      margin-bottom: 1px;
       @include respond("tab") {
         margin-bottom: 24px;
       }
