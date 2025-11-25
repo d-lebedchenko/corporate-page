@@ -171,6 +171,10 @@ const pagesList = computed(() => {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    @include respond("tab") {
+      margin-top: 32px;
+    }
+
     &-item {
       position: relative;
       display: flex;
