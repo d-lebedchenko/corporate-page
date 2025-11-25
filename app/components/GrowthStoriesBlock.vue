@@ -332,7 +332,7 @@ const slidePrev = () => {
       left: 0;
       width: 100%;
       height: 100%;
-      padding: 52px 16px;
+      padding: 52px 16px 28.6px;
       @include respond("tab") {
         position: static;
         padding: 20px 16px;
