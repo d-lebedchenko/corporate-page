@@ -54,7 +54,6 @@ const slidePrev = () => {
           :slides-per-view="1"
           :space-between="0"
           :rewind="true"
-          :auto-height="true"
           @swiper="onSwiper"
           @slideChange="onSlideChange"
         >
@@ -335,7 +334,7 @@ const slidePrev = () => {
       padding: 52px 16px 28.6px;
       @include respond("tab") {
         position: static;
-        padding: 20px 16px;
+        padding: 0;
       }
     }
     
@@ -344,9 +343,8 @@ const slidePrev = () => {
       padding: 0 36px;
       overflow: auto;
       @include respond("tab") {
-        max-height: none;
-        padding: 0;
-        overflow: visible;
+        max-height: 530px;
+        padding: 20px 16px;
       }
     }
 
