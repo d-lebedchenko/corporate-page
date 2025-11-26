@@ -43,6 +43,10 @@ const nameValue = ref('')
 const emailValue = ref('')
 const isFormSubmitted = ref(false)
 
+
+const isSending = ref(false) // Стан: чи триває відправка
+const isSendSuccess = ref(false) // Стан: чи форма успішно відправлена
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const isNameValid = computed(() => {
@@ -72,6 +76,10 @@ const showEmailError = computed(() => {
 // const showFileError = computed(() => {
 //   return isFormSubmitted.value && !isFileValid.value
 // })
+
+const isButtonDisabled = computed(() => {
+  return (isFormSubmitted.value && !isFormValid.value) || isSending.value || isSendSuccess.value
+})
 
 const triggerFileInput = () => {
   fileInputRef.value.click()
@@ -111,6 +119,8 @@ const clearFile = () => {
   }
 }
 const sendFormData = async () => {
+  isSending.value = true
+
   const formData = new FormData();
   
   formData.append('name', nameValue.value);
@@ -135,6 +145,7 @@ const sendFormData = async () => {
       emailValue.value = '';
       clearFile();
       isFormSubmitted.value = false;
+      isSendSuccess.value = true;
       
     } else {
       console.error('Sending error:', result.error);
@@ -142,6 +153,8 @@ const sendFormData = async () => {
 
   } catch (error) {
     console.error('Network error:', error);
+  } finally {
+    isSending.value = false;
   }
 }
 
@@ -233,7 +246,7 @@ const handleSubmit = (event) => {
             </div>
 
             <button type="submit" class="form__btn btn-green dots dots-hover f-b-p2 d-f ai-c"
-              :disabled="isFormSubmitted && !isFormValid" :class="{ 'disabled-btn': isFormSubmitted && !isFormValid }">
+              :disabled="isButtonDisabled" :class="{ 'disabled-btn': isButtonDisabled }">
               <span class="psevdo"></span>
               {{ btnText }}
 
@@ -436,6 +449,11 @@ const handleSubmit = (event) => {
     gap: 24px;
     min-width: 269px;
     font-family: $font-primary;
+
+    &.disabled-btn {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
 
     @include respond("tab") {
       font-size: 20px;

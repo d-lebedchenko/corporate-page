@@ -1,7 +1,13 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
 
-const { data } = await useFetch('/api/footer')
+// const { data } = await useFetch('/api/footer')
+
+
+const { locale } = useI18n();
+const { data } = useFetch('/api/footer', {
+  query: { locale: locale.value },
+})
 </script>
 
 <template>

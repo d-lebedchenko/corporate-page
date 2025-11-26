@@ -1,11 +1,15 @@
 <script setup>
 import IconX from '~/assets/icons/x.svg'
 
-const { data } = useFetch('/api/header')
+
 const scrollProgress = ref(0)
 const isOpen = ref(false)
 
 const { locale } = useI18n();
+
+const { data } = useFetch('/api/header', {
+  query: { locale: locale.value },
+})
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
