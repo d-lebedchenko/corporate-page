@@ -38,6 +38,7 @@
     "@types/node": "^24.5.2",
     "lightningcss": "^1.30.2",
     "sass-embedded": "^1.93.2",
+    "vite-plugin-vsharp": "^1.9.1",
     "vite-svg-loader": "^5.1.0"
   }
 }
