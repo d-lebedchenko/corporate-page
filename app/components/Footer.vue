@@ -1,13 +1,41 @@
 <script setup>
 import Arrow from '~/assets/icons/arrow-up-right.svg'
+import { stringify } from 'qs-esm';
 
 // const { data } = await useFetch('/api/footer')
 
 
 const { locale } = useI18n();
-const { data } = useFetch('/api/footer', {
-  query: { locale: locale.value },
+const route = useRoute()
+
+const ssrLocale = computed(() => {
+  if (route.params.locale) {
+    return Array.isArray(route.params.locale) ? route.params.locale[0] : route.params.locale;
+  }
+  return locale.value;
+});
+
+
+const apiPath = computed(() => {
+  const params = { locale: ssrLocale.value };
+  const queryString = stringify(params, { addQueryPrefix: true });
+
+  return `/api/footer${queryString}`;
+});
+
+
+const { data, refresh } = await useFetch(apiPath, {
+  key: `footer-data-${ssrLocale.value}`,
+  immediate: true,
 })
+
+
+watch(ssrLocale, (newLocale, oldLocale) => {
+  if (newLocale !== oldLocale) {
+    refresh();
+  }
+});
+
 </script>
 
 <template>

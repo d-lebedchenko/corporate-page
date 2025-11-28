@@ -1,15 +1,39 @@
 <script setup>
 import IconX from '~/assets/icons/x.svg'
+import { stringify } from 'qs-esm';
 
 
 const scrollProgress = ref(0)
 const isOpen = ref(false)
 
 const { locale } = useI18n();
+const route = useRoute()
 
-const { data } = useFetch('/api/header', {
-  query: { locale: locale.value },
+const ssrLocale = computed(() => {
+  if (route.params.locale) {
+    return Array.isArray(route.params.locale) ? route.params.locale[0] : route.params.locale;
+  }
+  return locale.value;
+});
+
+
+
+const apiPath = computed(() => {
+  const params = { locale: ssrLocale.value };
+  const queryString = stringify(params, { addQueryPrefix: true });
+
+  return `/api/header${queryString}`;
+});
+
+
+
+const { data, refresh } = await useFetch(apiPath, {
+  key: `header-data-${ssrLocale.value}`,
+  immediate: true,
+  watch: [locale]
 })
+
+
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
@@ -40,15 +64,8 @@ onUnmounted(() => {
     <header class="header">
       <div class="header__inner d-f ai-c">
         <NuxtLink :to="$localePath('/')" class="header__logo">
-          <NuxtPicture
-            v-if="data.logo?.url"
-            :src="`/payload${data.logo.url}`"
-            :alt="data.logo.alt || 'TENTENS Tech'"
-            width="110"
-            height="40"
-            sizes="77px lg:110px"
-            fit="inside"
-          />
+          <NuxtPicture v-if="data.logo?.url" :src="`/payload${data.logo.url}`" :alt="data.logo.alt || 'TENTENS Tech'"
+            width="110" height="40" sizes="77px lg:110px" fit="inside" />
         </NuxtLink>
         <div class="header__linebar__wr">
 
@@ -56,15 +73,13 @@ onUnmounted(() => {
             <div class="header__linebar-progress" :style="{ width: scrollProgress + '%' }"></div>
           </div>
         </div>
-          
-        <NuxtLink
-          class="header__language f-b-p3 d-f ai-c hover-green clickable"
-          :to="$switchLocalePath(locale === 'uk' ? 'en' : 'uk')"
-        >
+
+        <NuxtLink class="header__language f-b-p3 d-f ai-c hover-green clickable"
+          :to="$switchLocalePath(locale === 'uk' ? 'en' : 'uk')">
           {{ locale === 'uk' ? 'UA' : 'EN' }}
         </NuxtLink>
 
-        <button class="header__btn f-b-p3 hover-green" @click="toggleMenu()">Меню</button>
+        <button class="header__btn f-b-p3 hover-green" @click="toggleMenu()">{{ locale === 'uk' ? 'Меню' : 'Menu' }}</button>
       </div>
     </header>
 
@@ -95,16 +110,9 @@ onUnmounted(() => {
             </div>
             <div class="header__social__icons d-f">
               <CmsLink class="header__social__icons__item" v-for="item in data.social" :key="item.id" :link="item.link">
-                <NuxtPicture
-                  v-if="item.image?.url"
-                  :src="`/payload${item.image.url}`"
-                  :alt="item.link?.label || item.image.alt || 'Social link'"
-                  width="36"
-                  height="36"
-                  sizes="32px md:36px"
-                  fit="inside"
-                  loading="lazy"
-                />
+                <NuxtPicture v-if="item.image?.url" :src="`/payload${item.image.url}`"
+                  :alt="item.link?.label || item.image.alt || 'Social link'" width="36" height="36" sizes="32px md:36px"
+                  fit="inside" loading="lazy" />
               </CmsLink>
             </div>
           </div>
@@ -151,11 +159,13 @@ onUnmounted(() => {
 
     picture {
       display: block;
+
       &:deep(img) {
         display: block;
         width: 110px;
         height: 40px;
         object-fit: contain;
+
         @include respond("tab") {
           width: 77px;
           height: 28px;
@@ -252,13 +262,16 @@ onUnmounted(() => {
       &.menu-enter-active,
       &.menu-leave-active {
         transition: opacity 0.3s ease-in-out;
+
         .header__menu {
           transition: transform 0.3s ease-in-out;
         }
       }
+
       &.menu-enter-from,
       &.menu-leave-to {
         opacity: 0;
+
         .header__menu {
           transform: translateX(100%);
         }
@@ -327,11 +340,13 @@ onUnmounted(() => {
       &__item {
         picture {
           display: block;
+
           &:deep(img) {
             display: block;
             width: 36px;
             height: 36px;
             object-fit: contain;
+
             @include respond("mob") {
               width: 32px;
               height: 32px;
