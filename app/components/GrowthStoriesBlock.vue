@@ -102,7 +102,7 @@ const slidePrev = () => {
 
                 <div class="slide__quote">
                   <div class="slide__quote-wr">
-                    <div class="slide__quote-scroll custom-scrollbar">
+                    <div class="slide__quote-scroll custom-scrollbar swiper-no-swiping">
                       <img
                         class="slide__quote-icon"
                         src="/img/quote.svg"
