@@ -19,9 +19,6 @@ const payloadHostname = new URL(payloadUrl).hostname;
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  features: {
-    inlineStyles: false,
-  },
 
   runtimeConfig: {
     public: {
