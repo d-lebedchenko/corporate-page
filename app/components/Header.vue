@@ -1,39 +1,17 @@
 <script setup>
 import IconX from '~/assets/icons/x.svg'
-import { stringify } from 'qs-esm';
 
+const props = defineProps({
+  data: {
+    type: Object,
+    default: () => null,
+  },
+})
 
 const scrollProgress = ref(0)
 const isOpen = ref(false)
 
 const { locale } = useI18n();
-const route = useRoute()
-
-const ssrLocale = computed(() => {
-  if (route.params.locale) {
-    return Array.isArray(route.params.locale) ? route.params.locale[0] : route.params.locale;
-  }
-  return locale.value;
-});
-
-
-
-const apiPath = computed(() => {
-  const params = { locale: ssrLocale.value };
-  const queryString = stringify(params, { addQueryPrefix: true });
-
-  return `/api/header${queryString}`;
-});
-
-
-
-const { data, refresh } = await useFetch(apiPath, {
-  key: `header-data-${ssrLocale.value}`,
-  immediate: true,
-  watch: [locale]
-})
-
-
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value
