@@ -2,6 +2,7 @@ ARG NODE_VERSION=22.12.0
 FROM node:${NODE_VERSION}-alpine AS builder
 
 ARG NUXT_PUBLIC_PAYLOAD_URL
+ARG NUXT_PUBLIC_BASE_URL
 WORKDIR /app
 
 COPY package.json yarn.lock ./
