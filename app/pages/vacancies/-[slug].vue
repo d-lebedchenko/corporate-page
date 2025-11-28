@@ -37,6 +37,8 @@ const breadcrumbsList = [
     },
   },
 ]
+
+usePageSeo(page.value?.meta)
 </script>
 
 <template>

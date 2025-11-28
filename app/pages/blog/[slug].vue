@@ -10,44 +10,6 @@ const { data: page, error } = await useFetch(() => `/api/blog/posts/${slug.value
   query: { locale: locale.value },
 })
 
-const meta = page.value?.meta
-
-const config = useRuntimeConfig()
-const fullUrl = computed(() => config.public.baseUrl + route.path)
-
-
-if (meta) {
-  useSeoMeta({
-    title: meta.title,
-    description: meta.description,
-
-    ogTitle: meta.title,
-    ogDescription: meta.description,
-    ogUrl: fullUrl.value,
-    
-    ogImage: meta.image?.url || 'https://placehold.co/1200x630',
-    ogImageAlt: meta.image?.alt || meta.title,
-
-    twitterCard: 'summary_large_image',
-    twitterTitle: meta.title,
-    twitterDescription: meta.description,
-    twitterImage: meta.image?.url || 'https://placehold.co/1200x630',
-  })
-}
-
-if (meta?.title) {
-  useHead({
-    title: meta.title,
-    
-    link: [
-      { 
-        rel: 'canonical', 
-        href: fullUrl.value, 
-      },
-    ]
-  })
-}
-
 watchEffect(() => {
   if (error.value) showError(error.value)
 })
@@ -75,6 +37,8 @@ const breadcrumbsList = [
     },
   },
 ]
+
+usePageSeo(page.value?.meta)
 </script>
 
 <template>
