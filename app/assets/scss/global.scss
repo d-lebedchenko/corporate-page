@@ -57,7 +57,7 @@ button {
   font-weight: 500;
   font-size: 180px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
   
   @include respond("tab") {
     font-size: 64px;
@@ -68,7 +68,7 @@ button {
   font-weight: 500;
   font-size: 141px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
   
   @include respond("tab") {
     font-size: 48px;
@@ -79,14 +79,14 @@ button {
   font-weight: 500;
   font-size: 108px;
   line-height: 125%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 .f-a4 {
   font-family: $font-secondary;
   font-weight: 500;
   font-size: 80px;
   line-height: 96%;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 .f-h1 {
