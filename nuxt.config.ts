@@ -82,7 +82,6 @@ export default defineNuxtConfig({
     },
     build: {
       cssMinify: "lightningcss",
-      ssrManifest: true,
       minify: "terser",
     },
   },
