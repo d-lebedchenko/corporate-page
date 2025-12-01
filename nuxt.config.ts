@@ -85,9 +85,6 @@ export default defineNuxtConfig({
       ssrManifest: true,
       minify: "terser",
     },
-    json: {
-      stringify: true,
-    },
   },
 
   modules: [
