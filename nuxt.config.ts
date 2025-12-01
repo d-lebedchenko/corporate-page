@@ -42,10 +42,6 @@ export default defineNuxtConfig({
         proxy: `${payloadUrl}/**`,
       },
     },
-    minify: true,
-    compressPublicAssets: {
-      brotli: true,
-    },
   },
 
   vite: {
@@ -75,14 +71,6 @@ export default defineNuxtConfig({
         },
       }),
     ],
-    ssr: {
-      noExternal: process.env.NODE_ENV === "production" ? true : undefined,
-    },
-    build: {
-      cssMinify: "lightningcss",
-      ssrManifest: true,
-      minify: "terser",
-    },
   },
 
   modules: [
