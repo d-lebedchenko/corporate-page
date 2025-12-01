@@ -77,9 +77,6 @@ export default defineNuxtConfig({
       }),
       vsharp(),
     ],
-    ssr: {
-      noExternal: process.env.NODE_ENV === "production" ? true : undefined,
-    },
     build: {
       cssMinify: "lightningcss",
       minify: "terser",
