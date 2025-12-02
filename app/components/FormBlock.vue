@@ -4,6 +4,9 @@ import Attachment from '~/assets/icons/paperclip.svg'
 import IconX from '~/assets/icons/x.svg'
 import ErrorIcon from '~/assets/icons/error.svg'
 
+// Максимальний розмір файлу: 10 МБ (10 * 1024 * 1024 байт)
+const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
+
 const props = defineProps({
   runingTitle: {
     type: String,
@@ -44,8 +47,8 @@ const emailValue = ref('')
 const isFormSubmitted = ref(false)
 
 
-const isSending = ref(false) // Стан: чи триває відправка
-const isSendSuccess = ref(false) // Стан: чи форма успішно відправлена
+const isSending = ref(false)
+const isSendSuccess = ref(false)
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -57,9 +60,6 @@ const isEmailValid = computed(() => {
   return emailRegex.test(emailValue.value)
 })
 
-// const isFileValid = computed(() => {
-//   return selectedFile.value !== null
-// })
 
 const isFormValid = computed(() => {
   return isNameValid.value && isEmailValid.value
@@ -73,9 +73,6 @@ const showEmailError = computed(() => {
   return isFormSubmitted.value && !isEmailValid.value
 })
 
-// const showFileError = computed(() => {
-//   return isFormSubmitted.value && !isFileValid.value
-// })
 
 const isButtonDisabled = computed(() => {
   return (isFormSubmitted.value && !isFormValid.value) || isSending.value || isSendSuccess.value
@@ -90,9 +87,15 @@ const handleFileChange = (event) => {
   const file = files ? files[0] : null;
 
   if (file) {
-    selectedFile.value = file
+    if (file.size > MAX_FILE_SIZE_BYTES) {
+      const fileSizeMB = (file.size / 1024 / 1024).toFixed(2);
+      console.log('File size (MB):', fileSizeMB);
+      selectedFile.value = null;
+    } else {
+      selectedFile.value = file;
+    }
   } else {
-    selectedFile.value = null
+    selectedFile.value = null;
   }
 }
 const handleDrop = (event) => {
@@ -122,12 +125,12 @@ const sendFormData = async () => {
   isSending.value = true
 
   const formData = new FormData();
-  
+
   formData.append('name', nameValue.value);
   formData.append('email', emailValue.value);
-  
+
   if (selectedFile.value) {
-    formData.append('file', selectedFile.value); 
+    formData.append('file', selectedFile.value);
   }
 
   try {
@@ -140,13 +143,13 @@ const sendFormData = async () => {
 
     if (response.ok) {
       console.log('Succsess:', result.message);
-      
+
       nameValue.value = '';
       emailValue.value = '';
       clearFile();
       isFormSubmitted.value = false;
       isSendSuccess.value = true;
-      
+
     } else {
       console.error('Sending error:', result.error);
     }
@@ -160,9 +163,9 @@ const sendFormData = async () => {
 
 const handleSubmit = (event) => {
   event.preventDefault()
-  isFormSubmitted.value = true
 
   if (isFormValid.value) {
+    isFormSubmitted.value = true
     sendFormData()
   } else {
     console.error('Form is invalid!')
@@ -172,7 +175,7 @@ const handleSubmit = (event) => {
 
 <template>
   <section class="form">
-    <NuxtMarquee autoFill :speed="80" >
+    <NuxtMarquee autoFill :speed="80">
       <h2 class="form__runing f-a3 hide-tablet">
         <div class="marquee-wrapper">
           <div class="marquee">
@@ -181,7 +184,7 @@ const handleSubmit = (event) => {
         </div>
       </h2>
       <h2 class="form__runing f-a1 hide-desctop">
-      <div class="marquee-wrapper">
+        <div class="marquee-wrapper">
           <div class="marquee">
             <span>{{ runingTitle }}</span>&nbsp;
           </div>
@@ -200,18 +203,14 @@ const handleSubmit = (event) => {
           sizes="xs:345px lg:430px"
           loading="lazy"
         />
-
         <div class="form__content d-f fd-c">
-
           <form @submit="handleSubmit">
-
             <input class="form__input f-p1 clickable" type="text" :placeholder="name" v-model="nameValue"
               :class="{ 'input-error': showNameError }">
             <div v-if="showNameError" class="form__error-message d-f ai-c">
               <ErrorIcon />
               <div class="error-text f-p3">Name must contain at least 2 letters</div>
             </div>
-
             <input class="form__input f-p1 clickable" type="email" :placeholder="email" v-model="emailValue"
               :class="{ 'input-error': showEmailError }">
             <div v-if="showEmailError" class="form__error-message d-f ai-c">
@@ -227,29 +226,23 @@ const handleSubmit = (event) => {
                 @dragleave.prevent="handleDragLeave"
                 @dragover.prevent
                 @drop.prevent="handleDrop">
-
                 <Attachment v-if="selectedFile" class="icon icon-attach icon-24" />
                 <div class="file-label">
                   {{ fileLabel }}
                 </div>
-
                 <Attachment v-if="!selectedFile" class="icon icon-attach icon-24" />
-
                 <IconX v-if="selectedFile" class="icon icon-24 icon-clear" @click.stop="clearFile" />
               </div>
-
               <input type="file" ref="fileInputRef" @change="handleFileChange" style="display: none;"
                 accept=".pdf,.doc,.docx">
             </div>
             <div class="form__hint f-p3">
               {{ fileHint }}
             </div>
-
             <button type="submit" class="form__btn btn-green dots dots-hover f-b-p2 d-f ai-c"
               :disabled="isButtonDisabled" :class="{ 'disabled-btn': isButtonDisabled }">
               <span class="psevdo"></span>
               {{ btnText }}
-
               <Arrow class="icon icon-32" />
             </button>
           </form>
@@ -277,22 +270,6 @@ const handleSubmit = (event) => {
     margin-bottom: 32px;
     overflow: hidden;
 
-    // .marquee-wrapper {
-    //   display: block;
-    //   width: 100%;
-    //   overflow: hidden;
-    // }
-
-    // .marquee {
-    //   display: flex;
-    //   white-space: nowrap;
-    //   animation: marquee 25s linear infinite;
-
-    //   span {
-    //     display: inline-block;
-    //     padding-right: 10px;
-    //   }
-    // }
   }
 
   &__wr {
@@ -379,6 +356,7 @@ const handleSubmit = (event) => {
         border: 1px dashed $c-green;
         background-color: rgba($c-white, 0.1);
       }
+
       .icon-attach,
       .file-label {
         pointer-events: none;
