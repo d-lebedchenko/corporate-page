@@ -90,7 +90,7 @@ onClickOutside(selectRef, () => {
         {{ selectedLabel }}
       </span>
       <ChevronIcon
-        class="ui-select__arrow icon-32 shrink-0"
+        class="ui-select__arrow icon-32 shrink-0 green"
         aria-hidden="true"
       />
     </button>

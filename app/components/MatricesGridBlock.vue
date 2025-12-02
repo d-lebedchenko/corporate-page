@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
           <div class="matrices__select f-p1 clickable">
             {{ currentCategory ? currentCategory.title : 'Виберіть категорію' }}
           </div>
-          <Arrow class="icon icon-32" :class="{ 'rotated': isCatDropdownOpen }" />
+          <Arrow class="icon icon-32 green" :class="{ 'rotated': isCatDropdownOpen }" />
 
           <ul class="matrices__dropdown">
             <li class="matrices__option f-p2 clickable" v-for="cat in props.categories" :key="cat.id"
@@ -154,7 +154,7 @@ onBeforeUnmount(() => {
           <div class="matrices__select f-p1 clickable" :class="{ 'disabled': subcategoriesList.length === 0 }">
             {{ currentSubcategory ? currentSubcategory.title : 'Немає підкатегорій' }}
           </div>
-          <Arrow class="icon icon-32" :class="{ 'rotated': isSubcatDropdownOpen }" />
+          <Arrow class="icon icon-32 green" :class="{ 'rotated': isSubcatDropdownOpen }" />
 
           <ul class="matrices__dropdown" v-if="subcategoriesList.length > 0">
             <li class="matrices__option f-p2 clickable" v-for="sub in subcategoriesList" :key="sub.id"
