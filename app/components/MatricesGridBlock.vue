@@ -177,11 +177,11 @@ onBeforeUnmount(() => {
             <span class="psevdo"></span>{{ currentSlide + 1 }} / {{ sliderListItems.length }}</span>
           <button @click="slidePrev" class="slider-btn dots dots-hover">
             <span class="psevdo"></span>
-            <ArrowLeft class="icon green icon-22" />
+            <ArrowLeft class="icon green icon-32" />
           </button>
           <button @click="slideNext" class="slider-btn dots  dots-hover">
             <span class="psevdo"></span>
-            <ArrowRight class="icon green icon-22" />
+            <ArrowRight class="icon green icon-32" />
           </button>
         </div>
       </div>

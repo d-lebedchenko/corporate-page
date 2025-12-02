@@ -139,7 +139,7 @@ const slidePrev = () => {
             @click="slidePrev"
           >
             <span class="psevdo"></span>
-            <ArrowLeft class="green" />
+            <ArrowLeft class="green icon-32" />
           </button>
           <button
             type="button"
@@ -147,7 +147,7 @@ const slidePrev = () => {
             @click="slideNext"
           >
             <span class="psevdo"></span>
-            <ArrowRight class="green" />
+            <ArrowRight class="green icon-32" />
           </button>
         </div>
       </div>
@@ -204,8 +204,6 @@ const slidePrev = () => {
       }
 
       svg {
-        width: 32px;
-        height: 32px;
         @include respond("tab") {
           width: 20px;
           height: 20px;
