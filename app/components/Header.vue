@@ -57,7 +57,7 @@ onUnmounted(() => {
           {{ locale === 'uk' ? 'UA' : 'EN' }}
         </NuxtLink>
 
-        <button class="header__btn f-b-p3 hover-green" @click="toggleMenu()">{{ locale === 'uk' ? 'Меню' : 'Menu' }}</button>
+        <button class="header__btn f-b-p3 hover-green" @click="toggleMenu()">{{ $t('general.menu') }}</button>
       </div>
     </header>
 

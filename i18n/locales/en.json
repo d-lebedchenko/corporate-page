@@ -34,6 +34,11 @@
     "next": "Next slide"
   },
   "general": {
-    "close": "Close"
+    "close": "Close",
+    "menu": "Menu"
+  },
+  "matrices_grid_block": {
+    "select_category": "Select a category",
+    "no_subcategories": "No subcategories"
   }
 }

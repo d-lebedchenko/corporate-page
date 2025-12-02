@@ -34,6 +34,11 @@
     "next": "Наступний слайд"
   },
   "general": {
-    "close": "Закрити"
+    "close": "Закрити",
+    "menu": "Меню"
+  },
+  "matrices_grid_block": {
+    "select_category": "Виберіть категорію",
+    "no_subcategories": "Немає підкатегорій"
   }
 }

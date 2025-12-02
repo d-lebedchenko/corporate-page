@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
           >
 
           <div class="matrices__select f-p1 clickable">
-            {{ currentCategory ? currentCategory.title : 'Виберіть категорію' }}
+            {{ currentCategory ? currentCategory.title : $t('matrices_grid_block.select_category') }}
           </div>
           <Arrow class="icon icon-32 green" :class="{ 'rotated': isCatDropdownOpen }" />
 
@@ -152,7 +152,7 @@ onBeforeUnmount(() => {
           >
 
           <div class="matrices__select f-p1 clickable" :class="{ 'disabled': subcategoriesList.length === 0 }">
-            {{ currentSubcategory ? currentSubcategory.title : 'Немає підкатегорій' }}
+            {{ currentSubcategory ? currentSubcategory.title : $t('matrices_grid_block.no_subcategories') }}
           </div>
           <Arrow class="icon icon-32 green" :class="{ 'rotated': isSubcatDropdownOpen }" />
 
