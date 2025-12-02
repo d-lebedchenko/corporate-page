@@ -214,9 +214,16 @@ const slidePrev = () => {
 }
 
 .slide {
+  height: auto;
   padding: 6px 6px 0;
   @include respond("tab") {
     padding: 3px 3px 0;
+  }
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   &__head {
@@ -245,9 +252,10 @@ const slidePrev = () => {
   }
 
   &__body {
+    flex: 1;
     display: flex;
     @include respond("tab") {
-      display: block;
+      flex-direction: column;
     }
   }
 
@@ -256,6 +264,7 @@ const slidePrev = () => {
     min-height: 666px;
     @include respond("tab") {
       min-height: auto;
+      flex: 0 1 auto;
     }
 
     &-img {
@@ -322,6 +331,9 @@ const slidePrev = () => {
   &__quote {
     position: relative;
     flex: 1 0 50%;
+    @include respond("tab") {
+      flex: 1;
+    }
 
     &-wr {
       position: absolute;
@@ -337,7 +349,7 @@ const slidePrev = () => {
     }
     
     &-scroll {
-      max-height: 100%;
+      height: 100%;
       padding: 0 36px;
       overflow: auto;
       @include respond("tab") {
