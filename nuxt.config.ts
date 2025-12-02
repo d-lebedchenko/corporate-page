@@ -1,4 +1,5 @@
 import svgLoader from "vite-svg-loader";
+import vsharp from "vite-plugin-vsharp";
 
 interface PageDoc {
   slug: string;
@@ -42,6 +43,10 @@ export default defineNuxtConfig({
         proxy: `${payloadUrl}/**`,
       },
     },
+    minify: true,
+    compressPublicAssets: {
+      brotli: true,
+    },
   },
 
   vite: {
@@ -70,7 +75,19 @@ export default defineNuxtConfig({
           ],
         },
       }),
+      vsharp(),
     ],
+    ssr: {
+      noExternal: process.env.NODE_ENV === "production" ? true : undefined,
+    },
+    build: {
+      cssMinify: "lightningcss",
+      ssrManifest: true,
+      minify: "terser",
+    },
+    json: {
+      stringify: true,
+    },
   },
 
   modules: [
