@@ -239,7 +239,7 @@ const slidePrev = () => {
         text-align: left;
         text-transform: uppercase;
         min-height: 88.125px;
-        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, font-size 0.3s;
         cursor: pointer;
         &:hover,
         &[aria-current="true"] {
@@ -247,6 +247,9 @@ const slidePrev = () => {
         }
         &:hover {
           background-color: rgba(255, 255, 255, 0.1);
+        }
+        &[aria-current="true"] {
+          font-size: 35px;
         }
       }
 
