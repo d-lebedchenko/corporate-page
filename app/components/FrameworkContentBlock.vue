@@ -1,5 +1,6 @@
 <script setup>
 import ArrowIcon from '~/assets/icons/arrow-up-right.svg'
+import Circles from '~/assets/icons/framework-anim/circles.svg'
 
 const props = defineProps({
   title: {
@@ -32,7 +33,7 @@ const {
 } = useIconAnimation()
 
 const componentsMap = {
-  circles: () => import('~/assets/icons/framework-anim/circles.svg'),
+  circles: Circles,
 }
 
 const Icon = computed(() => {
@@ -41,7 +42,7 @@ const Icon = computed(() => {
   const loader = componentsMap[props.animation]
   if (!loader) return null
 
-  return defineAsyncComponent(() => loader())
+  return loader
 })
 </script>
 
