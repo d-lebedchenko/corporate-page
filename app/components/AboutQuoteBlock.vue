@@ -21,16 +21,6 @@ const props = defineProps({
     default: ''
   },
 })
-
-const {
-  containerRef,
-  isVisible
-} = useTextAnimation()
-
-const quoteLetters = computed(() => {
-  if (!props.quote || typeof props.quote !== 'string') return []
-  return props.quote.trim().split('').map(char => (char === '\n' ? '\n' : char))
-})
 </script>
 
 <template>
@@ -58,20 +48,9 @@ const quoteLetters = computed(() => {
         <div class="about-quote-block__text">
           <p
             v-if="quote"
-            ref="containerRef"
-            :class="[
-              'about-quote-block__quote f-p2 whitespace-pre-line',
-              { 'is-visible': isVisible }
-            ]"
+            class="about-quote-block__quote f-p2 whitespace-pre-line"
           >
-            <span
-              v-for="(letter, i) in quoteLetters"
-              :key="i"
-              class="animated-letter"
-              :style="{ 'animation-delay': `${i * 0.03}s` }"
-            >
-              {{ letter }}
-            </span>
+            {{ quote }}
           </p>
 
           <div v-if="name || position" class="about-quote-block__info">
@@ -155,7 +134,6 @@ const quoteLetters = computed(() => {
   }
 
   &__quote {
-    color: $c-grey;
     max-width: 600px;
     &:not(:last-child) {
       margin-bottom: 32px;
@@ -166,13 +144,6 @@ const quoteLetters = computed(() => {
 
     @include respond("tab") {
       font-size: 14px;
-    }
-
-    &.is-visible {
-      .animated-letter {
-        display: inline;
-        animation: colorChange 0.5s linear forwards;
-      }
     }
   }
 
@@ -192,9 +163,5 @@ const quoteLetters = computed(() => {
       }
     }
   }
-}
-
-@keyframes colorChange {
-  100% { color: $c-white; }
 }
 </style>
