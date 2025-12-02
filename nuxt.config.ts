@@ -81,7 +81,6 @@ export default defineNuxtConfig({
     "nuxt-lottie",
     "@nuxt/fonts",
     "@nuxt/image",
-    "nuxt-vitalizer",
     "@nuxtjs/sitemap",
     "@nuxtjs/robots"
   ],
@@ -186,9 +185,5 @@ export default defineNuxtConfig({
     ipx: {
       maxAge: 86400, // 24h
     },
-  },
-  vitalizer: {
-    disablePrefetchLinks: "dynamicImports",
-    disablePreloadLinks: true,
   },
 });
