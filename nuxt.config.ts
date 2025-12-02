@@ -23,6 +23,13 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: false,
   },
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        prefetch: false,
+      },
+    },
+  },
 
   runtimeConfig: {
     public: {
