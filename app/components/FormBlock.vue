@@ -449,6 +449,7 @@ const handleSubmit = (event) => {
     gap: 24px;
     min-width: 269px;
     font-family: $font-primary;
+    margin-left: auto;
 
     &.disabled-btn {
       cursor: not-allowed;
