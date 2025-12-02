@@ -1,4 +1,10 @@
 <script setup>
+import AnimCross from '~/assets/icons/about-us-anim/cross.svg'
+import AnimSquare from '~/assets/icons/about-us-anim/square.svg'
+import AnimPetal from '~/assets/icons/about-us-anim/petal.svg'
+import AnimCapsules from '~/assets/icons/about-us-anim/capsules.svg'
+import AnimCircles from '~/assets/icons/about-us-anim/circles.svg'
+
 const props = defineProps({
   animation: {
     type: String,
@@ -38,11 +44,11 @@ const {
 } = useIconAnimation()
 
 const componentsMap = {
-  cross: () => import('~/assets/icons/about-us-anim/cross.svg'),
-  square: () => import('~/assets/icons/about-us-anim/square.svg'),
-  petal: () => import('~/assets/icons/about-us-anim/petal.svg'),
-  capsules: () => import('~/assets/icons/about-us-anim/capsules.svg'),
-  circles: () => import('~/assets/icons/about-us-anim/circles.svg'),
+  cross: AnimCross,
+  square: AnimSquare,
+  petal: AnimPetal,
+  capsules: AnimCapsules,
+  circles: AnimCircles,
 }
 
 const Icon = computed(() => {
@@ -51,7 +57,7 @@ const Icon = computed(() => {
   const loader = componentsMap[props.animation]
   if (!loader) return null
 
-  return defineAsyncComponent(() => loader())
+  return loader
 })
 </script>
 
