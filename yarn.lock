@@ -1671,7 +1671,7 @@
     unimport "^5.4.1"
     untyped "^2.0.0"
 
-"@nuxt/kit@^4.1.2", "@nuxt/kit@^4.1.3", "@nuxt/kit@^4.2.0", "@nuxt/kit@^4.2.1":
+"@nuxt/kit@^4.1.1", "@nuxt/kit@^4.1.2", "@nuxt/kit@^4.1.3", "@nuxt/kit@^4.2.0", "@nuxt/kit@^4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-4.2.1.tgz#a53fdff6c99454414db6a2b037b895a50723fdcc"
   integrity sha512-lLt8KLHyl7IClc3RqRpRikz15eCfTRlAWL9leVzPyg5N87FfKE/7EWgWvpiL/z4Tf3dQCIqQb88TmHE0JTIDvA==
@@ -5913,6 +5913,13 @@ nuxt-swiper@2.0.1:
   dependencies:
     "@nuxt/kit" "^3.17.2"
     swiper "^11.2.6"
+
+nuxt-vitalizer@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/nuxt-vitalizer/-/nuxt-vitalizer-2.0.0.tgz#f210912951ab2bb4fea18341bc6396226177c0b6"
+  integrity sha512-X2mabvcXMfKmWc46p8WmCbTlr8+wDniPHunQIRSGWmH0goqw6YTAe0+ttxRNISGxcobXDqqip7qPCE6+T60t1g==
+  dependencies:
+    "@nuxt/kit" "^4.1.1"
 
 nuxt@^4.1.2:
   version "4.1.2"
