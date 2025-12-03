@@ -40,5 +40,9 @@
   "matrices_grid_block": {
     "select_category": "Виберіть категорію",
     "no_subcategories": "Немає підкатегорій"
+  },
+  "form": {
+    "name_error": "Ім'я повинно містити принаймні 2 літери",
+    "email_error": "Невірна електронна пошта."
   }
 }

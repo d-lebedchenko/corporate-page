@@ -195,7 +195,7 @@ const Icon = computed(() => {
     svg {
       width: 386px;
       height: 386px;
-      color: $c-steel-grey;
+      color: $c-white;
       @include respond("tab") {
         width: 102px;
         height: 102px;

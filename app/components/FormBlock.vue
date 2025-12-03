@@ -46,6 +46,8 @@ const nameValue = ref('')
 const emailValue = ref('')
 const isFormSubmitted = ref(false)
 
+const isFileError = ref(false)
+
 
 const isSending = ref(false)
 const isSendSuccess = ref(false)
@@ -62,7 +64,7 @@ const isEmailValid = computed(() => {
 
 
 const isFormValid = computed(() => {
-  return isNameValid.value && isEmailValid.value
+  return isNameValid.value && isEmailValid.value && !isFileError.value
 })
 
 const showNameError = computed(() => {
@@ -85,17 +87,23 @@ const triggerFileInput = () => {
 const handleFileChange = (event) => {
   const files = event.target.files || event.dataTransfer?.files;
   const file = files ? files[0] : null;
+  
+  isFileError.value = false;
 
   if (file) {
     if (file.size > MAX_FILE_SIZE_BYTES) {
       const fileSizeMB = (file.size / 1024 / 1024).toFixed(2);
       console.log('File size (MB):', fileSizeMB);
-      selectedFile.value = null;
+      // selectedFile.value = null;
+      selectedFile.value = file;
+      isFileError.value = true;
     } else {
       selectedFile.value = file;
+      isFileError.value = false;
     }
   } else {
     selectedFile.value = null;
+    isFileError.value = false;
   }
 }
 const handleDrop = (event) => {
@@ -117,6 +125,7 @@ const fileLabel = computed(() => {
 
 const clearFile = () => {
   selectedFile.value = null;
+  isFileError.value = false;
   if (fileInputRef.value) {
     fileInputRef.value.value = '';
   }
@@ -129,7 +138,7 @@ const sendFormData = async () => {
   formData.append('name', nameValue.value);
   formData.append('email', emailValue.value);
 
-  if (selectedFile.value) {
+  if (selectedFile.value  && !isFileError.value) {
     formData.append('file', selectedFile.value);
   }
 
@@ -164,8 +173,8 @@ const sendFormData = async () => {
 const handleSubmit = (event) => {
   event.preventDefault()
 
+  isFormSubmitted.value = true
   if (isFormValid.value) {
-    isFormSubmitted.value = true
     sendFormData()
   } else {
     console.error('Form is invalid!')
@@ -208,14 +217,15 @@ const handleSubmit = (event) => {
             <input class="form__input f-p1 clickable" type="text" :placeholder="name" v-model="nameValue"
               :class="{ 'input-error': showNameError }">
             <div v-if="showNameError" class="form__error-message d-f ai-c">
-              <ErrorIcon />
-              <div class="error-text f-p3">Name must contain at least 2 letters</div>
+              <ErrorIcon class="icon" />
+              <div class="error-text f-p3">{{ $t('form.name_error') }}</div>
             </div>
+            
             <input class="form__input f-p1 clickable" type="email" :placeholder="email" v-model="emailValue"
               :class="{ 'input-error': showEmailError }">
             <div v-if="showEmailError" class="form__error-message d-f ai-c">
-              <ErrorIcon />
-              <div class="error-text f-p3">Email is invalid.</div>
+              <ErrorIcon class="icon" />
+              <div class="error-text f-p3">{{ $t('form.email_error') }}</div>
             </div>
 
             <div class="form__file-attachment">
@@ -236,7 +246,7 @@ const handleSubmit = (event) => {
               <input type="file" ref="fileInputRef" @change="handleFileChange" style="display: none;"
                 accept=".pdf,.doc,.docx">
             </div>
-            <div class="form__hint f-p3">
+            <div class="form__hint f-p3" :class="{ 'error': isFileError }">
               {{ fileHint }}
             </div>
             <button type="submit" class="form__btn btn-green dots dots-hover f-b-p2 d-f ai-c"
@@ -385,7 +395,11 @@ const handleSubmit = (event) => {
 
   &__error-message {
     gap: 8px;
-    color: $c-green;
+    color: $c-red;
+
+    .icon { 
+      color: $c-red;
+    }
   }
 
   &__file-attachment {
@@ -418,6 +432,9 @@ const handleSubmit = (event) => {
   &__hint {
     margin-top: -4px;
     margin-bottom: 32px;
+    &.error {
+      color: $c-red;
+    }
   }
 
   &__btn {

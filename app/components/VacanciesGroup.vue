@@ -188,6 +188,15 @@ function getVacancyLink(slug) {
 
     &-apply {
       color: $c-green;
+      svg {
+        transition: transform 0.3s;
+      }
+
+      &:hover {
+        svg {
+          transform: rotate(45deg);
+        }
+      }
     }
   }
 
