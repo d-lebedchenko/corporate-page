@@ -43,6 +43,8 @@
   },
   "form": {
     "name_error": "Name must contain at least 2 letters",
-    "email_error": "Email is invalid."
+    "email_error": "Email is invalid.",
+    "popup_title": "application sent!",
+    "popup_text": "Thank you for your interest in working with us. We will carefully review your CV and respond as soon as a suitable opportunity arises."
   }
 }

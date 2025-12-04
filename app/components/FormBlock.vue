@@ -87,7 +87,7 @@ const triggerFileInput = () => {
 const handleFileChange = (event) => {
   const files = event.target.files || event.dataTransfer?.files;
   const file = files ? files[0] : null;
-  
+
   isFileError.value = false;
 
   if (file) {
@@ -138,7 +138,7 @@ const sendFormData = async () => {
   formData.append('name', nameValue.value);
   formData.append('email', emailValue.value);
 
-  if (selectedFile.value  && !isFileError.value) {
+  if (selectedFile.value && !isFileError.value) {
     formData.append('file', selectedFile.value);
   }
 
@@ -151,7 +151,6 @@ const sendFormData = async () => {
     const result = await response.json();
 
     if (response.ok) {
-      console.log('Succsess:', result.message);
 
       nameValue.value = '';
       emailValue.value = '';
@@ -202,16 +201,8 @@ const handleSubmit = (event) => {
     </NuxtMarquee>
     <div class="container">
       <div class="form__wr">
-        <NuxtPicture
-          v-if="image?.url"
-          class="form__image d-f jc-c"
-          :src="`/payload${image.url}`"
-          :alt="image.alt || ''"
-          :width="image.width"
-          :height="image.height"
-          sizes="xs:345px lg:430px"
-          loading="lazy"
-        />
+        <NuxtPicture v-if="image?.url" class="form__image d-f jc-c" :src="`/payload${image.url}`" :alt="image.alt || ''"
+          :width="image.width" :height="image.height" sizes="xs:345px lg:430px" loading="lazy" />
         <div class="form__content d-f fd-c">
           <form @submit="handleSubmit">
             <input class="form__input f-p1 clickable" type="text" :placeholder="name" v-model="nameValue"
@@ -220,7 +211,7 @@ const handleSubmit = (event) => {
               <ErrorIcon class="icon" />
               <div class="error-text f-p3">{{ $t('form.name_error') }}</div>
             </div>
-            
+
             <input class="form__input f-p1 clickable" type="email" :placeholder="email" v-model="emailValue"
               :class="{ 'input-error': showEmailError }">
             <div v-if="showEmailError" class="form__error-message d-f ai-c">
@@ -232,9 +223,7 @@ const handleSubmit = (event) => {
               <div class="form__input form__input--file f-p1 clickable" @click="triggerFileInput" :class="{
                 'file-selected': selectedFile,
                 'file-draged': isDragging,
-              }" @dragenter.prevent="handleDragEnter"
-                @dragleave.prevent="handleDragLeave"
-                @dragover.prevent
+              }" @dragenter.prevent="handleDragEnter" @dragleave.prevent="handleDragLeave" @dragover.prevent
                 @drop.prevent="handleDrop">
                 <Attachment v-if="selectedFile" class="icon icon-attach icon-24" />
                 <div class="file-label">
@@ -259,11 +248,85 @@ const handleSubmit = (event) => {
         </div>
       </div>
     </div>
+    <div class="popup d-f jc-c ai-c" v-if="isSendSuccess">
+      <div class="popup__wr dots">
+        <span class="psevdo"></span>
+        <div class="popup__top d-f">
+          <h3 class="popup__title  dots f-h2">
+            <span class="psevdo"></span>
+            {{ $t('form.popup_title') }}
+          </h3>
+          <div class="popup__close dots dots-hover d-f jc-c ai-c" @click="isSendSuccess = false">
+            <span class="psevdo"></span>
+            <IconX class="icon" />
+          </div>
+        </div>
+        <div class="popup__text f-p3">
+          {{ $t('form.popup_text') }}
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 @use "@/assets/scss/media" as *;
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 4;
+  padding: 15px;
+
+  &__wr {
+    background-color: $c-black;
+    max-width: 698px;
+    width: 100%;
+    
+    @include respond("tab") {
+      max-width: 485px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $c-green;
+    padding: 24px 32px;
+    width: 100%;
+
+    @include respond("tab") {
+      padding: 16px;
+    }
+  }
+
+  &__close {
+    width: 120px;
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      color: $c-green;
+
+      @include respond("tab") {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__text {
+    padding: 40px 32px;
+
+    @include respond("tab") {
+      padding: 24px 16px;
+    }
+  }
+}
 
 .form {
   color: $c-white;
@@ -397,7 +460,7 @@ const handleSubmit = (event) => {
     gap: 8px;
     color: $c-red;
 
-    .icon { 
+    .icon {
       color: $c-red;
     }
   }
@@ -426,12 +489,12 @@ const handleSubmit = (event) => {
     padding: 5px;
     z-index: 2;
     transition: color 0.2s;
-
   }
 
   &__hint {
     margin-top: -4px;
     margin-bottom: 32px;
+
     &.error {
       color: $c-red;
     }
