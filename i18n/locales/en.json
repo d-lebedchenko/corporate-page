@@ -46,5 +46,11 @@
     "email_error": "Email is invalid.",
     "popup_title": "application sent!",
     "popup_text": "Thank you for your interest in working with us. We will carefully review your CV and respond as soon as a suitable opportunity arises."
+  },
+  "cookie": {
+    "title": "We use cookies",
+    "text": "To ensure the proper functioning of the site and improve your experience, we use cookies. You can accept or decline optional cookies.",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }

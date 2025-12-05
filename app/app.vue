@@ -14,4 +14,5 @@ useHead(() => ({
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <CookieBanner />
 </template>
