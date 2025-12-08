@@ -223,6 +223,9 @@ onUnmounted(() => {
     @include respond("mob") {
       padding: 108px 32px 40px 32px;
     }
+    @include respond("mob-sm") {
+      padding: 76px 20px 20px 20px;
+    }
 
     &__wr {
       position: fixed;
@@ -262,6 +265,10 @@ onUnmounted(() => {
       @include respond("mob") {
         gap: 32px;
       }
+      
+      @include respond("mob-sm") {
+        gap: 20px;
+      }
     }
 
     &__item {
@@ -274,6 +281,11 @@ onUnmounted(() => {
           @include respond("mob") {
             font-size: 32px;
           }
+          @include respond("mob-sm") {
+            font-size: 24px;
+            font-weight: 600;
+          }
+          
         }
       }
     }
@@ -296,6 +308,11 @@ onUnmounted(() => {
           letter-spacing: -0.05em;
         }
       }
+    }
+    
+    @include respond("mob") {
+      gap: 20px;
+      margin-top: 24px;
     }
   }
 
