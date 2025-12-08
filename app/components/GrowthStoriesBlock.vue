@@ -254,7 +254,10 @@ const slidePrev = () => {
   &__body {
     flex: 1;
     display: flex;
-    @include respond("tab") {
+    // @include respond("tab") {
+    //   flex-direction: column;
+    // }
+    @include respond("mob") {
       flex-direction: column;
     }
   }
@@ -265,6 +268,8 @@ const slidePrev = () => {
     @include respond("tab") {
       min-height: auto;
       flex: 0 1 auto;
+      display: flex;
+      flex-direction: column;
     }
 
     &-img {
@@ -272,7 +277,12 @@ const slidePrev = () => {
       width: 100%;
       height: 529px;
       @include respond("tab") {
+        height: auto;
+        max-width: 244px;
+      }
+      @include respond("mob") {
         height: 240px;
+        max-width: 100%;
       }
       
       &:deep(img) {
@@ -286,6 +296,9 @@ const slidePrev = () => {
     &-text {
       padding: 32px;
       @include respond("tab") {
+        margin-top: auto;
+      }
+      @include respond("mob") {
         padding: 16px;
         position: relative;
         &:before,

@@ -50,14 +50,12 @@ const props = defineProps({
 @use "@/assets/scss/media" as *;
 
 .footer {
-  padding-top: 72px;
-  padding-bottom: 120px;
+  padding: 72px 0;
   background-color: $c-black;
   color: $c-white;
 
   @include respond("tab") {
-    padding-bottom: 75px;
-    padding-top: 40px;
+    padding: 40px 0;
   }
 
   &__wr {

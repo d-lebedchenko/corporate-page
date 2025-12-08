@@ -68,7 +68,7 @@ onBeforeUnmount(() => {
         <div class="main-section__marquee">
           
           <NuxtMarquee autoFill :speed="currentSpeed"  :direction="'down'">
-            <div class="main-section__runing f-a1">
+            <div class="main-section__runing f-a3">
               <span class="main-section__runing__text"> {{ runningText }} </span>&nbsp;
             </div>
           </NuxtMarquee>
@@ -192,7 +192,7 @@ onBeforeUnmount(() => {
 
   &__marquee {
     min-width: 0;
-    flex: 0 0 180px;
+    flex: 0 0 130px;
     transform: translateX(calc(100% - 10px));
 
     :deep() {
@@ -208,8 +208,9 @@ onBeforeUnmount(() => {
 
   &__runing {
     rotate: -90deg;
-    font-size: 150px;
+    // font-size: 150px;
     text-transform: uppercase;
+    color: $c-steel-grey;
 
     @include respond("tab") {
       font-size: 56px;
@@ -218,7 +219,7 @@ onBeforeUnmount(() => {
    
 
   &__right {
-    flex: 0 0 702px;
+    flex: 0 0 780px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
