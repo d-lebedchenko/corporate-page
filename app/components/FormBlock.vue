@@ -321,6 +321,7 @@ const handleSubmit = (event) => {
 
   &__text {
     padding: 40px 32px;
+    color: $c-grey-2;
 
     @include respond("tab") {
       padding: 24px 16px;
@@ -518,6 +519,7 @@ const handleSubmit = (event) => {
       font-size: 20px;
       width: 100%;
       padding: 16px;
+      justify-content: space-between;
 
       &.hide-desctop {
         display: flex;
