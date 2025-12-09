@@ -1,18 +1,53 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-const COOKIE_CONSENT_KEY = 'cookie_consent_given';
+const COOKIE_CONSENT_KEY = 'cookie_consent_details';
 const showBanner = ref(false);
 
+const ACCEPT_ALL_CONSENT = {
+  necessary: true,
+  preferences: true,
+  analytics: true,
+  marketing: true
+};
+
+const DECLINE_CONSENT = {
+  necessary: true,
+  preferences: false,
+  analytics: true,
+  marketing: false
+};
+
 const acceptCookies = () => {
-  localStorage.setItem(COOKIE_CONSENT_KEY, 'true');
-  showBanner.value = false;
-  console.log('User accepted cookies. Analytics can be initialized now.');
+  setConsent(ACCEPT_ALL_CONSENT);
+  console.log('User accepted ALL cookies. Full analytics initialized.');
+};
+
+const declineCookies = () => {
+  setConsent(DECLINE_CONSENT);
+  console.log('User declined optional cookies. Only necessary scripts running.');
+};
+
+const setConsent = (consentObject) => {
+  try {
+    localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consentObject));
+    showBanner.value = false;
+  } catch (e) {
+    console.error('Failed to save cookie consent to localStorage:', e);
+  }
 };
 
 onMounted(() => {
-  const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-  if (consent !== 'true') {
+  try {
+    const consentDetails = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (!consentDetails) {
+      showBanner.value = true;
+    } else {
+      const parsedConsent = JSON.parse(consentDetails);
+      console.log('Found existing consent:', parsedConsent);
+    }
+  } catch (e) {
+    console.error('Error reading cookie consent from localStorage:', e);
     showBanner.value = true;
   }
 });
@@ -22,7 +57,6 @@ onMounted(() => {
   <div class="cookie-banner" v-if="showBanner">
     <div>
       <div class="cookie-banner__top">
-
         <h4 class="cookie-banner__title f-h4">{{ $t('cookie.title') }}</h4>
         <p class="cookie-banner__text f-p4">{{ $t('cookie.text') }}</p>
       </div>
@@ -30,14 +64,13 @@ onMounted(() => {
         <button class="accept f-b-p3" @click="acceptCookies">
           {{ $t('cookie.accept') }}
         </button>
-        <button class="decline f-b-p3">
+        <button class="decline f-b-p3" @click="declineCookies">
           {{ $t('cookie.decline') }}
         </button>
       </div>
     </div>
   </div>
 </template>
-
 <style scoped lang="scss">
 @use "@/assets/scss/media" as *;
 
