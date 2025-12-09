@@ -12,7 +12,17 @@ defineProps({
     default: () => []
   },
 })
-
+const windowWidth = ref(0);
+const updateWidth = () => {
+  windowWidth.value = window.innerWidth;
+};
+onMounted(() => {
+  updateWidth();
+  window.addEventListener('resize', updateWidth);
+});
+onUnmounted(() => {
+  window.removeEventListener('resize', updateWidth);
+});
 const swiperInstance = ref(null)
 
 const onSwiper = (swiper) => {
@@ -37,6 +47,7 @@ const slidePrev = () => {
     swiperInstance.value.slidePrev()
   }
 }
+
 </script>
 
 <template>
@@ -74,7 +85,17 @@ const slidePrev = () => {
               <div class="slide__body">
                 <div class="slide__person dots-border dots-border--hide-bottom">
                   <NuxtPicture
-                    v-if="item.image?.url"
+                    v-if="item.imageTablet?.url && windowWidth <= 1024 && windowWidth > 601"
+                    class="slide__person-img"
+                    :src="`/payload${item.imageTablet.url}`"
+                    :alt="item.imageTablet.alt || ''"
+                    :width="item.imageTablet.width"
+                    :height="item.imageTablet.height"
+                    sizes="xs:100vw sm:100vw md:100vw lg:694px"
+                    loading="lazy"
+                  />
+                  <NuxtPicture
+                    v-else="item.image?.url"
                     class="slide__person-img"
                     :src="`/payload${item.image.url}`"
                     :alt="item.image.alt || ''"
@@ -267,7 +288,7 @@ const slidePrev = () => {
     min-height: 666px;
     @include respond("tab") {
       min-height: auto;
-      flex: 0 1 auto;
+      flex: 0 1 244px;
       display: flex;
       flex-direction: column;
     }
