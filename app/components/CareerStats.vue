@@ -1,7 +1,7 @@
 <script setup>
-import Anim1 from '~/assets/icons/career-anim-1.svg'
+import Anim1 from '~/assets/icons/career-anim-1-new.svg'
 import Anim2 from '~/assets/icons/career-anim-2.svg'
-import Anim3 from '~/assets/icons/career-anim-3.svg'
+import Anim3 from '~/assets/icons/career-anim-3-new.svg'
 
 defineProps({
   title: {
@@ -331,6 +331,13 @@ const {
         svg {
           animation: rotate 0.6s ease-out 0s forwards;
         }
+        :deep() {
+          .circle {
+            transform-origin: center;
+            animation: circle 0.6s ease-out 0s forwards;
+            animation-delay: 0.3s;
+          }
+        }
       }
     }
   }
@@ -358,6 +365,16 @@ const {
   100% {
     opacity: 1;
     transform: translate(0, 0);
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: none;
+  }
+
+  100% {
+    transform: scale(0.5);
   }
 }
 </style>

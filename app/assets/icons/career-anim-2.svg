@@ -1,5 +1,5 @@
 <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path class="triangle-bl" d="M54.5039 55.5V108.791L1.20898 55.5H54.5039Z" stroke="white"/>
+    <path class="triangle-bl" d="M54.5039 55.5V108.791L1.20898 55.5H54.5039Z" stroke="#00F3BC"/>
 
     <path class="triangle-br" d="M109.504 55.5V108.791L56.209 55.5H109.504Z" stroke="white"/>
 

@@ -5,13 +5,6 @@ interface PageDoc {
   slug: string;
 }
 
-interface EmployerDoc {
-  slug?: string;
-  meta?: {
-    slug?: string;
-  };
-}
-
 const baseUrl = process.env.NUXT_PUBLIC_BASE_URL || "http://localhost:3000";
 const payloadUrl =
   process.env.NUXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
@@ -20,6 +13,30 @@ const payloadHostname = new URL(payloadUrl).hostname;
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  app: {
+    head: {
+      link: [
+        { 
+          rel: 'preconnect', 
+          href: 'https://www.googletagmanager.com', 
+          crossorigin: 'anonymous' 
+        }
+      ],
+      script: [
+        {
+          innerHTML: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f) ;
+            })(window,document,'script','dataLayer','GTM-WT6WXQ9P');
+          `,
+          tagPosition: 'head',
+          type: 'text/javascript',
+        },
+      ]
+    }
+  },
   features: {
     inlineStyles: false,
   },
