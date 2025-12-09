@@ -24,20 +24,22 @@ const props = defineProps({
     default: ''
   }
 })
-const HEADER_OFFSET = 100
-const formatIsoDate = (dateString) => {
-  if (!dateString) {
-    return ''
-  }
-  
+
+// === State Management ===
+const isSidebarOpen = ref(true)
+const activeId = ref(getInitialActiveId(props.sections))
+
+// === Helper Functions ===
+
+function formatIsoDate(dateString) {
+  if (!dateString) return ''
   try {
     const date = new Date(dateString)
-    
     if (isNaN(date.getTime())) {
       console.error('Недійсний рядок дати:', dateString)
       return dateString
     }
-    
+
     const day = String(date.getDate()).padStart(2, '0')
     const month = String(date.getMonth() + 1).padStart(2, '0')
     const year = date.getFullYear()
@@ -48,21 +50,6 @@ const formatIsoDate = (dateString) => {
     return dateString
   }
 }
-const formattedPublishedAt = computed(() => {
-    const dateToFormat = props.publishedAt;
-    
-    if (!dateToFormat) {
-        return '';
-    }
-    
-    return formatIsoDate(dateToFormat);
-})
-
-
-const isSidebarOpen = ref(true)
-const activeId = ref(getInitialActiveId(props.sections))
-
-const sectionEls = shallowRef([])
 
 function getInitialActiveId(sections) {
   if (!Array.isArray(sections) || !sections.length) return ''
@@ -76,6 +63,12 @@ function getSectionId(section) {
   return ''
 }
 
+// === Computed Properties ===
+
+const formattedPublishedAt = computed(() => {
+  return formatIsoDate(props.publishedAt)
+})
+
 const sidebarItems = computed(() => {
   if (!Array.isArray(props.sections) || !props.sections.length) return []
   return props.sections
@@ -83,76 +76,54 @@ const sidebarItems = computed(() => {
     .map(s => ({ id: getSectionId(s), title: s.title }))
 })
 
-function collectSectionEls() {
-  if (typeof document === 'undefined') return
-  sectionEls.value = Array.from(
-    document.querySelectorAll('.privacy__section[id]')
-  )
-}
+/**
+ * NEW: Обчислює активну секцію на основі activeId.
+ * Це використовується для відображення вмісту в блоці privacy__right.
+ */
+const activeSection = computed(() => {
+  if (!activeId.value) return null
+  return props.sections.find(s => getSectionId(s) === activeId.value)
+})
 
-function updateActiveSection() {
-  if (!sectionEls.value.length) return
+// === User Actions ===
 
-  const y = window.scrollY
-  let current = sectionEls.value[0]
+/**
+ * NEW: Оновлює ID активної секції при кліку.
+ * Scroll logic is removed.
+ */
+function selectSection(id) {
 
-  for (const el of sectionEls.value) {
-    const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET
-    if (top <= y + 1) current = el
-    else break
+  activeId.value = id
+  if (typeof document !== 'undefined') {
+    // Шукаємо контейнер, який відображає вміст
+    const contentEl = document.querySelector('.privacy__right')
+    if (contentEl) {
+      // Обчислюємо позицію скролу з урахуванням фіксованого заголовка
+      const top = contentEl.getBoundingClientRect().top + window.pageYOffset - 80
+      window.scrollTo({ top: top, behavior: 'smooth' })
+    }
   }
-
-  if (current && current.id && activeId.value !== current.id) {
-    activeId.value = current.id
-  }
-}
-
-function scrollToSection(id) {
-  if (typeof document === 'undefined') return
-  const el = document.getElementById(id)
-  if (!el) return
-  const top = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET
-  window.scrollTo({ top, behavior: 'smooth' })
 }
 
 function toggleSidebar() {
   isSidebarOpen.value = !isSidebarOpen.value
 }
 
-let ticking = false
-function onScrollOrResize() {
-  if (ticking) return
-  ticking = true
-  requestAnimationFrame(() => {
-    updateActiveSection()
-    ticking = false
-  })
-}
+// === Lifecycle Hooks ===
 
 onMounted(() => {
+  // Закриваємо бічну панель на мобільних за замовчуванням
   if (typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches) {
-    isSidebarOpen.value = false;
+    isSidebarOpen.value = false
   }
-  collectSectionEls()
-  updateActiveSection()
-
-  window.addEventListener('scroll', onScrollOrResize, { passive: true })
-  window.addEventListener('resize', onScrollOrResize)
+  // No scroll listeners needed anymore
 })
 
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScrollOrResize)
-  window.removeEventListener('resize', onScrollOrResize)
-})
-
+// Спостерігаємо за зміною секцій та встановлюємо початковий активний ID, якщо дані оновлюються
 watch(
   () => props.sections,
   () => {
     activeId.value = getInitialActiveId(props.sections)
-    nextTick(() => {
-      collectSectionEls()
-      updateActiveSection()
-    })
   },
   { deep: true }
 )
@@ -163,7 +134,8 @@ watch(
     <div class="container">
       <h1 class="privacy__title f-a3">{{ title }}</h1>
       <p class="privacy__last-updated f-h3">{{ lastUpdated + ' ' + formattedPublishedAt }}</p>
-      <div v-if="sections?.length" class="privacy__wr">
+      <div v-if="sections?.length" class="privacy__wr dots">
+        <span class="psevdo"></span>
         <div v-if="sidebarItems?.length" class="privacy__left">
           <div class="privacy__sidebar">
             <button :class="[
@@ -175,11 +147,12 @@ watch(
             </button>
 
             <TransitionExpand>
-              <div v-show="isSidebarOpen" class="privacy__sidebar-list">
+              <div v-show="isSidebarOpen" class="privacy__sidebar-list dots">
+                <span class="psevdo"></span>
                 <a v-for="item in sidebarItems" :key="item.id" :href="`#${item.id}`" :class="[
-                  'privacy__sidebar-item f-p2',
+                  'privacy__sidebar-item f-sh2',
                   { active: activeId === item.id },
-                ]" @click.prevent="scrollToSection(item.id)">
+                ]" @click.prevent="selectSection(item.id)">
                   <span class="psevdo"></span>
                   {{ item.title }}
                 </a>
@@ -188,8 +161,9 @@ watch(
           </div>
         </div>
 
-        <div class="privacy__right">
-          <div v-for="section in sections" :key="section.id" :id="section.title ? getSectionId(section) : undefined"
+        <div class="privacy__right dots">
+          <spn class="psevdo"></spn>
+          <!-- <div v-for="section in sections" :key="section.id" :id="section.title ? getSectionId(section) : undefined"
             :class="[
               'privacy__section',
               { 'bigger-mb': section.biggerMarginBottom },
@@ -200,11 +174,29 @@ watch(
 
             <RichtextLexical v-if="lexicalHasText(section.text)" :content="section.text"
               class="privacy__richtext f-p2" />
+          </div> -->
+
+          <div v-if="activeSection" 
+               :key="activeSection.id" 
+               :id="getSectionId(activeSection)"
+               :class="[
+                 'privacy__section',
+                 { 'bigger-mb': activeSection.biggerMarginBottom },
+               ]">
+            
+            <h2 v-if="activeSection.title" class="privacy__right__title f-h2">
+              {{ activeSection.titleContent || activeSection.title }}
+            </h2>
+
+            <!-- Припускаємо, що RichtextLexical і lexicalHasText доступні -->
+            <RichtextLexical v-if="lexicalHasText(activeSection.text)" :content="activeSection.text"
+              class="privacy__richtext f-p2" />
           </div>
-          
-            <p v-if="footnote" class="privacy__footnote f-h2 green">{{ footnote }}</p>
+
         </div>
       </div>
+      
+          <p  v-if="footnote" class="privacy__footnote f-h2 green">{{ footnote }}</p>
     </div>
   </div>
 </template>
@@ -224,11 +216,13 @@ watch(
   &__title {
     text-transform: uppercase;
     margin-bottom: 16px;
+
     @include respond("tab") {
       font-size: 48px;
       margin-bottom: 4px;
     }
   }
+
   &__last-updated {
     color: #989898;
     margin-bottom: 140px;
@@ -241,7 +235,7 @@ watch(
 
   &__wr {
     display: flex;
-    gap: 92px;
+    // gap: 92px;
 
     @include respond("tab") {
       display: block;
@@ -253,17 +247,17 @@ watch(
     flex: 0 0 600px;
 
     @include respond("tab") {
-      margin-bottom: 80px;
+      // margin-bottom: 80px;
     }
 
     @include respond("mob") {
-      margin-bottom: 60px;
+      // margin-bottom: 60px;
     }
   }
 
   &__sidebar {
-    position: sticky;
-    top: 80px;
+    // position: sticky;
+    // top: 80px;
 
     @include respond("tab") {
       position: static;
@@ -275,13 +269,13 @@ watch(
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding: 18px 32px;
+      padding: 26px 32px;
       text-align: left;
       text-transform: uppercase;
       outline: 1px solid $c-steel-grey;
-      
+
       @include respond("tab") {
-        padding: 12px;
+        padding: 15.5px 20px;
       }
 
       svg {
@@ -298,16 +292,16 @@ watch(
     &-item {
       display: block;
       width: 100%;
-      padding: 18px 32px;
+      padding: 29px 32px;
       text-align: left;
 
       outline: 1px solid $c-steel-grey;
       transition: 0.3s color ease-in-out;
+      text-transform: uppercase;
 
       @include respond("tab") {
-        padding: 12px;
+        padding: 16.5px 20px;
         border-top: 1px solid $c-steel-grey;
-        font-weight: 500;
       }
 
       &.dots {
@@ -341,7 +335,12 @@ watch(
 
   &__right {
     flex: 1;
+    padding: 52px 40px 52px 52px;
 
+
+    @include respond("tab") {
+      padding: 32px 20px;
+    }
 
     &__title {
       text-transform: uppercase;
@@ -378,6 +377,7 @@ watch(
   }
 
   &__richtext {
+    color: $c-grey-2;
     @include respond("tab") {
       font-size: 14px;
     }
@@ -404,6 +404,10 @@ watch(
         margin-bottom: 12px;
       }
     }
+  }
+
+  &__footnote {
+    margin-top: 32px;
   }
 }
 </style>
