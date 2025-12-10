@@ -58,7 +58,7 @@ onMounted(() => {
     <div>
       <div class="cookie-banner__top">
         <h4 class="cookie-banner__title f-h4">{{ $t('cookie.title') }}</h4>
-        <p class="cookie-banner__text f-p4">{{ $t('cookie.text') }}</p>
+        <p class="cookie-banner__text f-p3">{{ $t('cookie.text') }}</p>
       </div>
       <div class="cookie-banner__btns">
         <button class="accept f-b-p3" @click="acceptCookies">
@@ -79,7 +79,7 @@ onMounted(() => {
   bottom: 20px;
   left: 20px;
   margin-right: 20px;
-  max-width: 491px;
+  max-width: 520px;
   width: 100%;
   color: white;
   z-index: 3;
@@ -90,7 +90,7 @@ onMounted(() => {
 
 
 
-  @include respond("mob-md") {
+  @include respond("mob") {
     width: calc(100% - 30px);
     margin: 0 15px;
     left: 0;
@@ -106,6 +106,9 @@ onMounted(() => {
     text-transform: uppercase;
   }
 
+  &__text {
+    color: $c-grey-2;
+  }
   &__btns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -118,7 +121,7 @@ onMounted(() => {
       text-transform: uppercase;
       min-height: 70px;
 
-      @include respond("mob-md") {
+      @include respond("mob") {
         min-height: 56px;
       }
     }
