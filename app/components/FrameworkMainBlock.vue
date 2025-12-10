@@ -42,7 +42,7 @@ const titleRest = computed(() => {
         <div class="framework-main-block__right">
           <h1
             v-if="title"
-            class="framework-main-block__title f-a4"
+            class="framework-main-block__title f-a3"
           >
             <span class="first">{{ titleFirst }}</span>
             {{ titleRest }}
@@ -141,6 +141,7 @@ const titleRest = computed(() => {
   }
 
   &__descr {
+    color: $c-grey-2;
     &:not(:first-child) {
       margin-top: 40px;
       @include respond("tab") {

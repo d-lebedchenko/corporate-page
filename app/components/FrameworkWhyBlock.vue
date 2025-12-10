@@ -109,6 +109,7 @@ defineProps({
       }
 
       &-descr {
+        color: $c-grey-2;
         @include respond("tab") {
           flex: 1;
           padding: 16px 12px;

@@ -137,6 +137,7 @@ usePageSeo(page.value?.meta)
     &-date {
       text-transform: uppercase;
       margin-bottom: 20px;
+      color: $c-grey-2;
       @include respond("tab") {
         text-transform: none;
         margin-bottom: 24px;
@@ -162,7 +163,7 @@ usePageSeo(page.value?.meta)
         padding: 12px 24px;
         text-align: center;
         background-color: $c-steel-grey;
-        color: $c-white;
+        color: $c-grey-2;
         @include respond("tab") {
           padding: 8px 12px;
         }

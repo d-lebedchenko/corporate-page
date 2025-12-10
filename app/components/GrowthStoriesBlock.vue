@@ -77,7 +77,7 @@ const slidePrev = () => {
               <div class="slide__head dots-border">
                 <h2 class="slide__title f-h2">{{ item.title }}</h2>
 
-                <div class="slide__count f-sh2 dots-border">
+                <div class="slide__count f-sh1 dots-border">
                   {{ index + 1 }}/{{ stories.length }}
                 </div>
               </div>
@@ -417,6 +417,10 @@ const slidePrev = () => {
           margin-bottom: 20px;
         }
       }
+    }
+
+    &-text {
+      color: $c-grey-2;
     }
   }
 }

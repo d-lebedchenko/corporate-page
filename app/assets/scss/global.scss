@@ -52,10 +52,21 @@ button {
   font-family: $font-secondary;
 }
 
+// .f-a1 {
+//   font-family: $font-secondary;
+//   font-weight: 500;
+//   font-size: 180px;
+//   line-height: 125%;
+//   letter-spacing: 0;
+  
+//   @include respond("tab") {
+//     font-size: 64px;
+//   }
+// }
 .f-a1 {
   font-family: $font-secondary;
   font-weight: 500;
-  font-size: 180px;
+  font-size: 141px;
   line-height: 125%;
   letter-spacing: 0;
   
@@ -66,22 +77,14 @@ button {
 .f-a2 {
   font-family: $font-secondary;
   font-weight: 500;
-  font-size: 141px;
+  font-size: 108px;
   line-height: 125%;
   letter-spacing: 0;
-  
   @include respond("tab") {
     font-size: 48px;
   }
 }
 .f-a3 {
-  font-family: $font-secondary;
-  font-weight: 500;
-  font-size: 108px;
-  line-height: 125%;
-  letter-spacing: 0;
-}
-.f-a4 {
   font-family: $font-secondary;
   font-weight: 500;
   font-size: 80px;
@@ -127,15 +130,18 @@ button {
   font-size: 20px;
   line-height: 125%;
   letter-spacing: 0;
+  @include respond("tab") {
+    font-size: 18px;
+  }
 }
+// .f-sh1 {
+//   font-family: $font-secondary;
+//   font-weight: 400;
+//   font-size: 35px;
+//   line-height: 125%;
+//   letter-spacing: 0;
+// }
 .f-sh1 {
-  font-family: $font-secondary;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 125%;
-  letter-spacing: 0;
-}
-.f-sh2 {
   font-family: $font-secondary;
   font-weight: 400;
   font-size: 24px;
@@ -197,6 +203,10 @@ button {
   font-size: 24px;
   line-height: 130%;
   letter-spacing: -0.02em;
+  @include respond("tab") {
+    font-size: 16px;
+    line-height: 110%;
+  }
 }
 
 .f-b-p3 {

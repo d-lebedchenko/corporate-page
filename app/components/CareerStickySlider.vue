@@ -168,9 +168,11 @@ $slide-scale: 0.8667;
     @include respond("tab") {
       margin-bottom: 24px;
     }
-
   }
 
+  &__text {
+    color: $c-grey-2
+  }
 
   &__slider {
     width: 50%;

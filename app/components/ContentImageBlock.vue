@@ -104,6 +104,7 @@ defineProps({
     margin-bottom: 40px;
     max-width: 616px;
     width: 100%;
+    color: $c-grey-2;
     
     @include respond("tab") {
       margin-bottom: 28px;

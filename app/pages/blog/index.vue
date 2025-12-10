@@ -55,7 +55,7 @@ usePageSeo(pageData.value?.meta)
         </h1>
         <h2
           v-if="pageData?.subtitle"
-          class="blog-page__head-subtitle f-a4"
+          class="blog-page__head-subtitle f-a3"
         >
           {{ pageData.subtitle }}
         </h2>

@@ -120,7 +120,7 @@ const {
             <div class="career-stats__item__title f-h2">
               {{ growTitle }}
             </div>
-            <div class="career-stats__item__text f-sh2 o-7">
+            <div class="career-stats__item__text f-sh1 o-7">
               {{ growSubtitle }}
             </div>
           </div>
@@ -136,7 +136,7 @@ const {
             <div class="career-stats__item__title f-h2">
               {{ expertsTitle }}
             </div>
-            <div class="career-stats__item__text  f-sh2 o-7">
+            <div class="career-stats__item__text  f-sh1 o-7">
               {{ expertsSubtitle }}
             </div>
           </div>
@@ -151,7 +151,7 @@ const {
             <div class="career-stats__item__title f-h2">
               {{ employeesTitle }}
             </div>
-            <div class="career-stats__item__text f-sh2  o-7">
+            <div class="career-stats__item__text f-sh1  o-7">
               {{ employeesSubtitle }}
             </div>
           </div>
@@ -207,6 +207,7 @@ const {
   }
 
   &__text  {
+    color: $c-grey-2;
     @include respond("tab") {
       font-size: 14px;
     }

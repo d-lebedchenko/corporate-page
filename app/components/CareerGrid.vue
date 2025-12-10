@@ -210,7 +210,7 @@ onMounted(() => {
               <component :is="AnimComponents[index]" class="icon" />
             </div>
 
-            <div class="career-grid__item__title f-sh2 dots d-f ai-c">
+            <div class="career-grid__item__title f-sh1 dots d-f ai-c">
               <span class="psevo"></span>
               <template v-if="index === 0">{{ frameworkTitle }}</template>
               <template v-else-if="index === 1">{{ communitiesTitle }}</template>
@@ -243,7 +243,7 @@ onMounted(() => {
                     <component :is="AnimComponents[index]" class="icon" />
                   </div>
 
-                  <div class="career-grid__item__title f-sh2 d-f ai-c">
+                  <div class="career-grid__item__title f-sh1 d-f ai-c">
                     <template v-if="index === 0">{{ frameworkTitle }}</template>
                     <template v-else-if="index === 1">{{ communitiesTitle }}</template>
                     <template v-else-if="index === 2">{{ systemTitle }}</template>
@@ -371,8 +371,7 @@ onMounted(() => {
 
     &__text {
       padding: 32px 20px;
-      opacity: 0.7;
-
+      color: $c-grey-2;
 
       @include respond("tab") {
         padding: 0;

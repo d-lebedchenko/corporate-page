@@ -75,7 +75,7 @@ onUnmounted(() => {
               <div class="header__submenu" v-if="item.subLinks.length">
 
                 <div class="header__submenu__item" v-for="sublink in item.subLinks" :key="sublink.id">
-                  <CmsLink class="header__submenu__item hover-green f-sh2" :link="sublink.link" @click="closeMenu()">
+                  <CmsLink class="header__submenu__item hover-green f-sh1" :link="sublink.link" @click="closeMenu()">
                     {{ sublink.link.label }}
                   </CmsLink>
                 </div>
@@ -83,7 +83,7 @@ onUnmounted(() => {
             </div>
           </div>
           <div class="header__social d-f ai-c jc-sb">
-            <div class="header__social__title f-sh2">
+            <div class="header__social__title f-sh1">
               {{ data.socialLabel }}
             </div>
             <div class="header__social__icons d-f">
@@ -221,10 +221,10 @@ onUnmounted(() => {
     }
 
     @include respond("mob") {
-      padding: 108px 32px 40px 32px;
+      padding: 32px;
     }
     @include respond("mob-sm") {
-      padding: 76px 20px 20px 20px;
+      padding: 20px;
     }
 
     &__wr {

@@ -173,7 +173,7 @@ onBeforeUnmount(() => {
       <div class="matrices__slider__controls__wr">
 
         <div class="matrices__slider__controls dots" v-if="sliderListItems.length > 0">
-          <span class="slider-counter f-sh2">
+          <span class="slider-counter f-sh1">
             <span class="psevdo"></span>{{ currentSlide + 1 }} / {{ sliderListItems.length }}</span>
           <button @click="slidePrev" class="slider-btn dots dots-hover">
             <span class="psevdo"></span>
@@ -459,6 +459,7 @@ onBeforeUnmount(() => {
         grid-template-columns: repeat(2, 1fr);
         gap: 64px;
         padding: 40px 32px;
+        color: $c-grey-2;
 
         @include respond("tab") {
           outline: none;

@@ -184,7 +184,7 @@ const handleSubmit = (event) => {
 <template>
   <section class="form">
     <NuxtMarquee autoFill :speed="80">
-      <h2 class="form__runing f-a3 hide-tablet">
+      <h2 class="form__runing f-a2 hide-tablet">
         <div class="marquee-wrapper">
           <div class="marquee">
             <span>{{ runingTitle }}</span>&nbsp;
@@ -417,7 +417,7 @@ const handleSubmit = (event) => {
     }
 
     &::placeholder {
-      color: $c-white;
+      color: $c-grey-2;
     }
 
     &--file {
@@ -425,6 +425,7 @@ const handleSubmit = (event) => {
       align-items: center;
       width: 100%;
       gap: 10px;
+      color: $c-grey-2;
 
       &.file-draged {
         border: 1px dashed $c-green;
@@ -437,6 +438,7 @@ const handleSubmit = (event) => {
       }
 
       &.file-selected {
+        color: $c-white;
         .icon {
           flex-shrink: 0;
         }

@@ -78,7 +78,7 @@ const slidePrev = () => {
               <ArrowBigRight aria-hidden="true" />
             </div>
             <button
-              class="value f-sh2"
+              class="value f-sh1"
               type="button"
               :aria-current="activeIndex === index"
               @click="slideTo(index)"
@@ -117,10 +117,10 @@ const slidePrev = () => {
 
                 <div class="slide__content custom-scrollbar">
                   <div v-if="item.keyTasks?.length" class="slide__group">
-                    <h4 class="slide__group-title f-sh2">
+                    <h4 class="slide__group-title f-sh1">
                       {{ $t('about_tracks_block.title_tasks') }}
                     </h4>
-                    <ul class="slide__tasks f-p4">
+                    <ul class="slide__tasks f-p3">
                       <li
                         v-for="task in item.keyTasks"
                         class="whitespace-pre-line"
@@ -132,10 +132,10 @@ const slidePrev = () => {
                   </div>
 
                   <div v-if="item.techStacks?.length" class="slide__group">
-                    <h4 class="slide__group-title f-sh2">
+                    <h4 class="slide__group-title f-sh1">
                       {{ $t('about_tracks_block.title_stacks') }}
                     </h4>
-                    <ul class="slide__stacks f-p4">
+                    <ul class="slide__stacks f-p3">
                       <li
                         v-for="stack in item.techStacks"
                         :key="stack.id"
@@ -368,6 +368,7 @@ const slidePrev = () => {
   }
 
   &__tasks {
+    color: $c-grey-2;
     @include respond("tab") {
       font-size: 14px;
     }
@@ -390,6 +391,7 @@ const slidePrev = () => {
   }
 
   &__stacks {
+      color: $c-grey-2;
     @include respond("tab") {
       font-size: 14px;
     }
@@ -401,7 +403,7 @@ const slidePrev = () => {
     }
 
     &-title {
-      color: $c-grey-2;
+      // color: $c-grey-2;
       margin-bottom: 4px;
     }
   }

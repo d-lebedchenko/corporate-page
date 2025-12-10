@@ -186,14 +186,14 @@ function handleIconThirdMouseLeave() {
           <div class="grid__item__title f-h2">
             {{ directionTitle }}
           </div>
-          <div class="grid__item__text f-sh2">
+          <div class="grid__item__text f-sh1">
             {{ directionSubtitle }}
           </div>
         </div>
         <div class="grid__top d-f fd-c jc-c dots">
           <span class="psevdo"></span>
           <h2 class="grid__top__title f-h1">{{ title }} <span class="green">{{ titleGreen }}</span></h2>
-          <RichtextLexical :content="text" class="grid__top__text" />
+          <RichtextLexical :content="text" class="grid__top__text f-p2" />
         </div>
         <div class="grid__icon dots d-f jc-c ai-c anim2-container" ref="iconSecondContainer" :class="{
           'is-animated-green': isIconSecondVisible,
@@ -207,7 +207,7 @@ function handleIconThirdMouseLeave() {
           <div class="grid__item__title f-h2">
             {{ schemaTitle }}
           </div>
-          <div class="grid__item__text  f-sh2">
+          <div class="grid__item__text  f-sh1">
             {{ schemaSubtitle }}
           </div>
         </div>
@@ -222,7 +222,7 @@ function handleIconThirdMouseLeave() {
           <div class="grid__item__title f-h2">
             {{ expertsTitle }}
           </div>
-          <div class="grid__item__text f-sh2">
+          <div class="grid__item__text f-sh1">
             {{ expertsSubtitle }}
           </div>
         </div>
@@ -297,11 +297,7 @@ function handleIconThirdMouseLeave() {
     }
 
     &__text {
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 130%;
-      letter-spacing: -0.02em;
-
+      color: $c-grey-2;
       @include respond("tab") {
         font-size: 14px;
       }
@@ -339,6 +335,7 @@ function handleIconThirdMouseLeave() {
     }
 
     &__text {
+      opacity: 0.7;
       @include respond("tab") {
         font-size: 12px;
       }

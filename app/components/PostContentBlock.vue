@@ -121,7 +121,7 @@ watch(
           <div class="post-content-block__sidebar">
             <button
               :class="[
-                'post-content-block__sidebar-toggle f-sh2',
+                'post-content-block__sidebar-toggle f-sh1',
                 { active: isSidebarOpen },
               ]"
               type="button"
@@ -141,7 +141,7 @@ watch(
                   :key="item.id"
                   :href="`#${item.id}`"
                   :class="[
-                    'post-content-block__sidebar-item f-sh2 dots dots-hover',
+                    'post-content-block__sidebar-item f-sh1 dots dots-hover',
                     { active: activeId === item.id },
                   ]"
                   @click.prevent="scrollToSection(item.id)"
@@ -330,6 +330,7 @@ watch(
   }
 
   &__richtext {
+    color: $c-grey-2;
     @include respond("tab") {
       font-size: 14px;
     }

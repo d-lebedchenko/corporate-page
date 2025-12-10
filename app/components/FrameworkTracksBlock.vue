@@ -156,6 +156,10 @@ watch(
       }
     }
 
+    &-descr {
+      color: $c-grey-2;
+    }
+
     &-head {
       @include respond("tab") {
         margin-bottom: 20px;

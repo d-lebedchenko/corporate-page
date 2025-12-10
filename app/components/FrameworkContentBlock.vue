@@ -162,6 +162,7 @@ const Icon = computed(() => {
 
   &__descr {
     margin-bottom: 40px;
+    color: $c-grey-2;
     @include respond("tab") {
       margin-bottom: 28px;
     }

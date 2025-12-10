@@ -150,7 +150,7 @@ watch(
               <div v-show="isSidebarOpen" class="privacy__sidebar-list dots">
                 <span class="psevdo"></span>
                 <a v-for="item in sidebarItems" :key="item.id" :href="`#${item.id}`" :class="[
-                  'privacy__sidebar-item f-sh2',
+                  'privacy__sidebar-item f-sh1',
                   { active: activeId === item.id },
                 ]" @click.prevent="selectSection(item.id)">
                   <span class="psevdo"></span>

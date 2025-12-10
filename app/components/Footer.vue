@@ -15,7 +15,7 @@ const props = defineProps({
       <div class="footer__wr">
 
         <div class="footer__row d-f ai-c">
-          <div class="footer__label f-sh2">{{ data.navLabel }}</div>
+          <div class="footer__label f-sh1">{{ data.navLabel }}</div>
           <div class="footer__links d-f">
             <div v-for="link in data.navItems" :key="link.id" class="footer__link f-p3 hover-green">
               <CmsLink :link="link.link">{{ link.link.label }}</CmsLink>
@@ -23,7 +23,7 @@ const props = defineProps({
           </div>
         </div>
         <div class="footer__row d-f ai-c">
-          <div class="footer__label f-sh2">{{ data.followLabel }}</div>
+          <div class="footer__label f-sh1">{{ data.followLabel }}</div>
           <div class="footer__links d-f">
             <div v-for="link in data.followItems" :key="link.id" class="footer__link f-p3 hover-green">
               <CmsLink class="d-f ai-c" :link="link.link">{{ link.link.label }}
@@ -97,6 +97,7 @@ const props = defineProps({
     width: 100%;
 
     @include respond("tab") {
+      color: $c-grey-2;
       display: flex;
       flex-direction: column;
       gap: 16px;

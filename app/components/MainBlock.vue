@@ -68,7 +68,7 @@ onBeforeUnmount(() => {
         <div class="main-section__marquee">
           
           <NuxtMarquee autoFill :speed="currentSpeed"  :direction="'down'">
-            <div class="main-section__runing f-a3">
+            <div class="main-section__runing f-a2">
               <span class="main-section__runing__text"> {{ runningText }} </span>&nbsp;
             </div>
           </NuxtMarquee>
@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
       </div>
       <div class="main-section__right">
         <div class="main-section__top">
-          <h1 class="main-section__title f-a2">
+          <h1 class="main-section__title f-a1">
             {{ title }}
           </h1>
           <h2 class="main-section__subtitle f-sh1">
@@ -198,6 +198,8 @@ onBeforeUnmount(() => {
     :deep() {
       .vfm-marquee-container {
         transform-origin: top left;
+        padding: 10px 0;
+        margin: -10px 0;
       }
     }
     @include respond("tab") {

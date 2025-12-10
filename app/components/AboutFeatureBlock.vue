@@ -118,7 +118,7 @@ const Icon = computed(() => {
 
           <ul
             v-if="highlights?.length"
-            class="about-feature-block__highlights f-sh2"
+            class="about-feature-block__highlights f-sh1"
           >
             <li v-for="item in highlights" :key="item.id">
               {{ item.text }}
@@ -144,7 +144,7 @@ const Icon = computed(() => {
             <div class="about-feature-block__person-info">
               <p
                 v-if="person.name"
-                class="about-feature-block__person-name f-sh2"
+                class="about-feature-block__person-name f-sh1"
               >
                 {{ person.name }}
               </p>
@@ -223,6 +223,9 @@ const Icon = computed(() => {
       }
     }
   }
+  &__descr {
+    color: $c-grey-2;
+  }
 
   &__title {
     text-transform: uppercase;
@@ -235,6 +238,7 @@ const Icon = computed(() => {
   }
 
   &__points {
+    color: $c-grey-2;
     @include respond("tab") {
       font-size: 14px;
     }
@@ -338,7 +342,9 @@ const Icon = computed(() => {
     }
 
     &-position {
+      color: $c-grey-2;
       @include respond("tab") {
+        color: $c-white;
         font-size: 12px;
       }
     }

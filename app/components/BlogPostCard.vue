@@ -210,6 +210,7 @@ const link = {
       -webkit-box-orient: vertical;
       display: -webkit-box;
       overflow: hidden;
+      color: $c-grey-2;
       @include respond("tab") {
         margin-top: 12px;
         max-height: (14px * 1.3 * 3);
@@ -242,7 +243,7 @@ const link = {
       padding: 8px 12px;
       text-align: center;
       background-color: $c-steel-grey;
-      color: $c-white;
+      color: $c-grey-2;
     }
   }
 

@@ -112,7 +112,7 @@ onBeforeUnmount(() => {
           loading="lazy"
         />
 
-        <h2 class="nolimits__title f-a2 hide-tablet">
+        <h2 class="nolimits__title f-a1 hide-tablet">
           <span class="first-word">{{ title.split(' ')[0] }}</span>
           {{ title.split(' ').slice(1).join(' ') }}
         </h2>
@@ -190,6 +190,7 @@ onBeforeUnmount(() => {
 
   &__text {
     margin-bottom: 152px;
+    color: $c-grey-2;
 
     @include respond("tab") {
       margin-bottom: 77px;

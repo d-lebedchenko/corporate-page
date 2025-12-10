@@ -139,6 +139,7 @@ const swiper = useSwiper(containerRef, {
     }
 
     &__text {
+      color: $c-grey-2;
       max-height: 0;
       padding-top: 0;
       overflow: hidden;
