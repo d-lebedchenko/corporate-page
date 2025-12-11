@@ -210,7 +210,7 @@ onUnmounted(() => {
   &__menu {
     background-color: $c-black;
     color: $c-white;
-    padding: 100px 56px 64px 56px;
+    padding: 56px 64px;
     max-width: 736px;
     width: 100%;
     margin-left: auto;

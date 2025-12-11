@@ -49,7 +49,9 @@
   },
   "cookie": {
     "title": "We use cookies",
-    "text": "To ensure the proper functioning of the site and improve your experience, we use cookies. You can accept or decline optional cookies.",
+    "text_before":"To ensure the proper functioning of the site and improve your experience, we use ",
+    "text_link": "cookies",
+    "text_after": ". You can accept or decline optional cookies.",
     "accept": "Accept",
     "decline": "Decline"
   }

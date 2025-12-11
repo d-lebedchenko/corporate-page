@@ -58,7 +58,7 @@ onMounted(() => {
     <div>
       <div class="cookie-banner__top">
         <h4 class="cookie-banner__title f-h4">{{ $t('cookie.title') }}</h4>
-        <p class="cookie-banner__text f-p3">{{ $t('cookie.text') }}</p>
+        <p class="cookie-banner__text f-p3">{{ $t('cookie.text_before') }}<a href="/privacy-policy" class="cookie-banner__link f-p3">{{ $t('cookie.text_link') }}</a>{{ $t('cookie.text_after') }}</p>
       </div>
       <div class="cookie-banner__btns">
         <button class="accept f-b-p3" @click="acceptCookies">
@@ -108,6 +108,9 @@ onMounted(() => {
 
   &__text {
     color: $c-grey-2;
+    a {
+      color: $c-green;
+    }
   }
   &__btns {
     display: grid;
