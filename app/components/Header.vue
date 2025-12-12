@@ -1,4 +1,5 @@
 <script setup>
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import IconX from '~/assets/icons/x.svg'
 
 const props = defineProps({
@@ -10,6 +11,7 @@ const props = defineProps({
 
 const scrollProgress = ref(0)
 const isOpen = ref(false)
+const menuRef = ref(null)
 
 const { locale } = useI18n();
 
@@ -27,6 +29,22 @@ const updateScroll = () => {
   scrollProgress.value = docHeight ? (scrollTop / docHeight) * 100 : 0
 }
 
+watch(isOpen, async (value) => {
+  if (value) {
+    await nextTick()
+
+    if (menuRef.value) {
+      disableBodyScroll(menuRef.value, {
+        reserveScrollBarGap: true,
+      })
+    }
+  } else {
+    if (menuRef.value) {
+      enableBodyScroll(menuRef.value)
+    }
+  }
+})
+
 onMounted(() => {
   window.addEventListener('scroll', updateScroll)
   updateScroll()
@@ -34,6 +52,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', updateScroll)
+  clearAllBodyScrollLocks()
 })
 </script>
 
@@ -63,7 +82,7 @@ onUnmounted(() => {
 
     <Transition name="menu">
       <div v-if="isOpen" class="header__menu__wr" @click.self="closeMenu()">
-        <div class="header__menu d-f fd-c">
+        <div ref="menuRef" class="header__menu d-f fd-c">
           <button type="button" class="header__close" @click="closeMenu()" :aria-label="$t('general.close')">
             <IconX />
           </button>
@@ -215,6 +234,7 @@ onUnmounted(() => {
     width: 100%;
     margin-left: auto;
     height: 100%;
+    overflow: auto;
 
     @include respond("tab") {
       max-width: 100%;
@@ -231,8 +251,8 @@ onUnmounted(() => {
       position: fixed;
       left: 0;
       top: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background-color: rgba(#00000080, 0.5);
 
       content: '';
