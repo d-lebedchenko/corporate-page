@@ -109,16 +109,6 @@ function toggleSidebar() {
   isSidebarOpen.value = !isSidebarOpen.value
 }
 
-// === Lifecycle Hooks ===
-
-onMounted(() => {
-  // Закриваємо бічну панель на мобільних за замовчуванням
-  if (typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches) {
-    isSidebarOpen.value = false
-  }
-  // No scroll listeners needed anymore
-})
-
 // Спостерігаємо за зміною секцій та встановлюємо початковий активний ID, якщо дані оновлюються
 watch(
   () => props.sections,
