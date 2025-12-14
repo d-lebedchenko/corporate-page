@@ -132,7 +132,7 @@ watch(
 <template>
   <div class="privacy">
     <div class="container">
-      <h1 class="privacy__title f-a3">{{ title }}</h1>
+      <h1 class="privacy__title f-a2">{{ title }}</h1>
       <p class="privacy__last-updated f-h3">{{ lastUpdated + ' ' + formattedPublishedAt }}</p>
       <div v-if="sections?.length" class="privacy__wr dots">
         <span class="psevdo"></span>
@@ -218,7 +218,6 @@ watch(
     margin-bottom: 16px;
 
     @include respond("tab") {
-      font-size: 48px;
       margin-bottom: 4px;
     }
   }
