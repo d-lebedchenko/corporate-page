@@ -381,26 +381,45 @@ watch(
       font-size: 14px;
     }
 
-    :deep(ul),
-    :deep(ol) {
-      margin: 1em 0;
+    :deep(h1) {
+      margin: 2em 0 0.8em;
+    }
 
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
+    :deep(h2) {
+      margin: 80px 0 32px;
+      @include respond("tab") {
+        margin: 48px 0 20px;
       }
     }
 
     :deep(h3) {
-      margin-top: 52px;
-      margin-bottom: 20px;
-
+      margin: 52px 0 20px;
       @include respond("tab") {
-        margin-top: 32px;
-        margin-bottom: 12px;
+        margin: 32px 0 12px;
+      }
+    }
+
+    :deep(p),
+    :deep(ul),
+    :deep(ol) {
+      margin: 1em 0;
+    }
+
+    :deep(ul) {
+      &:has(li :is(strong, em)) li {
+        margin: 1em 0;
+        @include respond("tab") {
+          margin: 12px 0;
+        }
+      }
+    }
+
+    :deep(*) {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }

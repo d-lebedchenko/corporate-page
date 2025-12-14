@@ -29,6 +29,18 @@ const htmlContent = computed(() => {
 } */
 
 .richtext {
+  :deep(h1) {
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 125%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    @include respond("tab") {
+      font-size: 32px;
+    }
+  }
+
   :deep(h2) {
     font-family: $font-secondary;
     font-weight: 500;
