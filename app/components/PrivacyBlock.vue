@@ -315,9 +315,6 @@ watch(
 
       &.active {
         color: $c-green;
-        @include respond-min("tab") {
-          font-weight: 700;
-        }
       }
     }
   }
