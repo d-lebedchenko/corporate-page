@@ -78,7 +78,7 @@ defineProps({
     text-transform: uppercase;
   }
   &__title__block {
-    gap: 24px;
+    gap: 10px;
     margin-bottom: 24px;
     margin-top: -22px;
     @include respond("tab") {
