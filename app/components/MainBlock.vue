@@ -234,12 +234,19 @@ onBeforeUnmount(() => {
 
   &__title {
     text-transform: uppercase;
+    @include respond("tab") {
+      font-size: 48px;
+    }
   }
 
   &__subtitle {
     text-transform: uppercase;
+    padding-left: 0.5em;
+    margin-top: -0.583333em;
 
     @include respond("tab") {
+      padding-left: 0;
+      margin-top: 0;
       margin-bottom: 16px;
       font-size: 18px;
     }
