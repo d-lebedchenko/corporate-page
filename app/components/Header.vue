@@ -177,7 +177,7 @@ onUnmounted(() => {
     left: 0;
     height: 2px;
     width: 100%;
-    background-color: $c-white;
+    background-color: $c-white-40;
     z-index: 100;
 
     &-progress {
