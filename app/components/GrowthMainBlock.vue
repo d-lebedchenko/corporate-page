@@ -171,7 +171,7 @@ const descrLetters = computed(() => {
   &__descr {
     font-weight: 600;
     text-transform: uppercase;
-    color: $c-grey-2;
+    color: $c-white-20;
 
     &.is-visible {
       .animated-letter {
@@ -183,6 +183,6 @@ const descrLetters = computed(() => {
 }
 
 @keyframes colorChange {
-  100% { color: $c-white; }
+  100% { color: $c-white-50; }
 }
 </style>
