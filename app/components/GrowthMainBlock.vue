@@ -54,8 +54,7 @@ const descrLetters = computed(() => {
             v-if="title"
             class="growth-main-block__title f-a3"
           >
-            <span class="first">{{ titleFirst }}</span>
-            {{ titleRest }}
+            <span class="first">{{ titleFirst }}</span> <span class="rest">{{ titleRest }}</span>
           </h1>
 
           <p
@@ -89,6 +88,7 @@ const descrLetters = computed(() => {
   color: $c-white;
   padding-top: 60px;
   padding-bottom: 70px;
+  overflow: hidden;
   @include respond("tab") {
     padding-top: 32px;
     padding-bottom: 40px;
@@ -139,10 +139,10 @@ const descrLetters = computed(() => {
     @include respond("tab") {
       font-size: 48px;
       padding-top: 0;
-      margin-top: -48px;
+      margin-top: -40px;
     }
     @include respond("mob") {
-      margin-top: -20px;
+      margin-top: -45px;
     }
     @include respond("mob-sm") {
       margin-top: -42px;
@@ -164,13 +164,21 @@ const descrLetters = computed(() => {
       right: 100%;
       color: $c-white;
       @include respond("tab") {
+        display: inline;
         position: static;
       }
+    }
+
+    .rest {
       @include respond("mob") {
-        transform: translateY(-32px);
+        display: block;
+        padding-left: 119px;
+        margin-top: -13px;
       }
       @include respond("mob-sm") {
-        transform: none;
+        display: inline;
+        padding-left: 0;
+        margin-top: 0;
       }
     }
   }
