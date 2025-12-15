@@ -368,6 +368,12 @@ watch(
       font-size: 14px;
     }
 
+    :deep(h1),
+    :deep(h2),
+    :deep(h3) {
+      color: $c-white;
+    }
+
     :deep(h1) {
       margin: 2em 0 0.8em;
     }
