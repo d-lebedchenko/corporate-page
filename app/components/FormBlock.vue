@@ -499,7 +499,7 @@ const handleSubmit = (event) => {
   }
 
   &__hint {
-    color: $c-grey-2;
+    color: $c-grey-2-60;
     margin-top: -4px;
     margin-bottom: 32px;
 
