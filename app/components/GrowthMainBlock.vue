@@ -105,6 +105,7 @@ const descrLetters = computed(() => {
   &__img {
     display: block;
     flex: 1 1 692px;
+    position: relative;
     @include respond("tab") {
       height: 307px;
     }
@@ -117,6 +118,12 @@ const descrLetters = computed(() => {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include respond("tab") {
+        position: static;
+      }
     }
   }
 
@@ -154,7 +161,7 @@ const descrLetters = computed(() => {
       max-width: 100%;
       position: absolute;
       top: -18px;
-      left: -261px;
+      right: 100%;
       color: $c-white;
       @include respond("tab") {
         position: static;
