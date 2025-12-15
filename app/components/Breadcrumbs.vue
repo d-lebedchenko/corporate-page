@@ -37,7 +37,7 @@ defineProps({
 
 .breadcrumbs {
   background-color: $c-black;
-  color: $c-white;
+  color: $c-grey-2;
   padding-top: 28px;
 
   &__list {
@@ -82,7 +82,6 @@ defineProps({
     margin-left: 12px;
     margin-right: 12px;
     user-select: none;
-    opacity: 0.5;
   }
 }
 </style>
