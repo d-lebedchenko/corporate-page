@@ -437,10 +437,6 @@ const handleSubmit = (event) => {
         pointer-events: none;
       }
 
-      .icon-attach {
-        color: inherit;
-      }
-
       &.file-selected {
         color: $c-white;
         .icon {
