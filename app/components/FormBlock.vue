@@ -437,6 +437,10 @@ const handleSubmit = (event) => {
         pointer-events: none;
       }
 
+      .icon-attach {
+        color: inherit;
+      }
+
       &.file-selected {
         color: $c-white;
         .icon {
@@ -495,6 +499,7 @@ const handleSubmit = (event) => {
   }
 
   &__hint {
+    color: $c-grey-2;
     margin-top: -4px;
     margin-bottom: 32px;
 
