@@ -24,7 +24,7 @@ defineProps({
           :height="image.height"
           sizes="xs:100vw sm:100vw md:100vw lg:1388px"
         />
-        <h1 class="matrices-main__title f-a2">
+        <h1 class="matrices-main__title f-a1">
           {{ title }}
         </h1>
       </div>
@@ -64,6 +64,7 @@ defineProps({
     text-transform: uppercase;
     @include respond("tab") {
       top: -40px;
+      font-size: 48px;
     }
   }
 }
