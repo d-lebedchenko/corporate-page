@@ -52,7 +52,7 @@ const descrLetters = computed(() => {
         <div class="growth-main-block__text">
           <h1
             v-if="title"
-            class="growth-main-block__title f-a3"
+            class="growth-main-block__title f-a2"
           >
             <span class="first">{{ titleFirst }}</span> <span class="rest">{{ titleRest }}</span>
           </h1>
@@ -137,15 +137,14 @@ const descrLetters = computed(() => {
     padding-top: 70px;
     color: $c-green;
     @include respond("tab") {
-      font-size: 48px;
       padding-top: 0;
-      margin-top: -40px;
+      margin-top: -48px;
     }
     @include respond("mob") {
-      margin-top: -45px;
+      margin-top: -52px;
     }
     @include respond("mob-sm") {
-      margin-top: -42px;
+      margin-top: -44px;
       line-height: 110%;
     }
 
@@ -173,7 +172,7 @@ const descrLetters = computed(() => {
       @include respond("mob") {
         display: block;
         padding-left: 119px;
-        margin-top: -13px;
+        margin-top: -27px;
       }
       @include respond("mob-sm") {
         display: inline;
