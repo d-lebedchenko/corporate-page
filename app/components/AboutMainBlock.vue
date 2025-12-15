@@ -37,7 +37,7 @@ defineProps({
           <div class="about-main-block__text-head">
             <h1
               v-if="title"
-              class="about-main-block__title f-a2"
+              class="about-main-block__title f-a1"
             >
               {{ title }}
             </h1>
@@ -132,6 +132,7 @@ defineProps({
   }
 
   &__marquee {
+    font-size: 35px;
     @include respond("tab") {
       font-size: 20px;
       font-weight: 600;
