@@ -118,9 +118,11 @@ const titleRest = computed(() => {
 
   &__title {
     padding-top: 0.95em;
+    padding-left: 66px;
     text-transform: uppercase;
     @include respond("tab") {
       padding-top: 0;
+      padding-left: 0;
       font-size: 32px;
       line-height: 1.25;
     }
@@ -130,12 +132,13 @@ const titleRest = computed(() => {
       top: 24px;
       left: 0;
       white-space: nowrap;
-      // width: calc(50% + 32px);
-      // text-align: right;
+      width: calc(50% + (32px + 66px));
+      text-align: right;
       @include respond("tab") {
         position: static;
         white-space: normal;
-        // text-align: left;
+        width: auto;
+        text-align: left;
       }
     }
   }
