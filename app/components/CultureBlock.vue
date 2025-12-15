@@ -66,7 +66,7 @@ const swiper = useSwiper(containerRef, {
                 <h4 class="culture__slider__title f-h2 green">
                   {{ slide.title }}
                 </h4>
-                <p class="culture__slider__text f-p2">{{ slide.text }}</p>
+                <p class="culture__slider__text f-p2 text-grey-2">{{ slide.text }}</p>
               </swiper-slide>
             </swiper-container>
           </ClientOnly>
