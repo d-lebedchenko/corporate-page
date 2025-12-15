@@ -114,7 +114,7 @@ const slidePrev = () => {
                     </p>
                     <p
                       v-if="item.position"
-                      class="slide__person-position f-p2"
+                      class="slide__person-position f-p2 text-grey-2"
                     >
                       {{ item.position }}
                     </p>
