@@ -57,7 +57,7 @@ defineProps({
           <RichtextLexical
             v-if="text"
             :content="text"
-            class="about-main-block__richtext f-p2"
+            class="about-main-block__richtext f-p2 text-grey-2"
           />
         </div>
       </div>

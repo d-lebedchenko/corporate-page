@@ -48,7 +48,7 @@ const props = defineProps({
         <div class="about-quote-block__text">
           <p
             v-if="quote"
-            class="about-quote-block__quote f-p2 whitespace-pre-line"
+            class="about-quote-block__quote f-p2 text-grey-2 whitespace-pre-line"
           >
             {{ quote }}
           </p>
@@ -57,7 +57,7 @@ const props = defineProps({
             <p v-if="name" class="about-quote-block__info-name f-h3">
               {{ name }}
             </p>
-            <p v-if="position" class="f-p2">
+            <p v-if="position" class="f-p2 text-grey-2">
               {{ position }}
             </p>
           </div>
