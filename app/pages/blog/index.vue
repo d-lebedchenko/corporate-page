@@ -190,6 +190,7 @@ usePageSeo(pageData.value?.meta)
       font-weight: 400;
       line-height: 1.3;
       letter-spacing: -0.02em;
+      color: $c-grey-2;
       transition: color 0.3s;
       @include respond("tab") {
         width: 57px;

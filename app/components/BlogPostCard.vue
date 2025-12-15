@@ -70,7 +70,7 @@ const link = {
         <div class="blog-post-card__info">
           <div
             v-if="publishedAt"
-            class="blog-post-card__info-date f-p2 clickable"
+            class="blog-post-card__info-date f-p2 text-grey-2 clickable"
           >
             {{ formatDate(publishedAt) }}
           </div>
