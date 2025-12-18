@@ -83,22 +83,32 @@ defineProps({
     margin-top: -22px;
     @include respond("tab") {
       margin-top: 0;
-      gap: 16px;
-    }
-    @include respond("mob") {
+      // gap: 16px;
       flex-direction: column;
       align-items: flex-start;
       gap: 0;
     }
+    // @include respond("mob") {
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    //   gap: 0;
+    // }
   }
   &__title__green {
     text-transform: uppercase;
     @include respond("tab") {
       font-size: 64px;
     }
+    @include respond("mob-sm") {
+      font-size: 48px;
+    }
   }
   &__subtitle {
     text-transform: uppercase;
+    
+    @include respond("tab") {
+      white-space: normal;
+    }
   }
 }
 </style>

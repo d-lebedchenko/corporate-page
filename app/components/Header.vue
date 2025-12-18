@@ -1,5 +1,4 @@
 <script setup>
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import IconX from '~/assets/icons/x.svg'
 
 const props = defineProps({
@@ -11,7 +10,6 @@ const props = defineProps({
 
 const scrollProgress = ref(0)
 const isOpen = ref(false)
-const menuRef = ref(null)
 
 const { locale } = useI18n();
 
@@ -24,35 +22,43 @@ const closeMenu = () => {
 }
 
 const updateScroll = () => {
-  const scrollTop = window.scrollY || window.pageYOffset
+  const scrollTop = window.scrollY || document.documentElement.scrollTop
   const docHeight = document.documentElement.scrollHeight - window.innerHeight
-  scrollProgress.value = docHeight ? (scrollTop / docHeight) * 100 : 0
+  scrollProgress.value = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
 }
 
-watch(isOpen, async (value) => {
-  if (value) {
-    await nextTick()
+const lockScroll = (lock) => {
+  const body = document.body
+  const html = document.documentElement
 
-    if (menuRef.value) {
-      disableBodyScroll(menuRef.value, {
-        reserveScrollBarGap: true,
-      })
-    }
+  if (lock) {
+    body.style.overflow = 'hidden'
+    body.style.touchAction = 'none'
+    html.style.overflow = 'hidden'
   } else {
-    if (menuRef.value) {
-      enableBodyScroll(menuRef.value)
-    }
+    body.style.overflow = ''
+    body.style.touchAction = ''
+    html.style.overflow = ''
   }
+}
+
+watch(isOpen, (value) => {
+  lockScroll(value)
 })
 
 onMounted(() => {
-  window.addEventListener('scroll', updateScroll)
+  window.addEventListener('scroll', updateScroll, { passive: true })
   updateScroll()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', updateScroll)
-  clearAllBodyScrollLocks()
+  lockScroll(false)
+})
+
+const route = useRoute()
+watch(() => route.fullPath, () => {
+  closeMenu()
 })
 </script>
 
@@ -65,7 +71,6 @@ onUnmounted(() => {
             width="110" height="40" sizes="77px lg:110px" fit="inside" />
         </NuxtLink>
         <div class="header__linebar__wr">
-
           <div class="header__linebar">
             <div class="header__linebar-progress" :style="{ width: scrollProgress + '%' }"></div>
           </div>
@@ -82,7 +87,7 @@ onUnmounted(() => {
 
     <Transition name="menu">
       <div v-if="isOpen" class="header__menu__wr" @click.self="closeMenu()">
-        <div ref="menuRef" class="header__menu d-f fd-c">
+        <div class="header__menu d-f fd-c">
           <button type="button" class="header__close" @click="closeMenu()" :aria-label="$t('general.close')">
             <IconX />
           </button>
@@ -92,7 +97,6 @@ onUnmounted(() => {
                 {{ item.link.label }}
               </CmsLink>
               <div class="header__submenu" v-if="item.subLinks.length">
-
                 <div class="header__submenu__item" v-for="sublink in item.subLinks" :key="sublink.id">
                   <CmsLink class="header__submenu__item hover-green f-sh1" :link="sublink.link" @click="closeMenu()">
                     {{ sublink.link.label }}
@@ -243,6 +247,7 @@ onUnmounted(() => {
     @include respond("mob") {
       padding: 32px;
     }
+
     @include respond("mob-sm") {
       padding: 20px;
     }
@@ -281,11 +286,12 @@ onUnmounted(() => {
 
     &__list {
       gap: 56px;
+      margin-bottom: auto;
 
       @include respond("mob") {
         gap: 32px;
       }
-      
+
       @include respond("mob-sm") {
         gap: 20px;
       }
@@ -301,11 +307,12 @@ onUnmounted(() => {
           @include respond("mob") {
             font-size: 32px;
           }
+
           @include respond("mob-sm") {
             font-size: 24px;
             font-weight: 600;
           }
-          
+
         }
       }
     }
@@ -329,7 +336,7 @@ onUnmounted(() => {
         }
       }
     }
-    
+
     @include respond("mob") {
       gap: 20px;
       margin-top: 24px;
@@ -337,7 +344,7 @@ onUnmounted(() => {
   }
 
   &__social {
-    margin-top: auto;
+    margin-top: 20px;
 
     @include respond("mob") {
       flex-direction: column;
