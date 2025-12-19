@@ -29,16 +29,11 @@ const updateScroll = () => {
 
 const lockScroll = (lock) => {
   const body = document.body
-  const html = document.documentElement
 
   if (lock) {
-    body.style.overflow = 'hidden'
     body.style.touchAction = 'none'
-    html.style.overflow = 'hidden'
   } else {
-    body.style.overflow = ''
     body.style.touchAction = ''
-    html.style.overflow = ''
   }
 }
 
