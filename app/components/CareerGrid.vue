@@ -193,7 +193,7 @@ onMounted(() => {
     <div class="container">
       <div class="career-grid__title-wr dots">
         <div class="psevdo"></div>
-        <h2 class="career-grid__title green f-h2">{{ title }}</h2>
+        <h2 class="career-grid__title f-h2">{{ title }}</h2>
       </div>
       <div class="career-grid__wr dots">
         <div class="psevdo"></div>

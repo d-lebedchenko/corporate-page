@@ -21,6 +21,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  noListStyle: {
+    type: Boolean,
+    default: false
+  },
   points: {
     type: Array,
     default: () => []
@@ -104,7 +108,7 @@ const Icon = computed(() => {
           </div>
 
           <ul
-            v-if="points?.length"
+            v-if="points?.length && !noListStyle"
             class="about-feature-block__points f-p2"
           >
             <li
@@ -115,6 +119,15 @@ const Icon = computed(() => {
               {{ item.text }}
             </li>
           </ul>
+          <div v-else class="about-feature-block__points f-p2">
+            <p
+              v-for="item in points"
+              class="whitespace-pre-line"
+              :key="item.id"
+            >
+              {{ item.text }}
+            </p>
+          </div>
 
           <ul
             v-if="highlights?.length"

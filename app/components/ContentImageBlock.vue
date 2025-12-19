@@ -10,6 +10,10 @@ defineProps({
     type: Boolean,
     default: false
   },
+  isTitleGreen: {
+    type: Boolean,
+    default: false
+  },
   subtitle: {
     type: String,
     default: ''
@@ -17,6 +21,10 @@ defineProps({
   text: {
     type: Object,
     default: () => ({})
+  },
+  isButtonHide: {
+    type: Boolean,
+    default: false
   },
   button: {
     type: Object,
@@ -34,11 +42,11 @@ defineProps({
     <div class="container">
       <div class="content-image__wr">
         <div class="content-image__content">
-          <h2 class="content-image__title" :class="isTitleBig ? 'f-h1' : 'f-h2'">
+          <h2 class="content-image__title" :class="[isTitleBig ? 'f-h1' : 'f-h2', { 'green': isTitleGreen }]">
             {{ title }}
           </h2>
           <RichtextLexical :content="text" class="content-image__text f-p2" />
-          <CmsLink :link="button" class="content-image__btn btn-green dots dots-hover d-if ai-c jc-sb f-b-p2">
+          <CmsLink v-if="!isButtonHide" :link="button" class="content-image__btn btn-green dots dots-hover d-if ai-c jc-sb f-b-p2">
             <span class="psevdo"></span>
             {{ button.label }}
             <Arrow class="icon icon-32 shrink-0" />
@@ -83,6 +91,7 @@ defineProps({
   }
   // &__content {}
   &__title {
+    max-width: 640px;
     margin-bottom: 32px;
     padding-top: 40px;
     text-transform: uppercase;
