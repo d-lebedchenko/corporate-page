@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: ''
@@ -46,6 +46,27 @@ useSwiper(sliderRef, {
       this.slides[this.activeIndex].classList.add('is-active-slide');
     },
   }
+});
+
+onMounted(() => {
+  setTimeout(() => {
+    const swiperInstance = sliderRef.value?.swiper;
+
+    if (swiperInstance) {
+
+      const totalSlides = props.slidesMobile.length;
+
+      swiperInstance.params.speed = 2000;
+
+      swiperInstance.slideToLoop(totalSlides);
+
+      setTimeout(() => {
+        swiperInstance.params.speed = 600;
+      }, 2000);
+    } else {
+      console.warn('Swiper ще не ініціалізований');
+    }
+  }, 100);
 });
 </script>
 
