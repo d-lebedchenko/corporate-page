@@ -239,7 +239,7 @@ swiper-slide {
   overflow: hidden;
   transition: transform 0.3s ease;
   
-  transform: scale($slide-scale);
+  transform: scaleY($slide-scale);
   transform-origin: center center;
 
   &:deep(img) {
