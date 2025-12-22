@@ -188,9 +188,11 @@ $slide-scale: 0.8667;
 
       &.mob {
         display: block;
-        width: 100%;
+        width: 100vw;
         padding: 0;
         box-sizing: border-box;
+        margin-left: -15px;
+        margin-right: -15px;
 
         swiper-container {
           width: 100%;
