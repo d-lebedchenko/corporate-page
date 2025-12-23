@@ -152,6 +152,21 @@ const swiper = useSwiper(containerRef, {
     swiper-container {
       width: 100%;
       height: 100%;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 1px;
+        background-color: $c-steel-grey;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        
+        @include respond("mob") {
+          display: none;
+        }
+      }
     }
     &__item {
       border-left: 1px solid $c-steel-grey;
