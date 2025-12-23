@@ -9,13 +9,25 @@ const props = defineProps({
 })
 
 const htmlContent = computed(() => {
-  if (!props.content) return ''
-  return convertLexicalToHTML({ data: props.content, disableContainer: true })
+  if (!props.content || !props.content.root || !props.content.root.children.length) {
+    return ''
+  }
+
+  try {
+    const html = convertLexicalToHTML({ data: props.content, disableContainer: true })
+
+    const stripped = html.replace(/<[^>]*>/g, '').trim()
+    return stripped.length > 0 || html.includes('<img') || html.includes('<iframe') ? html : ''
+  } catch (e) {
+    console.error('Lexical conversion error:', e)
+    return ''
+  }
 })
+const hasContent = computed(() => htmlContent.value !== '')
 </script>
 
 <template>
-  <div class="richtext" v-html="htmlContent"></div>
+  <div v-if="hasContent" class="richtext" v-html="htmlContent"></div>
 </template>
 
 <style scoped lang="scss">
@@ -36,6 +48,7 @@ const htmlContent = computed(() => {
     line-height: 125%;
     letter-spacing: 0;
     text-transform: uppercase;
+
     @include respond("tab") {
       font-size: 32px;
     }
@@ -48,6 +61,7 @@ const htmlContent = computed(() => {
     line-height: 125%;
     letter-spacing: 0;
     text-transform: uppercase;
+
     @include respond("tab") {
       font-size: 24px;
     }
@@ -60,6 +74,7 @@ const htmlContent = computed(() => {
     line-height: 125%;
     letter-spacing: 0;
     text-transform: uppercase;
+
     @include respond("tab") {
       font-size: 18px;
     }

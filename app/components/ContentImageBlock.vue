@@ -84,12 +84,19 @@ defineProps({
     grid-template-columns: repeat(2, 1fr);
     
     @include respond("tab") {
-      display: flex;
-      flex-direction: column-reverse;
       gap: 32px;
     }
+    
+    @include respond("mob") {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
-  // &__content {}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   &__title {
     max-width: 640px;
     margin-bottom: 32px;
@@ -152,6 +159,12 @@ defineProps({
       aspect-ratio: 1 / 1;
       
       @include respond("tab") {
+        max-width: 258px;
+        min-width: 241px;
+        width: auto;
+        height: 100%;
+      }
+      @include respond("mob") {
         max-width: 345px;
         width: 100%;
         height: auto;
