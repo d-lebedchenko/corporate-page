@@ -25,6 +25,10 @@ const props = defineProps({
   image: {
     type: Object,
     default: () => ({})
+  },
+  imageTablet: {
+    type: Object,
+    default: () => ({})
   }
 })
 
@@ -82,6 +86,17 @@ onBeforeUnmount(() => {
           :height="image.height"
           sizes="2sm:506px md:930px lg:501px"
           :preload="{ fetchPriority: 'high' }"
+        />
+        <NuxtPicture
+          v-if="imageTablet?.url"
+          class="main-section__img main-section__img--tab"
+          :src="`/payload${imageTablet.url}`"
+          :alt="imageTablet.alt || ''"
+          :width="imageTablet.width"
+          :height="imageTablet.height"
+          sizes="md:930px lg:501px"
+          :preload="{ fetchPriority: 'high' }"
+          densities="1x"
         />
         <NuxtPicture
           v-if="image?.url"
@@ -177,9 +192,20 @@ onBeforeUnmount(() => {
 
     @include respond("tab") {
       height: 360px;
+      display: none;
     }
     @include respond("mob-md") {
       display: none;
+    }
+    
+    &--tab {
+      display: none;
+      @include respond("tab") {
+        display: block;
+      }
+      @include respond("mob-md") {
+        display: none;
+      }
     }
 
     &--mob {
