@@ -237,7 +237,7 @@ function handleIconThirdMouseLeave() {
         <NuxtMarquee autoFill :speed="30">
           
           <template v-for="item in partners" :key="item.id">
-            <CmsLink class="grid__partners__item" :link="item.link">
+            <CmsLink class="grid__partners__item" v-if="item.link.url.trim()" :link="item.link">
               <NuxtPicture
                 v-if="item.image?.url"
                 :src="`/payload${item.image.url}`"
@@ -249,6 +249,20 @@ function handleIconThirdMouseLeave() {
                 loading="lazy"
               />
             </CmsLink>
+            
+            <div class="grid__partners__item" v-else>
+              <NuxtPicture
+                v-if="item.image?.url"
+                :src="`/payload${item.image.url}`"
+                :alt="item.image.alt || 'Partner image'"
+                width="112"
+                height="72"
+                sizes="90px lg:112px"
+                fit="inside"
+                loading="lazy"
+              />
+              
+            </div>
           </template>
         </NuxtMarquee>
       </div>
