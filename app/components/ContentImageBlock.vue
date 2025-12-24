@@ -146,23 +146,21 @@ defineProps({
 
   &__image {
     padding-left: 32px;
+    align-items: center;
     @include respond("tab") {
       padding-left: 0;
     }
 
     &:deep(img) {
       display: block;
-      max-width: 488px;
-      width: auto;
-      height: 100%;
+      max-width: 361px;
+      width: 100%;
+      height: auto;
       object-fit: contain;
       aspect-ratio: 1 / 1;
       
       @include respond("tab") {
         max-width: 258px;
-        min-width: 241px;
-        width: auto;
-        height: 100%;
       }
       @include respond("mob") {
         max-width: 345px;

@@ -69,7 +69,7 @@ const descrLetters = computed(() => {
               v-for="(letter, i) in descrLetters"
               :key="i"
               class="animated-letter"
-              :style="{ 'animation-delay': `${i * 0.03}s` }"
+              :style="{ 'animation-delay': `${i * 0.015}s` }"
             >
               {{ letter }}
             </span>
@@ -185,7 +185,7 @@ const descrLetters = computed(() => {
   &__descr {
     font-weight: 600;
     text-transform: uppercase;
-    color: $c-white-20;
+    color: $c-grey;
 
     &.is-visible {
       .animated-letter {
@@ -197,6 +197,6 @@ const descrLetters = computed(() => {
 }
 
 @keyframes colorChange {
-  100% { color: $c-white-50; }
+  100% { color: $c-white; }
 }
 </style>
