@@ -183,7 +183,6 @@ const descrLetters = computed(() => {
   }
 
   &__descr {
-    font-weight: 600;
     text-transform: uppercase;
     color: $c-grey;
 
