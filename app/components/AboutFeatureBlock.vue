@@ -138,7 +138,7 @@ const Icon = computed(() => {
             </li>
           </ul>
 
-          <div
+          <!-- <div
             v-if="person && (person.avatar?.url || person.name || person.position)"
             class="about-feature-block__person"
           >
@@ -168,7 +168,7 @@ const Icon = computed(() => {
                 {{ person.position }}
               </p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
