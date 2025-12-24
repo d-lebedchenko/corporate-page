@@ -118,7 +118,7 @@ const slidePrev = () => {
                 <div class="slide__content custom-scrollbar">
                   <div v-if="item.keyTasks?.length" class="slide__group">
                     <h4 class="slide__group-title f-sh1">
-                      {{ $t('about_tracks_block.title_tasks') }}
+                      {{ item.keyTasksTitle || $t('about_tracks_block.title_tasks') }}
                     </h4>
                     <ul class="slide__tasks f-p3">
                       <li
@@ -133,7 +133,7 @@ const slidePrev = () => {
 
                   <div v-if="item.techStacks?.length" class="slide__group">
                     <h4 class="slide__group-title f-sh1">
-                      {{ $t('about_tracks_block.title_stacks') }}
+                      {{ item.techStacksTitle || $t('about_tracks_block.title_stacks') }}
                     </h4>
                     <ul class="slide__stacks f-p3">
                       <li
