@@ -294,6 +294,7 @@ watch(() => route.fullPath, () => {
 
     &__item {
       text-transform: uppercase;
+      letter-spacing: 0.05em;
 
       @include respond("tab") {
         a {
@@ -319,15 +320,16 @@ watch(() => route.fullPath, () => {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    a {
+      letter-spacing: 0.05em;
+    }
 
     @include respond("tab") {
       & a {
-
         font-size: 24px;
 
         @include respond("mob") {
           font-size: 18px;
-          letter-spacing: -0.05em;
         }
       }
     }
@@ -349,6 +351,7 @@ watch(() => route.fullPath, () => {
 
     &__title {
       text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     &__icons {
