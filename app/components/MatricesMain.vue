@@ -7,6 +7,10 @@ defineProps({
   image: {
     type: Object,
     default: () => ({})
+  },
+  imageDesktop: {
+    type: Object,
+    default: () => ({})
   }
 })
 </script>
@@ -16,8 +20,17 @@ defineProps({
     <div class="container">
       <div class="matrices-main__wr">
         <NuxtPicture
+          v-if="imageDesktop?.url"
+          class="matrices-main__img hide-mob"
+          :src="`/payload${imageDesktop.url}`"
+          :alt="imageDesktop.alt || ''"
+          :width="imageDesktop.width"
+          :height="imageDesktop.height"
+          sizes="xs:100vw sm:100vw md:100vw lg:1388px"
+        />
+        <NuxtPicture
           v-if="image?.url"
-          class="matrices-main__img"
+          class="matrices-main__img mob-only"
           :src="`/payload${image.url}`"
           :alt="image.alt || ''"
           :width="image.width"
@@ -47,6 +60,17 @@ defineProps({
     display: block;
     height: 300px;
     width: 100%;
+    &.mob-only {
+      display: none;
+      @include respond("mob") {
+        display: block;
+      }
+    }
+    &.hide-mob {
+      @include respond("mob") {
+        display: none;
+      }
+    }
     @include respond("tab") {
       height: 212px;
     }
