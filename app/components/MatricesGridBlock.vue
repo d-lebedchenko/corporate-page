@@ -467,7 +467,7 @@ onBeforeUnmount(() => {
           border-top: none;
           padding: 0 16px 24px 16px;
           grid-template-columns: 1fr;
-          gap: 24px;
+          gap: 0;
 
           .psevdo {
             display: none;
