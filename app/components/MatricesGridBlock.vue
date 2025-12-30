@@ -197,7 +197,7 @@ onBeforeUnmount(() => {
                 <span class="psevdo"></span>
                 <h3>{{ item.title }}</h3>
               </div>
-              <div class="matrices__slider__item__content dots">
+              <div class="matrices__slider__item__content dots" :class="{'gap-mob': item.gap }">
                 <span class="psevdo"></span>
                 <div class="matrices__slider__item__col matrices__slider__item__col--left">
                   <RichtextLexical :content="item.textL" class="f-p3" />
@@ -468,6 +468,10 @@ onBeforeUnmount(() => {
           padding: 0 16px 24px 16px;
           grid-template-columns: 1fr;
           gap: 0;
+
+          &.gap-mob {
+            gap: 24px;
+          }
 
           .psevdo {
             display: none;
