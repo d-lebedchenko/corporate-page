@@ -4,6 +4,10 @@ defineProps({
     type: String,
     default: ''
   },
+  titleGreen: {
+    type: String,
+    default: ''
+  },
   image: {
     type: Object,
     default: () => ({})
@@ -38,7 +42,7 @@ defineProps({
           sizes="xs:100vw sm:100vw md:100vw lg:1388px"
         />
         <h1 class="matrices-main__title f-a1">
-          {{ title }}
+          {{ title }} <span v-if="titleGreen" class="matrices-main__title-additional green f-a2">{{ titleGreen }}</span>
         </h1>
       </div>
     </div>
