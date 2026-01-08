@@ -17,6 +17,13 @@ export default defineEventHandler(async (event) => {
 
   try {
     const res = await $fetch(`${payloadUrl}/api/globals/blog-main-page${queryString}`)
+
+    if (!res || res._status === 'draft') {
+      throw createError({
+        statusCode: 404,
+        statusMessage: 'Blog main page is not published',
+      })
+    }
     return res || null
   } catch (error) {
     console.error('Error in /api/blog/main-page:', error)
