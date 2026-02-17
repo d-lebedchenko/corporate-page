@@ -123,6 +123,9 @@ const swiper = useSwiper(containerRef, {
   &__item {
     padding: 32px;
     min-height: 360px;
+    &:first-child {
+      margin-top: -1px;
+    }
 
     &:hover {
       background-color: transparent;

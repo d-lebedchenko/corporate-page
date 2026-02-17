@@ -151,6 +151,7 @@ watch(
     &-head,
     &-descr {
       padding: 24px 32px;
+      margin: 0;
       @include respond("tab") {
         padding: 0;
       }
@@ -163,7 +164,7 @@ watch(
     &-head {
       @include respond("tab") {
         margin-bottom: 20px;
-        outline: none;
+        box-shadow: none;
         .psevdo,
         &:before,
         &:after {

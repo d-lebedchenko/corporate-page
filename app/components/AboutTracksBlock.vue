@@ -208,6 +208,7 @@ const slidePrev = () => {
 
   &__nav {
     flex: 1 1 695px;
+    margin-top: 0;
     @include respond("tab") {
       display: none;
     }

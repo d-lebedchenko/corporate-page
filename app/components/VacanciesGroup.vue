@@ -92,10 +92,15 @@ function getVacancyLink(slug) {
       margin-bottom: 48px;
     }
   }
+  
+  .dots:first-child {
+    margin-top: -1px;
+    margin-left: -1px;
+  }
 
   &__head {
     padding: 24px 32px;
-    margin-bottom: 1px;
+    // margin-bottom: 1px;
     text-transform: uppercase;
     color: $c-green;
     @include respond("tab") {

@@ -152,19 +152,7 @@ watch(
         </div>
 
         <div class="privacy__right dots">
-          <spn class="psevdo"></spn>
-          <!-- <div v-for="section in sections" :key="section.id" :id="section.title ? getSectionId(section) : undefined"
-            :class="[
-              'privacy__section',
-              { 'bigger-mb': section.biggerMarginBottom },
-            ]">
-            <h2 v-if="section.title" class="privacy__right__title f-h2">
-              {{ section.titleContent || section.title }}
-            </h2>
-
-            <RichtextLexical v-if="lexicalHasText(section.text)" :content="section.text"
-              class="privacy__richtext f-p2" />
-          </div> -->
+          <span class="psevdo"></span>
 
           <div v-if="activeSection" 
                :key="activeSection.id" 
@@ -178,7 +166,6 @@ watch(
               {{ activeSection.titleContent || activeSection.title }}
             </h2>
 
-            <!-- Припускаємо, що RichtextLexical і lexicalHasText доступні -->
             <RichtextLexical v-if="lexicalHasText(activeSection.text)" :content="activeSection.text"
               class="privacy__richtext f-p2" />
           </div>
@@ -224,7 +211,6 @@ watch(
 
   &__wr {
     display: flex;
-    // gap: 92px;
 
     @include respond("tab") {
       display: block;
@@ -234,19 +220,9 @@ watch(
   &__left {
     position: relative;
     flex: 0 0 600px;
-
-    @include respond("tab") {
-      // margin-bottom: 80px;
-    }
-
-    @include respond("mob") {
-      // margin-bottom: 60px;
-    }
   }
 
   &__sidebar {
-    // position: sticky;
-    // top: 80px;
 
     @include respond("tab") {
       position: static;
@@ -261,7 +237,7 @@ watch(
       padding: 26px 32px;
       text-align: left;
       text-transform: uppercase;
-      outline: 1px solid $c-steel-grey;
+      box-shadow: inset 0 0 0 1px $c-steel-grey;
 
       @include respond("tab") {
         padding: 15.5px 20px;
@@ -278,13 +254,19 @@ watch(
       }
     }
 
+    &-list {
+      box-shadow: none;
+    }
+
     &-item {
       display: block;
       width: 100%;
       padding: 29px 32px;
       text-align: left;
 
-      outline: 1px solid $c-steel-grey;
+      box-shadow: inset 0 0 0 1px $c-steel-grey;
+      margin-top: -1px;
+      margin-left: 1px;
       transition: 0.3s color ease-in-out;
       text-transform: uppercase;
 
@@ -295,7 +277,7 @@ watch(
 
       &.dots {
         @include respond("tab") {
-          outline: none;
+          box-shadow: none;
 
           .psevdo,
           &:before,
@@ -322,6 +304,7 @@ watch(
   &__right {
     flex: 1;
     padding: 52px 40px 52px 52px;
+    margin-left: 0;
 
 
     @include respond("tab") {

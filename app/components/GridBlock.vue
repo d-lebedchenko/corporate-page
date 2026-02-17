@@ -232,7 +232,7 @@ function handleIconThirdMouseLeave() {
           <Arrow class="icon icon-52" />
         </CmsLink>
       </div>
-      <div class="grid__partners" v-if="partners?.length">
+      <!-- <div class="grid__partners" v-if="partners?.length">
         
         <NuxtMarquee autoFill :speed="30">
           
@@ -265,7 +265,7 @@ function handleIconThirdMouseLeave() {
             </div>
           </template>
         </NuxtMarquee>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -285,6 +285,14 @@ function handleIconThirdMouseLeave() {
   &__content {
     display: grid;
     grid-template-columns: 177px auto 50%;
+    gap: 1px;
+    border: 1px solid $c-steel-grey;
+    background-color: $c-steel-grey;
+    .dots {
+      background-color: $c-black;
+      box-shadow: none;
+      margin: 0;
+    }
 
     @include respond("tab") {
       grid-template-columns: 64px auto;

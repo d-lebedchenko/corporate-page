@@ -14,69 +14,67 @@ const props = defineProps({
   }
 })
 
-
 const {
   containerRef: textRef,
   isVisible: isTextVisible
 } = useTextAnimation();
 
 const subtitleWords = computed(() => props.subtitle.split(/\s+/));
-
 const staticWordsCount = computed(() => subtitleWords.value.length > 3 ? subtitleWords.value.length - 3 : 0);
+
 const staticText = computed(() => {
   return subtitleWords.value.slice(0, staticWordsCount.value).join(' ') + (staticWordsCount.value > 0 ? ' ' : '');
 });
 
 const dynamicPhrases = computed(() => {
   const lastThree = subtitleWords.value.slice(staticWordsCount.value);
-
-  return [
-    lastThree.join(' ')
-  ];
+  return [lastThree.join(' ')];
 });
 
-
 const dynamicWord = ref('');
+const charIndex = ref(0); // Перетворили на ref для кращої реактивності
 let phraseIndex = 0;
-let charIndex = 0; 
 let isDeleting = false;
 let typingInterval;
 
 const TYPING_SPEED = 100;
 const DELETING_SPEED = 50;
 const PAUSE_DURATION = 1500;
-const RESTART_PAUSE_DURATION = 1500
+const RESTART_PAUSE_DURATION = 1500;
+
+const remainingText = computed(() => {
+  const currentPhrase = dynamicPhrases.value[phraseIndex] || '';
+  return currentPhrase.substring(charIndex.value);
+});
 
 function typeWriter() {
   const currentPhrase = dynamicPhrases.value[phraseIndex];
   if (!currentPhrase) return;
 
   if (isDeleting) {
-    dynamicWord.value = currentPhrase.substring(0, charIndex - 1);
-    charIndex--;
+    charIndex.value--;
   } else {
-    dynamicWord.value = currentPhrase.substring(0, charIndex + 1);
-    charIndex++;
+    charIndex.value++;
   }
 
-  if (!isDeleting && charIndex === currentPhrase.length) {
+  dynamicWord.value = currentPhrase.substring(0, charIndex.value);
+
+  if (!isDeleting && charIndex.value === currentPhrase.length) {
     isDeleting = true;
     clearInterval(typingInterval);
     typingInterval = setTimeout(typeWriter, PAUSE_DURATION);
-
-  } else if (isDeleting && charIndex === 0) {
+  } else if (isDeleting && charIndex.value === 0) {
     isDeleting = false;
     phraseIndex = (phraseIndex + 1) % dynamicPhrases.value.length;
-
     clearInterval(typingInterval);
     typingInterval = setTimeout(typeWriter, RESTART_PAUSE_DURATION);
-
   } else {
     const speed = isDeleting ? DELETING_SPEED : TYPING_SPEED;
     clearInterval(typingInterval);
     typingInterval = setTimeout(typeWriter, speed);
   }
 }
+
 watch(isTextVisible, (isVisible) => {
   if (isVisible && !typingInterval) {
     typeWriter();
@@ -84,16 +82,14 @@ watch(isTextVisible, (isVisible) => {
     clearInterval(typingInterval);
     typingInterval = null;
     dynamicWord.value = '';
+    charIndex.value = 0;
     phraseIndex = 0;
-    charIndex = 0;
     isDeleting = false;
   }
 });
 
 onBeforeUnmount(() => {
-  if (typingInterval) {
-    clearInterval(typingInterval);
-  }
+  if (typingInterval) clearInterval(typingInterval);
 });
 </script>
 
@@ -101,16 +97,9 @@ onBeforeUnmount(() => {
   <section class="nolimits">
     <div class="container">
       <div class="nolimits__wr">
-        <NuxtPicture
-          v-if="image?.url"
-          class="nolimits__image d-f jc-e"
-          :src="`/payload${image.url}`"
-          :alt="image.alt || ''"
-          :width="image.width"
-          :height="image.height"
-          sizes="xs:100vw sm:100vw md:50vw lg:524px"
-          loading="lazy"
-        />
+        <NuxtPicture v-if="image?.url" class="nolimits__image d-f jc-e" :src="`/payload${image.url}`"
+          :alt="image.alt || ''" :width="image.width" :height="image.height" sizes="xs:100vw sm:100vw md:50vw lg:524px"
+          loading="lazy" />
 
         <h2 class="nolimits__title f-a1 hide-tablet">
           <span class="first-word">{{ title.split(' ')[0] }}</span>
@@ -123,16 +112,19 @@ onBeforeUnmount(() => {
         <div class="nolimits__content d-f fd-c jc-e" ref="textRef" :class="{ 'is-visible': isTextVisible }">
           <p class="nolimits__text f-p2 hide-tablet">
             {{ staticText }}
-            <span class="typing-word">
-              {{ dynamicWord }}
+            
+            <span class="typing-area">
+              <span class="visible-part">{{ dynamicWord }}</span>
               <span class="cursor">|</span>
+              <span class="placeholder-part">{{ remainingText }}</span>
             </span>
           </p>
           <p class="nolimits__text f-p1 hide-desctop">
             {{ staticText }}
-            <span class="typing-word">
-              {{ dynamicWord }}
+            <span class="typing-area">
+              <span class="visible-part">{{ dynamicWord }}</span>
               <span class="cursor">|</span>
+              <span class="placeholder-part">{{ remainingText }}</span>
             </span>
           </p>
         </div>
@@ -201,17 +193,34 @@ onBeforeUnmount(() => {
       margin-bottom: -70px;
     }
 
-    .typing-word {
-      white-space: nowrap;
+    .typing-area {
+      display: inline;
+      // Дозволяє браузеру розривати рядок всередині анімації
+      white-space: normal;
+    }
+
+    .visible-part {
+      display: inline;
+    }
+
+    .placeholder-part {
+      display: inline;
+      opacity: 0;
+      user-select: none;
+      pointer-events: none;
     }
 
     .cursor {
-      opacity: 1;
+      display: inline-block;
+      width: 0;
+      white-space: nowrap;
       font-weight: 300;
       animation: blink 0.7s infinite;
+      vertical-align: baseline;
     }
 
     @keyframes blink {
+
       0%,
       100% {
         opacity: 1;
@@ -228,7 +237,6 @@ onBeforeUnmount(() => {
     right: 0;
     bottom: -24px;
     text-transform: uppercase;
-    letter-spacing: 0;
 
     @include respond("tab") {
       bottom: -7px;

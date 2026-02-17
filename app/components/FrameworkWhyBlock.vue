@@ -26,7 +26,7 @@ defineProps({
 
       <div
         v-if="items?.length"
-        class="framework-why-block__list dots"
+        class="framework-why-block__list"
       >
         <div class="psevdo" />
         <div
@@ -90,7 +90,7 @@ defineProps({
       &-num {
         margin-bottom: 36px;
         @include respond-min("tab") {
-          outline: none;
+          box-shadow: none;
           .psevdo,
           &:before,
           &:after {
@@ -105,6 +105,7 @@ defineProps({
           display: flex;
           align-items: center;
           justify-content: center;
+          margin-top: 0;
         }
       }
 

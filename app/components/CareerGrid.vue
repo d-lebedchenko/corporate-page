@@ -304,6 +304,14 @@ onMounted(() => {
 
   &__content {
     display: grid;
+    gap: 1px;
+    border: 1px solid $c-steel-grey;
+    background-color: $c-steel-grey;
+    .dots {
+      background-color: $c-black;
+      box-shadow: none;
+      margin: 0;
+    }
 
     &.mob {
       display: none;
@@ -350,6 +358,8 @@ onMounted(() => {
   &__item {
     display: grid;
     grid-template-columns: 177px auto 50%;
+    gap: 1px;
+    background-color: $c-steel-grey;
 
     @include respond("tab") {
       display: flex;

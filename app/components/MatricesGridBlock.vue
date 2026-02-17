@@ -346,7 +346,7 @@ onBeforeUnmount(() => {
       z-index: 2;
 
       @include respond("tab") {
-        outline: none;
+        box-shadow: none;
         right: 31px;
         top: 41px;
 
@@ -362,6 +362,7 @@ onBeforeUnmount(() => {
         @include respond("tab") {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
+          margin-top: -1px;
         }
 
         .slider-btn {
@@ -369,6 +370,8 @@ onBeforeUnmount(() => {
           display: flex;
           justify-content: center;
           align-items: center;
+          margin-top: 0;
+
         }
 
         .icon {
@@ -415,6 +418,15 @@ onBeforeUnmount(() => {
 
       .slider-btn {
         min-width: 120px;
+        margin: 0;
+        &:last-child {
+          margin-left: -1px;
+        }
+
+         @include respond("tab") {
+          min-width: 0;
+          padding: 16px;
+        }
 
         @include respond("tab") {
           display: none;
@@ -435,14 +447,19 @@ onBeforeUnmount(() => {
           padding: 15px;
           padding-bottom: 0;
         }
+        
+        @include respond("mob-sm") {
+          padding: 12px;
+          padding-bottom: 0;
+        }
       }
 
       &__title {
-        padding: 24px 32px;
+        padding: 24px 32px 24px 32px;
         color: $c-green;
 
         @include respond("tab") {
-          outline: none;
+          box-shadow: none;
           border: 1px solid $c-steel-grey;
           border-bottom: none;
 
@@ -450,7 +467,7 @@ onBeforeUnmount(() => {
             display: none;
           }
 
-          padding: 24px 16px 20px 16px;
+          padding: 24px 70px 20px 16px;
         }
       }
 
@@ -462,7 +479,7 @@ onBeforeUnmount(() => {
         color: $c-grey-2;
 
         @include respond("tab") {
-          outline: none;
+          box-shadow: none;
           border: 1px solid $c-steel-grey;
           border-top: none;
           padding: 0 16px 24px 16px;

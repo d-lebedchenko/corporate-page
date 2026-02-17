@@ -292,12 +292,16 @@ button {
 
 .dots {
   position: relative;
-  // padding: 20px; 
-  outline: 1px solid $c-steel-grey;
-  outline-offset: 0;
+  box-shadow: inset 0 0 0 1px $c-steel-grey;
   transition: 0.3s all ease-in-out;
+  margin-top: -1px;
+  margin-left: -1px;
+  z-index: 1;
 }
-
+.dots:first-child {
+  margin-top: 0;
+  margin-left: 0;
+}
 .dots::before,
 .dots::after,
 .dots .psevdo::before,
@@ -361,14 +365,15 @@ button {
   }
 }
 .dots-hover:hover {
-  outline: 1px solid $c-white;
+  z-index: 5;
+  box-shadow: inset 0 0 0 1px $c-white;
   background-color: rgba($c-white, 0.1);
    
   &::before,
   &::after, 
   .psevdo::before,
   .psevdo::after{
-    z-index: 2;
+    z-index: 6;
     background-color: $c-green;
     transition: 0.3s all ease-in-out;
   }

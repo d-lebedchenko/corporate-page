@@ -176,6 +176,15 @@ const {
   &__wr {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    border: 1px solid $c-steel-grey;
+    background-color: $c-steel-grey;
+    .dots {
+      background-color: $c-black;
+      box-shadow: none;
+      margin: 0;
+    }
+
     
     @include respond("tab") {
       grid-template-columns: 1fr;
@@ -185,6 +194,8 @@ const {
   &__content {
     display: grid;
     grid-template-columns: 177px auto;
+    gap: 1px;
+    background-color: $c-steel-grey;
 
     @include respond("tab") {
       grid-template-columns: 64px auto;
@@ -195,6 +206,7 @@ const {
     padding: 40px;
     overflow: hidden;
     position: relative;
+    background-color: $c-black;
     @include respond("tab") {
       padding: 24px 12px;
     }
@@ -331,13 +343,6 @@ const {
       &.is-hovered {
         svg {
           animation: rotate 0.6s ease-out 0s forwards;
-        }
-        :deep() {
-          .circle {
-            transform-origin: center;
-            animation: circle 0.6s ease-out 0s forwards;
-            animation-delay: 0.3s;
-          }
         }
       }
     }

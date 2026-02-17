@@ -286,6 +286,7 @@ const slidePrev = () => {
   &__person {
     flex: 1 0 50%;
     min-height: 666px;
+    margin-top: -1px;
     @include respond("tab") {
       min-height: auto;
       flex: 0 1 244px;
