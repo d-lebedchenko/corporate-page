@@ -211,7 +211,7 @@ onMounted(() => {
             </div>
 
             <div class="career-grid__item__title f-sh1 dots d-f ai-c">
-              <span class="psevo"></span>
+              <span class="psevdo"></span>
               <template v-if="index === 0">{{ frameworkTitle }}</template>
               <template v-else-if="index === 1">{{ communitiesTitle }}</template>
               <template v-else-if="index === 2">{{ systemTitle }}</template>
@@ -220,7 +220,7 @@ onMounted(() => {
             </div>
 
             <div class="career-grid__item__text f-p2 dots">
-              <span class="psevo"></span>
+              <span class="psevdo"></span>
               <template v-if="index === 0">{{ frameworkText }}</template>
               <template v-else-if="index === 1">{{ communitiesText }}</template>
               <template v-else-if="index === 2">{{ systemText }}</template>
@@ -319,6 +319,8 @@ onMounted(() => {
 
     @include respond("tab") {
       display: none;
+      // border: none;
+      background-color: transparent;
 
       &.mob {
         display: block;
@@ -365,6 +367,7 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       padding: 32px 16px;
+      background-color: transparent;
     }
 
     &__title {
@@ -699,15 +702,26 @@ onMounted(() => {
   &__controls {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    // border-top: 1px solid $c-steel-grey;
+    .prev, .next {
+      box-shadow: inset 0 0 0 1px $c-steel-grey;
+    }
   }
 
   &__arrow {
     padding: 16px;
 
     &.prev {
+      margin-bottom: -1px;
+      margin-left: -1px;
+      margin-right: -1px;
       .icon {
         transform: rotate(180deg);
       }
+    }
+    &.next {
+      margin-bottom: -1px;
+      margin-right: -1px;
     }
 
     .icon {

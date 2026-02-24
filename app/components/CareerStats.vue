@@ -196,9 +196,15 @@ const {
     grid-template-columns: 177px auto;
     gap: 1px;
     background-color: $c-steel-grey;
+    margin-right: -1px;
+    margin-left: -1px;
+    border-left: 1px solid $c-steel-grey;
 
     @include respond("tab") {
       grid-template-columns: 64px auto;
+      margin-right: 0;
+      margin-left: 0;
+      border-left: none;
     }
   }
 

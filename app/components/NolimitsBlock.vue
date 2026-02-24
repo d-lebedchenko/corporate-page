@@ -141,6 +141,10 @@ onBeforeUnmount(() => {
   background-color: $c-black;
   padding: 70px 0;
 
+  @include respond("tab") {
+    padding: 40px 0;
+  }
+
   &__wr {
     position: relative;
     display: grid;

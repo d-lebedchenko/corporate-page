@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: '',
@@ -9,18 +9,23 @@ defineProps({
     default: () => [],
   },
 })
+const validPosts = computed(() => {
+  return props.posts.filter(post => 
+    typeof post === 'object' && post !== null && !Array.isArray(post)
+  )
+})
 </script>
 
 <template>
-  <div class="related-posts-block">
+  <div  v-if="validPosts.length" class="related-posts-block">
     <div class="container">
       <h2 class="related-posts-block__title f-h1">
         {{ title ? title : $t('related_posts_block.title_fallback') }}
       </h2>
 
-      <div v-if="posts?.length">
+      <div>
         <BlogPostCard
-          v-for="post in posts"
+          v-for="post in validPosts"
           :key="post.id"
           :slug="post.slug"
           :title="post.title"
