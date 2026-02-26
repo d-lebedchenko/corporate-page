@@ -283,8 +283,11 @@ onBeforeUnmount(() => {
     }
     @include respond("mob") {
       transform: translateY(-50%);
+    }
+    @include respond("mob-md") {
       font-size: 48px;
     }
+
 
     .first-word {
       display: inline-block;
