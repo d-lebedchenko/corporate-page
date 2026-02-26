@@ -59,7 +59,7 @@ const props = defineProps({
   }
 
   &__wr {
-    @include respond("tab") {
+    @include respond("tab-sm") {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 28px;
@@ -73,7 +73,7 @@ const props = defineProps({
   &__row {
     margin-bottom: 44px;
 
-    @include respond("tab") {
+    @include respond("tab-sm") {
       margin-bottom: 0;
       display: flex;
       flex-direction: column;
@@ -82,10 +82,8 @@ const props = defineProps({
   }
 
   &__label {
-    width: 50%;
-    flex-shrink: 0;
 
-    @include respond("tab") {
+    @include respond("tab-sm") {
       width: 100%;
     }
   }
@@ -95,8 +93,10 @@ const props = defineProps({
     grid-template-columns: minmax(0, 111px) minmax(0, 195px) minmax(0, 82px) minmax(0, 80px);
     gap: 76px;
     width: 100%;
+    max-width: 694px;
+    margin-left: auto;
 
-    @include respond("tab") {
+    @include respond("tab-sm") {
       color: $c-grey-2;
       display: flex;
       flex-direction: column;

@@ -4,7 +4,10 @@ $breakpoints: (
   "mob-sm": 350px,
   "mob-md": 430px,
   "mob": 600px,
+  "tab-sm": 991px,
   "tab": 1024px,
+  "tab-lg": 1200px,
+  "laptop": 1439px
 );
 
 @mixin respond($device) {

@@ -32,7 +32,7 @@ const dynamicPhrases = computed(() => {
 });
 
 const dynamicWord = ref('');
-const charIndex = ref(0); // Перетворили на ref для кращої реактивності
+const charIndex = ref(0);
 let phraseIndex = 0;
 let isDeleting = false;
 let typingInterval;
@@ -149,8 +149,8 @@ onBeforeUnmount(() => {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
-    @include respond("mob") {
+    
+    @include respond("tab-sm") {
       display: flex;
       flex-direction: column;
     }
@@ -159,47 +159,64 @@ onBeforeUnmount(() => {
   &__image {
     padding-left: 170px;
 
-    @include respond("tab") {
+    @include respond("laptop") {
       padding-left: 0;
     }
+    @include respond("tab-sm") {
+      justify-content: flex-start;
+    }
+
 
     &:deep(img) {
       display: block;
       width: 100%;
+      max-width: 516px;
       height: auto;
     }
   }
 
   &__content {
     padding: 0 39px;
-
-    @include respond("tab") {
-      padding: 0 8px;
+    
+    @include respond("laptop") {
+      padding-right: 0;
+      padding-left: 48px;
+    }
+    @include respond("tab-lg") {
+      padding-left: 40px;
     }
 
-    @include respond("mob") {
+    @include respond("tab-sm") {
       padding: 0;
       display: flex;
       flex-direction: column;
+      transform: translateY(-56px);
+      margin-bottom: -56px;
     }
   }
 
   &__text {
     margin-bottom: 152px;
     color: $c-grey-2;
+    font-size: 20px;
+    
 
     @include respond("tab") {
       margin-bottom: 77px;
     }
-
+    @include respond("tab-lg") {
+      margin-bottom: 112px;
+    }
     @include respond("mob") {
-      transform: translateY(-70px);
-      margin-bottom: -70px;
+      font-size: 16px;
+    }
+
+    @include respond("tab-sm") {
+      margin-bottom: 0;
     }
 
     .typing-area {
       display: inline;
-      // Дозволяє браузеру розривати рядок всередині анімації
       white-space: normal;
     }
 
@@ -242,20 +259,38 @@ onBeforeUnmount(() => {
     bottom: -24px;
     text-transform: uppercase;
 
+    @include respond("laptop") {
+      font-size: 108px;
+      bottom: -0;
+    }
+    @include respond("tab-lg") {
+      font-size: 80px;
+      line-height: 96%;
+      bottom: 8px;
+    }
+    @include respond("tab-sm") {
+      font-size: 64px;
+      line-height: 125%;
+    }
     @include respond("tab") {
       bottom: -7px;
     }
 
+    @include respond("tab-sm") {
+      position: relative;
+      transform: translateY(-100%);
+      bottom: 0;
+    }
     @include respond("mob") {
-      position: static;
       transform: translateY(-50%);
+      font-size: 48px;
     }
 
     .first-word {
       display: inline-block;
       transform: translateY(-66%);
 
-      @include respond("tab") {
+      @include respond("laptop") {
         transform: translateY(0);
       }
     }

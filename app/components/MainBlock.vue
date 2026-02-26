@@ -148,29 +148,48 @@ onBeforeUnmount(() => {
   padding-top: 28px;
   height: calc(100vh - 62px);
   overflow: hidden;
+  
+  @include respond("laptop") {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  @include respond("tab") {
+    height: calc(100vh - 52px);
+  }
 
-    @include respond("tab") {
-      height: 100%;
-    }
+  @include respond("tab-sm") {
+    height: 100%;
+  }
 
   &__wrapper {
-    gap: 16px;
+    gap: 20px;
     height: 100%;
+    
+    @include respond("laptop") {
+      gap: 24px;
+    }
 
-    @include respond("tab") {
+    @include respond("tab-sm") {
       display: block;
     }
 
   }
 
   &__left {
-    flex: 1;
+    flex: 0 0 618px;
     overflow: hidden;
     position: relative;
     padding-left: 26px;
     margin-left: -26px;
 
-    @include respond("tab") {
+    @include respond("laptop") {
+      flex: 0 0 594px;
+    }
+    @include respond("tab-lg") {
+      flex: 0 0 466px;
+    }
+
+    @include respond("tab-sm") {
       min-height: 360px;
       padding: 0 15px;
       margin: 0 -15px 20px;
@@ -190,17 +209,14 @@ onBeforeUnmount(() => {
       object-fit: cover;
     }
 
-    @include respond("tab") {
+    @include respond("tab-sm") {
       height: 360px;
-      display: none;
-    }
-    @include respond("mob-md") {
       display: none;
     }
     
     &--tab {
       display: none;
-      @include respond("tab") {
+      @include respond("tab-sm") {
         display: block;
       }
       @include respond("mob-md") {
@@ -220,6 +236,14 @@ onBeforeUnmount(() => {
     min-width: 0;
     flex: 0 0 130px;
     transform: translateX(calc(100% - 10px));
+    
+    @include respond("tab-lg") {
+      flex: 0 0 90px;
+    }
+    @include respond("tab-sm") {
+      flex: 0 0 69px;
+      transform: translateX(calc(100% - 0px));
+    }
 
     :deep() {
       .vfm-marquee-container {
@@ -228,10 +252,6 @@ onBeforeUnmount(() => {
         margin: -10px 0;
       }
     }
-    @include respond("tab") {
-      flex-basis: 64px;
-      transform: translateX(100%);
-    }
   }
 
   &__runing {
@@ -239,20 +259,25 @@ onBeforeUnmount(() => {
     // font-size: 150px;
     text-transform: uppercase;
     color: $c-steel-grey;
+    
+    @include respond("tab-lg") {
+      font-size: 80px;
+      line-height: 96%;
+    }
 
-    @include respond("tab") {
-      font-size: 56px;
+    @include respond("tab-sm") {
+      font-size: 64px;
     }
   }
    
 
   &__right {
-    flex: 0 0 780px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    @include respond("tab") {
+    @include respond("tab-sm") {
       display: block;
     }
   }
@@ -260,21 +285,37 @@ onBeforeUnmount(() => {
 
   &__title {
     text-transform: uppercase;
-    @include respond("tab") {
+    @include respond("laptop") {
+      line-height: 94%;
+    }
+    @include respond("tab-lg") {
+      font-size: 80px;
+      line-height: 96%;
+    }
+    @include respond("tab-sm") {
       font-size: 48px;
+      line-height: 125%;
     }
   }
 
   &__subtitle {
     text-transform: uppercase;
-    padding-left: 0.5em;
+    padding-left: 11px;
     margin-top: -0.583333em;
+    @include respond("laptop") {
+      margin-top: 8px;
+    }
+    @include respond("tab-lg") {
+      padding-left: 0;
+      font-size: 18px;
+      line-height: 125%;
+    }
 
-    @include respond("tab") {
+    @include respond("tab-sm") {
       padding-left: 0;
       margin-top: 0;
       margin-bottom: 16px;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
@@ -283,10 +324,15 @@ onBeforeUnmount(() => {
     margin-bottom: 36px;
     white-space: pre-wrap;
     color: $c-grey;
+    
+    @include respond("laptop") {
+      font-size: 24px;
+    }
+    @include respond("tab-lg") {
+      font-size: 16px;
+    }
 
     &.is-visible {
-
-
       .animated-letter {
         display: inline;
         animation: colorChange 0.5s linear forwards;
@@ -311,11 +357,13 @@ onBeforeUnmount(() => {
   &__btn {
     text-transform: uppercase;
     padding: 40px;
-
-    @include respond("tab") {
+    
+    @include respond("laptop") {
+      font-size: 28px;
+    }
+    @include respond("tab-lg") {
+      font-size: 20px;
       padding: 16px;
-      gap: 32px;
-      width: max-content;
 
       .icon {
         width: 24px;
@@ -323,9 +371,14 @@ onBeforeUnmount(() => {
       }
     }
 
-    @include respond("mob") {
-      width: 100%;
+    @include respond("tab-sm") {
+      gap: 32px;
+      // width: max-content;
     }
+
+    // @include respond("tab-sm") {
+    //   width: 100%;
+    // }
   }
 }
 </style>
