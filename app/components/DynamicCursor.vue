@@ -114,7 +114,7 @@ onUnmounted(() => {
   }
 
   
-  @include respond("tab") {
+  @include respond("tab-sm") {
     display: none;
   }
 }

@@ -130,7 +130,7 @@ const swiper = useSwiper(containerRef, {
     &:hover {
       background-color: transparent;
       .culture__item__text {
-        max-height: 300px;
+        max-height: 500px;
         padding-top: 32px;
         opacity: 1;
       }
