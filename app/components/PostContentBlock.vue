@@ -270,8 +270,18 @@ watch(
       }
 
       &.dots {
+        margin-top: 0;
+        margin-left: 0;
+
+        &:not(:first-child) {
+          box-shadow:
+            inset 0 1px 0 0 $c-black,
+            inset 0 0 0 1px $c-steel-grey;
+        }
+
         @include respond("tab") {
           outline: none;
+          box-shadow: none;
           .psevdo,
           &:before,
           &:after {

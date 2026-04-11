@@ -242,7 +242,7 @@ const handleSubmit = (event) => {
               :disabled="isButtonDisabled" :class="{ 'disabled-btn': isButtonDisabled }">
               <span class="psevdo"></span>
               {{ btnText }}
-              <Arrow class="icon icon-32" />
+              <Arrow class="icon icon-40" />
             </button>
           </form>
         </div>
@@ -507,11 +507,10 @@ const handleSubmit = (event) => {
   &__btn {
     text-transform: uppercase;
     padding: 32px 40px;
-    width: max-content;
+    width: 100%;
     gap: 24px;
-    min-width: 269px;
     font-family: $font-primary;
-    margin-left: auto;
+    justify-content: space-between;
 
     &.disabled-btn {
       cursor: not-allowed;

@@ -48,7 +48,7 @@ const MOBILE_SPEED = 100;
 const currentSpeed = ref(DESKTOP_SPEED);
 
 const checkScreenSize = () => {
-  if (window.innerWidth < 1023) { 
+  if (window.innerWidth < 1023) {
     currentSpeed.value = MOBILE_SPEED;
   } else {
     currentSpeed.value = DESKTOP_SPEED;
@@ -70,8 +70,7 @@ onBeforeUnmount(() => {
 
       <div class="main-section__left d-f">
         <div class="main-section__marquee">
-          
-          <NuxtMarquee autoFill :speed="currentSpeed"  :direction="'down'">
+          <NuxtMarquee autoFill :speed="currentSpeed" :direction="'down'">
             <div class="main-section__runing f-a2">
               <span class="main-section__runing__text"> {{ runningText }} </span>&nbsp;
             </div>
@@ -112,15 +111,31 @@ onBeforeUnmount(() => {
       </div>
       <div class="main-section__right">
         <div class="main-section__top">
-          <h1 class="main-section__title f-a1">
+          <h1 class="main-section__title f-hero-title">
             {{ title }}
           </h1>
-          <h2 class="main-section__subtitle f-sh1">
-            {{ subtitle }}
-          </h2>
+          <div
+            v-if="subtitle"
+            class="main-section__tagline-row"
+          >
+            <svg
+              class="main-section__tagline-mark"
+              viewBox="0 0 13 96"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M0 96V0H13V2.35712H2.33092V93.5898H12.9469V96H0Z"
+                fill="currentColor"
+              />
+            </svg>
+            <p class="main-section__tagline f-tagline">
+              {{ subtitle }}
+            </p>
+          </div>
         </div>
         <div class="main-section__bottom">
-          <p class="main-section__text f-p1" ref="textRef" :class="{ 'is-visible': isTextVisible }">
+          <p class="main-section__text f-hero-lead" ref="textRef" :class="{ 'is-visible': isTextVisible }">
             <span v-for="(letter, i) in letters" :key="i" class="animated-letter"
               :style="{ 'animation-delay': `${i * 0.015}s` }">
               {{ letter }}
@@ -192,7 +207,7 @@ onBeforeUnmount(() => {
     @include respond("tab-sm") {
       min-height: 360px;
       padding: 0 15px;
-      margin: 0 -15px 20px;
+      margin: 0 -15px 16px;
     }
   }
 
@@ -256,7 +271,6 @@ onBeforeUnmount(() => {
 
   &__runing {
     rotate: -90deg;
-    // font-size: 150px;
     text-transform: uppercase;
     color: $c-steel-grey;
     
@@ -269,7 +283,6 @@ onBeforeUnmount(() => {
       font-size: 64px;
     }
   }
-   
 
   &__right {
     flex: 1;
@@ -282,54 +295,71 @@ onBeforeUnmount(() => {
     }
   }
 
-
-  &__title {
-    text-transform: uppercase;
-    @include respond("laptop") {
-      line-height: 94%;
-    }
-    @include respond("tab-lg") {
-      font-size: 80px;
-      line-height: 96%;
-    }
+  &__bottom {
     @include respond("tab-sm") {
-      font-size: 48px;
-      line-height: 125%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      margin-top: 16px;
+      gap: 16px;
     }
   }
 
-  &__subtitle {
-    text-transform: uppercase;
-    padding-left: 11px;
-    margin-top: -0.583333em;
-    @include respond("laptop") {
-      margin-top: 8px;
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include respond("tab-sm") {
+      gap: 16px;
     }
+  }
+
+  &__title {
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+
+  &__tagline-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 30px;
+
     @include respond("tab-lg") {
-      padding-left: 0;
-      font-size: 18px;
-      line-height: 125%;
+      gap: 10px;
+      font-size: 24px;
     }
 
     @include respond("tab-sm") {
-      padding-left: 0;
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 16px;
+      gap: 8px;
+      font-size: 18px;
     }
+  }
+
+  &__tagline-mark {
+    flex-shrink: 0;
+    display: block;
+    width: calc(13em / 30);
+    height: calc(96em / 30);
+    color: $c-green;
+  }
+
+  &__tagline {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    text-transform: uppercase;
+    white-space: pre-line;
   }
 
   &__text {
-    text-transform: uppercase;
-    margin-bottom: 36px;
+    margin: 0 0 36px;
     white-space: pre-wrap;
     color: $c-grey;
-    
-    @include respond("laptop") {
-      font-size: 24px;
-    }
-    @include respond("tab-lg") {
-      font-size: 16px;
+
+    @include respond("tab") {
+      margin-bottom: 16px;
     }
 
     &.is-visible {
@@ -348,16 +378,14 @@ onBeforeUnmount(() => {
         }
       }
     }
-
-    @include respond("tab") {
-      margin-bottom: 16px;
-    }
   }
 
   &__btn {
+    box-sizing: border-box;
+    width: 100%;
     text-transform: uppercase;
     padding: 40px;
-    
+
     @include respond("laptop") {
       font-size: 28px;
     }
@@ -373,12 +401,7 @@ onBeforeUnmount(() => {
 
     @include respond("tab-sm") {
       gap: 32px;
-      // width: max-content;
     }
-
-    // @include respond("tab-sm") {
-    //   width: 100%;
-    // }
   }
 }
 </style>

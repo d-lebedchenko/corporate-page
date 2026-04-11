@@ -54,9 +54,9 @@ const props = defineProps({
           </p>
 
           <div v-if="name || position" class="about-quote-block__info">
-            <p v-if="name" class="about-quote-block__info-name f-h3">
+            <h3 v-if="name" class="about-quote-block__info-name f-h3">
               {{ name }}
-            </p>
+            </h3>
             <p v-if="position" class="f-p2 text-grey-2">
               {{ position }}
             </p>
