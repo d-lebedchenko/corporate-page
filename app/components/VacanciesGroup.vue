@@ -34,7 +34,7 @@ function getVacancyLink(slug) {
       { 'is-visible': isVisible },
     ]"
   >
-    <h2 class="vacancies-group__head f-sh1 dots">
+    <h2 class="vacancies-group__head f-h3 dots">
       {{ data.department?.label || $t('vacancies.other_department') }}
     </h2>
 

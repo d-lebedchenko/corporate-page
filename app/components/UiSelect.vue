@@ -75,7 +75,7 @@ onClickOutside(selectRef, () => {
   >
     <button
       type="button"
-      class="ui-select__control f-p1"
+      class="ui-select__control f-b-p2"
       :disabled="disabled"
       @click="toggle"
     >

@@ -193,9 +193,9 @@ onBeforeUnmount(() => {
           <swiper-slide class="matrices__slider__item" v-for="(item, idx) in sliderListItems" :key="item.id || idx">
             <div class="matrices__slider__item__inner">
 
-              <div class="matrices__slider__item__title f-h2 dots">
+              <div class="matrices__slider__item__title dots">
                 <span class="psevdo"></span>
-                <h3>{{ item.title }}</h3>
+                <h2 class="f-h2">{{ item.title }}</h2>
               </div>
               <div class="matrices__slider__item__content dots" :class="{'gap-mob': item.gap }">
                 <span class="psevdo"></span>
@@ -458,6 +458,7 @@ onBeforeUnmount(() => {
         padding: 24px 32px 24px 32px;
         color: $c-green;
 
+
         @include respond("tab") {
           box-shadow: none;
           border: 1px solid $c-steel-grey;
@@ -468,6 +469,21 @@ onBeforeUnmount(() => {
           }
 
           padding: 24px 70px 20px 16px;
+        }
+      }
+
+      &__col {
+        :deep(.richtext h3) {
+          font-family: $font-primary;
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 130%;
+
+          @include respond("tab") {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 125%;
+          }
         }
       }
 

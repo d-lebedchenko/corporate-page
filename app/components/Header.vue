@@ -140,7 +140,7 @@ watch(() => route.fullPath, () => {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 10;
   }
 
   &__inner {

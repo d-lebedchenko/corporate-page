@@ -123,8 +123,22 @@ const swiper = useSwiper(containerRef, {
   &__item {
     padding: 32px;
     min-height: 360px;
-    &:first-child {
-      margin-top: -1px;
+    margin-top: 0;
+    margin-left: 0;
+
+    // колонки 2-4: маскуємо лівий border
+    &:not(:nth-child(4n+1)) {
+      box-shadow: inset 1px 0 0 0 $c-black, inset 0 0 0 1px $c-steel-grey;
+    }
+
+    // перший рядок: маскуємо верхній border
+    &:nth-child(-n+4) {
+      box-shadow: inset 0 1px 0 0 $c-black, inset 0 0 0 1px $c-steel-grey;
+    }
+
+    // перший рядок, колонки 2-4: маскуємо обидва
+    &:nth-child(-n+4):not(:nth-child(4n+1)) {
+      box-shadow: inset 1px 0 0 0 $c-black, inset 0 1px 0 0 $c-black, inset 0 0 0 1px $c-steel-grey;
     }
 
     &:hover {

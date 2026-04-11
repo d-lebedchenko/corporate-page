@@ -27,7 +27,7 @@ defineProps({
           {{ title }}
         </h1>
         <div class="career-main__title__block d-f ai-c">
-          <span class="career-main__title__green green f-a2 shrink-0">
+          <span class="career-main__title__green f-a2 shrink-0">
             {{ titleGreen }}
           </span>
           <span class="career-main__subtitle f-h2 whitespace-pre-line">
@@ -83,18 +83,13 @@ defineProps({
     margin-top: -22px;
     @include respond("tab") {
       margin-top: 0;
-      // gap: 16px;
       flex-direction: column;
       align-items: flex-start;
       gap: 0;
     }
-    // @include respond("mob") {
-    //   flex-direction: column;
-    //   align-items: flex-start;
-    //   gap: 0;
-    // }
   }
   &__title__green {
+    color: $c-white;
     text-transform: uppercase;
     @include respond("tab") {
       font-size: 64px;
@@ -104,8 +99,9 @@ defineProps({
     }
   }
   &__subtitle {
+    color: $c-green;
     text-transform: uppercase;
-    
+
     @include respond("tab") {
       white-space: normal;
     }
