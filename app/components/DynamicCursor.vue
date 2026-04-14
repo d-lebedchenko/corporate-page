@@ -66,12 +66,6 @@ onUnmounted(() => {
       width: `${cursorSize}px`,
       height: `${cursorSize}px`,
     }">
-      <!--
-        4 arc segments on r=20 circle centered at 24,24.
-        Each arc spans 60° at a diagonal position (NW/NE/SE/SW).
-        Point at θ°: x = 24 + 20·cos(θ°), y = 24 + 20·sin(θ°)
-        NW 195°→255°, NE 285°→345°, SE 15°→75°, SW 105°→165°
-      -->
       <svg class="cursor-hover" width="48" height="48" viewBox="0 0 48 48" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M 4.7 18.8 A 20 20 0 0 1 18.8 4.7"   stroke="#00F3BC" stroke-width="2.5" stroke-linecap="round"/>
