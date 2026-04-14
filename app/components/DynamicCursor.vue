@@ -62,17 +62,16 @@ onUnmounted(() => {
     <div class="custom-cursor" :class="{ 'is-hovering': isHovering }" :style="{
       top: '0',
       left: '0',
-
       transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px) translate(-50%, -50%)`,
-
       width: `${cursorSize}px`,
       height: `${cursorSize}px`,
     }">
       <svg class="cursor-hover" width="48" height="48" viewBox="0 0 48 48" fill="none"
         xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M0 0V24H23.9962L0 0ZM23.9962 24L48 0H23.9962V24ZM23.9962 24L48 48V24H23.9962ZM23.9962 24L0 48H23.9962V24Z"
-          fill="#00F3BC" />
+        <path d="M 4.7 18.8 A 20 20 0 0 1 18.8 4.7"   stroke="#00F3BC" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 29.2 4.7 A 20 20 0 0 1 43.3 18.8"  stroke="#00F3BC" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 43.3 29.2 A 20 20 0 0 1 29.2 43.3" stroke="#00F3BC" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 18.8 43.3 A 20 20 0 0 1 4.7 29.2"  stroke="#00F3BC" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
 
     </div>
@@ -81,6 +80,12 @@ onUnmounted(() => {
 
 <style scoped lang="scss">
 @use "@/assets/scss/media" as *;
+
+@keyframes cursor-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 .custom-cursor {
   position: fixed;
 
@@ -95,25 +100,41 @@ onUnmounted(() => {
   transition: width 0.5s ease, height 0.5s ease, background-color 0.5s ease;
 
   .cursor-hover {
+    position: absolute;
+    inset: 0;
+    margin: auto;
     width: 12px;
     height: 12px;
     opacity: 0;
-    transition: 0.3s all ease-in-out;
-  }
+    transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
 
+    path {
+      stroke-dasharray: 22;
+      stroke-dashoffset: 22;
+      transition: stroke-dashoffset 0.4s ease;
+
+      &:nth-child(1) { transition-delay: 0s; }
+      &:nth-child(2) { transition-delay: 0.07s; }
+      &:nth-child(3) { transition-delay: 0.14s; }
+      &:nth-child(4) { transition-delay: 0.21s; }
+    }
+  }
 
   &.is-hovering {
     background-color: transparent;
 
     .cursor-hover {
       opacity: 1;
-      transform: rotate(270deg);
       width: 48px;
       height: 48px;
+      animation: cursor-spin 3s linear infinite;
+
+      path {
+        stroke-dashoffset: 0;
+      }
     }
   }
 
-  
   @include respond("tab-sm") {
     display: none;
   }

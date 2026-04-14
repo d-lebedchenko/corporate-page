@@ -23,11 +23,29 @@ const titleRest = computed(() => {
   if (!props.title || typeof props.title !== 'string') return ''
   return props.title.trim().split(' ').slice(2).join(' ')
 })
+
+const {
+  containerRef,
+  isVisible
+} = useTextAnimation()
+
+const descrLetters = computed(() => {
+  if (!props.description || typeof props.description !== 'string') return []
+  return props.description.trim().split('').map(char => (char === '\n' ? '\n' : char))
+})
 </script>
 
 <template>
   <div class="framework-main-block">
     <div class="container">
+      <h1
+        v-if="title"
+        class="framework-main-block__title f-hero-title"
+      >
+        {{ titleFirst }}
+        <span v-if="titleRest" class="framework-main-block__title-green f-h2 green">{{ titleRest }}</span>
+      </h1>
+
       <div class="framework-main-block__wr">
         <NuxtPicture
           v-if="image?.url"
@@ -40,18 +58,22 @@ const titleRest = computed(() => {
         />
 
         <div class="framework-main-block__right">
-          <h1
-            v-if="title"
-            class="framework-main-block__title f-a3"
-          >
-            <span class="first">{{ titleFirst }}</span>
-            {{ titleRest }}
-          </h1>
           <p
             v-if="description"
-            class="framework-main-block__descr f-p2 whitespace-pre-line"
+            ref="containerRef"
+            :class="[
+              'framework-main-block__descr f-p1 whitespace-pre-line',
+              { 'is-visible': isVisible }
+            ]"
           >
-            {{ description }}
+            <span
+              v-for="(letter, i) in descrLetters"
+              :key="i"
+              class="animated-letter"
+              :style="{ 'animation-delay': `${i * 0.015}s` }"
+            >
+              {{ letter }}
+            </span>
           </p>
         </div>
       </div>
@@ -67,14 +89,33 @@ const titleRest = computed(() => {
   color: $c-white;
   padding: 60px 0 70px;
   overflow: hidden;
+
   @include respond("tab") {
     padding: 32px 0 40px;
   }
 
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 34px;
+
+    @include respond("tab") {
+      margin-bottom: 24px;
+    }
+
+    @include respond("mob") {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title-green {
+    display: block;
+    color: $c-green;
+  }
+
   &__wr {
-    position: relative;
     display: flex;
-    gap: 32px;
+    gap: 25px;
+
     @include respond("tab") {
       display: block;
     }
@@ -83,24 +124,21 @@ const titleRest = computed(() => {
   &__left {
     display: block;
     flex: 0 0 50%;
-    min-height: 460px;
+
     @include respond("tab") {
-      min-height: auto;
       margin-bottom: 20px;
     }
 
     &:deep(img) {
       display: block;
-      max-width: 516px;
-      margin-left: auto;
       width: 100%;
       height: 100%;
       object-fit: cover;
+
       @include respond("tab") {
-        max-width: none;
-        margin-left: 0;
         height: 300px;
       }
+
       @include respond("mob") {
         height: auto;
         aspect-ratio: 345 / 307;
@@ -110,48 +148,25 @@ const titleRest = computed(() => {
 
   &__right {
     flex: 1;
-    padding-top: 24px;
+
     @include respond("tab") {
       padding-top: 0;
-    }
-  }
-
-  &__title {
-    padding-top: 0.95em;
-    padding-left: 66px;
-    text-transform: uppercase;
-    @include respond("tab") {
-      padding-top: 0;
-      padding-left: 0;
-      font-size: 32px;
-      line-height: 1.25;
-    }
-
-    .first {
-      position: absolute;
-      top: 24px;
-      left: 0;
-      white-space: nowrap;
-      width: calc(50% + (32px + 66px));
-      text-align: right;
-      @include respond("tab") {
-        position: static;
-        white-space: normal;
-        width: auto;
-        text-align: left;
-      }
     }
   }
 
   &__descr {
-    color: $c-grey-2;
-    &:not(:first-child) {
-      margin-top: 40px;
-      @include respond("tab") {
-        margin-top: 16px;
-        font-weight: 500;
+    color: $c-grey;
+
+    &.is-visible {
+      .animated-letter {
+        display: inline;
+        animation: colorChange 0.5s linear forwards;
       }
     }
   }
+}
+
+@keyframes colorChange {
+  100% { color: $c-white; }
 }
 </style>

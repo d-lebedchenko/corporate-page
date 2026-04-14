@@ -23,6 +23,10 @@ defineProps({
   <div class="matrices-main">
     <div class="container">
       <div class="matrices-main__wr">
+        <h1 class="matrices-main__title f-hero-title">
+          {{ title }}
+          <span v-if="titleGreen" class="matrices-main__title-additional green f-h2">{{ titleGreen }}</span>
+        </h1>
         <NuxtPicture
           v-if="imageDesktop?.url"
           class="matrices-main__img hide-mob"
@@ -41,9 +45,6 @@ defineProps({
           :height="image.height"
           sizes="xs:100vw sm:100vw md:100vw lg:1388px"
         />
-        <h1 class="matrices-main__title f-a1">
-          {{ title }} <span v-if="titleGreen" class="matrices-main__title-additional green f-a2">{{ titleGreen }}</span>
-        </h1>
       </div>
     </div>
   </div>
@@ -62,7 +63,7 @@ defineProps({
 
   &__img {
     display: block;
-    height: 300px;
+    height: 375px;
     width: 100%;
     &.mob-only {
       display: none;
@@ -87,12 +88,18 @@ defineProps({
     }
   }
   &__title {
-    position: relative;
-    top: -66px;
-    text-transform: uppercase;
+    margin-bottom: 54px;
+
+    &-additional {
+      display: block;
+    }
+
     @include respond("tab") {
-      top: -40px;
-      font-size: 48px;
+      margin-bottom: 32px;
+    }
+
+    @include respond("mob") {
+      margin-bottom: 20px;
     }
   }
 }

@@ -17,6 +17,8 @@ defineProps({
     default: () => ({})
   },
 })
+
+const { containerRef, isVisible } = useTextAnimation()
 </script>
 
 <template>
@@ -37,14 +39,14 @@ defineProps({
           <div class="about-main-block__text-head">
             <h1
               v-if="title"
-              class="about-main-block__title f-a1"
+              class="about-main-block__title f-hero-title"
             >
               {{ title }}
             </h1>
             
             <div
               v-if="marquee?.length"
-              class="about-main-block__marquee f-sh1"
+              class="about-main-block__marquee f-h3"
             >
               <NuxtMarquee autoFill>
                 <span v-for="item in marquee" :key="item.id">
@@ -56,8 +58,9 @@ defineProps({
 
           <RichtextLexical
             v-if="text"
+            ref="containerRef"
             :content="text"
-            class="about-main-block__richtext f-p2 text-grey-2"
+            :class="['about-main-block__richtext f-p1', { 'is-visible': isVisible }]"
           />
         </div>
       </div>
@@ -90,7 +93,7 @@ defineProps({
   &__image {
     display: block;
     flex-basis: 694px;
-    height: 600px;
+    height: 740px;
     @include respond("tab") {
       width: 100%;
       height: 316px;
@@ -125,17 +128,12 @@ defineProps({
 
   &__title {
     margin-bottom: 12px;
-    text-transform: uppercase;
-    @include respond("tab") {
-      font-size: 64px;
-    }
   }
 
   &__marquee {
-    font-size: 35px;
+    color: $c-green;
     @include respond("tab") {
       font-size: 20px;
-      font-weight: 600;
     }
     span {
       display: block;
@@ -152,6 +150,13 @@ defineProps({
   }
 
   &__richtext {
+    color: $c-grey;
+    transition: color 0.6s ease;
+
+    &.is-visible {
+      color: $c-white;
+    }
+
     :deep(p) {
       &:not(:last-child) {
         margin-bottom: 1.3em;

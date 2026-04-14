@@ -19,16 +19,6 @@ const {
   isVisible
 } = useTextAnimation()
 
-const titleFirst = computed(() => {
-  if (!props.title || typeof props.title !== 'string') return ''
-  return props.title.trim().split(' ')[0]
-})
-
-const titleRest = computed(() => {
-  if (!props.title || typeof props.title !== 'string') return ''
-  return props.title.trim().split(' ').slice(1).join(' ')
-})
-
 const descrLetters = computed(() => {
   if (!props.description || typeof props.description !== 'string') return []
   return props.description.trim().split('').map(char => (char === '\n' ? '\n' : char))
@@ -38,6 +28,13 @@ const descrLetters = computed(() => {
 <template>
   <div class="growth-main-block">
     <div class="container">
+      <h1
+        v-if="title"
+        class="growth-main-block__title f-hero-title"
+      >
+        {{ title }}
+      </h1>
+
       <div class="growth-main-block__inner">
         <NuxtPicture
           v-if="image?.url"
@@ -50,13 +47,6 @@ const descrLetters = computed(() => {
         />
 
         <div class="growth-main-block__text">
-          <h1
-            v-if="title"
-            class="growth-main-block__title f-a2"
-          >
-            <span class="first">{{ titleFirst }}</span> <span class="rest">{{ titleRest }}</span>
-          </h1>
-
           <p
             v-if="description"
             ref="containerRef"
@@ -94,6 +84,20 @@ const descrLetters = computed(() => {
     padding-bottom: 40px;
   }
 
+  &__title {
+    color: $c-white;
+    text-transform: uppercase;
+    margin-bottom: 34px;
+
+    @include respond("tab") {
+      margin-bottom: 24px;
+    }
+
+    @include respond("mob") {
+      margin-bottom: 16px;
+    }
+  }
+
   &__inner {
     display: flex;
     gap: 30px;
@@ -106,6 +110,7 @@ const descrLetters = computed(() => {
     display: block;
     flex: 1 1 692px;
     position: relative;
+    height: 376px;
     @include respond("tab") {
       height: 307px;
     }
@@ -131,59 +136,7 @@ const descrLetters = computed(() => {
     flex: 1 1 663px;
   }
 
-  &__title {
-    text-transform: uppercase;
-    position: relative;
-    padding-top: 70px;
-    color: $c-green;
-    @include respond("tab") {
-      padding-top: 0;
-      margin-top: -48px;
-    }
-    @include respond("mob") {
-      margin-top: -52px;
-    }
-    @include respond("mob-sm") {
-      margin-top: -44px;
-      line-height: 110%;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-      @include respond("tab") {
-        margin-bottom: 16px;
-      }
-    }
-
-    .first {
-      display: inline-block;
-      max-width: 100%;
-      position: absolute;
-      top: -18px;
-      right: 100%;
-      color: $c-white;
-      @include respond("tab") {
-        display: inline;
-        position: static;
-      }
-    }
-
-    .rest {
-      @include respond("mob") {
-        display: block;
-        padding-left: 119px;
-        margin-top: -27px;
-      }
-      @include respond("mob-sm") {
-        display: inline;
-        padding-left: 0;
-        margin-top: 0;
-      }
-    }
-  }
-
   &__descr {
-    text-transform: uppercase;
     color: $c-grey;
 
     &.is-visible {
