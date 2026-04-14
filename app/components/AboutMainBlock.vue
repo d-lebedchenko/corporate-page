@@ -132,6 +132,7 @@ defineProps({
   }
 
   &__marquee {
+    color: $c-green;
     font-size: 35px;
     @include respond("tab") {
       font-size: 20px;
