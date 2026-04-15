@@ -1,0 +1,59 @@
+{
+  "docs": [
+    {
+      "id": 2,
+      "slug": "data-analyst",
+      "title": "Data Analyst",
+      "department": {
+        "id": 2,
+        "slug": "analytics",
+        "label": "Analytics"
+      },
+      "locations": [
+        {
+          "id": 1,
+          "slug": "warsaw-pl",
+          "label": "Warsaw, PL"
+        },
+        {
+          "id": 2,
+          "slug": "kyiv-ua",
+          "label": "Kyiv, UA"
+        }
+      ],
+      "applyLink": "https://jobs.ashbyhq.com/SKELAR/c871c341-5943-4d6e-808f-4dcee5ae6e4b?departmentId=2b852c7c-21f8-4b5e-b0c5-5930732bef80"
+    },
+    {
+      "id": 3,
+      "slug": "data-engineer",
+      "title": "Data Engineer",
+      "department": {
+        "id": 2,
+        "slug": "analytics",
+        "label": "Analytics"
+      },
+      "locations": [
+        {
+          "id": 2,
+          "slug": "kyiv-ua",
+          "label": "Kyiv, UA"
+        },
+        {
+          "id": 1,
+          "slug": "warsaw-pl",
+          "label": "Warsaw, PL"
+        }
+      ],
+      "applyLink": "https://jobs.ashbyhq.com/SKELAR/a816a7a0-6206-4074-93e4-61dac4b4024f"
+    }
+  ],
+  "hasNextPage": false,
+  "hasPrevPage": false,
+  "limit": 100,
+  "nextPage": null,
+  "page": 1,
+  "pagingCounter": 1,
+  "prevPage": null,
+  "totalDocs": 2,
+  "totalPages": 1
+}

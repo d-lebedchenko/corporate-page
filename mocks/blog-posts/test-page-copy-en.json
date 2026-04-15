@@ -1,0 +1,239 @@
+{
+  "id": 10,
+  "pageName": "test-page-copy",
+  "publishedAt": "2026-02-24T11:23:29.958Z",
+  "slug": "test-page-copy",
+  "slugLock": false,
+  "title": "test-page-copy",
+  "description": "some test page copy",
+  "image": {
+    "id": 109,
+    "alt": null,
+    "updatedAt": "2026-01-14T17:59:36.579Z",
+    "createdAt": "2026-01-14T17:59:36.579Z",
+    "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash.jpg",
+    "thumbnailURL": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-300x200.jpg",
+    "filename": "caleb-george-URmkfvtK3Qw-unsplash.jpg",
+    "mimeType": "image/jpeg",
+    "filesize": 1001027,
+    "width": 3264,
+    "height": 2176,
+    "focalX": 50,
+    "focalY": 50,
+    "sizes": {
+      "thumbnail": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-300x200.jpg",
+        "width": 300,
+        "height": 200,
+        "mimeType": "image/jpeg",
+        "filesize": 12504,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-300x200.jpg"
+      },
+      "square": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-500x500.jpg",
+        "width": 500,
+        "height": 500,
+        "mimeType": "image/jpeg",
+        "filesize": 40326,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-500x500.jpg"
+      },
+      "small": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-600x400.jpg",
+        "width": 600,
+        "height": 400,
+        "mimeType": "image/jpeg",
+        "filesize": 39721,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-600x400.jpg"
+      },
+      "medium": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-900x600.jpg",
+        "width": 900,
+        "height": 600,
+        "mimeType": "image/jpeg",
+        "filesize": 79056,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-900x600.jpg"
+      },
+      "large": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1400x933.jpg",
+        "width": 1400,
+        "height": 933,
+        "mimeType": "image/jpeg",
+        "filesize": 166933,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1400x933.jpg"
+      },
+      "xlarge": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1920x1280.jpg",
+        "width": 1920,
+        "height": 1280,
+        "mimeType": "image/jpeg",
+        "filesize": 284379,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1920x1280.jpg"
+      },
+      "og": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "filesize": 112975,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1200x630.jpg"
+      }
+    }
+  },
+  "categories": [
+    {
+      "id": 1,
+      "label": "Career"
+    }
+  ],
+  "Blocks": [
+    {
+      "id": "699d8a9618477f00228a48c8",
+      "blockName": null,
+      "sections": [
+        {
+          "id": "699d8a9618477f00228a48c7",
+          "biggerMarginBottom": null,
+          "title": "some test data",
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "test text",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        }
+      ],
+      "blockType": "post-content-block"
+    },
+    {
+      "id": "699d8ab1a8bbefefbab2e425",
+      "blockName": null,
+      "blockType": "related-posts-block",
+      "posts": [
+        9,
+        {
+          "id": 2,
+          "publishedAt": "2026-01-14T17:50:14.329Z",
+          "slug": "yak-shtuchniy-intelekt-pokrashchuie-yakist-produktovih-rishen",
+          "title": "How artificial intelligence improves the quality of food solutions",
+          "description": "We examine how IT experts help businesses transform their strategies in response to digital change, as well as the importance of technological innovation in a fast-paced environment We examine how IT experts help businesses transform their strategies in response to digital change, and the importance of technological innovation in a fast-paced environment. We explore how IT experts help businesses transform their strategies in response to digital change, as well as the importance of technological innovation in a fast-paced environment.",
+          "image": {
+            "id": 37,
+            "alt": "post-2-sm",
+            "updatedAt": "2025-11-05T18:25:54.514Z",
+            "createdAt": "2025-11-05T18:25:54.513Z",
+            "url": "/api/media/file/post-2-sm.png",
+            "thumbnailURL": "/api/media/file/post-2-sm-300x203.png",
+            "filename": "post-2-sm.png",
+            "mimeType": "image/png",
+            "filesize": 101526,
+            "width": 532,
+            "height": 360,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/post-2-sm-300x203.png",
+                "width": 300,
+                "height": 203,
+                "mimeType": "image/png",
+                "filesize": 94320,
+                "filename": "post-2-sm-300x203.png"
+              },
+              "square": {
+                "url": "/api/media/file/post-2-sm-500x500.png",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/png",
+                "filesize": 338484,
+                "filename": "post-2-sm-500x500.png"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "categories": [
+            {
+              "id": 1,
+              "label": "Career"
+            },
+            {
+              "id": 2,
+              "label": "Education"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "title": null,
+    "image": null,
+    "description": null
+  },
+  "updatedAt": "2026-02-24T11:34:40.635Z",
+  "createdAt": "2026-02-24T11:25:10.886Z",
+  "_status": "published"
+}

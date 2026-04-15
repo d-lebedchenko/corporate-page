@@ -1,0 +1,905 @@
+{
+  "id": 4,
+  "title": "Кар’єрний фреймворк",
+  "Blocks": [
+    {
+      "id": "69137e3c0a8bd8f672e477ba",
+      "blockName": null,
+      "list": [
+        {
+          "id": "69137e410a8bd8f672e477bb",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "career-pages",
+              "value": {
+                "id": 2,
+                "title": "Кар'єра",
+                "slug": "career"
+              }
+            },
+            "url": null,
+            "label": "Кар’єра"
+          }
+        },
+        {
+          "id": "69137e600a8bd8f672e477bc",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "career-pages",
+              "value": {
+                "id": 4,
+                "title": "Кар’єрний фреймворк",
+                "slug": "career/framework"
+              }
+            },
+            "url": null,
+            "label": "Кар’єрний фреймворк у TENTENS Tech"
+          }
+        }
+      ],
+      "blockType": "breadcrumbs"
+    },
+    {
+      "id": "69137e9b068cfe68cdba6955",
+      "image": {
+        "id": 50,
+        "alt": "framework-hero",
+        "updatedAt": "2025-11-11T18:31:34.132Z",
+        "createdAt": "2025-11-11T18:31:34.132Z",
+        "url": "/api/media/file/framework-hero.png",
+        "thumbnailURL": "/api/media/file/framework-hero-300x201.png",
+        "filename": "framework-hero.png",
+        "mimeType": "image/png",
+        "filesize": 64193,
+        "width": 688,
+        "height": 460,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/framework-hero-300x201.png",
+            "width": 300,
+            "height": 201,
+            "mimeType": "image/png",
+            "filesize": 76535,
+            "filename": "framework-hero-300x201.png"
+          },
+          "square": {
+            "url": "/api/media/file/framework-hero-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 223267,
+            "filename": "framework-hero-500x500.png"
+          },
+          "small": {
+            "url": "/api/media/file/framework-hero-600x401.png",
+            "width": 600,
+            "height": 401,
+            "mimeType": "image/png",
+            "filesize": 278837,
+            "filename": "framework-hero-600x401.png"
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "blockName": null,
+      "blockType": "framework-main-block",
+      "title": "Career framework at TENTENS Tech",
+      "description": "Фреймворк допомагає зрозуміти, де ти зараз, і що потрібно, аби рухатися далі всередині TENTENS Tech. Обирай свій трек: поглиблювати експертизу як Individual Contributor або розвиватися в Leadership. Кожен рівень описує очікування та патерни дій — щоб і ти, і твій менеджер мали спільну опору для розвитку."
+    },
+    {
+      "id": "69138094068cfe68cdba6956",
+      "blockName": null,
+      "items": [
+        {
+          "id": "69138123068cfe68cdba6957",
+          "text": "Допомагає визначити, де ти знаходишся зараз, які наступні кроки доступні, і що потрібно, аби рухатися далі."
+        },
+        {
+          "id": "6913814a068cfe68cdba6958",
+          "text": "Дає змогу обрати напрям розвитку – у межах IC або Leadership-треку чи змінити фокус, якщо професійні інтереси еволюціонують."
+        },
+        {
+          "id": "69138172068cfe68cdba695a",
+          "text": "Формує спільне бачення між фахівцем, менеджером і компанією: щодо очікувань, рівня перформансу та векторів зростання."
+        },
+        {
+          "id": "69138182068cfe68cdba695b",
+          "text": "Показує, як твоя робота впливає на цілі бізнесу та яку цінність ти створюєш у своїй ролі."
+        }
+      ],
+      "blockType": "framework-why-block",
+      "title": "Навіщо потрібен кар’єрний фреймворк?"
+    },
+    {
+      "id": "691385012aca97506fd5d513",
+      "blockName": null,
+      "items": [
+        {
+          "id": "6913850b2aca97506fd5d514",
+          "title": "IC — Individual Contributor",
+          "description": "Спеціалісти цього треку поглиблюють експертизу, працюють із технологіями та безпосередньо впливають на створення технічних рішень. Чим вищий рівень – тим більша зона відповідальності й внесок у бізнес."
+        },
+        {
+          "id": "691385352aca97506fd5d515",
+          "title": "Leadership — Team Lead",
+          "description": "Лідери команд відповідають за розвиток фахівців, продуктивність і стратегічний напрям. Для цього не обов’язково бути найсильнішим інженером, але важливо добре розуміти, як працюють системи й процеси. Перехід до Leadership зазвичай починається з рівня IC3, коли сформовано стратегічне бачення й менеджерський потенціал."
+        }
+      ],
+      "blockType": "framework-tracks-block",
+      "title": "Треки зростання від IC-1 до Team Lead"
+    },
+    {
+      "id": "691381a0068cfe68cdba695c",
+      "animation": "circles",
+      "blockName": null,
+      "blockType": "framework-content-block",
+      "title": "дивись, як це працює",
+      "description": "Як на практиці виглядає зростання за фреймворком всередині TENTENS Tech. Дивись кейси зростання і долучайся до команди 10/10ths.",
+      "button": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "career-pages",
+          "value": {
+            "id": 3,
+            "title": "Cases",
+            "slug": "career/growth-cases"
+          }
+        },
+        "url": null,
+        "label": "Growth cases"
+      }
+    },
+    {
+      "id": "691385672aca97506fd5d516",
+      "blockName": null,
+      "items": [
+        {
+          "id": "691385742aca97506fd5d517",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=backend",
+            "label": "Backend"
+          }
+        },
+        {
+          "id": "691386e72aca97506fd5d51d",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=frontend",
+            "label": "Frontend"
+          }
+        },
+        {
+          "id": "691386782aca97506fd5d519",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=devops",
+            "label": "Devops"
+          }
+        },
+        {
+          "id": "691386b32aca97506fd5d51b",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=analytics",
+            "label": "Analytic"
+          }
+        },
+        {
+          "id": "691386552aca97506fd5d518",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=database-administrator",
+            "label": "Database Administrator"
+          }
+        },
+        {
+          "id": "691386972aca97506fd5d51a",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=quality-assurance",
+            "label": "Quality Assurance"
+          }
+        },
+        {
+          "id": "691386d12aca97506fd5d51c",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=service-operations",
+            "label": "Service Operations"
+          }
+        },
+        {
+          "id": "694b1155e9430eea8d596990",
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "/career/matrices?matricesCat=soft-skills",
+            "label": "Soft Skills"
+          }
+        }
+      ],
+      "blockType": "framework-nav-block",
+      "title": "Матриці компетенцій"
+    },
+    {
+      "id": "6942e017fe2509184268f397",
+      "icon": {
+        "id": 22,
+        "alt": "icon",
+        "updatedAt": "2025-10-21T10:40:18.293Z",
+        "createdAt": "2025-10-21T10:40:18.293Z",
+        "url": "/api/media/file/sticky-icon.svg",
+        "thumbnailURL": null,
+        "filename": "sticky-icon.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 10087,
+        "width": 176,
+        "height": 32,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "blockName": null,
+      "slides": [
+        {
+          "image": {
+            "id": 23,
+            "alt": "slide1",
+            "updatedAt": "2025-10-21T10:40:35.709Z",
+            "createdAt": "2025-10-21T10:40:35.708Z",
+            "url": "/api/media/file/sticky-1.jpg",
+            "thumbnailURL": "/api/media/file/sticky-1-300x260.jpg",
+            "filename": "sticky-1.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 162504,
+            "width": 516,
+            "height": 448,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/sticky-1-300x260.jpg",
+                "width": 300,
+                "height": 260,
+                "mimeType": "image/jpeg",
+                "filesize": 14752,
+                "filename": "sticky-1-300x260.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/sticky-1-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 34796,
+                "filename": "sticky-1-500x500.jpg"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "id": "6942e04afe2509184268f398"
+        },
+        {
+          "image": {
+            "id": 24,
+            "alt": "slide2",
+            "updatedAt": "2025-10-21T10:40:48.077Z",
+            "createdAt": "2025-10-21T10:40:48.077Z",
+            "url": "/api/media/file/sticky-2.jpg",
+            "thumbnailURL": "/api/media/file/sticky-2-300x260.jpg",
+            "filename": "sticky-2.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 127275,
+            "width": 516,
+            "height": 448,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/sticky-2-300x260.jpg",
+                "width": 300,
+                "height": 260,
+                "mimeType": "image/jpeg",
+                "filesize": 12770,
+                "filename": "sticky-2-300x260.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/sticky-2-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 29778,
+                "filename": "sticky-2-500x500.jpg"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "id": "6942e065fe2509184268f399"
+        },
+        {
+          "image": {
+            "id": 25,
+            "alt": "slide-3",
+            "updatedAt": "2025-10-21T10:41:01.345Z",
+            "createdAt": "2025-10-21T10:41:01.345Z",
+            "url": "/api/media/file/sticky-3.png",
+            "thumbnailURL": "/api/media/file/sticky-3-300x260.png",
+            "filename": "sticky-3.png",
+            "mimeType": "image/png",
+            "filesize": 238184,
+            "width": 516,
+            "height": 448,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/sticky-3-300x260.png",
+                "width": 300,
+                "height": 260,
+                "mimeType": "image/png",
+                "filesize": 137926,
+                "filename": "sticky-3-300x260.png"
+              },
+              "square": {
+                "url": "/api/media/file/sticky-3-500x500.png",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/png",
+                "filesize": 345595,
+                "filename": "sticky-3-500x500.png"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "id": "6942e074fe2509184268f39a"
+        }
+      ],
+      "slidesMobile": [
+        {
+          "image": {
+            "id": 42,
+            "alt": "mob",
+            "updatedAt": "2025-11-10T13:05:52.305Z",
+            "createdAt": "2025-11-10T13:05:52.305Z",
+            "url": "/api/media/file/sticky11.png",
+            "thumbnailURL": "/api/media/file/sticky11-300x300.png",
+            "filename": "sticky11.png",
+            "mimeType": "image/png",
+            "filesize": 121999,
+            "width": 300,
+            "height": 300,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/sticky11-300x300.png",
+                "width": 300,
+                "height": 300,
+                "mimeType": "image/png",
+                "filesize": 155861,
+                "filename": "sticky11-300x300.png"
+              },
+              "square": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "id": "6942e07efe2509184268f39b"
+        },
+        {
+          "image": {
+            "id": 43,
+            "alt": "mob2",
+            "updatedAt": "2025-11-10T13:06:05.185Z",
+            "createdAt": "2025-11-10T13:06:05.185Z",
+            "url": "/api/media/file/sticky22.png",
+            "thumbnailURL": null,
+            "filename": "sticky22.png",
+            "mimeType": "image/png",
+            "filesize": 49785,
+            "width": 210,
+            "height": 240,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "square": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "id": "6942e094fe2509184268f39d"
+        },
+        {
+          "image": {
+            "id": 44,
+            "alt": "mob3",
+            "updatedAt": "2025-11-10T13:06:18.042Z",
+            "createdAt": "2025-11-10T13:06:18.042Z",
+            "url": "/api/media/file/sticky33.png",
+            "thumbnailURL": null,
+            "filename": "sticky33.png",
+            "mimeType": "image/png",
+            "filesize": 73910,
+            "width": 210,
+            "height": 240,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "square": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "id": "6942e089fe2509184268f39c"
+        }
+      ],
+      "blockType": "career-sticky-slider",
+      "title": "Менеджерське ком’юніті  TENTENS Tech",
+      "subTitle": "Закрита внутрішня професійна спільнота менеджерів, які прагнуть зростати в ролі лідера. Розвиваємо управлінські навички через системну рефлексію, аналіз реальних ситуацій і заглиблення в теми, що перетворюють досвід на прикладну експертизу."
+    },
+    {
+      "id": "691387ab77fdf94f4c950b05",
+      "runingTitle": "join the team join the team join the team",
+      "image": {
+        "id": 7,
+        "alt": "star",
+        "updatedAt": "2025-10-09T09:15:33.180Z",
+        "createdAt": "2025-10-09T09:15:33.172Z",
+        "url": "/api/media/file/Vector.svg",
+        "thumbnailURL": null,
+        "filename": "Vector.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 1372,
+        "width": 430,
+        "height": 430,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "name": "Ім’я",
+      "email": "Email",
+      "file": "Прикріпити CV ",
+      "fileHint": "We support pdf and word files up to 10MB.",
+      "btnText": "Надіслати CV",
+      "blockName": null,
+      "blockType": "form-block"
+    }
+  ],
+  "meta": {
+    "title": "TENTENS Tech - Career framework",
+    "image": null,
+    "description": null
+  },
+  "publishedAt": "2026-01-08T13:48:21.776Z",
+  "slug": "career/framework",
+  "updatedAt": "2026-04-11T16:58:23.487Z",
+  "createdAt": "2025-11-11T18:20:27.097Z",
+  "_status": "published"
+}

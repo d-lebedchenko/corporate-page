@@ -43,6 +43,9 @@ const parseMultipartFormData = (event) => {
 
 
 export default defineEventHandler(async (event) => {
+  if (process.env.IS_NUXT_MOCK === 'true') {
+    return { message: 'Mail sent successfully!' }
+  }
   let fileToCleanup = null;
 
   try {

@@ -1,0 +1,189 @@
+{
+  "docs": [
+    {
+      "id": 1,
+      "publishedAt": "2026-01-14T17:50:14.313Z",
+      "slug": "cifrova-transformaciya-biznesu-yak-it-eksperti-dopomagayut-adaptuvatisya-do-novih-realiy",
+      "title": "Цифрова трансформація бізнесу: як ІТ-експерти допомагають адаптуватися до нових реалій",
+      "description": "Розбираємо, як ІТ-експерти допомагають бізнесам трансформувати свої стратегії у відповідь на цифрові зміни, а також важливість технологічних інновацій у швидкоплинному середовищі Розбираємо, як ІТ-експерти допомагають бізнесам трансформувати свої стратегії у відповідь на цифрові зміни, а також важливість технологічних інновацій у швидкоплинному середовищі Розбираємо, як ІТ-експерти допомагають бізнесам трансформувати свої стратегії у відповідь на цифрові зміни, а також важливість технологічних інновацій у швидкоплинному середовищі",
+      "image": {
+        "id": 36,
+        "alt": "post-1",
+        "updatedAt": "2025-11-05T17:32:44.740Z",
+        "createdAt": "2025-11-05T17:32:44.740Z",
+        "url": "/api/media/file/post-1.png",
+        "thumbnailURL": "/api/media/file/post-1-300x156.png",
+        "filename": "post-1.png",
+        "mimeType": "image/png",
+        "filesize": 50509,
+        "width": 692,
+        "height": 360,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/post-1-300x156.png",
+            "width": 300,
+            "height": 156,
+            "mimeType": "image/png",
+            "filesize": 60108,
+            "filename": "post-1-300x156.png"
+          },
+          "square": {
+            "url": "/api/media/file/post-1-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 193890,
+            "filename": "post-1-500x500.png"
+          },
+          "small": {
+            "url": "/api/media/file/post-1-600x312.png",
+            "width": 600,
+            "height": 312,
+            "mimeType": "image/png",
+            "filesize": 208518,
+            "filename": "post-1-600x312.png"
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "categories": [
+        {
+          "id": 1,
+          "label": "Career"
+        },
+        {
+          "id": 2,
+          "label": "Education"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "publishedAt": "2025-03-12T12:00:45.000Z",
+      "slug": "yak-shtuchniy-intelekt-pokrashchuie-yakist-produktovih-rishen-2",
+      "title": "Як штучний інтелект покращує якість продуктових рішень 2",
+      "description": "Як штучний інтелект покращує якість продуктових рішень 2",
+      "image": {
+        "id": 41,
+        "alt": "post-6-sm",
+        "updatedAt": "2025-11-05T18:32:27.247Z",
+        "createdAt": "2025-11-05T18:32:27.246Z",
+        "url": "/api/media/file/post-6-sm.png",
+        "thumbnailURL": "/api/media/file/post-6-sm-300x203.png",
+        "filename": "post-6-sm.png",
+        "mimeType": "image/png",
+        "filesize": 101520,
+        "width": 532,
+        "height": 360,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/post-6-sm-300x203.png",
+            "width": 300,
+            "height": 203,
+            "mimeType": "image/png",
+            "filesize": 105772,
+            "filename": "post-6-sm-300x203.png"
+          },
+          "square": {
+            "url": "/api/media/file/post-6-sm-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 385281,
+            "filename": "post-6-sm-500x500.png"
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "categories": [
+        {
+          "id": 4,
+          "label": "Insights"
+        }
+      ]
+    }
+  ],
+  "hasNextPage": false,
+  "hasPrevPage": true,
+  "limit": 6,
+  "nextPage": null,
+  "page": 2,
+  "pagingCounter": 7,
+  "prevPage": 1,
+  "totalDocs": 8,
+  "totalPages": 2
+}

@@ -1,0 +1,456 @@
+{
+  "id": 1,
+  "logo": {
+    "id": 6,
+    "alt": "Logo",
+    "updatedAt": "2025-10-09T08:44:23.931Z",
+    "createdAt": "2025-10-09T08:44:23.928Z",
+    "url": "/api/media/file/logo.svg",
+    "thumbnailURL": null,
+    "filename": "logo.svg",
+    "mimeType": "image/svg+xml",
+    "filesize": 14640,
+    "width": 110,
+    "height": 40,
+    "focalX": null,
+    "focalY": null,
+    "sizes": {
+      "thumbnail": {
+        "url": null,
+        "width": null,
+        "height": null,
+        "mimeType": null,
+        "filesize": null,
+        "filename": null
+      },
+      "square": {
+        "url": null,
+        "width": null,
+        "height": null,
+        "mimeType": null,
+        "filesize": null,
+        "filename": null
+      },
+      "small": {
+        "url": null,
+        "width": null,
+        "height": null,
+        "mimeType": null,
+        "filesize": null,
+        "filename": null
+      },
+      "medium": {
+        "url": null,
+        "width": null,
+        "height": null,
+        "mimeType": null,
+        "filesize": null,
+        "filename": null
+      },
+      "large": {
+        "url": null,
+        "width": null,
+        "height": null,
+        "mimeType": null,
+        "filesize": null,
+        "filename": null
+      },
+      "xlarge": {
+        "url": null,
+        "width": null,
+        "height": null,
+        "mimeType": null,
+        "filesize": null,
+        "filename": null
+      },
+      "og": {
+        "url": null,
+        "width": null,
+        "height": null,
+        "mimeType": null,
+        "filesize": null,
+        "filename": null
+      }
+    }
+  },
+  "links": [
+    {
+      "id": "6936de84dd89e128c85cb648",
+      "subLinks": [],
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 1,
+            "title": "Home Page",
+            "slug": "home"
+          }
+        },
+        "url": null,
+        "label": "Головна"
+      }
+    },
+    {
+      "id": "68e7804a08675f69cf46e3b0",
+      "subLinks": [],
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 3,
+            "title": "Про нас",
+            "slug": "about-us"
+          }
+        },
+        "url": "",
+        "label": "About us"
+      }
+    },
+    {
+      "id": "68e673579d21e417c5a50f1e",
+      "subLinks": [
+        {
+          "id": "68e6735d9d21e417c5a50f1f",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "career-pages",
+              "value": {
+                "id": 4,
+                "title": "Кар’єрний фреймворк",
+                "slug": "career/framework"
+              }
+            },
+            "url": "",
+            "label": "Кар'єрний фреймворк"
+          }
+        },
+        {
+          "id": "68e6736c9d21e417c5a50f20",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "career-pages",
+              "value": {
+                "id": 1,
+                "title": "Matrices",
+                "slug": "career/matrices"
+              }
+            },
+            "url": "",
+            "label": "Матриці компетенцій"
+          }
+        },
+        {
+          "id": "68e7803908675f69cf46e3af",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "career-pages",
+              "value": {
+                "id": 3,
+                "title": "Cases",
+                "slug": "career/growth-cases"
+              }
+            },
+            "url": "",
+            "label": "Кейси зростання"
+          }
+        }
+      ],
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "career-pages",
+          "value": {
+            "id": 2,
+            "title": "Кар'єра",
+            "slug": "career"
+          }
+        },
+        "url": "",
+        "label": "Кар’єра в tentens"
+      }
+    },
+    {
+      "id": "68e7806308675f69cf46e3b1",
+      "subLinks": [],
+      "link": {
+        "type": "custom",
+        "newTab": null,
+        "url": "/vacancies",
+        "label": "вакансії"
+      }
+    },
+    {
+      "id": "68e7806b08675f69cf46e3b3",
+      "subLinks": [],
+      "link": {
+        "type": "custom",
+        "newTab": null,
+        "url": "/blog",
+        "label": "Блог"
+      }
+    }
+  ],
+  "socialLabel": "шукай нас в соціальних мережах",
+  "social": [
+    {
+      "id": "68e6737b9d21e417c5a50f21",
+      "image": {
+        "id": 12,
+        "alt": "instagram",
+        "updatedAt": "2025-10-09T09:29:46.349Z",
+        "createdAt": "2025-10-09T09:29:46.348Z",
+        "url": "/api/media/file/Instagram.svg",
+        "thumbnailURL": null,
+        "filename": "Instagram.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 784,
+        "width": 36,
+        "height": 36,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "link": {
+        "type": "custom",
+        "newTab": true,
+        "url": "https://www.instagram.com/tentens.tech/",
+        "label": "inst"
+      }
+    },
+    {
+      "id": "68e7808c08675f69cf46e3b4",
+      "image": {
+        "id": 13,
+        "alt": "linkedin",
+        "updatedAt": "2025-10-09T09:30:07.066Z",
+        "createdAt": "2025-10-09T09:30:07.066Z",
+        "url": "/api/media/file/LinkedIn.svg",
+        "thumbnailURL": null,
+        "filename": "LinkedIn.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 921,
+        "width": 36,
+        "height": 36,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "link": {
+        "type": "custom",
+        "newTab": true,
+        "url": "https://www.linkedin.com/company/tentens-tech/about/",
+        "label": "linkedin"
+      }
+    },
+    {
+      "id": "68e780a108675f69cf46e3b5",
+      "image": {
+        "id": 14,
+        "alt": "email",
+        "updatedAt": "2025-10-09T09:30:26.073Z",
+        "createdAt": "2025-10-09T09:30:26.073Z",
+        "url": "/api/media/file/email.svg",
+        "thumbnailURL": null,
+        "filename": "email.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 1233,
+        "width": 36,
+        "height": 36,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "link": {
+        "type": "custom",
+        "newTab": null,
+        "url": "mailto:info@tentens.tech",
+        "label": "email"
+      }
+    }
+  ],
+  "updatedAt": "2025-12-24T10:24:26.715Z",
+  "createdAt": "2025-10-08T14:21:58.637Z",
+  "globalType": "header"
+}

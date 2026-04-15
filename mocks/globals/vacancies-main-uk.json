@@ -1,0 +1,167 @@
+{
+  "id": 1,
+  "hero": [
+    {
+      "id": "694c2349ddd1a5d5ee75a1a6",
+      "image": {
+        "id": 96,
+        "alt": "hero",
+        "updatedAt": "2025-12-24T17:31:06.623Z",
+        "createdAt": "2025-12-24T17:31:06.622Z",
+        "url": "/api/media/file/vac-new-mob-1.png",
+        "thumbnailURL": "/api/media/file/vac-new-mob-1-300x184.png",
+        "filename": "vac-new-mob-1.png",
+        "mimeType": "image/png",
+        "filesize": 53827,
+        "width": 345,
+        "height": 212,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/vac-new-mob-1-300x184.png",
+            "width": 300,
+            "height": 184,
+            "mimeType": "image/png",
+            "filesize": 74481,
+            "filename": "vac-new-mob-1-300x184.png"
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "imageDesktop": {
+        "id": 97,
+        "alt": "hero",
+        "updatedAt": "2026-04-14T11:00:57.096Z",
+        "createdAt": "2025-12-24T17:31:16.602Z",
+        "url": "/api/media/file/car-3.webp",
+        "thumbnailURL": "/api/media/file/car-3-300x81.webp",
+        "filename": "car-3.webp",
+        "mimeType": "image/webp",
+        "filesize": 17340,
+        "width": 2076,
+        "height": 563,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/car-3-300x81.webp",
+            "width": 300,
+            "height": 81,
+            "mimeType": "image/webp",
+            "filesize": 1564,
+            "filename": "car-3-300x81.webp"
+          },
+          "square": {
+            "url": "/api/media/file/car-3-500x500.webp",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/webp",
+            "filesize": 5998,
+            "filename": "car-3-500x500.webp"
+          },
+          "small": {
+            "url": "/api/media/file/car-3-600x163.webp",
+            "width": 600,
+            "height": 163,
+            "mimeType": "image/webp",
+            "filesize": 3768,
+            "filename": "car-3-600x163.webp"
+          },
+          "medium": {
+            "url": "/api/media/file/car-3-900x244.webp",
+            "width": 900,
+            "height": 244,
+            "mimeType": "image/webp",
+            "filesize": 6348,
+            "filename": "car-3-900x244.webp"
+          },
+          "large": {
+            "url": "/api/media/file/car-3-1400x380.webp",
+            "width": 1400,
+            "height": 380,
+            "mimeType": "image/webp",
+            "filesize": 10798,
+            "filename": "car-3-1400x380.webp"
+          },
+          "xlarge": {
+            "url": "/api/media/file/car-3-1920x521.webp",
+            "width": 1920,
+            "height": 521,
+            "mimeType": "image/webp",
+            "filesize": 16270,
+            "filename": "car-3-1920x521.webp"
+          },
+          "og": {
+            "url": "/api/media/file/car-3-1200x630.webp",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/webp",
+            "filesize": 13816,
+            "filename": "car-3-1200x630.webp"
+          }
+        }
+      },
+      "blockName": null,
+      "blockType": "matrices-main-block",
+      "title": "Вакансії",
+      "titleGreen": "у Tentens tech"
+    }
+  ],
+  "meta": {
+    "title": "TENTENS Tech - Вакансії",
+    "image": null,
+    "description": "vacancies desc"
+  },
+  "_status": "published",
+  "updatedAt": "2026-01-08T19:18:06.518Z",
+  "createdAt": "2025-11-14T15:13:37.140Z",
+  "globalType": "vacancies-main"
+}

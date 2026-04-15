@@ -1,0 +1,910 @@
+{
+  "id": 3,
+  "title": "Cases",
+  "Blocks": [
+    {
+      "id": "690375764dedcd8e30884ad8",
+      "blockName": null,
+      "list": [
+        {
+          "id": "6903757a4dedcd8e30884ada",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "career-pages",
+              "value": {
+                "id": 2,
+                "title": "Кар'єра",
+                "slug": "career"
+              }
+            },
+            "url": "",
+            "label": "Кар’єра"
+          }
+        },
+        {
+          "id": "690375a44dedcd8e30884adc",
+          "link": {
+            "type": "reference",
+            "newTab": null,
+            "reference": {
+              "relationTo": "career-pages",
+              "value": {
+                "id": 3,
+                "title": "Cases",
+                "slug": "career/growth-cases"
+              }
+            },
+            "url": "",
+            "label": "Кейси зростання"
+          }
+        }
+      ],
+      "blockType": "breadcrumbs"
+    },
+    {
+      "id": "690393e4ab17fc6e3674cbfa",
+      "image": {
+        "id": 93,
+        "alt": "grow",
+        "updatedAt": "2025-12-24T17:03:24.350Z",
+        "createdAt": "2025-12-24T17:03:24.349Z",
+        "url": "/api/media/file/grow-cases.jpg",
+        "thumbnailURL": "/api/media/file/grow-cases-300x218.jpg",
+        "filename": "grow-cases.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 291780,
+        "width": 692,
+        "height": 502,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/grow-cases-300x218.jpg",
+            "width": 300,
+            "height": 218,
+            "mimeType": "image/jpeg",
+            "filesize": 9360,
+            "filename": "grow-cases-300x218.jpg"
+          },
+          "square": {
+            "url": "/api/media/file/grow-cases-500x500.jpg",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/jpeg",
+            "filesize": 46364,
+            "filename": "grow-cases-500x500.jpg"
+          },
+          "small": {
+            "url": "/api/media/file/grow-cases-600x435.jpg",
+            "width": 600,
+            "height": 435,
+            "mimeType": "image/jpeg",
+            "filesize": 41622,
+            "filename": "grow-cases-600x435.jpg"
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "blockName": null,
+      "blockType": "growth-main-block",
+      "title": "Кейси зростання",
+      "description": "У TENTENS Tech ти керуєш темпом і напрямом свого руху. Фреймворк дає опору, а команда — підтримку.\n\nМи зібрали історії тих, хто проклав власний маршрут: у межах треку, між напрямами (IC ↔ Leadership) та вийшов на новий рівень впливу на бізнес."
+    },
+    {
+      "id": "6903956bab17fc6e3674cbfb",
+      "blockName": null,
+      "stories": [
+        {
+          "id": "6903956eab17fc6e3674cbfc",
+          "image": {
+            "id": 98,
+            "alt": "growth-story-1",
+            "updatedAt": "2025-12-29T14:46:22.368Z",
+            "createdAt": "2025-12-29T14:46:22.368Z",
+            "url": "/api/media/file/Rostyslav%20Sylka%20copy.jpg",
+            "thumbnailURL": "/api/media/file/Rostyslav%20Sylka%20copy-300x200.jpg",
+            "filename": "Rostyslav Sylka copy.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 680727,
+            "width": 1440,
+            "height": 960,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Rostyslav Sylka copy-300x200.jpg",
+                "width": 300,
+                "height": 200,
+                "mimeType": "image/jpeg",
+                "filesize": 6529,
+                "filename": "Rostyslav Sylka copy-300x200.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Rostyslav Sylka copy-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 24690,
+                "filename": "Rostyslav Sylka copy-500x500.jpg"
+              },
+              "small": {
+                "url": "/api/media/file/Rostyslav Sylka copy-600x400.jpg",
+                "width": 600,
+                "height": 400,
+                "mimeType": "image/jpeg",
+                "filesize": 18937,
+                "filename": "Rostyslav Sylka copy-600x400.jpg"
+              },
+              "medium": {
+                "url": "/api/media/file/Rostyslav Sylka copy-900x600.jpg",
+                "width": 900,
+                "height": 600,
+                "mimeType": "image/jpeg",
+                "filesize": 37883,
+                "filename": "Rostyslav Sylka copy-900x600.jpg"
+              },
+              "large": {
+                "url": "/api/media/file/Rostyslav Sylka copy-1400x933.jpg",
+                "width": 1400,
+                "height": 933,
+                "mimeType": "image/jpeg",
+                "filesize": 86833,
+                "filename": "Rostyslav Sylka copy-1400x933.jpg"
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Rostyslav Sylka copy-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 55028,
+                "filename": "Rostyslav Sylka copy-1200x630.jpg"
+              }
+            }
+          },
+          "imageTablet": {
+            "id": 105,
+            "alt": "grow 1-tablet",
+            "updatedAt": "2025-12-29T14:50:52.920Z",
+            "createdAt": "2025-12-29T14:50:52.920Z",
+            "url": "/api/media/file/Rostyslav%20Sylka%20copy%20small.jpg",
+            "thumbnailURL": "/api/media/file/Rostyslav%20Sylka%20copy%20small-300x488.jpg",
+            "filename": "Rostyslav Sylka copy small.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 258157,
+            "width": 430,
+            "height": 700,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Rostyslav Sylka copy small-300x488.jpg",
+                "width": 300,
+                "height": 488,
+                "mimeType": "image/jpeg",
+                "filesize": 19685,
+                "filename": "Rostyslav Sylka copy small-300x488.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Rostyslav Sylka copy small-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 33942,
+                "filename": "Rostyslav Sylka copy small-500x500.jpg"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Rostyslav Sylka copy small-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 70502,
+                "filename": "Rostyslav Sylka copy small-1200x630.jpg"
+              }
+            }
+          },
+          "title": "Від Genesis School до Team Lead у TENTENS Tech",
+          "name": "Poстислав Силка",
+          "position": "Backend Team Lead",
+          "highlightedText": "«Мені не просто хотілося потрапити в ІТ, я прагнув швидкого й усвідомленого зростання».",
+          "text": "На старті я вже трохи орієнтувався в коді, але хотів системного розвитку, тому подався в Genesis Software Engineering School. Вчився інтенсивно й з фокусом: мені не просто хотілося потрапити в ІТ, я прагнув швидкого й усвідомленого зростання.\nНа ярмарку вакансій отримав кілька запрошень, але саме TENTENS Tech зачепили: команда, підхід, запал. Мене взяли на позицію Trainee. Формально це був даунґрейд, але я чітко бачив, куди можу прийти.\n\nЗ першого дня стало зрозуміло: у TENTENS Tech більше цінують не рівень, а мислення. Я брав задачі складніші за мій поточний рівень, сам «менеджив» свою роботу, приймав рішення. Цінність компанії бути Chief Executive Everyone стала ключовою у моєму зростанні.\nЯ пройшов IC1, IC2, IC3-треки й вийшов у лідерство. Сьогодні я веду команду бекенду, відповідаю за планування, архітектуру, розвиток людей і результат. Те, що починалося зі школи, стало моєю кар’єрною траєкторією і щодня набирає обертів."
+        },
+        {
+          "id": "6903967bab17fc6e3674cbfd",
+          "image": {
+            "id": 99,
+            "alt": "growth-story-2",
+            "updatedAt": "2025-12-29T14:46:38.954Z",
+            "createdAt": "2025-12-29T14:46:38.954Z",
+            "url": "/api/media/file/%D0%A1%D0%BE%D1%84%D1%96%D1%8F%20%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B0%20copy.jpg",
+            "thumbnailURL": "/api/media/file/%D0%A1%D0%BE%D1%84%D1%96%D1%8F%20%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B0%20copy-300x200.jpg",
+            "filename": "Софія Львова copy.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 723748,
+            "width": 1440,
+            "height": 960,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Софія Львова copy-300x200.jpg",
+                "width": 300,
+                "height": 200,
+                "mimeType": "image/jpeg",
+                "filesize": 10347,
+                "filename": "Софія Львова copy-300x200.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Софія Львова copy-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 28598,
+                "filename": "Софія Львова copy-500x500.jpg"
+              },
+              "small": {
+                "url": "/api/media/file/Софія Львова copy-600x400.jpg",
+                "width": 600,
+                "height": 400,
+                "mimeType": "image/jpeg",
+                "filesize": 27622,
+                "filename": "Софія Львова copy-600x400.jpg"
+              },
+              "medium": {
+                "url": "/api/media/file/Софія Львова copy-900x600.jpg",
+                "width": 900,
+                "height": 600,
+                "mimeType": "image/jpeg",
+                "filesize": 51128,
+                "filename": "Софія Львова copy-900x600.jpg"
+              },
+              "large": {
+                "url": "/api/media/file/Софія Львова copy-1400x933.jpg",
+                "width": 1400,
+                "height": 933,
+                "mimeType": "image/jpeg",
+                "filesize": 102099,
+                "filename": "Софія Львова copy-1400x933.jpg"
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Софія Львова copy-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 60532,
+                "filename": "Софія Львова copy-1200x630.jpg"
+              }
+            }
+          },
+          "imageTablet": {
+            "id": 104,
+            "alt": "growth-story-2 tablet",
+            "updatedAt": "2025-12-29T14:50:39.502Z",
+            "createdAt": "2025-12-29T14:50:39.502Z",
+            "url": "/api/media/file/%D0%A1%D0%BE%D1%84%D1%96%D1%8F%20%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B0%20copy%20small.jpg",
+            "thumbnailURL": "/api/media/file/%D0%A1%D0%BE%D1%84%D1%96%D1%8F%20%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B0%20copy%20small-300x488.jpg",
+            "filename": "Софія Львова copy small.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 235954,
+            "width": 430,
+            "height": 700,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Софія Львова copy small-300x488.jpg",
+                "width": 300,
+                "height": 488,
+                "mimeType": "image/jpeg",
+                "filesize": 19059,
+                "filename": "Софія Львова copy small-300x488.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Софія Львова copy small-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 25699,
+                "filename": "Софія Львова copy small-500x500.jpg"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Софія Львова copy small-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 47197,
+                "filename": "Софія Львова copy small-1200x630.jpg"
+              }
+            }
+          },
+          "title": "Lead → IC: зміна траєкторії",
+          "name": "Софія Львова",
+          "position": "Software Engineer",
+          "highlightedText": "«Повернення до інженерії — це не крок назад, а повернення до себе».",
+          "text": "Розпочавши кар’єру у фронтенді, я завжди мріяла про лідерство. У TENTENS Tech ця можливість з’явилася швидко, і я очолила одразу дві команди. Класний досвід, багато взаємодії, стратегічне планування, відповідальність.\nАле з часом помітила: з мого робочого дня зник код. Я все більше ловила себе на думці, що сумую за складними технічними рішеннями. У якийсь момент чесно зізналася собі: повернення до інженерії — це не крок назад, а повернення до себе.\nЯ змістилася кар’єрним треком, щоб знову включитися в ті задачі, які мене драйвлять.\nСьогодні я — Software Engineer. Працюю у Functional Team, де завдання мають складну архітектуру, впливають на різні зони бізнесу й тривають місяцями. Мені знову цікаво. Я знову на драйві й відчуваю зростання."
+        },
+        {
+          "id": "690396c5ab17fc6e3674cbfe",
+          "image": {
+            "id": 100,
+            "alt": "growth-story-3",
+            "updatedAt": "2025-12-29T14:47:07.804Z",
+            "createdAt": "2025-12-29T14:47:07.804Z",
+            "url": "/api/media/file/%D0%91%D0%BE%D0%B3%D0%B4%D0%B0%D0%BD%20%D0%9D%D0%BE%D0%B2%D1%96%D0%BA%D0%BE%D0%B2%20copy.jpg",
+            "thumbnailURL": "/api/media/file/%D0%91%D0%BE%D0%B3%D0%B4%D0%B0%D0%BD%20%D0%9D%D0%BE%D0%B2%D1%96%D0%BA%D0%BE%D0%B2%20copy-300x200.jpg",
+            "filename": "Богдан Новіков copy.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 802646,
+            "width": 1440,
+            "height": 960,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Богдан Новіков copy-300x200.jpg",
+                "width": 300,
+                "height": 200,
+                "mimeType": "image/jpeg",
+                "filesize": 12041,
+                "filename": "Богдан Новіков copy-300x200.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Богдан Новіков copy-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 32629,
+                "filename": "Богдан Новіков copy-500x500.jpg"
+              },
+              "small": {
+                "url": "/api/media/file/Богдан Новіков copy-600x400.jpg",
+                "width": 600,
+                "height": 400,
+                "mimeType": "image/jpeg",
+                "filesize": 32711,
+                "filename": "Богдан Новіков copy-600x400.jpg"
+              },
+              "medium": {
+                "url": "/api/media/file/Богдан Новіков copy-900x600.jpg",
+                "width": 900,
+                "height": 600,
+                "mimeType": "image/jpeg",
+                "filesize": 59571,
+                "filename": "Богдан Новіков copy-900x600.jpg"
+              },
+              "large": {
+                "url": "/api/media/file/Богдан Новіков copy-1400x933.jpg",
+                "width": 1400,
+                "height": 933,
+                "mimeType": "image/jpeg",
+                "filesize": 117911,
+                "filename": "Богдан Новіков copy-1400x933.jpg"
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Богдан Новіков copy-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 76261,
+                "filename": "Богдан Новіков copy-1200x630.jpg"
+              }
+            }
+          },
+          "imageTablet": {
+            "id": 103,
+            "alt": "growth-story-3 tablet",
+            "updatedAt": "2025-12-29T14:50:25.953Z",
+            "createdAt": "2025-12-29T14:50:25.953Z",
+            "url": "/api/media/file/%D0%91%D0%BE%D0%B3%D0%B4%D0%B0%D0%BD%20%D0%9D%D0%BE%D0%B2%D1%96%D0%BA%D0%BE%D0%B2%20copy%20small.jpg",
+            "thumbnailURL": "/api/media/file/%D0%91%D0%BE%D0%B3%D0%B4%D0%B0%D0%BD%20%D0%9D%D0%BE%D0%B2%D1%96%D0%BA%D0%BE%D0%B2%20copy%20small-300x488.jpg",
+            "filename": "Богдан Новіков copy small.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 233784,
+            "width": 430,
+            "height": 700,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Богдан Новіков copy small-300x488.jpg",
+                "width": 300,
+                "height": 488,
+                "mimeType": "image/jpeg",
+                "filesize": 19750,
+                "filename": "Богдан Новіков copy small-300x488.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Богдан Новіков copy small-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 31034,
+                "filename": "Богдан Новіков copy small-500x500.jpg"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Богдан Новіков copy small-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 57148,
+                "filename": "Богдан Новіков copy small-1200x630.jpg"
+              }
+            }
+          },
+          "title": "З розробника — у драйвери інженерної культури",
+          "name": "Богдан Новіков",
+          "position": "Head of Engineering ",
+          "highlightedText": "«Разом із компанією я пройшов шлях від стартапу до масштабованого late-stage, зростав разом із ним у сіньйорності, архітектурному мисленні та управлінні».",
+          "text": "У школі я написав програму, яка автоматизувала сортування файлів, — і вперше відчув, що технології можуть економити час і створювати реальну цінність.\nПерший професійний досвід я здобув у вебстудіях: короткі проєкти, стислі дедлайни, швидкий темп. Але справжній інтерес з’явився пізніше — у довгострокових ініціативах, де важливі не лише задачі, а й вплив на продукт.\nУ логістичному стартапі я співпрацював напряму з CEO, самостійно обирав стек, відповідав за архітектуру, розробку, інфраструктуру. Це був повний цикл — від ідеї до підтримки. Коли відчув, що межі зростання вичерпано, почав шукати новий контекст. \n\nПрийшов у TENTENS Tech як Middle Backend Engineer. З перших днів — реальні челенджі: терабайти даних, тисячі RPS, складні стейкхолдери — і все це потрібно звести до єдиного рішення. Разом із компанією я пройшов шлях від стартапу до масштабованого late-stage, зростав разом із ним у сіньйорності, архітектурному мисленні та управлінні.\n \nСьогодні я — Head of Engineering. Веду кілька інфраструктурних команд: DevOps, DBA, SO, Platform. Разом ми створюємо платформу, яка дозволяє бізнесу рости швидко й стабільно. Розвиваю інженерну культуру — від навчальних ініціатив до стратегій, які прокачують технічні скіли та відкривають шлях до архітектури.\nРазом з архітектурним бордом працюємо над складними задачами в 12+ кросфункціональних командах, щоб будувати сильну технічну екосистему та досягати амбітних бізнес-цілей."
+        },
+        {
+          "id": "69039723ab17fc6e3674cbff",
+          "image": {
+            "id": 101,
+            "alt": "growth-story-4",
+            "updatedAt": "2025-12-29T14:47:29.734Z",
+            "createdAt": "2025-12-29T14:47:29.734Z",
+            "url": "/api/media/file/%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%20%D0%A1%D1%96%D0%BD%D0%B5%D0%B2%D0%B8%D1%87%20copy.jpg",
+            "thumbnailURL": "/api/media/file/%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%20%D0%A1%D1%96%D0%BD%D0%B5%D0%B2%D0%B8%D1%87%20copy-300x200.jpg",
+            "filename": "Володимир Сіневич copy.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 730828,
+            "width": 1440,
+            "height": 960,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Володимир Сіневич copy-300x200.jpg",
+                "width": 300,
+                "height": 200,
+                "mimeType": "image/jpeg",
+                "filesize": 9679,
+                "filename": "Володимир Сіневич copy-300x200.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Володимир Сіневич copy-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 29980,
+                "filename": "Володимир Сіневич copy-500x500.jpg"
+              },
+              "small": {
+                "url": "/api/media/file/Володимир Сіневич copy-600x400.jpg",
+                "width": 600,
+                "height": 400,
+                "mimeType": "image/jpeg",
+                "filesize": 26279,
+                "filename": "Володимир Сіневич copy-600x400.jpg"
+              },
+              "medium": {
+                "url": "/api/media/file/Володимир Сіневич copy-900x600.jpg",
+                "width": 900,
+                "height": 600,
+                "mimeType": "image/jpeg",
+                "filesize": 50231,
+                "filename": "Володимир Сіневич copy-900x600.jpg"
+              },
+              "large": {
+                "url": "/api/media/file/Володимир Сіневич copy-1400x933.jpg",
+                "width": 1400,
+                "height": 933,
+                "mimeType": "image/jpeg",
+                "filesize": 107427,
+                "filename": "Володимир Сіневич copy-1400x933.jpg"
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Володимир Сіневич copy-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 68706,
+                "filename": "Володимир Сіневич copy-1200x630.jpg"
+              }
+            }
+          },
+          "imageTablet": {
+            "id": 102,
+            "alt": "growth-story-4 tablet",
+            "updatedAt": "2025-12-29T14:50:09.573Z",
+            "createdAt": "2025-12-29T14:50:09.573Z",
+            "url": "/api/media/file/%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%20%D0%A1%D1%96%D0%BD%D0%B5%D0%B2%D0%B8%D1%87%20copy%20small.jpg",
+            "thumbnailURL": "/api/media/file/%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%20%D0%A1%D1%96%D0%BD%D0%B5%D0%B2%D0%B8%D1%87%20copy%20small-300x488.jpg",
+            "filename": "Володимир Сіневич copy small.jpg",
+            "mimeType": "image/jpeg",
+            "filesize": 280060,
+            "width": 430,
+            "height": 700,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": "/api/media/file/Володимир Сіневич copy small-300x488.jpg",
+                "width": 300,
+                "height": 488,
+                "mimeType": "image/jpeg",
+                "filesize": 23585,
+                "filename": "Володимир Сіневич copy small-300x488.jpg"
+              },
+              "square": {
+                "url": "/api/media/file/Володимир Сіневич copy small-500x500.jpg",
+                "width": 500,
+                "height": 500,
+                "mimeType": "image/jpeg",
+                "filesize": 36514,
+                "filename": "Володимир Сіневич copy small-500x500.jpg"
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": "/api/media/file/Володимир Сіневич copy small-1200x630.jpg",
+                "width": 1200,
+                "height": 630,
+                "mimeType": "image/jpeg",
+                "filesize": 66518,
+                "filename": "Володимир Сіневич copy small-1200x630.jpg"
+              }
+            }
+          },
+          "title": "З лінгвістики у розробку: зміна треку",
+          "name": "Володимир Сінєвич",
+          "position": "Frontend Lead",
+          "highlightedText": "«I may be struggling, but I'm not fucking failing. У TENTENS Tech цінують не тільки навички, а й здатність мислити, вчитися й діяти».",
+          "text": "Моя перша професія — викладач англійської. Спілкування з людьми з різних сфер приносило задоволення, але найбільше надихали ті, хто працював в ІТ. Їхнє мислення, прагнення розібратися у складному й бажання впливати на щось більше — стали для мене орієнтиром.\n \nЯ почав із самонавчання: переглядав усі доступні ресурси, пробував перші проєкти на Codecademy. У певний момент стало зрозуміло, що для реального прориву потрібна практика й живе середовище, де є зворотний зв’язок. Так я потрапив у Genesis Frontend School.\nНавчання було інтенсивним. Серед менторів було багато розробників із TENTENS Tech — їхній підхід до роботи з кодом та командою мені дуже сильно запам’ятався. Коли на ярмарку вакансій я побачив запрошення від TENTENS, сумнівів не залишилося.\n \nЯ прийшов у команду як Trainee. Без технічної освіти, але з системним мисленням, високою мотивацією та бажанням брати відповідальність. І саме ці якості виявилися найважливішими: I may be struggling, but I'm not fucking failing. У TENTENS Tech цінують не тільки навички, а й здатність мислити, вчитися й діяти.\nЦе дозволило мені швидко зростати всередині IC-треку.\n\nЗгодом я перейшов у Leadership, де нині веду дві фронтенд-команди. Мій фокус — на стабільному зростанні команд, покращенні процесів і якості рішень.\nСвій кар’єрний шлях я починав далеко від tech, але правильне середовище, підтримка менторів і власна наполегливість — це те, що привело мене туди, де я зараз."
+        }
+      ],
+      "blockType": "growth-stories-block"
+    },
+    {
+      "id": "690375bf4dedcd8e30884ade",
+      "isTitleBig": true,
+      "isTitleGreen": false,
+      "subtitle": null,
+      "isButtonHide": false,
+      "image": {
+        "id": 11,
+        "alt": "grow",
+        "updatedAt": "2025-10-09T09:27:17.754Z",
+        "createdAt": "2025-10-09T09:27:17.753Z",
+        "url": "/api/media/file/grow.png",
+        "thumbnailURL": "/api/media/file/grow-300x299.png",
+        "filename": "grow.png",
+        "mimeType": "image/png",
+        "filesize": 197615,
+        "width": 362,
+        "height": 361,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/grow-300x299.png",
+            "width": 300,
+            "height": 299,
+            "mimeType": "image/png",
+            "filesize": 158253,
+            "filename": "grow-300x299.png"
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "blockName": null,
+      "blockType": "content-image-block",
+      "title": "Ставай частиною команди TENTENS Tech",
+      "text": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "TENTENS Tech шукає спраглих вивчати трасу, готуватися до стрімких поворотів і тиснути на газ там, де інші гальмують.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            },
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            },
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Хочеш вийти на пік свого потенціалу? Переглянь відкриті вакансії та обирай нові можливості.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": null
+        }
+      },
+      "button": {
+        "type": "custom",
+        "newTab": null,
+        "url": "/vacancies",
+        "label": "Відкриті вакансії"
+      }
+    }
+  ],
+  "meta": {
+    "title": "Grow cases",
+    "image": null,
+    "description": "grow desc"
+  },
+  "publishedAt": "2025-10-30T14:25:26.594Z",
+  "slug": "career/growth-cases",
+  "updatedAt": "2025-12-29T14:50:56.930Z",
+  "createdAt": "2025-10-30T14:24:58.994Z",
+  "_status": "published"
+}

@@ -1,6 +1,12 @@
 import { stringify } from 'qs-esm'
 
 export default defineEventHandler(async (event) => {
+  if (process.env.IS_NUXT_MOCK === 'true') {
+    const query = getQuery(event)
+    const locale = query.locale || 'uk'
+    const { slug } = event.context.params || {}
+    return readMockFile(`blog-posts/${slug}-${locale}`)
+  }
   const config = useRuntimeConfig(event)
   const payloadUrl = config.public.payloadUrl
 

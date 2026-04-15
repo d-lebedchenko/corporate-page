@@ -1,0 +1,2078 @@
+{
+  "id": 7,
+  "title": "Політика приватності",
+  "Blocks": [
+    {
+      "id": "6915c94105bdee769a344942",
+      "blockName": null,
+      "sections": [
+        {
+          "id": "6915c96d05bdee769a344944",
+          "title": "Загальні положення",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "У цій Політиці приватності пояснюється, які персональні дані збираються під час вашого використання вебсайту, розташованого за адресою: ",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    },
+                    {
+                      "id": "6939664bdb97c044cfcb6d61",
+                      "type": "link",
+                      "fields": {
+                        "url": "https://tentens.tech",
+                        "newTab": false,
+                        "linkType": "custom"
+                      },
+                      "format": "",
+                      "indent": 0,
+                      "version": 3,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "https://tentens.tech",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "mode": "normal",
+                      "text": " (“Вебсайт”), послуг та продуктів, що надаються через нього, а також яким чином такі персональні дані підлягатимуть обробці.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "ЗАСТОСОВУЮЧИ ВЕБСАЙТ, ВИ ПІДТВЕРДЖУЄТЕ, ЩО (I) ВИ ОЗНАЙОМИЛИСЯ, ЗРОЗУМІЛИ ТА ПОГОДЖУЄТЕСЯ З ЦІЄЮ ПОЛІТИКОЮ ПРИВАТНОСТІ ТА (II) ВАМ ВИПОВНИЛОСЯ 18 РОКІВ (АБО ВАШІ БАТЬКИ ЧИ ЗАКОННІ ОПІКУНИ ОЗНАЙОМИЛИСЯ ТА ПОГОДЖУЮТЬСЯ З ЦІЄЮ ПОЛІТИКОЮ ПРИВАТНОСТІ ЗА ВАС). Якщо ви не згодні або не можете підтвердити вищезазначене, вам заборонено використовувати Вебсайт. У такому випадку ви повинні (а) зв’язатися з нами та подати запит на стирання ваших даних; (b) покинути Вебсайт, не отримувати доступу до нього та не застосовувати його.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "«GDPR» означає Загальний регламент про захист даних (ЄС) 2016/679 Європейського парламенту та Ради від 27 квітня 2016 року щодо охорони фізичних осіб у зв’язку з опрацюванням персональних даних та про вільний рух таких даних.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "«ЄЕЗ» охоплює всі дійсні країни-члени Європейського Союзу та Європейської асоціації вільної торгівлі. Для цілей цієї політики ЄЕЗ включає Сполучене Королівство Великої Британії та Північної Ірландії.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "«Обробка» щодо персональних даних включає збір, зберігання та розкриття даних іншим особам.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Під час вашого доступу до нашого вебсайту ми автоматично збираємо з вашого пристрою файли cookie, інтернет-протокол (IP), відомості про вашу взаємодію з Вебсайтом, наприклад, тип, модель та вид пристрою, мовні налаштування, обсяг оперативної пам’яті, версію операційної системи, час доступу та часову зону тощо. Ці відомості необхідні нам для забезпечення наших послуг, а також для аналізу способів використання Вебсайту користувачами.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "З метою вдосконалення Вебсайту та показу реклами ми застосовуємо сторонні рішення. Відповідно, певні дані зберігаються та опрацьовуються на серверах третіх осіб. Це дозволяє нам аналізувати різноманітні види взаємодії (частоту використання вебсайту користувачами, перелік сторінок, які переглядають наші користувачі тощо).",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Для отримання детальнішої інформації про наші дії з даними (Розділ 3), ваші доступні права у зв’язку з опрацюванням ваших персональних даних (Розділ 6) та визначення контролера даних (Розділ 1), будь ласка, ознайомтеся з нашою Політикою приватності, розміщеною нижче. У разі виникнення будь-яких питань, звертайтеся до нас за адресою ",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    },
+                    {
+                      "id": "6939664bdb97c044cfcb6d62",
+                      "type": "link",
+                      "fields": {
+                        "url": "mailto:info@tentens.tech",
+                        "newTab": false,
+                        "linkType": "custom"
+                      },
+                      "format": "",
+                      "indent": 0,
+                      "version": 3,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "info@tentens.tech",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 8,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 8
+                    },
+                    {
+                      "mode": "normal",
+                      "text": ".",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 8
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915c99305bdee769a344948",
+          "title": "1. Контролер персональних даних",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Глобальна IT-компанія TENTENS Tech виступає контролером ваших персональних даних.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915c97f05bdee769a344946",
+          "title": "2. Категорії персональних даних, які ми збираємо",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми здійснюємо збір відомостей, які ви надаєте нам добровільно (наприклад, ім'я та електронна поштова адреса). Крім того, ми в автоматичному режимі отримуємо певні дані (такі як файли cookie, ваша IP-адреса, інформація про вашу взаємодію з Вебсайтом, технічні характеристики вашого пристрою).",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "1. Відомості, які ви нам надаєте",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми можемо запропонувати вам вказати вашу електронну поштову адресу, а також прикріпити ваше резюме, якщо ви виявите бажання подати свою кандидатуру на вакансію нашої компанії. Ми використовуватимемо ці відомості для надсилання вам електронних листів.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "2. Відомості, які ми збираємо автоматично:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "tag": "ul",
+                  "type": "list",
+                  "start": 1,
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "value": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Дані про джерела вашого переходу на наш Вебсайт ",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": "– ми збираємо відомості про ваш мобільний застосунок або URL-адресу (тобто програму або місце в мережі Інтернет, де ви перебували безпосередньо перед тим, як натиснули на наше рекламне оголошення).",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 2,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Відомості про пристрій та місцезнаходження ",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": "– ми здійснюємо збір окремих даних з вашого мобільного пристрою. До прикладів таких даних належать: мовні налаштування, IP-адреса, часова зона, тип та модель пристрою, конфігурація пристрою, операційна система, постачальник інтернет-послуг, оператор мобільного зв'язку, ідентифікатор апаратного забезпечення.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 3,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Дані про використання",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " – ми фіксуємо способи вашої взаємодії з нашим Вебсайтом. Наприклад, ми фіксуємо переглянуті вами сторінки, функції та контент, з якими ви взаємодієте, частоту використання вами Вебсайту, тривалість вашого перебування на Вебсайті.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 4,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Файли Cookies",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " – файл cookie є текстовим файл, що зберігається на комп'ютері користувача з метою обліку. Файли cookie можуть бути сеансовими або постійними. Сеансовий файл cookie припиняє свою дію після закриття вами браузера та використовується для полегшення вашої навігації нашим Вебсайтом. Постійний файл cookie залишається на вашому жорсткому диску протягом тривалого періоду часу. Ми також застосовуємо пікселі відстеження, які встановлюють файли cookie для сприяння розміщенню онлайн-реклами.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        },
+                        {
+                          "type": "linebreak",
+                          "version": 1
+                        },
+                        {
+                          "type": "linebreak",
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": "Файли cookie використовуються, зокрема, для автоматичної ідентифікації вас під час вашого наступного візиту на наш Вебсайт. Внаслідок цього інформація, яку ви раніше вводили в певні поля Вебсайту, може автоматично відображатися під час вашого подальшого використання нашого Вебсайту. Дані файлів cookie у більшості випадків зберігатимуться на вашому пристрої лише протягом обмеженого часового проміжку.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    }
+                  ],
+                  "listType": "bullet",
+                  "direction": null,
+                  "textFormat": 1
+                }
+              ],
+              "direction": null,
+              "textFormat": 1
+            }
+          }
+        },
+        {
+          "id": "6915cd02d33566157ff2314b",
+          "title": "3. Обробка ваших персональних даних",
+          "titleContent": "3. З якою метою ми обробляємо ваші персональні дані",
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми здійснюємо обробку ваших персональних даних з наступною метою:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "3.1. Для надання наших послуг",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Це включає забезпечення можливості безперебійного використання Вебсайту та запобігання або усунення помилок Вебсайту чи технічних проблем.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "3.2. Для забезпечення підтримки користувачів",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми обробляємо ваші персональні дані для надання відповідей на ваші запити щодо технічної підтримки, надання інформації про послуги або будь-які інші повідомлення, ініційовані вами. З цією метою ми можемо надсилати вам, наприклад, сповіщення або електронні листи стосовно продуктивності нашого Вебсайту, питань безпеки, повідомлень щодо наших Положень про користування або цієї Політики приватності.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "3.3. Для комунікації з вами стосовно подачі на відкриту компанією вакансію",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "На Вебсайті ми надаємо вам можливість податися на відкриту у нашій компанії вакансію. Для цього вам буде запропоновано через форму зазначити персональні дані та подати своє резюме.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "3.4. Для дослідження та аналізу вашого використання Вебсайту",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Це допомагає нам глибше розуміти нашу діяльність, аналізувати наші операції, підтримувати, покращувати, впроваджувати інновації, планувати, проектувати та розвивати Вебсайт. Ми також використовуємо ці дані для цілей статистичного аналізу. Це дозволяє нам краще розуміти, які категорії користувачів використовують наш Вебсайт. Як наслідок, ми часто приймаємо рішення щодо покращення Вебсайту на основі результатів, отриманих внаслідок цього опрацювання.  ",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "3.5. Для надсилання вам маркетингових повідомлень",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми здійснюємо обробку ваших персональних даних для цілей наших маркетингових кампаній. В результаті ви отримуватимете новини про нашу компанію, інформацію про наші продукти або нові функціональні можливості, доступні на Вебсайті. Ми можемо надсилати вам електронні листи з маркетинговою метою. Якщо ви не бажаєте отримувати від нас маркетингові електронні листи, ви маєте можливість скасувати підписку, дотримуючись інструкцій, наведених у нижньому колонтитулі таких електронних листів.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "3.6. Для персоналізації реклами",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми та наші партнери використовуємо ваші персональні дані для адаптації рекламних оголошень та, можливо, навіть для їх показу вам у найбільш підходящий момент. Наприклад, якщо ви відвідали наш Вебсайт, ви можете побачити рекламу наших продуктів у своїй стрічці Facebook.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Як відмовитися або налаштувати персоналізовану рекламу:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 2,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 2
+                },
+                {
+                  "tag": "ul",
+                  "type": "list",
+                  "start": 1,
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "value": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "iOS:",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " На вашому iPhone або iPad перейдіть до «Параметри» > «Конфіденційність» > «Реклама Apple» та вимкніть опцію «Персоналізована реклама».",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 2,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Android:",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " Щоб вимкнути рекламу на пристрої Android, перейдіть до «Налаштування» > «Конфіденційність» > «Реклама» та активуйте параметр «Вимкнути персоналізацію реклами». Крім того, у цьому ж розділі ви можете скинути свій рекламний ідентифікатор (що також може допомогти зменшити кількість персоналізованої реклами, яку ви бачите). ",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 3,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "macOS:",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " На вашому MacBook ви можете вимкнути персоналізовану рекламу: перейдіть до «Системні параметри» > «Безпека та конфіденційність» > «Конфіденційність», виберіть «Реклама Apple» та зніміть позначку з «Персоналізована реклама».",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 4,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Windows:",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 1,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " На вашому ноутбуці з операційною системою Windows 10 виберіть «Пуск» > «Налаштування» > «Конфіденційність», а потім вимкніть параметр «Дозволити програмам використовувати рекламний ідентифікатор, щоб зробити рекламу цікавішою для вас на основі активності в програмі».",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 1
+                    }
+                  ],
+                  "listType": "bullet",
+                  "direction": null,
+                  "textFormat": 1
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "3.7. Для виконання юридичних зобов'язань",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми можемо обробляти персональні дані коли цього вимагає закон, зокрема, якщо правоохоронні органи запитують ваші дані доступними законними засобами.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915cdb7d33566157ff2314d",
+          "title": "4. Правові підстави для опрацювання ваших персональних даних",
+          "titleContent": "",
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "У цьому розділі ми інформуємо вас про правову основу, яку ми застосовуємо для кожної конкретної мети опрацювання. Цей розділ стосується виключно користувачів, які перебувають у межах Європейської економічної зони (ЄЕЗ).",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми здійснюємо опрацювання ваших персональних даних на таких правових підставах:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "4.1. Для виконання умов нашого з вами договору",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Відповідно до цієї правової підстави ми здійснюємо наступні дії:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "ul",
+                  "type": "list",
+                  "start": 1,
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "value": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Надаємо наші послуги (відповідно до наших Положень про користування)",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 2,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Персоналізуємо ваш досвід користування Вебсайтом",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 3,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Надаємо підтримку користувачам",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 4,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Встановлюємо зв'язок з вами стосовно вашого використання нашого Вебсайту",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    }
+                  ],
+                  "listType": "bullet",
+                  "direction": null
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "4.2. Для забезпечення наших (або інших) легітимних інтересів, за умови, що ці інтереси не мають переваги над вашими інтересами або основними правами та свободами, які потребують захисту персональних даних",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми покладаємося на легітимні інтереси для здійснення наступних дій:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "ul",
+                  "type": "list",
+                  "start": 1,
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "value": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Дослідження та аналіз вашого використання Вебсайту",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 2,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " – наш легітимний інтерес у контексті цієї мети полягає в нашому прагненні покращити наш Вебсайт, щоб розуміти вподобання користувачів і надавати вам якісніший сервіс (наприклад, спростити та зробити приємнішим використання вебсайту або впроваджувати й тестувати нові функції).",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 2
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 2,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Надсилання вам маркетингових повідомлень",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 2,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " – легітимним інтересом, на який ми спираємося, здійснюючи опрацювання в такий спосіб, є наше зацікавлення в обґрунтованому та належному просуванні нашого Вебсайту.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 2
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 3,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Персоналізація нашої реклами",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 2,
+                          "version": 1
+                        },
+                        {
+                          "mode": "normal",
+                          "text": " – легітимним інтересом, на який ми спираємося, здійснюючи опрацювання в такий спосіб, є наше зацікавлення в просуванні нашого Вебсайту в розумно цілеспрямований спосіб.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 2
+                    }
+                  ],
+                  "listType": "bullet",
+                  "direction": null,
+                  "textFormat": 2
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "4.3. Для виконання юридичних зобов’язань",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915cdfad33566157ff2314f",
+          "title": "5. Особи, яким ми розкриваємо ваші персональні дані",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми надаємо доступ до інформації третім сторонам, які сприяють функціонуванню, підтримці, вдосконаленню, інтеграції, персоналізації, забезпеченню безпеки та просуванню нашого Вебсайту. Ми можемо передавати певні набори персональних даних, зокрема, для цілей та суб'єктам, зазначеним у Розділі 3 цієї Політики приватності. До категорій третіх осіб, яким ми надаємо інформацію, належать, серед іншого:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "5.1. Постачальники послуг",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми можемо передавати персональні дані стороннім організаціям, залученим нами для надання послуг або виконання комерційних функцій від нашого імені, діючи відповідно до наших інструкцій. Ми можемо надавати вашу особисту інформацію таким постачальникам послуг, як:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "ul",
+                  "type": "list",
+                  "start": 1,
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "value": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "постачальники хмарних сховищ;",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 2,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "постачальники аналітичних послуг;",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 3,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "постачальники послуг зв'язку;",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 4,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "маркетингові партнери (включаючи соціальні мережі та маркетингові агенції).",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    }
+                  ],
+                  "listType": "bullet",
+                  "direction": null
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "5.2. Органи правопорядку та інші державні органи",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми можемо використовувати та розкривати персональні дані з метою забезпечення дотримання наших Положень про користування, захисту наших прав, приватності, безпеки чи власності, а також прав наших афілійованих осіб, вас або інших осіб, а також для реагування на запити судових інстанцій, правоохоронних органів, регуляторних органів, інших державних установ, юридичних осіб публічного права, або в інших випадках, передбачених чинним законодавством.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "5.3. Треті сторони в контексті злиття або поглинання",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "У процесі розвитку нашого бізнесу ми можемо здійснювати придбання або продаж активів. Інформація про клієнтів зазвичай є одним із комерційних активів, що передаються під час таких операцій. Ми також можемо обмінюватися такою інформацією з будь-якою афілійованою структурою (наприклад, материнською або дочірньою компанією) та можемо передавати таку інформацію в рамках корпоративних транзакцій.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915ce3dd33566157ff23151",
+          "title": "6. Ваші права щодо конфіденційності",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Для забезпечення контролю над вашими персональними даними, ви володієте наступними правами:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "ul",
+                  "type": "list",
+                  "start": 1,
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "value": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Доступ, перегляд, оновлення та виправлення ваших персональних даних: Ви маєте можливість переглядати, вносити зміни або коригувати особисті дані, які ви раніше надали на Вебсайті.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 2,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Видалення ваших персональних даних: Ви можете подати запит на стирання ваших персональних даних у встановленому законодавством порядку. Після отримання такого запиту, ми докладемо обґрунтованих зусиль для його виконання. У певних ситуаціях ми можемо бути юридично зобов'язані зберігати певні дані протягом визначеного терміну; у такому випадку ваш запит буде виконано після виконання нами відповідних юридичних зобов'язань.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 3,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Заперечення або обмеження використання ваших персональних даних: Ви маєте право вимагати припинення використання всіх або частини ваших персональних даних, або обмеження їх обробки.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    }
+                  ],
+                  "listType": "bullet",
+                  "direction": null
+                },
+                {
+                  "tag": "h3",
+                  "type": "heading",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Додаткові права для користувачів з ЄЕЗ:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Якщо ви перебуваєте в межах Європейської економічної зони (ЄЕЗ), ви володієте наступними додатковими правами:",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "tag": "ul",
+                  "type": "list",
+                  "start": 1,
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "type": "listitem",
+                      "value": 1,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Право подати скаргу до наглядового органу: Ми заохочуємо вас спочатку звертатися до нас для вирішення ваших питань. Однак, ви маєте право подати скаргу до компетентного органу нагляду за захистом даних, зокрема, у державі-члені ЄС, де ви проживаєте, працюєте або де сталося ймовірне порушення.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "type": "listitem",
+                      "value": 2,
+                      "format": "",
+                      "indent": 0,
+                      "version": 1,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "Право на перенесення даних: За вашим бажанням отримати ваші персональні дані у форматі, придатному для машинного зчитування, ви можете надіслати нам відповідний запит, як описано нижче.",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 0,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    }
+                  ],
+                  "listType": "bullet",
+                  "direction": null
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Для реалізації будь-якого з вищезазначених прав, будь ласка, надішліть свій запит на адресу: ",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    },
+                    {
+                      "id": "693967c5db97c044cfcb6d65",
+                      "type": "link",
+                      "fields": {
+                        "url": "mailto:info@tentens.tech",
+                        "newTab": false,
+                        "linkType": "custom"
+                      },
+                      "format": "",
+                      "indent": 0,
+                      "version": 3,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "info@tentens.tech",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 8,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null,
+                      "textFormat": 8
+                    },
+                    {
+                      "mode": "normal",
+                      "text": ".",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 8
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915ce7ad33566157ff23153",
+          "title": "7. Вікові обмеження",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми свідомо не здійснюємо обробку персональних даних осіб, які не досягли 18-річного віку. У разі отримання інформації про те, що особа молодше 18 років надала нам особисті дані, просимо негайно зв'язатися з нами.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915ce84d33566157ff23155",
+          "title": "8. Міжнародна передача даних",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "З метою надання послуг, визначених в Положеннях про користування, та для цілей, зазначених у цій Політиці конфіденційності, ми можемо передавати персональні дані до країн, відмінних від країни первинного збору даних. У випадках, коли законодавство про захист даних у таких країнах відрізняється від законодавства країни, в якій ви спочатку надали інформацію, ми вживаємо спеціальних заходів безпеки для забезпечення належного рівня захисту.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                },
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Зокрема, при передачі персональних даних з ЄЕЗ до країн з недостатнім рівнем захисту даних, ми застосовуємо одну з наступних правових підстав: (i) Стандартні договірні положення, затверджені Європейською Комісією або (ii) рішення Європейської Комісії про адекватність рівня захисту в певних країнах.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915ceb1d33566157ff23159",
+          "title": "9. Внесення змін до цієї Політики приватності",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми залишаємо за собою право періодично вносити зміни до цієї Політики приватності. Ми повідомимо вас про будь-які зміни шляхом оновлення дати “Останнє оновлення” цих Положень. Ви відмовляєтеся від будь-якого права на отримання окремого повідомлення про кожну зміну. Продовження використання вами Вебсайту після набуття чинності такими змінами означає вашу згоду з переглянутими положеннями Політики приватності.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915cec4d33566157ff2315b",
+          "title": "10. Зберігання даних",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ми зберігатимемо ваші персональні дані протягом періоду часу, який є обґрунтовано необхідним для досягнення цілей, визначених у цій Політиці приватності (включаючи надання вам послуг). Крім того, ми зберігатимемо та використовуватимемо ваші персональні дані у випадках, коли це необхідно для виконання наших юридичних зобов'язань, врегулювання спорів та забезпечення виконання наших угод.",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        },
+        {
+          "id": "6915cecdd33566157ff2315d",
+          "title": "11. Зв'язок з нами",
+          "titleContent": null,
+          "text": {
+            "root": {
+              "type": "root",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "format": "",
+                  "indent": 0,
+                  "version": 1,
+                  "children": [
+                    {
+                      "mode": "normal",
+                      "text": "Ви можете зв'язатися з нами у будь-який час для отримання детальної інформації щодо цієї Політики приватності та її попередніх версій. З будь-якими питаннями стосовно вашого облікового запису або ваших персональних даних, будь ласка, звертайтеся за адресою: ",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    },
+                    {
+                      "id": "693967f1db97c044cfcb6d67",
+                      "type": "link",
+                      "fields": {
+                        "url": "mailto:info@tentens.tech",
+                        "newTab": false,
+                        "linkType": "custom"
+                      },
+                      "format": "",
+                      "indent": 0,
+                      "version": 3,
+                      "children": [
+                        {
+                          "mode": "normal",
+                          "text": "info@tentens.tech",
+                          "type": "text",
+                          "style": "",
+                          "detail": 0,
+                          "format": 8,
+                          "version": 1
+                        }
+                      ],
+                      "direction": null
+                    },
+                    {
+                      "mode": "normal",
+                      "text": ".",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
+                    }
+                  ],
+                  "direction": null,
+                  "textStyle": "",
+                  "textFormat": 0
+                }
+              ],
+              "direction": null
+            }
+          }
+        }
+      ],
+      "blockType": "privacy-block",
+      "title": "Політика приватності",
+      "lastUpdated": "Останнє оновлення:",
+      "footnote": null
+    }
+  ],
+  "meta": {
+    "title": null,
+    "image": null,
+    "description": null
+  },
+  "publishedAt": "2026-01-08T13:46:24.503Z",
+  "slug": "privacy-policy",
+  "slugLock": false,
+  "updatedAt": "2026-01-08T13:47:02.896Z",
+  "createdAt": "2025-11-13T12:03:32.357Z",
+  "_status": "published"
+}

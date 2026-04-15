@@ -1,0 +1,1055 @@
+{
+  "id": 3,
+  "title": "Про нас",
+  "Blocks": [
+    {
+      "id": "68fb815fa903ea3f98b9db89",
+      "image": {
+        "id": 27,
+        "alt": "About us hero image",
+        "updatedAt": "2025-10-24T13:42:11.121Z",
+        "createdAt": "2025-10-24T13:42:11.121Z",
+        "url": "/api/media/file/about-us-hero.png",
+        "thumbnailURL": "/api/media/file/about-us-hero-300x133.png",
+        "filename": "about-us-hero.png",
+        "mimeType": "image/png",
+        "filesize": 398299,
+        "width": 1428,
+        "height": 632,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/about-us-hero-300x133.png",
+            "width": 300,
+            "height": 133,
+            "mimeType": "image/png",
+            "filesize": 76633,
+            "filename": "about-us-hero-300x133.png"
+          },
+          "square": {
+            "url": "/api/media/file/about-us-hero-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 491023,
+            "filename": "about-us-hero-500x500.png"
+          },
+          "small": {
+            "url": "/api/media/file/about-us-hero-600x266.png",
+            "width": 600,
+            "height": 266,
+            "mimeType": "image/png",
+            "filesize": 296547,
+            "filename": "about-us-hero-600x266.png"
+          },
+          "medium": {
+            "url": "/api/media/file/about-us-hero-900x398.png",
+            "width": 900,
+            "height": 398,
+            "mimeType": "image/png",
+            "filesize": 667130,
+            "filename": "about-us-hero-900x398.png"
+          },
+          "large": {
+            "url": "/api/media/file/about-us-hero-1400x620.png",
+            "width": 1400,
+            "height": 620,
+            "mimeType": "image/png",
+            "filesize": 1566663,
+            "filename": "about-us-hero-1400x620.png"
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": "/api/media/file/about-us-hero-1200x630.png",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/png",
+            "filesize": 1359515,
+            "filename": "about-us-hero-1200x630.png"
+          }
+        }
+      },
+      "blockName": "Let's drive",
+      "marquee": [
+        {
+          "id": "68fb816da903ea3f98b9db8b",
+          "label": "таланти"
+        },
+        {
+          "id": "68fb8171a903ea3f98b9db8d",
+          "label": "результати"
+        },
+        {
+          "id": "68fb8178a903ea3f98b9db8f",
+          "label": "компанію"
+        },
+        {
+          "id": "68fb8182a903ea3f98b9db91",
+          "label": "індустрію"
+        }
+      ],
+      "blockType": "about-main-block",
+      "title": "Драйвимо",
+      "text": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "TENTENS Tech — українська ІТ-компанія, що розробляє social discovery-платформи для понад 20 мільйонів користувачів у всьому світі. Наш темп і масштаб тримаються на глибокій експертизі в аналітиці, highload та performance marketing.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            },
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Команда TENTENS Tech сьогодні — це 250+ людей, де кожен діє як CEO у своїй ролі та впливає на спільний результат. Працюємо в стилі 10/10ths: тримаємо курс на ціль, ставимо правильні питання на шляху і не зупиняємось на «добре» — тільки максимум і ще трохи далі.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": null
+        }
+      }
+    },
+    {
+      "id": "68fe58303da8a7010acb57c4",
+      "image": {
+        "id": 78,
+        "alt": "about us quote image Serhii Miheev",
+        "updatedAt": "2025-12-24T10:28:44.045Z",
+        "createdAt": "2025-12-24T10:28:44.045Z",
+        "url": "/api/media/file/Miheev%20new-1.jpg",
+        "thumbnailURL": "/api/media/file/Miheev%20new-1-300x174.jpg",
+        "filename": "Miheev new-1.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 645988,
+        "width": 1500,
+        "height": 868,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/Miheev new-1-300x174.jpg",
+            "width": 300,
+            "height": 174,
+            "mimeType": "image/jpeg",
+            "filesize": 10234,
+            "filename": "Miheev new-1-300x174.jpg"
+          },
+          "square": {
+            "url": "/api/media/file/Miheev new-1-500x500.jpg",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/jpeg",
+            "filesize": 28151,
+            "filename": "Miheev new-1-500x500.jpg"
+          },
+          "small": {
+            "url": "/api/media/file/Miheev new-1-600x347.jpg",
+            "width": 600,
+            "height": 347,
+            "mimeType": "image/jpeg",
+            "filesize": 27591,
+            "filename": "Miheev new-1-600x347.jpg"
+          },
+          "medium": {
+            "url": "/api/media/file/Miheev new-1-900x521.jpg",
+            "width": 900,
+            "height": 521,
+            "mimeType": "image/jpeg",
+            "filesize": 49946,
+            "filename": "Miheev new-1-900x521.jpg"
+          },
+          "large": {
+            "url": "/api/media/file/Miheev new-1-1400x810.jpg",
+            "width": 1400,
+            "height": 810,
+            "mimeType": "image/jpeg",
+            "filesize": 97648,
+            "filename": "Miheev new-1-1400x810.jpg"
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": "/api/media/file/Miheev new-1-1200x630.jpg",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/jpeg",
+            "filesize": 71620,
+            "filename": "Miheev new-1-1200x630.jpg"
+          }
+        }
+      },
+      "blockName": "Technical expertise TENTENS Tech",
+      "blockType": "about-quote-block",
+      "sectionTitle": "Технічна експертиза TENTENS Tech",
+      "quote": "«У наших інженерних командах рішення народжуються не в ізоляції, а на перетині глибокого розуміння продукту, відкритої дискусії та відповідальності за результат. Ми мислимо системно — кожне технічне рішення має бути не просто ефективним, а масштабованим, надійним і зрозумілим для всієї команди».",
+      "name": "Сергій Міхєєв",
+      "position": "CTO"
+    },
+    {
+      "id": "68fe59d9709efb2089eb155d",
+      "animation": "cross",
+      "noListStyle": false,
+      "blockName": "01. Запатентована антифрод-система",
+      "points": [
+        {
+          "id": "68fe5a09709efb2089eb155f",
+          "text": "Аналізує транзакції за допомогою ML-моделей і кастомних алгоритмів, створених з нуля;"
+        },
+        {
+          "id": "68fe5a15709efb2089eb1561",
+          "text": "Працює в продакшені та має офіційний патент."
+        }
+      ],
+      "highlights": [
+        {
+          "id": "68fe5a2d709efb2089eb1565",
+          "text": "95% — частка зниження фінансових втрат від фроду"
+        },
+        {
+          "id": "68fe5a30709efb2089eb1567",
+          "text": "100% — кількість транзакцій перевіряються в реальному часі"
+        },
+        {
+          "id": "68fe5a39709efb2089eb1569",
+          "text": "5 хвилин — середній час на розв’язання кейсів зі спірними платіжними транзакціями"
+        }
+      ],
+      "blockType": "about-feature-block",
+      "title": "01. Запатентована антифрод-система",
+      "description": "Система виявляє та блокує платіжні шахрайства в реальному часі:",
+      "person": {
+        "avatar": {
+          "id": 79,
+          "alt": "Serhii Miheev small",
+          "updatedAt": "2025-12-24T10:29:54.381Z",
+          "createdAt": "2025-12-24T10:29:54.381Z",
+          "url": "/api/media/file/Miheev%20new%20small.jpg",
+          "thumbnailURL": "/api/media/file/Miheev%20new%20small-300x300.jpg",
+          "filename": "Miheev new small.jpg",
+          "mimeType": "image/jpeg",
+          "filesize": 554098,
+          "width": 1000,
+          "height": 1000,
+          "focalX": 50,
+          "focalY": 50,
+          "sizes": {
+            "thumbnail": {
+              "url": "/api/media/file/Miheev new small-300x300.jpg",
+              "width": 300,
+              "height": 300,
+              "mimeType": "image/jpeg",
+              "filesize": 13865,
+              "filename": "Miheev new small-300x300.jpg"
+            },
+            "square": {
+              "url": "/api/media/file/Miheev new small-500x500.jpg",
+              "width": 500,
+              "height": 500,
+              "mimeType": "image/jpeg",
+              "filesize": 28875,
+              "filename": "Miheev new small-500x500.jpg"
+            },
+            "small": {
+              "url": "/api/media/file/Miheev new small-600x600.jpg",
+              "width": 600,
+              "height": 600,
+              "mimeType": "image/jpeg",
+              "filesize": 37739,
+              "filename": "Miheev new small-600x600.jpg"
+            },
+            "medium": {
+              "url": "/api/media/file/Miheev new small-900x900.jpg",
+              "width": 900,
+              "height": 900,
+              "mimeType": "image/jpeg",
+              "filesize": 71183,
+              "filename": "Miheev new small-900x900.jpg"
+            },
+            "large": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "xlarge": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "og": {
+              "url": "/api/media/file/Miheev new small-1200x630.jpg",
+              "width": 1200,
+              "height": 630,
+              "mimeType": "image/jpeg",
+              "filesize": 64469,
+              "filename": "Miheev new small-1200x630.jpg"
+            }
+          }
+        },
+        "name": "Serhii Mikheiev",
+        "position": "CTO у TENTENS Tech"
+      }
+    },
+    {
+      "id": "68fe5b1b709efb2089eb156b",
+      "animation": "square",
+      "noListStyle": false,
+      "blockName": "02. Стійка архітектура для highload",
+      "points": [
+        {
+          "id": "68fe5b54709efb2089eb156d",
+          "text": "Забезпечує швидку доставку медіаконтенту й безперервний доступ до сервісів;"
+        },
+        {
+          "id": "68fe5b57709efb2089eb156f",
+          "text": "Підтримує високу продуктивність і доступність під піковими навантаженнями."
+        }
+      ],
+      "highlights": [
+        {
+          "id": "68fe5b68709efb2089eb1571",
+          "text": "12 000+ — кількість API-запитів/сек, які обробляє система навіть у пікові навантаження"
+        },
+        {
+          "id": "68fe5b6b709efb2089eb1573",
+          "text": "99% — кількість запитів, які система виконує за 4–200 мс (від найпростішого оновлення даних до завантаження медіа)"
+        },
+        {
+          "id": "68fe5b74709efb2089eb1575",
+          "text": "1 000 ТБ — річний обсяг медіаконтенту, який обробляє система дистрибуції"
+        }
+      ],
+      "blockType": "about-feature-block",
+      "title": "02. Стійка архітектура для highload",
+      "description": "Архітектура стабільно обслуговує понад 1 000 000 користувачів щодня:",
+      "person": {
+        "avatar": {
+          "id": 107,
+          "alt": "Artem Pyshniuk small",
+          "updatedAt": "2025-12-30T14:26:10.740Z",
+          "createdAt": "2025-12-30T14:26:10.740Z",
+          "url": "/api/media/file/artem%20new%20mob.jpg",
+          "thumbnailURL": "/api/media/file/artem%20new%20mob-300x300.jpg",
+          "filename": "artem new mob.jpg",
+          "mimeType": "image/jpeg",
+          "filesize": 548670,
+          "width": 1000,
+          "height": 1000,
+          "focalX": 50,
+          "focalY": 50,
+          "sizes": {
+            "thumbnail": {
+              "url": "/api/media/file/artem new mob-300x300.jpg",
+              "width": 300,
+              "height": 300,
+              "mimeType": "image/jpeg",
+              "filesize": 11005,
+              "filename": "artem new mob-300x300.jpg"
+            },
+            "square": {
+              "url": "/api/media/file/artem new mob-500x500.jpg",
+              "width": 500,
+              "height": 500,
+              "mimeType": "image/jpeg",
+              "filesize": 23345,
+              "filename": "artem new mob-500x500.jpg"
+            },
+            "small": {
+              "url": "/api/media/file/artem new mob-600x600.jpg",
+              "width": 600,
+              "height": 600,
+              "mimeType": "image/jpeg",
+              "filesize": 30879,
+              "filename": "artem new mob-600x600.jpg"
+            },
+            "medium": {
+              "url": "/api/media/file/artem new mob-900x900.jpg",
+              "width": 900,
+              "height": 900,
+              "mimeType": "image/jpeg",
+              "filesize": 61517,
+              "filename": "artem new mob-900x900.jpg"
+            },
+            "large": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "xlarge": {
+              "url": null,
+              "width": null,
+              "height": null,
+              "mimeType": null,
+              "filesize": null,
+              "filename": null
+            },
+            "og": {
+              "url": "/api/media/file/artem new mob-1200x630.jpg",
+              "width": 1200,
+              "height": 630,
+              "mimeType": "image/jpeg",
+              "filesize": 62851,
+              "filename": "artem new mob-1200x630.jpg"
+            }
+          }
+        },
+        "name": "Артем Пишнюк",
+        "position": "Lead Data Scientist у TENTENS Tech"
+      }
+    },
+    {
+      "id": "68fe5bab709efb2089eb1577",
+      "image": {
+        "id": 106,
+        "alt": "about us photo 2",
+        "updatedAt": "2025-12-30T14:07:31.866Z",
+        "createdAt": "2025-12-30T14:07:31.866Z",
+        "url": "/api/media/file/artem%20photo%20new.JPG",
+        "thumbnailURL": "/api/media/file/artem%20photo%20new-300x200.jpg",
+        "filename": "artem photo new.JPG",
+        "mimeType": "image/jpeg",
+        "filesize": 678296,
+        "width": 1500,
+        "height": 1000,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/artem photo new-300x200.jpg",
+            "width": 300,
+            "height": 200,
+            "mimeType": "image/jpeg",
+            "filesize": 9295,
+            "filename": "artem photo new-300x200.jpg"
+          },
+          "square": {
+            "url": "/api/media/file/artem photo new-500x500.jpg",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/jpeg",
+            "filesize": 23331,
+            "filename": "artem photo new-500x500.jpg"
+          },
+          "small": {
+            "url": "/api/media/file/artem photo new-600x400.jpg",
+            "width": 600,
+            "height": 400,
+            "mimeType": "image/jpeg",
+            "filesize": 24905,
+            "filename": "artem photo new-600x400.jpg"
+          },
+          "medium": {
+            "url": "/api/media/file/artem photo new-900x600.jpg",
+            "width": 900,
+            "height": 600,
+            "mimeType": "image/jpeg",
+            "filesize": 46361,
+            "filename": "artem photo new-900x600.jpg"
+          },
+          "large": {
+            "url": "/api/media/file/artem photo new-1400x933.jpg",
+            "width": 1400,
+            "height": 933,
+            "mimeType": "image/jpeg",
+            "filesize": 94144,
+            "filename": "artem photo new-1400x933.jpg"
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": "/api/media/file/artem photo new-1200x630.jpg",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/jpeg",
+            "filesize": 62120,
+            "filename": "artem photo new-1200x630.jpg"
+          }
+        }
+      },
+      "blockName": "Artem Pyshniuk",
+      "blockType": "about-quote-block",
+      "sectionTitle": null,
+      "quote": "«ML — це міст між даними й дією: без нього бізнес бачить минуле, з ним — майбутнє».",
+      "name": "Артем Пишнюк",
+      "position": "Lead Data Scientist"
+    },
+    {
+      "id": "68fe5bdc709efb2089eb1579",
+      "animation": "petal",
+      "noListStyle": true,
+      "blockName": "03. Комплексна AI-модерація контенту",
+      "points": [
+        {
+          "id": "68fe5bf9709efb2089eb157b",
+          "text": "Це дозволяє системі працювати швидко та ефективно, забезпечуючи якісний досвід взаємодії із платформою для мільйонів користувачів."
+        }
+      ],
+      "highlights": [
+        {
+          "id": "68fe5c16709efb2089eb1581",
+          "text": "80 000+ — одиниць контенту на день модерується автоматично"
+        },
+        {
+          "id": "68fe5c19709efb2089eb1583",
+          "text": "90% — точність роботи моделей"
+        },
+        {
+          "id": "68fe5c20709efb2089eb1585",
+          "text": "2 секунди — середній час модерації одиниці контенту"
+        }
+      ],
+      "blockType": "about-feature-block",
+      "title": "03. Комплексна AI-модерація контенту",
+      "description": "Система AI-модерації аналізує весь медіаконтент в реальному часі: визначає тональність, оцінює ризики та автоматично блокує те, що порушує правила платформи.",
+      "person": {
+        "avatar": null,
+        "name": null,
+        "position": null
+      }
+    },
+    {
+      "id": "68fe5d55709efb2089eb159f",
+      "blockName": null,
+      "tracks": [
+        {
+          "id": "68fe5d5e709efb2089eb15a1",
+          "keyTasks": [
+            {
+              "id": "68fe5d77709efb2089eb15a5",
+              "text": "Побудова та підтримка масштабованої UI-архітектури."
+            },
+            {
+              "id": "68fe5d69709efb2089eb15a3",
+              "text": "Співпраця з командами Product, Design та Backend."
+            },
+            {
+              "id": "68fe5da84a9519156040f647",
+              "text": "Забезпечення якості коду через рев’ю та тестування."
+            },
+            {
+              "id": "68fe5db84a9519156040f649",
+              "text": "Оптимізація продуктивності, доступності та сумісності з браузерами."
+            },
+            {
+              "id": "68fe5dc04a9519156040f64b",
+              "text": "Підтримка дизайн-систем та фронтенд-документації."
+            },
+            {
+              "id": "68fe5dc94a9519156040f64d",
+              "text": "Оптимізація інструментів та процесів для комфортної роботи розробників."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe5de04a9519156040f64f",
+              "title": "Frameworks & Libraries:",
+              "value": "Vue.js, Nuxt.js"
+            },
+            {
+              "id": "68fe5deb4a9519156040f651",
+              "title": "Languages & Tooling:",
+              "value": "TypeScript, JavaScript, HTML, CSS (with TailwindCSS and UnoCSS)"
+            },
+            {
+              "id": "68fe5dfe4a9519156040f653",
+              "title": "Build & Bundling:",
+              "value": "Vite"
+            },
+            {
+              "id": "694c09eec372ea1bc36d6f4d",
+              "title": "Testing:",
+              "value": "Playwright, Vitest"
+            },
+            {
+              "id": "68fe5e124a9519156040f655",
+              "title": "State Management:",
+              "value": "Pinia, Vuex"
+            },
+            {
+              "id": "68fe5e254a9519156040f657",
+              "title": "API & Data Layer:",
+              "value": "JSON-RPC, GraphQL, Axios"
+            },
+            {
+              "id": "68fe5e314a9519156040f659",
+              "title": "Monorepo Management:",
+              "value": "pnpm workspaces, Nx"
+            }
+          ],
+          "title": "Front-end Development",
+          "keyTasksTitle": null,
+          "techStacksTitle": null
+        },
+        {
+          "id": "68fe610ab61a4620490944a2",
+          "keyTasks": [
+            {
+              "id": "68fe613fb61a4620490944a3",
+              "text": "Підтримка та вдосконалення існуючих бекенд-систем."
+            },
+            {
+              "id": "68fe6145b61a4620490944a4",
+              "text": "Розробка нових функцій і виправлення багів."
+            },
+            {
+              "id": "68fe6148b61a4620490944a5",
+              "text": "Робота з високонавантаженими системами та великими обсягами даних для забезпечення продуктивності, надійності та масштабованості."
+            },
+            {
+              "id": "68fe614fb61a4620490944a6",
+              "text": "Вирішення бізнес-задач через бекенд-розробку."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe617db61a4620490944a7",
+              "title": "Languages & Tooling:",
+              "value": "PHP 8+, Golang"
+            },
+            {
+              "id": "68fe6188b61a4620490944a8",
+              "title": "Development Principles & Design Patterns:",
+              "value": "SOLID, GoF patterns, Clean Code"
+            },
+            {
+              "id": "68fe6197b61a4620490944a9",
+              "title": "DBMS:",
+              "value": "MySQL, MongoDB"
+            },
+            {
+              "id": "68fe61a0b61a4620490944aa",
+              "title": "Architectural Approaches:",
+              "value": "microservices architecture, Clean Architecture, Domain-Driven Design, event-driven architecture, CQRS"
+            }
+          ],
+          "title": "BACK-END DEVELOPMENT",
+          "keyTasksTitle": null,
+          "techStacksTitle": null
+        },
+        {
+          "id": "68fe61ddb61a4620490944ab",
+          "keyTasks": [
+            {
+              "id": "68fe621bb61a4620490944ac",
+              "text": "Розвиток і вдосконалення QА-стратегії."
+            },
+            {
+              "id": "68fe6222b61a4620490944ad",
+              "text": "Сприяння впровадженню QA-практик у командах."
+            },
+            {
+              "id": "68fe622fb61a4620490944ae",
+              "text": "Підтримка та покращення тестової інфраструктури."
+            },
+            {
+              "id": "68fe623ab61a4620490944af",
+              "text": "Розширення та підтримка метрик якості."
+            },
+            {
+              "id": "68fe6241b61a4620490944b0",
+              "text": "Впровадження підходу shift-left."
+            },
+            {
+              "id": "68fe6247b61a4620490944b1",
+              "text": "Оцінка та тестування нових інструментів і практик."
+            },
+            {
+              "id": "68fe624cb61a4620490944b2",
+              "text": "Забезпечення масштабованості QA-процесів."
+            },
+            {
+              "id": "68fe6251b61a4620490944b3",
+              "text": "Аналіз робочих процесів і пропозиції щодо їх покращення."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe626eb61a4620490944b4",
+              "title": "Languages & Tooling:",
+              "value": "Java, TypeScript"
+            },
+            {
+              "id": "68fe6279b61a4620490944b5",
+              "title": "Test Frameworks:",
+              "value": "Selenide, Playwright"
+            },
+            {
+              "id": "68fe6290b61a4620490944b6",
+              "title": "Infrastructure & Execution:",
+              "value": "Selenoid, Docker, GitLab CI"
+            },
+            {
+              "id": "68fe6299b61a4620490944b7",
+              "title": "Test Management & Reporting:",
+              "value": "Testomat.io"
+            },
+            {
+              "id": "68fe62a6b61a4620490944b8",
+              "title": "Performance & Load Testing:",
+              "value": "k6"
+            }
+          ],
+          "title": "QUALITY ASSURANCE",
+          "keyTasksTitle": null,
+          "techStacksTitle": null
+        },
+        {
+          "id": "68fe62b4b61a4620490944b9",
+          "keyTasks": [
+            {
+              "id": "68fe62ccb61a4620490944ba",
+              "text": "Дослідження можливостей для зростання бізнесу."
+            },
+            {
+              "id": "68fe62e1b61a4620490944bb",
+              "text": "Оцінка ефективності ініціатив та їхнього впливу на ключові бізнес-метрики."
+            },
+            {
+              "id": "68fe62e8b61a4620490944bc",
+              "text": "Побудова моделей і прогнозування бізнес-показників."
+            },
+            {
+              "id": "68fe62f1b61a4620490944bd",
+              "text": "Розробка та підтримка фреймворку метрик, побудова аналітичних звітів і дашбордів."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe62f5b61a4620490944be",
+              "title": "Analytical Methods & Frameworks:",
+              "value": "Cohort & Funnel Analysis, A/B Testing, Unit Economics, Segmentation, Metrics Frameworks, ML & LLM"
+            },
+            {
+              "id": "68fe6316b61a4620490944bf",
+              "title": "Tech Stack:",
+              "value": "SQL, Python, BigQuery, Airflow, Tableau"
+            }
+          ],
+          "title": "ANALYTICS",
+          "keyTasksTitle": null,
+          "techStacksTitle": "Аналітичний інструментарій та підходи:"
+        },
+        {
+          "id": "68fe634bb61a4620490944c2",
+          "keyTasks": [
+            {
+              "id": "68fe634fb61a4620490944c3",
+              "text": "Налаштування, моніторинг і підтримка безперебійної роботи баз даних, включно з бекапами та аварійним відновленням."
+            },
+            {
+              "id": "68fe63adb61a4620490944c4",
+              "text": "Оптимізація продуктивності запитів через тюнінг індексів, оптимізацію схем і аналіз планів виконання."
+            },
+            {
+              "id": "68fe63b7b61a4620490944c5",
+              "text": "Гарантування доступності та цілісності даних за допомогою реплікації, кластеризації та шифрування."
+            },
+            {
+              "id": "68fe63c0b61a4620490944c6",
+              "text": "Співпраця з розробниками для оптимізації запитів та з Data Engineers — для налаштування якісного потокового доступу до даних у реальному часі."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe6403b61a4620490944c7",
+              "title": "Databases:",
+              "value": "MySQL, MongoDB, OpenSearch"
+            },
+            {
+              "id": "68fe640fb61a4620490944c8",
+              "title": "Practices:",
+              "value": "performance tuning, replication & clustering, monitoring & observability, secure data management"
+            }
+          ],
+          "title": "DATABASE ADMINISTRATION",
+          "keyTasksTitle": null,
+          "techStacksTitle": null
+        },
+        {
+          "id": "68fe6430b61a4620490944c9",
+          "keyTasks": [
+            {
+              "id": "68fe6434b61a4620490944ca",
+              "text": "Забезпечення моніторингу 24/7 та ескалація у випадку збоїв або зниження продуктивності сервісів."
+            },
+            {
+              "id": "68fe6478b61a4620490944cb",
+              "text": "Гарантія того, що всі критично важливі системи (9C) охоплені моніторингом, і постійне вдосконалення його якості."
+            },
+            {
+              "id": "68fe647cb61a4620490944cc",
+              "text": "Цілодобове відстеження стану продакшену, реагування на алерти та виконання ролі першої лінії реагування на інциденти."
+            },
+            {
+              "id": "68fe6481b61a4620490944cd",
+              "text": "Підтримка інструментів операційної діяльності: система інцидентів, документація, бази знань."
+            },
+            {
+              "id": "68fe648fb61a4620490944ce",
+              "text": "Аналіз впливу інцидентів на стабільність системи."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe64a8b61a4620490944cf",
+              "title": "Monitoring & alerting:",
+              "value": "Prometheus, Grafana, vmalert"
+            },
+            {
+              "id": "68fe64b1b61a4620490944d0",
+              "title": "Incident tracking & knowledge:",
+              "value": "Compass, Betterstack"
+            }
+          ],
+          "title": "SERVICE OPERATIONS",
+          "keyTasksTitle": null,
+          "techStacksTitle": null
+        },
+        {
+          "id": "68fe6564b61a4620490944d9",
+          "keyTasks": [
+            {
+              "id": "68fe6567b61a4620490944da",
+              "text": "Надання командам інструментів і сервісів для швидшої та безпечнішої розробки."
+            },
+            {
+              "id": "68fe65ceb61a4620490944db",
+              "text": "Побудова та підтримка інфраструктурних сервісів, що використовуються всіма інженерними командами."
+            },
+            {
+              "id": "68fe65dab61a4620490944dc",
+              "text": "Підтримка та розвиток R&D-рішень."
+            },
+            {
+              "id": "68fe65deb61a4620490944dd",
+              "text": "Розробка внутрішніх платформ і self-service інструментів (для Data Science, Data Engineering та підвищення інженерної продуктивності)."
+            },
+            {
+              "id": "68fe65e4b61a4620490944de",
+              "text": "Уніфікація підходів, забезпечення безпеки та масштабованості інженерної екосистеми."
+            },
+            {
+              "id": "68fe65ecb61a4620490944df",
+              "text": "Співпраця з усіма командами для того, щоб їхні рішення було легко розгортати, масштабувати та підтримувати."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe6607b61a4620490944e0",
+              "title": "Programming:",
+              "value": "Golang, PHP, TypeScript, Python"
+            },
+            {
+              "id": "68fe660db61a4620490944e1",
+              "title": "Infrastructure as Code:",
+              "value": "Terraform, Pulumi"
+            },
+            {
+              "id": "68fe6617b61a4620490944e2",
+              "title": "Cloud:",
+              "value": "GCP, AWS"
+            }
+          ],
+          "title": "PLATFORM ENGINEERING",
+          "keyTasksTitle": null,
+          "techStacksTitle": null
+        },
+        {
+          "id": "68fe64beb61a4620490944d1",
+          "keyTasks": [
+            {
+              "id": "68fe64f9b61a4620490944d2",
+              "text": "Розробка та підтримка надійної, масштабованої та безпечної інфраструктури."
+            },
+            {
+              "id": "68fe64fbb61a4620490944d3",
+              "text": "Забезпечення стабільності сервісів і високої доступності."
+            },
+            {
+              "id": "68fe6516b61a4620490944d5",
+              "text": "Впровадження FinOps-практик для оптимізації витрат на інфраструктуру."
+            }
+          ],
+          "techStacks": [
+            {
+              "id": "68fe6534b61a4620490944d6",
+              "title": "Infrastructure as Code & Automation:",
+              "value": "Pulumi, Terraform, Ansible"
+            },
+            {
+              "id": "68fe653db61a4620490944d7",
+              "title": "Cloud & Infrastructure:",
+              "value": "GCP, AWS, bare metal"
+            },
+            {
+              "id": "68fe6547b61a4620490944d8",
+              "title": "Programming & OS:",
+              "value": "Golang, Linux"
+            }
+          ],
+          "title": "DEVOPS",
+          "keyTasksTitle": null,
+          "techStacksTitle": null
+        }
+      ],
+      "blockType": "about-tracks-block",
+      "title": "Інші tech/semi-tech треки TENTENS Tech"
+    },
+    {
+      "id": "694aa462a1256b0788e7e313",
+      "runingTitle": "join the team join the team join the team",
+      "image": {
+        "id": 7,
+        "alt": "star",
+        "updatedAt": "2025-10-09T09:15:33.180Z",
+        "createdAt": "2025-10-09T09:15:33.172Z",
+        "url": "/api/media/file/Vector.svg",
+        "thumbnailURL": null,
+        "filename": "Vector.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 1372,
+        "width": 430,
+        "height": 430,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "name": "ІМ'Я",
+      "email": "Email",
+      "file": "Прикріпити CV",
+      "fileHint": "We support pdf and word files up to 10MB.",
+      "btnText": "Надіслати CV",
+      "blockName": null,
+      "blockType": "form-block"
+    }
+  ],
+  "meta": {
+    "title": "TENTENS Tech - Про нас",
+    "image": null,
+    "description": ""
+  },
+  "publishedAt": "2025-10-24T11:37:28.624Z",
+  "slug": "about-us",
+  "slugLock": true,
+  "updatedAt": "2026-02-12T11:25:43.886Z",
+  "createdAt": "2025-10-24T11:36:44.084Z",
+  "_status": "published"
+}

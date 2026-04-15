@@ -1,0 +1,87 @@
+{
+  "id": 1,
+  "title": "TENTENS Blog",
+  "subtitle": "Technical insights without the complexity",
+  "image": {
+    "id": 35,
+    "alt": "blog-main-page",
+    "updatedAt": "2026-01-14T18:00:45.077Z",
+    "createdAt": "2025-11-05T16:25:19.454Z",
+    "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1.jpg",
+    "thumbnailURL": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-300x200.jpg",
+    "filename": "caleb-george-URmkfvtK3Qw-unsplash-1.jpg",
+    "mimeType": "image/jpeg",
+    "filesize": 1001027,
+    "width": 3264,
+    "height": 2176,
+    "focalX": 74,
+    "focalY": 24,
+    "sizes": {
+      "thumbnail": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-300x200.jpg",
+        "width": 300,
+        "height": 200,
+        "mimeType": "image/jpeg",
+        "filesize": 12504,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1-300x200.jpg"
+      },
+      "square": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-500x500.jpg",
+        "width": 500,
+        "height": 500,
+        "mimeType": "image/jpeg",
+        "filesize": 39057,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1-500x500.jpg"
+      },
+      "small": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-600x400.jpg",
+        "width": 600,
+        "height": 400,
+        "mimeType": "image/jpeg",
+        "filesize": 39721,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1-600x400.jpg"
+      },
+      "medium": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-900x600.jpg",
+        "width": 900,
+        "height": 600,
+        "mimeType": "image/jpeg",
+        "filesize": 79056,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1-900x600.jpg"
+      },
+      "large": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-1400x933.jpg",
+        "width": 1400,
+        "height": 933,
+        "mimeType": "image/jpeg",
+        "filesize": 166933,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1-1400x933.jpg"
+      },
+      "xlarge": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-1920x1280.jpg",
+        "width": 1920,
+        "height": 1280,
+        "mimeType": "image/jpeg",
+        "filesize": 284379,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1-1920x1280.jpg"
+      },
+      "og": {
+        "url": "/api/media/file/caleb-george-URmkfvtK3Qw-unsplash-1-1200x630.jpg",
+        "width": 1200,
+        "height": 630,
+        "mimeType": "image/jpeg",
+        "filesize": 107493,
+        "filename": "caleb-george-URmkfvtK3Qw-unsplash-1-1200x630.jpg"
+      }
+    }
+  },
+  "meta": {
+    "title": "TENTENS Tech - Blog",
+    "image": null,
+    "description": "blog main desc"
+  },
+  "_status": "published",
+  "updatedAt": "2026-01-14T17:48:58.995Z",
+  "createdAt": "2025-11-05T16:03:47.731Z",
+  "globalType": "blog-main-page"
+}

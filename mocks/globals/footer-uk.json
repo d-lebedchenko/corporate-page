@@ -1,0 +1,124 @@
+{
+  "id": 1,
+  "navLabel": "NAVIGATION",
+  "navItems": [
+    {
+      "id": "68e780db08675f69cf46e3b6",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 3,
+            "title": "Про нас",
+            "slug": "about-us"
+          }
+        },
+        "url": "",
+        "label": "ПРО НАС"
+      }
+    },
+    {
+      "id": "68e780eb08675f69cf46e3b7",
+      "link": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "career-pages",
+          "value": {
+            "id": 2,
+            "title": "Кар'єра",
+            "slug": "career"
+          }
+        },
+        "url": "",
+        "label": "КАР’ЄРА В TENTENS"
+      }
+    },
+    {
+      "id": "68e780ef08675f69cf46e3b8",
+      "link": {
+        "type": "custom",
+        "newTab": null,
+        "url": "/vacancies",
+        "label": "ВАКАНСІЇ"
+      }
+    },
+    {
+      "id": "68e780f108675f69cf46e3b9",
+      "link": {
+        "type": "custom",
+        "newTab": null,
+        "url": "/blog",
+        "label": "БЛОГ"
+      }
+    }
+  ],
+  "followLabel": "FOLLOW US",
+  "followItems": [
+    {
+      "id": "68e7810808675f69cf46e3ba",
+      "link": {
+        "type": "custom",
+        "newTab": true,
+        "url": "https://www.linkedin.com/company/tentens-tech/about/",
+        "label": "LINKEDIN"
+      }
+    },
+    {
+      "id": "68e7810a08675f69cf46e3bb",
+      "link": {
+        "type": "custom",
+        "newTab": true,
+        "url": "https://www.instagram.com/tentens.tech/",
+        "label": "INSTAGRAM"
+      }
+    },
+    {
+      "id": "68e7810e08675f69cf46e3bc",
+      "link": {
+        "type": "custom",
+        "newTab": null,
+        "url": "mailto:info@tentens.tech",
+        "label": "EMAIL"
+      }
+    }
+  ],
+  "privacyLink": {
+    "link": {
+      "type": "reference",
+      "newTab": null,
+      "reference": {
+        "relationTo": "pages",
+        "value": {
+          "id": 7,
+          "title": "Політика приватності",
+          "slug": "privacy-policy"
+        }
+      },
+      "url": "/",
+      "label": "Privacy policy"
+    }
+  },
+  "termsLink": {
+    "link": {
+      "type": "reference",
+      "newTab": null,
+      "reference": {
+        "relationTo": "pages",
+        "value": {
+          "id": 8,
+          "title": "Положення про користування",
+          "slug": "terms-and-conditions"
+        }
+      },
+      "url": "/",
+      "label": "Terms & conditions"
+    }
+  },
+  "rights": "2025 © All rights reserved.",
+  "updatedAt": "2025-11-26T13:04:37.936Z",
+  "createdAt": "2025-10-09T09:32:30.627Z",
+  "globalType": "footer"
+}

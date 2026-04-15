@@ -1,0 +1,815 @@
+{
+  "id": 1,
+  "title": "Home Page",
+  "Blocks": [
+    {
+      "id": "68e77da408675f69cf46e39e",
+      "image": {
+        "id": 15,
+        "alt": "main",
+        "updatedAt": "2025-12-03T09:44:18.198Z",
+        "createdAt": "2025-10-09T09:39:05.034Z",
+        "url": "/api/media/file/main.jpg",
+        "thumbnailURL": "/api/media/file/main-300x509.jpg",
+        "filename": "main.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 650914,
+        "width": 501,
+        "height": 850,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/main-300x509.jpg",
+            "width": 300,
+            "height": 509,
+            "mimeType": "image/jpeg",
+            "filesize": 24308,
+            "filename": "main-300x509.jpg"
+          },
+          "square": {
+            "url": "/api/media/file/main-500x500.jpg",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/jpeg",
+            "filesize": 37116,
+            "filename": "main-500x500.jpg"
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": "/api/media/file/main-1200x630.jpg",
+            "width": 1200,
+            "height": 630,
+            "mimeType": "image/jpeg",
+            "filesize": 78762,
+            "filename": "main-1200x630.jpg"
+          }
+        }
+      },
+      "imageTablet": {
+        "id": 73,
+        "alt": "hero tablet",
+        "updatedAt": "2025-12-23T15:15:22.366Z",
+        "createdAt": "2025-12-23T15:15:22.365Z",
+        "url": "/api/media/file/hero-tablet.png",
+        "thumbnailURL": "/api/media/file/hero-tablet-300x167.png",
+        "filename": "hero-tablet.png",
+        "mimeType": "image/png",
+        "filesize": 461885,
+        "width": 647,
+        "height": 360,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/hero-tablet-300x167.png",
+            "width": 300,
+            "height": 167,
+            "mimeType": "image/png",
+            "filesize": 110793,
+            "filename": "hero-tablet-300x167.png"
+          },
+          "square": {
+            "url": "/api/media/file/hero-tablet-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 549789,
+            "filename": "hero-tablet-500x500.png"
+          },
+          "small": {
+            "url": "/api/media/file/hero-tablet-600x334.png",
+            "width": 600,
+            "height": 334,
+            "mimeType": "image/png",
+            "filesize": 451311,
+            "filename": "hero-tablet-600x334.png"
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "blockName": null,
+      "blockType": "main-block",
+      "title": "TENTENS Tech",
+      "subtitle": "Ukrainian IT company with a team of 250+ specialists",
+      "text": "We develop technical solutions for digital products in the field of communications: anti-fraud systems, payment modules, retention tools, and ensure product development at all stages.",
+      "runningText": "Manage your potential with TENTENS Tech",
+      "button": {
+        "type": "custom",
+        "newTab": null,
+        "url": "/vacancies",
+        "label": "test"
+      }
+    },
+    {
+      "id": "68e77e5208675f69cf46e39f",
+      "title": "Що означає",
+      "titleGreen": " 10/10ths",
+      "text": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "10/10s — термін зі світу рейсингу, яким описують вихід авто у пік свого потенціалу, і найкращий з можливих результатів.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            },
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "TENTENS Tech — про технології, що рухають вперед: щоб виграти, потрібен максимальний темп, технічна досконалість та команда, що працює пліч-о-пліч.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": null
+        }
+      },
+      "directionTitle": "6+ напрямків",
+      "directionSubtitle": "tech-експертизи",
+      "schemaTitle": "запатентована система ",
+      "schemaSubtitle": "фрод-моніторингу",
+      "expertsTitle": "30+ фахівців",
+      "expertsSubtitle": "є лекторами та викладачами всеукраїнських освітніх проєктів",
+      "blockName": null,
+      "partners": [
+        {
+          "id": "68e77ee908675f69cf46e3a4",
+          "image": {
+            "id": 8,
+            "alt": "genesis",
+            "updatedAt": "2025-10-09T09:21:39.815Z",
+            "createdAt": "2025-10-09T09:21:39.815Z",
+            "url": "/api/media/file/genesis.png",
+            "thumbnailURL": null,
+            "filename": "genesis.png",
+            "mimeType": "image/png",
+            "filesize": 4230,
+            "width": 113,
+            "height": 72,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "square": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": "        ",
+            "label": "genesis"
+          }
+        },
+        {
+          "id": "68e77ef208675f69cf46e3a5",
+          "image": {
+            "id": 9,
+            "alt": "platform",
+            "updatedAt": "2025-10-09T09:22:24.402Z",
+            "createdAt": "2025-10-09T09:22:24.402Z",
+            "url": "/api/media/file/platform.png",
+            "thumbnailURL": null,
+            "filename": "platform.png",
+            "mimeType": "image/png",
+            "filesize": 5835,
+            "width": 113,
+            "height": 72,
+            "focalX": 50,
+            "focalY": 50,
+            "sizes": {
+              "thumbnail": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "square": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "small": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "medium": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "large": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "xlarge": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              },
+              "og": {
+                "url": null,
+                "width": null,
+                "height": null,
+                "mimeType": null,
+                "filesize": null,
+                "filename": null
+              }
+            }
+          },
+          "link": {
+            "type": "custom",
+            "newTab": null,
+            "url": " ",
+            "label": "platform"
+          }
+        }
+      ],
+      "blockType": "grid-block",
+      "button": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "pages",
+          "value": {
+            "id": 3,
+            "title": "Про нас",
+            "slug": "about-us"
+          }
+        },
+        "url": "https://google.com",
+        "label": "Експертиза TENTENS Tech"
+      }
+    },
+    {
+      "id": "68e77f3308675f69cf46e3a8",
+      "title": "we don’t think limits",
+      "subtitle": "ВПЕВНЕНО РУХАЄМОСЯ ЗА ГОРИЗОНТ СВОЇХ МОЖЛИВОСТЕЙ — ДО НАЙКРАЩИХ РЕЗУЛЬТАТІВ ДАЛЕКО ЗА ФІНІШ.",
+      "image": {
+        "id": 53,
+        "alt": "nolimit ",
+        "updatedAt": "2025-12-08T13:50:21.844Z",
+        "createdAt": "2025-12-08T13:50:21.844Z",
+        "url": "/api/media/file/Exclude.png",
+        "thumbnailURL": "/api/media/file/Exclude-300x267.png",
+        "filename": "Exclude.png",
+        "mimeType": "image/png",
+        "filesize": 385633,
+        "width": 516,
+        "height": 460,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/Exclude-300x267.png",
+            "width": 300,
+            "height": 267,
+            "mimeType": "image/png",
+            "filesize": 205325,
+            "filename": "Exclude-300x267.png"
+          },
+          "square": {
+            "url": "/api/media/file/Exclude-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mimeType": "image/png",
+            "filesize": 601640,
+            "filename": "Exclude-500x500.png"
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "blockName": "we don’t think limits",
+      "blockType": "nolimits-block"
+    },
+    {
+      "id": "68e77f7c08675f69cf46e3a9",
+      "title": "Культурний код TENTENS Tech",
+      "subtitle": "— те, чим ми керуємось щодня у роботі",
+      "blockName": null,
+      "features": [
+        {
+          "id": "68e77f8f08675f69cf46e3aa",
+          "title": "BE 1010s",
+          "text": "Ми робимо все краще, сильніше, швидше, ефективніше, нестандартніше, ніж просто добре. Ставимо і досягаємо цілі на межі можливостей, щоб кожного разу посунути межу трошки далі. Наша мета — бути не просто десяткою, а безмежною множиною десяток."
+        },
+        {
+          "id": "68e77f9908675f69cf46e3ab",
+          "title": "TRACK THE TRACK",
+          "text": "Ми завжди керуємо швидкістю, напрямком і результатом роботи. Адаптуємо власні потужності до обставин так, щоб завжди залишатися в найвищій точці свого потенціалу."
+        },
+        {
+          "id": "68e77f9d08675f69cf46e3ac",
+          "title": "CHIEF EXECUTIVE EVERYONE",
+          "text": "У нашій системі не існує гвинтиків, болтиків та інших маленьких деталей. Кожен у команді TENTENS Tech — директор своєї роботи: ставить собі задачі, вдосконалює процеси та відповідає за результати."
+        },
+        {
+          "id": "68e77f9f08675f69cf46e3ad",
+          "title": "PLICH-O-PLICH",
+          "text": "TENTENS Tech — це команда, що працює пліч-о-пліч. Ми підтримуємо, допомагаємо та обмінюємося фідбеком — все заради найкращого спільного результату."
+        }
+      ],
+      "blockType": "culture"
+    },
+    {
+      "id": "68f0db90d7324425111c99b5",
+      "isTitleBig": true,
+      "isTitleGreen": false,
+      "subtitle": "",
+      "isButtonHide": false,
+      "image": {
+        "id": 11,
+        "alt": "grow",
+        "updatedAt": "2025-10-09T09:27:17.754Z",
+        "createdAt": "2025-10-09T09:27:17.753Z",
+        "url": "/api/media/file/grow.png",
+        "thumbnailURL": "/api/media/file/grow-300x299.png",
+        "filename": "grow.png",
+        "mimeType": "image/png",
+        "filesize": 197615,
+        "width": 362,
+        "height": 361,
+        "focalX": 50,
+        "focalY": 50,
+        "sizes": {
+          "thumbnail": {
+            "url": "/api/media/file/grow-300x299.png",
+            "width": 300,
+            "height": 299,
+            "mimeType": "image/png",
+            "filesize": 158253,
+            "filename": "grow-300x299.png"
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "blockName": null,
+      "blockType": "content-image-block",
+      "title": "Зростай з TENTENS Tech",
+      "text": {
+        "root": {
+          "type": "root",
+          "format": "",
+          "indent": 0,
+          "version": 1,
+          "children": [
+            {
+              "type": "paragraph",
+              "format": "",
+              "indent": 0,
+              "version": 1,
+              "children": [
+                {
+                  "mode": "normal",
+                  "text": "Керуй своїм зростанням та йди до мети. Побудуй чіткий та прозорий шлях розвитку у TENTENS Tech, враховуючи твій стек технологій та рівень компетенцій.",
+                  "type": "text",
+                  "style": "",
+                  "detail": 0,
+                  "format": 0,
+                  "version": 1
+                }
+              ],
+              "direction": null,
+              "textStyle": "",
+              "textFormat": 0
+            }
+          ],
+          "direction": null
+        }
+      },
+      "button": {
+        "type": "reference",
+        "newTab": null,
+        "reference": {
+          "relationTo": "career-pages",
+          "value": {
+            "id": 4,
+            "title": "Кар’єрний фреймворк",
+            "slug": "career/framework"
+          }
+        },
+        "url": "",
+        "label": "переглянути кар’єрний фреймворк"
+      }
+    },
+    {
+      "id": "68e672ab67132205b584be6d",
+      "runingTitle": "join the team join the team join the team",
+      "image": {
+        "id": 7,
+        "alt": "star",
+        "updatedAt": "2025-10-09T09:15:33.180Z",
+        "createdAt": "2025-10-09T09:15:33.172Z",
+        "url": "/api/media/file/Vector.svg",
+        "thumbnailURL": null,
+        "filename": "Vector.svg",
+        "mimeType": "image/svg+xml",
+        "filesize": 1372,
+        "width": 430,
+        "height": 430,
+        "focalX": null,
+        "focalY": null,
+        "sizes": {
+          "thumbnail": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "square": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "small": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "medium": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "large": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "xlarge": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          },
+          "og": {
+            "url": null,
+            "width": null,
+            "height": null,
+            "mimeType": null,
+            "filesize": null,
+            "filename": null
+          }
+        }
+      },
+      "name": "ІМ'Я",
+      "email": "Email",
+      "file": "Прикріпити CV",
+      "fileHint": "We support pdf and word files up to 10MB.",
+      "btnText": "Надіслати CV",
+      "blockName": null,
+      "blockType": "form-block"
+    }
+  ],
+  "meta": {
+    "title": "TENTENS Tech - Home page",
+    "image": {
+      "id": 52,
+      "alt": null,
+      "updatedAt": "2025-12-03T09:46:59.132Z",
+      "createdAt": "2025-12-03T09:46:59.132Z",
+      "url": "/api/media/file/main-2.jpg",
+      "thumbnailURL": "/api/media/file/main-2-300x509.jpg",
+      "filename": "main-2.jpg",
+      "mimeType": "image/jpeg",
+      "filesize": 650914,
+      "width": 501,
+      "height": 850,
+      "focalX": 50,
+      "focalY": 50,
+      "sizes": {
+        "thumbnail": {
+          "url": "/api/media/file/main-2-300x509.jpg",
+          "width": 300,
+          "height": 509,
+          "mimeType": "image/jpeg",
+          "filesize": 24308,
+          "filename": "main-2-300x509.jpg"
+        },
+        "square": {
+          "url": "/api/media/file/main-2-500x500.jpg",
+          "width": 500,
+          "height": 500,
+          "mimeType": "image/jpeg",
+          "filesize": 37116,
+          "filename": "main-2-500x500.jpg"
+        },
+        "small": {
+          "url": null,
+          "width": null,
+          "height": null,
+          "mimeType": null,
+          "filesize": null,
+          "filename": null
+        },
+        "medium": {
+          "url": null,
+          "width": null,
+          "height": null,
+          "mimeType": null,
+          "filesize": null,
+          "filename": null
+        },
+        "large": {
+          "url": null,
+          "width": null,
+          "height": null,
+          "mimeType": null,
+          "filesize": null,
+          "filename": null
+        },
+        "xlarge": {
+          "url": null,
+          "width": null,
+          "height": null,
+          "mimeType": null,
+          "filesize": null,
+          "filename": null
+        },
+        "og": {
+          "url": "/api/media/file/main-2-1200x630.jpg",
+          "width": 1200,
+          "height": 630,
+          "mimeType": "image/jpeg",
+          "filesize": 78762,
+          "filename": "main-2-1200x630.jpg"
+        }
+      }
+    },
+    "description": "We develop technical solutions for digital products in the field of communications: anti-fraud systems, payment modules, retention tools, and ensure product development at all stages."
+  },
+  "publishedAt": "2025-10-08T14:18:09.428Z",
+  "slug": "home",
+  "slugLock": false,
+  "updatedAt": "2026-04-11T07:42:21.601Z",
+  "createdAt": "2025-10-08T14:16:47.079Z",
+  "_status": "published"
+}

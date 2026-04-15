@@ -13,6 +13,10 @@ const props = defineProps({
   },
 })
 
+const visibleCategories = computed(() =>
+  props.categories.filter(c => !c.hidden)
+)
+
 const { query } = useRoute()
 
 const selectedCat = ref(null)
@@ -41,7 +45,7 @@ const selectSubcategory = (subId) => {
 }
 
 
-watch(() => props.categories, (newCategories) => {
+watch(visibleCategories, (newCategories) => {
   if (newCategories && newCategories.length > 0) {
     const { matricesCat } = query
     const queryCategory =
@@ -56,7 +60,7 @@ watch(() => props.categories, (newCategories) => {
 }, { immediate: true })
 
 const currentCategory = computed(() =>
-  props.categories.find(cat => cat.id === selectedCat.value)
+  visibleCategories.value.find(cat => cat.id === selectedCat.value)
 )
 
 const subcategoriesList = computed(() =>
@@ -129,7 +133,7 @@ onBeforeUnmount(() => {
 <template>
   <section class="matrices">
     <div class="container">
-      <div class="matrices__selectors" v-if="props.categories.length > 0">
+      <div class="matrices__selectors" v-if="visibleCategories.length > 0">
 
         <div class="matrices__select__wrapper" :class="{ 'open': isCatDropdownOpen }" @click="toggleCatDropdown"
           >
@@ -140,7 +144,7 @@ onBeforeUnmount(() => {
           <Arrow class="icon icon-32 green" :class="{ 'rotated': isCatDropdownOpen }" />
 
           <ul class="matrices__dropdown">
-            <li class="matrices__option f-p2 clickable" v-for="cat in props.categories" :key="cat.id"
+            <li class="matrices__option f-p2 clickable" v-for="cat in visibleCategories" :key="cat.id"
               @click.stop="selectCategory(cat.id)" :class="{ 'active': cat.id === selectedCat }">
               {{ cat.title }}
               <Check class="icon-active icon icon-24 green" v-if="cat.id === selectedCat" />

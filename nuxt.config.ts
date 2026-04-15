@@ -63,9 +63,11 @@ export default defineNuxtConfig({
 
   nitro: {
     routeRules: {
-      "/payload/**": {
-        proxy: `${payloadUrl}/**`,
-      },
+      ...(process.env.IS_NUXT_MOCK !== 'true' && {
+        "/payload/**": {
+          proxy: `${payloadUrl}/**`,
+        },
+      }),
     },
     minify: true,
     compressPublicAssets: {
@@ -129,6 +131,33 @@ export default defineNuxtConfig({
 
   sitemap: {
     urls: async () => {
+      if (process.env.IS_NUXT_MOCK === 'true') {
+        const { readdirSync, existsSync } = await import('node:fs')
+        const { resolve } = await import('node:path')
+        const mocksDir = resolve(process.cwd(), 'mocks')
+
+        const pageFiles = readdirSync(`${mocksDir}/pages`)
+          .filter((f: string) => f.endsWith('-uk.json'))
+        const pageUrls = pageFiles.map((f: string) => {
+          const slug = f.replace('-uk.json', '')
+          return slug === 'home' ? '/' : `/${slug}`
+        })
+
+        const careerFiles = readdirSync(`${mocksDir}/career-pages`)
+          .filter((f: string) => f.endsWith('-uk.json'))
+        const careerUrls = careerFiles.map((f: string) => `/${f.replace('-uk.json', '')}`)
+
+        if (existsSync(`${mocksDir}/globals/blog-main-page-uk.json`)) {
+          pageUrls.push('/blog')
+        }
+
+        const blogFiles = readdirSync(`${mocksDir}/blog-posts`)
+          .filter((f: string) => f.endsWith('-uk.json') && !f.startsWith('list-'))
+        const blogUrls = blogFiles.map((f: string) => `/blog/${f.replace('-uk.json', '')}`)
+
+        return [...pageUrls, ...careerUrls, ...blogUrls]
+      }
+
       const payloadBase = `${payloadUrl}/api/`;
 
       try {
@@ -212,8 +241,8 @@ export default defineNuxtConfig({
     autoFolderCreation: false,
   },
   image: {
-    domains: [payloadHostname],
-    alias: {
+    domains: process.env.IS_NUXT_MOCK === 'true' ? [] : [payloadHostname],
+    alias: process.env.IS_NUXT_MOCK === 'true' ? {} : {
       payload: payloadUrl,
     },
     screens: {
