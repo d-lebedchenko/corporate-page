@@ -25,6 +25,3 @@ logs
 
 #docs
 docs/
-
-# Mock media (downloaded from Payload, not tracked in git)
-public/payload/
